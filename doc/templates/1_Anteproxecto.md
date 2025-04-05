@@ -19,9 +19,6 @@
   - [3- Requirimentos técnicos](#3--requirimentos-técnicos)
   - [4- Planificación](#4--planificación)
 
-> _EXPLICACIÓN_: Este documento será a páxina de explicación de en que consiste o teu proxecto. Coida a súa redacción con todo ou teu mimo. Elimina posteriormente todas as lineas "EXPLICACIÓN" cando creas finalizada a súa redacción.
-> Podes acompañar á redacción deste ficheiro con imaxes, pero non abuses deles.
-> Explica da mellor forma posible de en que consiste o proxecto é que ferramentas e linguaxes de programación empregarás.
 
 ## 1- Descrición do proxecto
 
@@ -38,11 +35,14 @@
 
 ## 2- Empresa
 
-> _EXPLICACIÓN_: Neste apartado desenvolveredes todo o referente os módulos de Empresa e iniciativa emprendedora e de FOL.
-
 ### 2.1- Idea de negocio
 
-> _EXPLICACIÓN_: Define o producto central, o valor engadido e a utilidade. Se se ogrecen productos aumentados, indicalo tamén.
+> El objetivo es digitalizar la empresa con una página moderna y única, que deje clara la esencia del negocio. Con un sistema simple de puntos pero que funcione y que ofrezca la posibilidad de recompensar a los clientes más habituales. 
+
+> Este tipo de servicio suele ser de un coste muy elevado y la mayoría son de pago mensual lo que la mayoría del comercio local no puede ni a veces quiere pagar. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía el sistema de puntos no necesitaría. 
+
+> El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por tenerlas pero siempre pueden quedarse con la primera versión si es suficiente y sin nuevos costes.
+
 
 ### 2.2- Xustificación da idea
 
