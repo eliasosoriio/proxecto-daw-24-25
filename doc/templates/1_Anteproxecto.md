@@ -25,13 +25,16 @@
 
 ## 1- Descrición do proxecto
 
-> _EXPLICACIÓN_: Realiza unha breve descrición do anteproxecto.Resalta o fundamental *coas túas propias palabras\*\*. Utiliza unha linguaxe correcta, *pero natural\*\*, que o entenda todo o mundo, mesmo e en especial, as persoas que non teñan un coñecemento técnico avanzado. Pode ser un estracto ou resumo de apartados que xa contemples noutros ficheiros.
->
-> Neste apartado trátase de describir a análise realizada e a toma de decisións adoptada sobre aspectos básicos ou iniciais do proxecto como:
->
-> - ¿En que consiste o noso proxecto? ¿Cal é o propósito principal da aplicación a desenvolver? ¿Cales son os obxectivos?
-> - ¿O desenvolvemento da aplicación abre unha oportunidade de negocio? ¿É posible comercializala? Como?
-> - ¿Que tecnoloxías son as máis axeitadas para a realización do proxecto?
+> El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. 
+
+> La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
+
+> Otras plataformas que dan servicios de este tipo suelen cobrar una cantidad alta mensualmente por integrar su software en la página, lo que es un gran dolor para ellos porque tienen menos poder de inversión y los que se desarrollan exclusivamente tienen costes muy elevados. La idea es estar en el punto medio, dar un servicio de pago único, simple, moderno y que a largo plazo sea más barato para el cliente que mantener una cuota mensual de por vida.
+
+> Con el tiempo se quiere ir actualizando y mejorando el sistema para que los usuarios que más lo utilizan y quieran disponer de una mejor versión puedan pagar para actualizarla. De esta forma el comercio local tiene una oportunidad atractiva de digitalizar su negocio y mantener su clientela, algo imprescindible hoy en día.
+
+> En cuanto a tecnologías, el frontend será desarrollado con React ya que la creación de componentes ahorra tiempo y código. Además podría mejorar la velocidad y facilitar la escalabilidad de la página en un futuro. El backend será realizado en PHP.
+
 
 ## 2- Empresa
 
