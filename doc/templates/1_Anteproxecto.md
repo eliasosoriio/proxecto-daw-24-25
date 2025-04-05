@@ -46,17 +46,22 @@
 
 ### 2.2- Xustificación da idea
 
-> _EXPLICACIÓN_: Neste apartado incluirase a información necesaria para xustificar a realización do proxecto. Debe indicarse como xurdiu a idea do proxecto, que obxectivo se persegue coa súa posta en marcha e/ou que problema vai resolver.
->
-> En este apartado indicade a nivel de idea de negocio:
->
-> - ¿Cal é a necesidade ou necesidades que se pretenden cubrir ou satisfacer?
-> - ¿Existen na actualidade aplicacións ou productos que tenten dar resposta a esa(s) necesidade(s)? ¿En que medida o conseguen?
-> - ¿Trátase de un segmento de mercado desabastecido ou insuficientemente atendido?
-> - ¿Un produto ineficiente? Un mercado novo?
->
-> Para sustentar as xustificación deberás proporcionar datos. Fontes máis utilizadas: INE, IGE, Informes sectoriais de
-> Industria, Statista... Deberás facer unha DAFO.
+> Mi hermano es el dueño del restaurante LAMARTA, que lleva abierto desde enero de 2024. En ese momento mi hermano me encargó hacerle la página web y desde entonces he intentado mantenerla lo mejor posible.
+
+> Desde hace meses me estuvo consultando la opción de tener un sistema con el que sus clientes puedan acumular puntos ya que las demás que habían eran bastante caras. Si quería que le desarrollasen algo más avanzado el presupuesto era de miles de euros. Y en cuanto a las opciones más económicas, son softwares de terceros que implican una suscripción mensual de cientos de euros o las que son un poco más económicas necesitas disponer de alguien con conocimientos que aplique ese software a la web.
+
+> El caso de un familiar me hizo darme aún más cuenta de que podría haber mercado ya que en la tienda donde compra té, siguen utilizando el sistema de fidelización en papel, sellando una tarjeta. Esta tienda tampoco dispone de página web por lo que sería un potencial cliente para digitalizar y facilitar a los usuarios la obtención de recompensas. Evitando por ejemplo que alguien pueda perder su tarjeta.
+
+> LoyaltyLion, Smile.io y Connectif son algunas empresas que ofrecen este servicio pero solo funcionan en páginas que son de Shopify y demás de e-commerce. Sus precios están entre los 50 y 500 euros mensuales dependiendo del plan. Hay otras que sí que podrían funcionar fuera de las plataformas de e-commerce pero o son muy caras también o no te ofrecen la creación de tu página personalizada.
+
+> En [este informe del INE 2023-2024](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&cid=1254736176743&menu=ultiDatos&idp=1254735576799) vemos que las empresas con menos de 10 empleados apenas tienen páginas web (33%) a diferencia de las grandes.
+
+> Además, [en este artículo de SimplotFoods](https://www.simplotfoods.com/au/es/blog/do-restaurant-loyalty-programs-really-work) comenta acerca de diferentes estudios de cómo el mantener clientes proporciona mayor rentabilidad para el negocio frente a obtener nuevos y de lo bien que funcionan los programas o sistemas de fidelización para conseguirlo. La gente suele volver mucho más de esta forma.
+
+> La necesidad que se pretende cumplir es que los comercios locales tengan una página única y moderna, con el sistema de fidelización para sus clientes mediante un pago único no tan elevado. De esta forma, se consigue que obtengan algo propio, que puedan digitalizarse, que no les suponga un coste mensual de por vida y mantener más clientes habitualmente generando por lo tanto más ingresos. El modelo se puede adaptar a cualquier tipo de negocio, desde un taller, a un restaurante, a un centro de estética y demás.
+
+> ![DAFO](DAFO.jpg)
+
 
 ### 2.3- Segmento de clientes
 
