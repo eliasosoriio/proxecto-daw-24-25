@@ -41,12 +41,12 @@
 
 > Este tipo de servicio suele ser de un coste muy elevado y la mayoría son de pago mensual lo que la mayoría del comercio local no puede ni a veces quiere pagar. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía el sistema de puntos no necesitaría. 
 
-> El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por tenerlas pero siempre pueden quedarse con la primera versión si es suficiente y sin nuevos costes.
+> El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por tenerlas pero siempre pueden quedarse con la primera versión si es suficiente y sin nuevos costes. Si alguno de nuestros clientes recomienda el servicio y lo obtienen, podrían recibir una bonificación. Así, conseguimos promover la escalabilidad y llegar a más gente.
 
 
 ### 2.2- Xustificación da idea
 
-> Mi hermano es el dueño del restaurante LAMARTA, que lleva abierto desde enero de 2024. En ese momento mi hermano me encargó hacerle la página web y desde entonces he intentado mantenerla lo mejor posible.
+> Mi hermano es el dueño del restaurante LAMARTA, que lleva abierto desde enero de 2024. En ese momento mi hermano me encargó hacerle la página web, por lo que diseñé y desarrollé esta misma y desde entonces he intentado mantenerla lo mejor posible.
 
 > Desde hace meses me estuvo consultando la opción de tener un sistema con el que sus clientes puedan acumular puntos ya que las demás que habían eran bastante caras. Si quería que le desarrollasen algo más avanzado el presupuesto era de miles de euros. Y en cuanto a las opciones más económicas, son softwares de terceros que implican una suscripción mensual de cientos de euros o las que son un poco más económicas necesitas disponer de alguien con conocimientos que aplique ese software a la web.
 
