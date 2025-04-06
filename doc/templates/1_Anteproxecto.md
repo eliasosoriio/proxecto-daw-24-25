@@ -134,15 +134,14 @@
 
 ## 4- Planificación
 
-> _EXPLICACIÓN_: Inclúe un calendario co tempo estimado a adicar a cada fase do proxecto.
+> El proyecto estará formado por las siguientes fases:
 >
-> O proxecto estará formado polas seguintes fases:
->
-> - Estudo preliminar
-> - Análise
-> - Deseño
-> - Codificación e probas (debe ser a fase máis longa).
->
-> Debe facerse un calendario ou un diagrama de Gantt indicando, para cada fase, a data de inicio, a súa duración e breve descrición das tarefas a realizar.
+> - Estudio preliminar: Definición de idea de negocio, justificación, segmento de clientes, competencia, propuesta, forma jurídica, inversiones, viabilidad, requerimientos y planificación.
+> - Análisis: Funcionalidades, definir tipos de usuarios, contorno operacional, normativa y mejoras futuras.
+> - Diseño: Diagrama de arquitectura, casos de uso, diagrama de la BD y diseño de la interfaz de usuarios.
+> - Desarrollo: Se codifica la aplicación web.
+> - Pruebas: Realización de pruebas y últimos cambios.
+
+> ![GANTT](GANTT.png)
 
 [**<-Anterior**](../../README.md)
