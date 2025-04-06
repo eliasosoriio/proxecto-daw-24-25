@@ -128,11 +128,9 @@
 
 ## 3- Requirimentos técnicos
 
-> _EXPLICACIÓN_: Descrición dos medios materiais e das tecnoloxías necesarias que se usarán para desenvolver o proxecto incluíndo as linguaxes de programación frontend e backend, técnicas, librerías, bases de datos, servizos usados, servidores, API’s, etc.
->
-> - **Infraestructura:** dominio web, servidor web dedicado, servidor de base de datos, almacenamento, memoria, ...
-> - **Backend:** tecnoloxías usadas.
-> - **Frontend:** tecnoloxías usadas
+> - **Infraestructura:** Hostinger para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
+> - **Backend:** API en PHP crudo.
+> - **Frontend:** React, HTML, CSS y JavaScript.
 
 ## 4- Planificación
 
