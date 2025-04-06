@@ -76,7 +76,11 @@
 
 ### 2.4- Competencia
 
-> _EXPLICACIÓN_: Neste apartado deberase indicar que outras empresas operan no mercado. Que cota de mercado teñen e como están posicionadas. Existencia de productos/servizos substitutivos. Como están posicionados.
+> En cuanto a competencias, las anteriormente nombradas LoyaltyLion, Smile.io o Connectif, son de las más utilizadas a nivel nacional e internacional, teniendo así una gran cuota de mercado. Sus planes suelen ser de pago mensual y caros, algo que no es atractivo para los pequeños negocios. Además, son algo difíciles de manejar si no tienes ciertos conocimientos o si no utilizas una plataforma de e-commerce. Otro punto es que no siempre puedes integrarlo directamente en tu web, si no que habría que utilizarlo externamente.
+
+> Los locales utilizan los sistemas antiguos como producto sustitutivo, sellos en papeles, tarjetas y demás que a día de hoy presentan limitaciones a diferencia de los modernos.
+
+> Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único que resultaría en un precio más económico a largo plazo. Ayudando así a dejar los sistemas antiguos y obteniendo todos los beneficios que trae al negocio, anteriormente comentados en la justificación. Ofreciendo esta solución personalizada, simple, propia y fácil de utilizar conseguiremos difrenciarnos del resto.
 
 ### 2.5- Proposta de valor
 
