@@ -65,12 +65,14 @@
 
 ### 2.3- Segmento de clientes
 
-> _EXPLICACIÓN_: Neste apartado debes indicar a quen irá dirixido o negocio, os potenciales clientes, respostando as seguinte pregunta: ¿A quen está dirixido?
->
-> Debes:
->
-> - Indicar o segmento ou segmentos cos rasgos principais e cuantificar o mercado.
-> - E se é o caso, diferenciar entre usuario e cliente.
+> El objetivo es llegar a ese comercio local pequeño y mediano que aún no está digitalizado o que se puede mejorar su presencia online a la hora de conectar con sus clientes. Aumentar el alcance para multiplicar la clientela y enfocarse en mantenerla dejando atrás los métodos antiguos de fidelización, por los más modernos, simples, baratos y personalizados.
+
+> Los que ya son frecuentes, seguirán queriendo volver si les recompensas por su fidelidad. Los que son más ocasionales o nuevos pueden convertirse en frecuentes con más promociones.
+
+> En relación a lo comentado en el apartado de Idea de Negocio. La tienda de té sería un ejemplo perfecto de cliente potencial. Digitalizar su tienda y su sistema de bonos le daría más alcance y evitaría que los usuarios tengan la posibilidad de perder el papel de sellos u otro imprevisto.
+
+> Por lo tanto, este tipo de negocio es aplicable a cualquier sector. Cualquier empresa puede realizar programas de fidelidad y cómo anteriormente se analizó, más de un 60% de micropymes aún no están digitalizadas y se les puede ayudar a generar más ingresos y mejorar tanto la experiencia del local, como la del usuario.
+
 
 ### 2.4- Competencia
 
