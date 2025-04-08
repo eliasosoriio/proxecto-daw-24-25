@@ -22,67 +22,65 @@
 
 ## 1- Descrición do proxecto
 
-**Quita el ">" de delante de cada párrafo**
-
 El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. 
 
-> La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
+La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
 
-> Otras plataformas que dan servicios de este tipo suelen cobrar una cantidad alta mensualmente por integrar su software en la página, lo que es un gran dolor para ellos porque tienen menos poder de inversión y los que se desarrollan exclusivamente tienen costes muy elevados. La idea es estar en el punto medio, dar un servicio de pago único, simple, moderno y que a largo plazo sea más barato para el cliente que mantener una cuota mensual de por vida.
+Otras plataformas que dan servicios de este tipo suelen cobrar una cantidad alta mensualmente por integrar su software en la página, lo que es un gran dolor para ellos porque tienen menos poder de inversión y los que se desarrollan exclusivamente tienen costes muy elevados. La idea es estar en el punto medio, dar un servicio de pago único, simple, moderno y que a largo plazo sea más barato para el cliente que mantener una cuota mensual de por vida.
 
-> Con el tiempo se quiere ir actualizando y mejorando el sistema para que los usuarios que más lo utilizan y quieran disponer de una mejor versión puedan pagar para actualizarla. De esta forma el comercio local tiene una oportunidad atractiva de digitalizar su negocio y mantener su clientela, algo imprescindible hoy en día.
+Con el tiempo se quiere ir actualizando y mejorando el sistema para que los usuarios que más lo utilizan y quieran disponer de una mejor versión puedan pagar para actualizarla. De esta forma el comercio local tiene una oportunidad atractiva de digitalizar su negocio y mantener su clientela, algo imprescindible hoy en día.
 
-> En cuanto a tecnologías, el frontend será desarrollado con React ya que la creación de componentes ahorra tiempo y código. Además podría mejorar la velocidad y facilitar la escalabilidad de la página en un futuro. El backend será realizado en PHP.
+En cuanto a tecnologías, el frontend será desarrollado con React ya que la creación de componentes ahorra tiempo y código. Además podría mejorar la velocidad y facilitar la escalabilidad de la página en un futuro. El backend será realizado en PHP.
 
 
 ## 2- Empresa
 
 ### 2.1- Idea de negocio
 
-> El objetivo es digitalizar la empresa con una página moderna y única, que deje clara la esencia del negocio. Con un sistema simple de puntos pero que funcione y que ofrezca la posibilidad de recompensar a los clientes más habituales. 
+El objetivo es digitalizar la empresa con una página moderna y única, que deje clara la esencia del negocio. Con un sistema simple de puntos pero que funcione y que ofrezca la posibilidad de recompensar a los clientes más habituales. 
 
-> Este tipo de servicio suele ser de un coste muy elevado y en la mayoría de los casos es de pago mensual, por lo que muchos comercios locales no quieren o no pueden pagarlo. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento, lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía, en el sistema de puntos no sería necesario. 
+Este tipo de servicio suele ser de un coste muy elevado y en la mayoría de los casos es de pago mensual, por lo que muchos comercios locales no quieren o no pueden pagarlo. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento, lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía, en el sistema de puntos no sería necesario. 
 
-> El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por ello, pero siempre pueden quedarse con la primera versión y sin nuevos costes. Nuestros clientes podrán obtener una bonificación si recomiendan nuestro servicio exitosamente. Así, conseguimos promover la escalabilidad y llegar a más gente.
+El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por ello, pero siempre pueden quedarse con la primera versión y sin nuevos costes. Nuestros clientes podrán obtener una bonificación si recomiendan nuestro servicio exitosamente. Así, conseguimos promover la escalabilidad y llegar a más gente.
 
 
 ### 2.2- Xustificación da idea
 
-> Mi hermano es el dueño del restaurante LAMARTA, que lleva abierto desde enero de 2024. En ese momento, él me encargó hacerle la página web, por lo que diseñé y desarrollé esta misma y desde entonces he intentado mantenerla lo mejor posible.
+Mi hermano es el dueño del restaurante LAMARTA, que lleva abierto desde enero de 2024. En ese momento, él me encargó hacerle la página web, por lo que diseñé y desarrollé esta misma y desde entonces he intentado mantenerla lo mejor posible.
 
-> Desde hace meses me estuvo consultando la opción de tener un sistema con el que sus clientes puedan acumular puntos, ya que los demás que habían eran bastante caros, pues si quería que le desarrollasen algo más avanzado el presupuesto era de miles de euros. Y en cuanto a las opciones más económicas, son softwares de terceros que implican una suscripción mensual de cientos de euros o que necesitas disponer de conocimientos para aplicarlo a la web.
+Desde hace meses me estuvo consultando la opción de tener un sistema con el que sus clientes puedan acumular puntos, ya que los demás que habían eran bastante caros, pues si quería que le desarrollasen algo más avanzado el presupuesto era de miles de euros. Y en cuanto a las opciones más económicas, son softwares de terceros que implican una suscripción mensual de cientos de euros o que necesitas disponer de conocimientos para aplicarlo a la web.
 
-> El caso de un familiar me hizo darme aún más cuenta de que podría haber mercado ya que en la tienda donde compra té, siguen utilizando el sistema de fidelización en papel, sellando una tarjeta. Esta tienda tampoco dispone de página web por lo que sería un potencial cliente para digitalizar y facilitar a los usuarios la obtención de recompensas. Evitando por ejemplo, que alguien pueda perder su tarjeta.
+El caso de un familiar me hizo darme aún más cuenta de que podría haber mercado ya que en la tienda donde compra té, siguen utilizando el sistema de fidelización en papel, sellando una tarjeta. Esta tienda tampoco dispone de página web por lo que sería un potencial cliente para digitalizar y facilitar a los usuarios la obtención de recompensas. Evitando por ejemplo, que alguien pueda perder su tarjeta.
 
-> LoyaltyLion, Smile.io y Connectif son algunas empresas que ofrecen este servicio pero solo funcionan en páginas que son de Shopify y demás de e-commerce. Sus precios están entre los 50 y 500 euros mensuales dependiendo del plan. Hay otras que sí que podrían funcionar fuera de las plataformas de e-commerce pero o son muy caras también o no te ofrecen la creación de tu página personalizada.
+LoyaltyLion, Smile.io y Connectif son algunas empresas que ofrecen este servicio pero solo funcionan en páginas que son de Shopify y demás de e-commerce. Sus precios están entre los 50 y 500 euros mensuales dependiendo del plan. Hay otras que sí que podrían funcionar fuera de las plataformas de e-commerce pero o son muy caras también o no te ofrecen la creación de tu página personalizada.
 
-> En [este informe del INE 2023-2024](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&cid=1254736176743&menu=ultiDatos&idp=1254735576799) vemos que las empresas con menos de 10 empleados apenas tienen páginas web (33%) a diferencia de las grandes.
+En [este informe del INE 2023-2024](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&cid=1254736176743&menu=ultiDatos&idp=1254735576799) vemos que las empresas con menos de 10 empleados apenas tienen páginas web (33%) a diferencia de las grandes.
 
-> Además, [en este artículo de SimplotFoods](https://www.simplotfoods.com/au/es/blog/do-restaurant-loyalty-programs-really-work) comenta acerca de diferentes estudios de cómo el mantener clientes proporciona mayor rentabilidad para el negocio frente a obtener nuevos y de lo bien que funcionan los programas o sistemas de fidelización para conseguirlo. La gente suele volver mucho más de esta forma.
+Además, [en este artículo de SimplotFoods](https://www.simplotfoods.com/au/es/blog/do-restaurant-loyalty-programs-really-work) comenta acerca de diferentes estudios de cómo el mantener clientes proporciona mayor rentabilidad para el negocio frente a obtener nuevos y de lo bien que funcionan los programas o sistemas de fidelización para conseguirlo. La gente suele volver mucho más de esta forma.
 
-> La necesidad que se pretende cumplir es que los comercios locales tengan una página única y moderna, con el sistema de fidelización para sus clientes mediante un pago único no tan elevado. De esta forma, se consigue que obtengan algo propio, que puedan digitalizarse, que no les suponga un coste mensual de por vida y mantener más clientes habitualmente generando por lo tanto más ingresos. El modelo se puede adaptar a cualquier tipo de negocio, desde un taller, a un restaurante, a un centro de estética y demás.
+La necesidad que se pretende cumplir es que los comercios locales tengan una página única y moderna, con el sistema de fidelización para sus clientes mediante un pago único no tan elevado. De esta forma, se consigue que obtengan algo propio, que puedan digitalizarse, que no les suponga un coste mensual de por vida y mantener más clientes habitualmente generando por lo tanto más ingresos. El modelo se puede adaptar a cualquier tipo de negocio, desde un taller, a un restaurante, a un centro de estética y demás.
 
-> ![DAFO](DAFO.jpg)
+![DAFO](DAFO.jpg)
 
 
 ### 2.3- Segmento de clientes
 
-> El objetivo es llegar a ese comercio local pequeño y mediano que aún no está digitalizado o que se puede mejorar su presencia online a la hora de conectar con sus clientes. Aumentar el alcance para multiplicar la clientela y enfocarse en mantenerla dejando atrás los métodos antiguos de fidelización, por los más modernos, simples, baratos y personalizados.
+El objetivo es llegar a ese comercio local pequeño y mediano que aún no está digitalizado o que se puede mejorar su presencia online a la hora de conectar con sus clientes. Aumentar el alcance para multiplicar la clientela y enfocarse en mantenerla dejando atrás los métodos antiguos de fidelización, por los más modernos, simples, baratos y personalizados.
 
-> Los que ya son frecuentes, seguirán queriendo volver si les recompensas por su fidelidad. Los que son más ocasionales o nuevos pueden convertirse en frecuentes con más promociones.
+Los que ya son frecuentes, seguirán queriendo volver si les recompensas por su fidelidad. Los que son más ocasionales o nuevos pueden convertirse en frecuentes con más promociones.
 
-> En relación a lo comentado en el apartado de Idea de Negocio. La tienda de té sería un ejemplo perfecto de cliente potencial. Digitalizar su tienda y su sistema de bonos le daría más alcance y evitaría que los usuarios tengan la posibilidad de perder el papel de sellos u otro imprevisto.
+En relación a lo comentado en el apartado de Idea de Negocio. La tienda de té sería un ejemplo perfecto de cliente potencial. Digitalizar su tienda y su sistema de bonos le daría más alcance y evitaría que los usuarios tengan la posibilidad de perder el papel de sellos u otro imprevisto.
 
-> Por lo tanto, este tipo de negocio es aplicable a cualquier sector. Cualquier empresa puede realizar programas de fidelidad y cómo anteriormente se analizó, más de un 60% de micropymes aún no están digitalizadas y se les puede ayudar a generar más ingresos y mejorar tanto la experiencia del local, como la del usuario.
+Por lo tanto, este tipo de negocio es aplicable a cualquier sector. Cualquier empresa puede realizar programas de fidelidad y cómo anteriormente se analizó, más de un 60% de micropymes aún no están digitalizadas y se les puede ayudar a generar más ingresos y mejorar tanto la experiencia del local, como la del usuario.
 
 
 ### 2.4- Competencia
 
-> En cuanto a competencias, las anteriormente nombradas LoyaltyLion, Smile.io o Connectif, son de las más utilizadas a nivel nacional e internacional, teniendo así una gran cuota de mercado. Sus planes suelen ser de pago mensual y caros, algo que no es atractivo para los pequeños negocios. Además, son algo difíciles de manejar si no tienes ciertos conocimientos o si no utilizas una plataforma de e-commerce. Otro punto es que no siempre puedes integrarlo directamente en tu web, si no que habría que utilizarlo externamente.
+En cuanto a competencias, las anteriormente nombradas LoyaltyLion, Smile.io o Connectif, son de las más utilizadas a nivel nacional e internacional, teniendo así una gran cuota de mercado. Sus planes suelen ser de pago mensual y caros, algo que no es atractivo para los pequeños negocios. Además, son algo difíciles de manejar si no tienes ciertos conocimientos o si no utilizas una plataforma de e-commerce. Otro punto es que no siempre puedes integrarlo directamente en tu web, si no que habría que utilizarlo externamente.
 
-> Los locales utilizan los sistemas antiguos como producto sustitutivo, sellos en papeles, tarjetas y demás que a día de hoy presentan limitaciones a diferencia de los modernos.
+Los locales utilizan los sistemas antiguos como producto sustitutivo, sellos en papeles, tarjetas y demás que a día de hoy presentan limitaciones a diferencia de los modernos.
 
-> Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único que resultaría en un precio más económico a largo plazo. Ayudando así a dejar los sistemas antiguos y obteniendo todos los beneficios que trae al negocio, anteriormente comentados en la justificación. Ofreciendo esta solución personalizada, simple, propia y fácil de utilizar conseguiremos difrenciarnos del resto.
+Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único que resultaría en un precio más económico a largo plazo. Ayudando así a dejar los sistemas antiguos y obteniendo todos los beneficios que trae al negocio, anteriormente comentados en la justificación. Ofreciendo esta solución personalizada, simple, propia y fácil de utilizar conseguiremos difrenciarnos del resto.
 
 ### 2.5- Proposta de valor
 
@@ -140,16 +138,12 @@ El proyecto consiste en diseñar una página web con un sistema de fidelización
 
 ## 4- Planificación
 
-**NO ES CALCAR LO QUE YO OS PONGO DE LAS FASES DE ENTREGA, ES LO QUE CREEIS TU Y LAS FASES QUE REALMENTE APLICARÍAS**
+- Semana 1: Realización del anteproyecto (la primera idea, si funciona, si es viable y demás). También comienzo a pensar en la estructura y sus acciones. 
+- Semana 1 y 2: Defino de que estará compuesta mi aplicación tras haberla estructurado con todas las funciones, que me viene mejor hacer antes, y que dejar de último.
+- Semana 2: Hago un diseño de la aplicación, tanto del frontend (Figma), como del backend (BD).
+- Semana 3, 4, 5, 6 y 7: Desarrollo de la aplicación, desde lo más fácil e importante a lo más difícil y menos importante. Dando prioridad a que funcione.
+- Semana 8, 9: Pruebas de la aplicación en local y después con una selección de clientes habituales. Estos tendrán la oportunidad de utilizar el sistema de fidelización y obtener recompensas desde un inicio. Aquí trataremos de arreglar cualquier problema que se presente.
 
-> El proyecto estará formado por las siguientes fases:
->
-> - Estudio preliminar: Definición de idea de negocio, justificación, segmento de clientes, competencia, propuesta, forma jurídica, inversiones, viabilidad, requerimientos y planificación.
-> - Análisis: Funcionalidades, definir tipos de usuarios, contorno operacional, normativa y mejoras futuras.
-> - Diseño: Diagrama de arquitectura, casos de uso, diagrama de la BD y diseño de la interfaz de usuarios.
-> - Desarrollo: Se codifica la aplicación web.
-> - Pruebas: Realización de pruebas y últimos cambios.
-
-> ![GANTT](GANTT.png)
+![GANTT](GANTT.png)
 
 [**<-Anterior**](../../README.md)
