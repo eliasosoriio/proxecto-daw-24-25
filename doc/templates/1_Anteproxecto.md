@@ -22,7 +22,9 @@
 
 ## 1- Descrición do proxecto
 
-> El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. 
+**Quita el ">" de delante de cada párrafo**
+
+El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. 
 
 > La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
 
@@ -137,6 +139,8 @@
 > - **Frontend:** React, HTML, CSS y JavaScript.
 
 ## 4- Planificación
+
+**NO ES CALCAR LO QUE YO OS PONGO DE LAS FASES DE ENTREGA, ES LO QUE CREEIS TU Y LAS FASES QUE REALMENTE APLICARÍAS**
 
 > El proyecto estará formado por las siguientes fases:
 >
