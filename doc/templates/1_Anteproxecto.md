@@ -138,11 +138,15 @@ Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único qu
 
 ## 4- Planificación
 
-- Semana 1: Realización del anteproyecto (la primera idea, si funciona, si es viable y demás). También comienzo a pensar en la estructura y sus acciones. 
-- Semana 1 y 2: Defino de que estará compuesta mi aplicación tras haberla estructurado con todas las funciones, que me viene mejor hacer antes, y que dejar de último.
-- Semana 2: Hago un diseño de la aplicación, tanto del frontend (Figma), como del backend (BD).
-- Semana 3, 4, 5, 6 y 7: Desarrollo de la aplicación, desde lo más fácil e importante a lo más difícil y menos importante. Dando prioridad a que funcione.
-- Semana 8, 9: Pruebas de la aplicación en local y después con una selección de clientes habituales. Estos tendrán la oportunidad de utilizar el sistema de fidelización y obtener recompensas desde un inicio. Aquí trataremos de arreglar cualquier problema que se presente.
+Semana 1: Realización del anteproyecto (la primera idea, si funciona, si es viable y demás). También comienzo a pensar en la estructura y sus acciones. 
+
+Semana 1 y 2: Defino de que estará compuesta mi aplicación tras haberla estructurado con todas las funciones, que me viene mejor hacer antes, y que dejar de último.
+
+Semana 2: Hago un diseño de la aplicación, tanto del frontend (Figma), como del backend (BD).
+
+Semana 3, 4, 5, 6 y 7: Desarrollo de la aplicación, desde lo más fácil e importante a lo más difícil y menos importante. Dando prioridad a que funcione.
+
+Semana 8, 9: Pruebas de la aplicación en local y después con una selección de clientes habituales. Estos tendrán la oportunidad de utilizar el sistema de fidelización y obtener recompensas desde un inicio. Aquí trataremos de arreglar cualquier problema que se presente.
 
 ![GANTT](GANTT.png)
 
