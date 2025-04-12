@@ -98,14 +98,15 @@ En este caso, autónomo, ya que se trata de un proyecto en el que voy a trabajar
 
 ### 2.7- Investimentos
 
-> _EXPLICACIÓN_: Neste apartado idicaremos o investimentos, aínda que sexa, só unha enumeración de todo o que necesitan (locais, infraestruturas, equipos, suministros, mobiliario...) cuantificando cada elemento.
+Lo principal sería el equipamiento informático (ordenador, teclado, etc..), también los programas o servicios a utilizar (Hostinger), mobiliario,  conexión a internet y publicidad.
 
 #### 2.7.1- Custos
 
-> > _EXPLICACIÓN_: Neste apartado idicaremos o invertimento
->
-> - Diferenzando custos fixos de variables.
-> - Computando impostos e custos sociais.
+Los costes fijos están compuestos por la cuota de autónomo (80 euros al mes el primer año), teléfono e internet (60 euros al mes), electricidad (20 euros al mes) y publicidad (50 euros al mes).
+
+Los variables serían el dominio y hosting (70 euros al año), la publicidad adicional (50 euros al mes), ordenador y hardware (900 euros). 
+
+En resumen, los costes fijos serían de un total de 210 euros aproximadamente y los variables de 1020 euros. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después). 
 
 #### 2.7.2- Ingresos
 
