@@ -116,11 +116,7 @@ En resumen, los costes fijos serían de un total de 210 euros aproximadamente y 
 
 #### 2.8.1- Viabilidade técnica
 
-> _EXPLICACIÓN_: Neste subapartado deberás defender tendo en conta os datos xa aportados, a viabilidade da realización do proyecto.
-> Evidentemente, para poder xustificar a viabilidade económica do proyecto deberás ter en conta os ingresos. **Ainda que está na parte de empresa, este apartado é interesante dende o punto de vista técnico**
->
-> - Será posible dispoñer dos recursos humanos e medios de produción necesarios (materias primas, maquinaria, instalacións, etc.)?
-> - Existe algún impedimento técnico que dificulte o proceso produtivo?
+La viabilidad técnica es prácticamente del 100%. Al haber aprendido Figma, HTML, CSS, JS, algo de React, PHP, MySQL y diferentes formas de despliegue, no deben existir posibles complicaciones para el desarrollo de la páginas web y el sistema. La única complicación posible puede ser no resolver correctamente las necesidades de un cliente por no saber realizar lo que él necesita. Los medios y servicios necesarios como el ordenador, hosting y demás estarán disponibles.
 
 #### 2.8.2 - Viabilidade económica
 
