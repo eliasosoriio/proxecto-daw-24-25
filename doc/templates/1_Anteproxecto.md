@@ -84,16 +84,17 @@ Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único qu
 
 ### 2.5- Proposta de valor
 
-> _EXPLICACIÓN_: **Apartado fundamental.**
->
-> - En que se diferencia fronte os competidores.
-> - Que melloras terá fronte os competidores.
-> - Que valor aporta ao mercado.
-> - ¿Porqué mercarán/contratarán este producto/servizo/idea fronte o resto?
+Es muy difícil ver comercios locales con páginas que estén llenas de su identidad. Normalmente son plantillas o ni siquiera tienen una web. Además, no hay un sistema de fidelización sin complicaciones, simple, barato y que se adapte a los pequeños negocios.
+
+Una página web atractiva para los usuarios, que se sienta propia y única, mejora la imagen del negocio ante los clientes. Además, ayudaría a ganar visibilidad, beneficios y destacar frente a la competencia.
+
+La principal diferencia está en la forma de pago. Eliminamos el tedioso pago mensual para los negocios que no pueden o no quieren afrontar ese gasto indefinidamente. De esta forma, el comercio local gana una plataforma a la altura de la actualidad, con la misma calidad, distinguida, moderna, simple y efectiva, por un coste muy bajo a largo plazo.
+
+Con nuestra página y sistema mejoramos la imagen, fidelizamos a sus clientes, aumentamos la visibilidad y damos la oportunidad de tener tecnologías o plataformas necesarias a día de hoy sin grandes inversiones. Esto todo se traduce en más beneficios. La gente disfrutará de acudir más a sus negocios favoritos sabiendo que incluso ganarán recompensas.
 
 ### 2.6- Forma xurídica
 
-> _EXPLICACIÓN_: Neste apartado deberedes indicar a forma xurídica: autónomo, soc. Cooperativa, SL,.. Explicando (nun par de frases) por que escolledes esta forma
+En este caso, autónomo, ya que se trata de un proyecto en el que voy a trabajar solo. Así consigo más flexibilidad, rapidez, menos costes y menos trámites. En el futuro, a medida que se vaya creciendo y haga falta expandir o contratar gente, se buscaría el cambio de forma jurídica.
 
 ### 2.7- Investimentos
 
@@ -132,9 +133,9 @@ Para ayudar a digitalizar estos comercios ofrecemos un sistema de pago único qu
 
 ## 3- Requirimentos técnicos
 
-> - **Infraestructura:** Hostinger para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
-> - **Backend:** API en PHP crudo.
-> - **Frontend:** React, HTML, CSS y JavaScript.
+- **Infraestructura:** Hostinger para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
+- **Backend:** API en PHP crudo.
+- **Frontend:** React, HTML, CSS y JavaScript.
 
 ## 4- Planificación
 
