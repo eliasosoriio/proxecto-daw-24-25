@@ -110,19 +110,19 @@ En resumen, los costes fijos serían de un total de 2520 euros anuales y los var
 
 #### 2.7.2- Ingresos
 
-Las fuentes de ingresos serán principalmente tres:
- - El pack de web + sistema de puntos tendrá un coste de 500 euros.
- - Mantenimiento de la web (no del sistema), 140 euros anuales.
- - Mejoras o nuevas funcionalidades a partir de 50 euros.
- - Actualización a una nueva versión a partir de los 200 euros. 
+Las fuentes de ingresos serán principalmente cuatro:
+ - El pack de web + sistema de puntos.
+ - Mantenimiento de la web (no del sistema).
+ - Mejoras o nuevas funcionalidades.
+ - Actualización a una nueva versión. 
 
 La política de precios será progresiva pero sin llegar a precios elevados. El precio inicial será más barato para captar más clientes y consolidarse. A partir de ahí, se incrementa levemente durante los primeros cuatro años.
 | Servicio   |  2025        |   2026        |   2027        |   2028        |
 |------------|--------------|---------------|---------------|---------------|
-| Pack de web + sistema de puntos  | 500 euros| 600 euros| 700 euros| 800 euros|
-| Mantenimiento de la web |  140 euros| 160 euros| 180 euros| 200 euros|
-| Funcionalidades |  50 euros| 70 euros| 90 euros| 110 euros|
-| Nueva versión |  200 euros| 300 euros| 400 euros| 500 euros|
+| Pack de web + sistema de puntos  | 500€| 600€ | 700€ | 800€ |
+| Mantenimiento de la web (anual) |  140€ | 160€ | 180€ | 200€ |
+| Funcionalidades |  50€ | 70€ | 90€ | 110€ |
+| Nueva versión |  200€ | 300€ | 400€ | 500€ |
 
 El objetivo del primer año es que 12 negocios contraten el servicio, obteniendo unos ingresos de 8100 euros. Por el pack se ingresan 6000 euros, por el mantenimiento de la web 700 euros, por las mejoras 200 euros y por las actualizaciones a nuevas versiones 1200 euros. La cantidad de mejoras, actualizaciones y mantenimiento es aproximada. 
 
@@ -130,7 +130,7 @@ El objetivo del primer año es que 12 negocios contraten el servicio, obteniendo
 
 #### 2.8.1- Viabilidade técnica
 
-La viabilidad técnica es prácticamente del 100%. Al haber aprendido Figma, HTML, CSS, JS, algo de React, PHP, MySQL y diferentes formas de despliegue, no deben existir posibles complicaciones para el desarrollo de la páginas web y el sistema. La única complicación posible puede ser no resolver correctamente las necesidades de un cliente por no saber realizar lo que él necesita. Los medios y servicios necesarios como el ordenador, hosting y demás estarán disponibles.
+La viabilidad técnica es prácticamente del 100%. Al haber aprendido Figma, HTML, CSS, JS, algo de React, PHP, MySQL y diferentes formas de despliegue, no deben existir posibles complicaciones para el desarrollo de la página web y el sistema. La única complicación posible puede ser no resolver correctamente las necesidades de un cliente por no saber realizar lo que él necesita. Los medios y servicios necesarios como el ordenador, hosting y demás estarán disponibles.
 
 #### 2.8.2 - Viabilidade económica
 
@@ -142,10 +142,9 @@ Con inversión en publicidad y en el crecimiendo del negocio en el tercer año y
 
 #### 2.8.3- Conclusión
 
-El proyecto es viable económicamente a corto, medio y largo plazo, especialmente gracias a las ayudas y subvenciones que evitarían las pérdidas el primer año. Con la de Cuota Cero que reembolsa la cuota de atónomos el primer año se recuperan 960 euros. Con la ayuda para el inicio de actividad se consiguen 6000 euros y con ayudas al emprendimiento se podrían financiar los gastos en mobliario, ordenadores y demás.
+El proyecto es viable económicamente a corto, medio y largo plazo, especialmente gracias a las ayudas y subvenciones que evitarían las pérdidas del primer año. Con la de Cuota Cero que reembolsa la cuota de autónomos, el primer año se recuperan 960 euros. Con la ayuda para el inicio de actividad, se consiguen 6000 euros y con ayudas al emprendimiento, se podrían financiar los gastos en mobliario, ordenadores y demás. De esta forma, se cubrirían las pérdidas.
 
 A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y los ingresos aumentarán. En el tercer año ya prácticamente el gasto es mínimo ya que el sistema se implanta en cualquier negocio sin casi trabajo alguno. La inversión en publicidad aumentaría el alcance y la cantidad de clientes, aumentando los ingresos y beneficios exponencialmente. 
-
 
 ## 3- Requirimentos técnicos
 
