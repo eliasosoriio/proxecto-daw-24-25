@@ -106,11 +106,25 @@ Los costes fijos están compuestos por la cuota de autónomo (80 euros al mes el
 
 Los variables serían el dominio y hosting (70 euros al año), la publicidad adicional (50 euros al mes), ordenador y hardware (900 euros) y mobiliario (200 euros). 
 
-En resumen, los costes fijos serían de un total de 210 euros aproximadamente y los variables de 1220 euros. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después). 
+En resumen, los costes fijos serían de un total de 2520 euros anuales y los variables de 1770 euros anuales. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después). 
 
 #### 2.7.2- Ingresos
 
-> _EXPLICACIÓN_: Neste apartado indicarase unha previsión de ventas e unha política de prezos. Isto implicar apuntar unha previsión de ventas e unha política de prezos.
+Las fuentes de ingresos serán principalmente tres:
+ - El pack de web + sistema de puntos tendrá un coste de 500 euros.
+ - Mantenimiento de la web (no del sistema), 140 euros anuales.
+ - Mejoras o nuevas funcionalidades a partir de 50 euros.
+ - Actualización a una nueva versión a partir de los 200 euros. 
+
+La política de precios será progresiva pero sin llegar a precios elevados. El precio inicial será más barato para captar más clientes y consolidarse. A partir de ahí, se incrementa levemente durante los primeros cuatro años.
+| Servicio   |  2025        |   2026        |   2027        |   2028        |
+|------------|--------------|---------------|---------------|---------------|
+| Pack de web + sistema de puntos  | 500 euros| 600 euros| 700 euros| 800 euros|
+| Mantenimiento de la web |  140 euros| 160 euros| 180 euros| 200 euros|
+| Funcionalidades |  50 euros| 70 euros| 90 euros| 110 euros|
+| Nueva versión |  200 euros| 300 euros| 400 euros| 500 euros|
+
+El objetivo del primer año es que 12 negocios contraten el servicio, obteniendo unos ingresos de 8100 euros. Por el pack se ingresan 6000 euros, por el mantenimiento de la web 700 euros, por las mejoras 200 euros y por las actualizaciones a nuevas versiones 1200 euros. La cantidad de mejoras, actualizaciones y mantenimiento es aproximada. 
 
 ### 2.8- Viabilidade
 
@@ -120,13 +134,18 @@ La viabilidad técnica es prácticamente del 100%. Al haber aprendido Figma, HTM
 
 #### 2.8.2 - Viabilidade económica
 
-> _EXPLICACIÓN_: Neste subapartado deberás defender con datos a viabilidade da realización do proyecto, para elo debes indicar os custos e investimentos:
+Si se estiman unos ingresos de 8100 euros teniendo unos costes totales de 4290 euros, los beneficios brutos son 3810 euros. Si calculamos el IVA que se va pagando trimestralmente, se deducen 1701 euros. El IRPF sería un 7% el primer año por lo que descontarían 567 euros. El beneficio neto es de 1542 euros.
+
+Con esta estimación el primer año se considera como uno con pérdidas ya que a pesar del cálculo positivo habría que extraer un salario mínimo de 15876 euros. Dejando así un total de -14334 euros.
+
+Con inversión en publicidad y en el crecimiendo del negocio en el tercer año ya se podrían esperar ganancias reales.
 
 #### 2.8.3- Conclusión
 
-> - É viable?
-> - Os beneficios do proxecto son superiores aos costes?
-> - As perdas poden cubrirse vía financiamento (por parte da administración pública, con subvencións, etc)?
+El proyecto es viable económicamente a corto, medio y largo plazo, especialmente gracias a las ayudas y subvenciones que evitarían las pérdidas el primer año. Con la de Cuota Cero que reembolsa la cuota de atónomos el primer año se recuperan 960 euros. Con la ayuda para el inicio de actividad se consiguen 6000 euros y con ayudas al emprendimiento se podrían financiar los gastos en mobliario, ordenadores y demás.
+
+A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y los ingresos aumentarán. En el tercer año ya prácticamente el gasto es mínimo ya que el sistema se implanta en cualquier negocio sin casi trabajo alguno. La inversión en publicidad aumentaría el alcance y la cantidad de clientes, aumentando los ingresos y beneficios exponencialmente. 
+
 
 ## 3- Requirimentos técnicos
 
