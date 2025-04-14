@@ -8,8 +8,6 @@
   - [5- Normativa](#5--normativa)
   - [6- Melloras futuras](#6--melloras-futuras)
 
-> *EXPLICACION*: Este documento describe os requirimentos para "nome do proxecto" especificando que funcionalidade ofrecerá e de que xeito.
-
 ## 1- Descrición Xeral
 
 El proyecto contará con la web de LAMARTA y el sistema de puntos. En la página se podrán ver diferentes secciones. Inicio, blog, conócenos, carta, contacto y LAMARTA Club. 
@@ -59,6 +57,10 @@ Los recursos necesarios para un usuario tan solo serían tener un dispositivo co
 
 ## 6- Melloras futuras
 
-> *EXPLICACION* É posible que o noso proxecto se centre en resolver un problema concreto que se poderá ampliar no futuro con novas funcionalidades, novas interfaces, etc.
+La primera mejora se centraría en la forma de añadir puntos y de canjear recompensas. Al principio los trabajadores realizan estas acciones, pero en el futuro la idea es que lo haga el usuario. 
+
+También existe la idea de en el futuro realizar encuestas con el público para que participe. Por ejemplo, eligiendo qué promoción hay este mes o qué producto nuevo se añade. Acompañado de esto habría una newsletter para anunciar todo.
+
+Muchos negocios de estos también carecen de sistemas de reservas propios, simples y efectivos. Por lo que sumarle uno de estos es casi seguro.
 
 [**<-Anterior**](../../README.md)
