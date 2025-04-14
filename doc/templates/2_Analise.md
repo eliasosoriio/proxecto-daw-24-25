@@ -34,17 +34,14 @@ El encargado o camarero dispondrá de un panel de control diferente. En él, se 
 
 ## 3- Tipos de usuarios
 
-> *EXPLICACION* Describir os tipos de usuario que poderán acceder ao noso sistema. Habitualmente os tipos de usuario veñen definidos polas funcionalidades ás cales teñen acceso. En termos xerais existen moitos grupos de usuarios: anónimos, novos, rexistrados, bloqueados, confirmados, verificados, administradores, etc.
->
-> Exemplo:
->
-> - Usuario xenérico, que terá acceso a ...
-> - Usuario técnico, que poderá...
+Habrá 3 tipos de usuarios:
+- Usuario genérico, que tendrá acceso a a la web y sus secciones (menos el club).
+- Usuario registrado, que disfruta de lo mismo que el genérico pero con acceso al club.
+- Usuario administrador, que podrá realizar todo tipo de acciones en el panel de administrador.
 
 ## 4- Contorno operacional
 
-> *EXPLICACION* Neste apartado deben describirse os recursos necesarios, dende o punto de vista do usuario, para poder operar coa aplicación web. Habitualmente consiste nun navegador web actualizado e unha conexión a internet.
-Se é necesario algún hardware ou software adicional, deberá indicarse.
+Los recursos necesarios para un usuario tan solo serían tener un dispositivo con acceso a internet, el navegador actualizado y en caso de querer emplear el sistema de puntos, la información necesaria para crear una cuenta. 
 
 ## 5- Normativa
 
