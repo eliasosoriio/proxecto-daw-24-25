@@ -25,9 +25,9 @@ El encargado o camarero dispondrá de un panel de control diferente. En él, se 
 | Acción   |  Descripción        |
 |----------|--------------------|
 | Suma de puntos   | Se introduce el importe de la compra de un cliente para sumarle puntos.|
-| Resta de puntos | Se introduce el importe de la compra de un cliente para restarle puntos.|
 | Listar usuarios  | Muestra los socios registrados en el club. |
 | Listar recompensas  | Muestra de los premios canjeables por puntos. |
+| Canjear recompensa | El usuario obtiene el premio y se le restan los puntos.|
 | Añadir recompensa  | Crear un nuevo premio canjeable por puntos. |
 | Modificar recompensa  | Cambiar algo de un premio canjeable por puntos. |
 | Eliminar recompensa  | Borrar un premio canjeable por puntos. |
