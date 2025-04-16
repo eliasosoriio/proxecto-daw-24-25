@@ -43,17 +43,9 @@ Los recursos necesarios para un usuario tan solo serían tener un dispositivo co
 
 ## 5- Normativa
 
-> *EXPLICACION* Investigarase que normativa vixente afecta ao desenvolvemento do proxecto e de que maneira. O proxecto debe adaptarse ás esixencias legais dos territorios onde vai operar.
-> 
-> Pola natureza dos sistema de información, unha lei que se vai a ter que mencionar de forma obrigatoria é la [Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDPGDD)](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673). O ámbito da LOPDPGDD é nacional. Se a aplicación está pensada para operar a nivel europeo, tamén se debe facer referencia á [General Data Protection Regulation (GDPR)](https://eur-lex.europa.eu/eli/reg/2016/679/oj). Na documentación debe afirmarse que o proxecto cumpre coa normativa vixente.
->
-> Para cumplir a LOPDPGDD e/ou GDPR debe ter un apartado na web onde se indique quen é a persoa responsable do tratamento dos datos e para que fins se van utilizar. Habitualmente esta información estructúrase nos seguintes apartados:
->
-> - Aviso legal.
-> - Política de privacidade.
-> - Política de cookies.
->
-> É acosenllable ver [exemplos de webs](https://www.spotify.com/es/legal/privacy-policy/) que conteñan textos legais referenciando a LOPDPGDD ou GDPR.
+El proyecto estará acorde a la normativa de protección de datos, establecida por la [Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDPGDD)](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673), y por el [Reglamento General de Protección de Datos (RGPD)](https://eur-lex.europa.eu/eli/reg/2016/679/oj), ya que se encuentra en el espacio europeo. Para ello, se redactará un aviso legal, una política de privacidad, una política de cookies y una declaración de accesibilidad.
+
+El aviso legal informará sobre el titular de la web, los datos del responsable y las condiciones de uso. En la de privacidad, se explican los datos personales que son recogidos, su finalidad y los derechos de los usuarios. En la de cookies, se explica que son, si hay, y como aceptarlas o denegarlas. Por último, incluirá una declaración de accesibilidad acorde con el [Real Decreto 1112/2018, del 7 de septiembre](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-12699).
 
 ## 6- Melloras futuras
 
