@@ -6,11 +6,16 @@
   - [3- Diagrama de Base de Datos](#3--diagrama-de-base-de-datos)
   - [4- Deseño de interface de usuarios](#4--deseño-de-interface-de-usuarios)
 
-> *EXPLICACIÓN:* Este documento inclúe os diferentes diagramas, esquemas e deseños que axuden a describir mellor o [nome do proxecto] detallando os seus compoñentes, funcionalidades, bases de datos e interface.
-
 ## 1- Diagrama da arquitectura
 
-> *EXPLICACIÓN:* Incluír os diagramas de arquitectura que representen de forma gráfica a aplicación, os seus compoñentes e a súa interrelación: front-end, back-end, bases de datos, nube, microservizos, etc.
+![DIAGRAMA DE ARQUITECTURA](diagrama_arquitectura.png)
+
+En el diagrama de arquitectura se pueden observar las dos secciones principales, el frontend y el backend. La primera está compuesta por el repositorio de GitHub, que contiene el proyecto con su código, este se despliega en Vercel. Esto permitirá que, al realizar cualquier cambio en el código del repositorio, automáticamente se refleje la nueva versión en la página web. Una vez desplegada, el frontend recibe las solicitudes de los usuarios y se comunica con el backend (alojado en Hostinger) mediante llamadas a la API. El backend está compuesto por la API y la BD, en lenguaje PHP. Aquí se procesan las solicitudes recibidas del frontend.
+
+Un ejemplo sería el siguiente:
+- El usuario realiza una acción en el frontend, y este envía una solicitud a la API.
+- El backend valida la solicitud, y si es necesarios añade, modifica o elimina algo de la BD.
+- Finalmente, se envía una respuesta al frontend con el resultado de la acción.
 
 ## 2- Casos de uso
 
