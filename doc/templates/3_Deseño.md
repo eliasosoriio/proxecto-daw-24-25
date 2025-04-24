@@ -37,9 +37,10 @@ puntos, canjear recompensas, etc.).
 > *EXPLICACIÓN:* Neste apartado incluiranse os diagramas relacionados coa Base de Datos:
 >
 > - Modelo Entidade/relación
-> - Modelo relacional
->
-> Pódese entregar a captura do phpMyAdmin se se emprega MariaDB como Modelo relacional.
+
+![MODELO RELACIONAL](img_3/modelo_relacional.png)
+
+En el modelo relacional se observa como está organizada la información de los usuarios normales, administradores y afiliados. Por un lado, tiene tablas para cada tipo de usuario, otra para registrar las transacciones de puntos y la última para las recompensas disponibles.
 
 ## 4- Deseño de interface de usuarios
 
