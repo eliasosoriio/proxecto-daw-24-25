@@ -19,9 +19,18 @@ Un ejemplo sería el siguiente:
 
 ## 2- Casos de uso
 
-> *EXPLICACIÓN:* Facer os diagramas de casos de uso que representen como as persoas usuarias interaccionan co sistema.
->
->Deben incluírse o(s) tipo(s) de usuario implicados en cada caso de uso.
+![DIAGRAMA UML](casos_de_uso.png)
+
+Con este diagrama de casos de uso, se observa que a la página
+principal podrían acceder todos los usuarios y navegar por las
+distintas secciones. En cambio, para el club hay que estar registrado.
+
+Los usuarios genéricos tienen la posibilidad de crear una cuenta para
+poder entrar. El usuario registrado accede a su panel, donde puede
+consultar su número en el club, su saldo de puntos y las recompensas
+disponibles. Los administradores acceden con su cuenta a un panel
+diferente. En este, se pueden realizar diferentes acciones (añadir
+puntos, canjear recompensas, etc.).
 
 ## 3- Diagrama de Base de Datos
 
