@@ -22,7 +22,7 @@
 
 ## 1- Descrición do proxecto
 
-El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. 
+El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento.
 
 La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
 
@@ -37,9 +37,9 @@ En cuanto a tecnologías, el frontend será desarrollado con React ya que la cre
 
 ### 2.1- Idea de negocio
 
-El objetivo es digitalizar la empresa con una página moderna y única, que deje clara la esencia del negocio. Con un sistema simple de puntos pero que funcione y que ofrezca la posibilidad de recompensar a los clientes más habituales. 
+El objetivo es digitalizar la empresa con una página moderna y única, que deje clara la esencia del negocio. Con un sistema simple de puntos pero que funcione y que ofrezca la posibilidad de recompensar a los clientes más habituales.
 
-Este tipo de servicio suele ser de un coste muy elevado y en la mayoría de los casos es de pago mensual, por lo que muchos comercios locales no quieren o no pueden pagarlo. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento, lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía, en el sistema de puntos no sería necesario. 
+Este tipo de servicio suele ser de un coste muy elevado y en la mayoría de los casos es de pago mensual, por lo que muchos comercios locales no quieren o no pueden pagarlo. A largo plazo, nuestra opción sería más económica ya que se realiza un pago único al comienzo, sin cuotas mensuales ni de mantenimiento, lo que lo hace más accesible. Se puede pagar mensualmente por un mantenimiento o actualización de contenidos en la página, pero como se decía, en el sistema de puntos no sería necesario.
 
 El sistema se irá mejorando y actualizando con el tiempo. En caso de que quieran pasar a la nueva versión o tener nuevas funciones, tendrían que pagar por ello, pero siempre pueden quedarse con la primera versión y sin nuevos costes. Nuestros clientes podrán obtener una bonificación si recomiendan nuestro servicio exitosamente. Así, conseguimos promover la escalabilidad y llegar a más gente.
 
@@ -60,7 +60,7 @@ Además, [en este artículo de SimplotFoods](https://www.simplotfoods.com/au/es/
 
 La necesidad que se pretende cumplir es que los comercios locales tengan una página única y moderna, con el sistema de fidelización para sus clientes mediante un pago único no tan elevado. De esta forma, se consigue que obtengan algo propio, que puedan digitalizarse, que no les suponga un coste mensual de por vida y mantener más clientes habitualmente generando por lo tanto más ingresos. El modelo se puede adaptar a cualquier tipo de negocio, desde un taller, a un restaurante, a un centro de estética y demás.
 
-![DAFO](DAFO.jpg)
+![DAFO](img_1/dafo.jpg)
 
 
 ### 2.3- Segmento de clientes
@@ -104,9 +104,9 @@ Lo principal sería el equipamiento informático (ordenador, teclado, etc..), ta
 
 Los costes fijos están compuestos por la cuota de autónomo (80 euros al mes el primer año), teléfono e internet (60 euros al mes), electricidad (20 euros al mes) y publicidad (50 euros al mes).
 
-Los variables serían el dominio y hosting (70 euros al año), la publicidad adicional (50 euros al mes), ordenador y hardware (900 euros) y mobiliario (200 euros). 
+Los variables serían el dominio y hosting (70 euros al año), la publicidad adicional (50 euros al mes), ordenador y hardware (900 euros) y mobiliario (200 euros).
 
-En resumen, los costes fijos serían de un total de 2520 euros anuales y los variables de 1770 euros anuales. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después). 
+En resumen, los costes fijos serían de un total de 2520 euros anuales y los variables de 1770 euros anuales. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después).
 
 #### 2.7.2- Ingresos
 
@@ -114,7 +114,7 @@ Las fuentes de ingresos serán principalmente cuatro:
  - El pack de web + sistema de puntos.
  - Mantenimiento de la web (no del sistema).
  - Mejoras o nuevas funcionalidades.
- - Actualización a una nueva versión. 
+ - Actualización a una nueva versión.
 
 La política de precios será progresiva pero sin llegar a precios elevados. El precio inicial será más barato para captar más clientes y consolidarse. A partir de ahí, se incrementa levemente durante los primeros cuatro años.
 | Servicio   |  2025        |   2026        |   2027        |   2028        |
@@ -124,7 +124,7 @@ La política de precios será progresiva pero sin llegar a precios elevados. El 
 | Funcionalidades |  50€ | 70€ | 90€ | 110€ |
 | Nueva versión |  200€ | 300€ | 400€ | 500€ |
 
-El objetivo del primer año es que 12 negocios contraten el servicio, obteniendo unos ingresos de 8100 euros. Por el pack se ingresan 6000 euros, por el mantenimiento de la web 700 euros, por las mejoras 200 euros y por las actualizaciones a nuevas versiones 1200 euros. La cantidad de mejoras, actualizaciones y mantenimiento es aproximada. 
+El objetivo del primer año es que 12 negocios contraten el servicio, obteniendo unos ingresos de 8100 euros. Por el pack se ingresan 6000 euros, por el mantenimiento de la web 700 euros, por las mejoras 200 euros y por las actualizaciones a nuevas versiones 1200 euros. La cantidad de mejoras, actualizaciones y mantenimiento es aproximada.
 
 ### 2.8- Viabilidade
 
@@ -144,7 +144,7 @@ Con inversión en publicidad y en el crecimiendo del negocio en el tercer año y
 
 El proyecto es viable económicamente a corto, medio y largo plazo, especialmente gracias a las ayudas y subvenciones que evitarían las pérdidas del primer año. Con la de Cuota Cero que reembolsa la cuota de autónomos, el primer año se recuperan 960 euros. Con la ayuda para el inicio de actividad, se consiguen 6000 euros y con ayudas al emprendimiento, se podrían financiar los gastos en mobliario, ordenadores y demás. De esta forma, se cubrirían las pérdidas.
 
-A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y los ingresos aumentarán. En el tercer año ya prácticamente el gasto es mínimo ya que el sistema se implanta en cualquier negocio sin casi trabajo alguno. La inversión en publicidad aumentaría el alcance y la cantidad de clientes, aumentando los ingresos y beneficios exponencialmente. 
+A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y los ingresos aumentarán. En el tercer año ya prácticamente el gasto es mínimo ya que el sistema se implanta en cualquier negocio sin casi trabajo alguno. La inversión en publicidad aumentaría el alcance y la cantidad de clientes, aumentando los ingresos y beneficios exponencialmente.
 
 ## 3- Requirimentos técnicos
 
@@ -154,7 +154,7 @@ A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y 
 
 ## 4- Planificación
 
-Semana 1: Realización del anteproyecto (la primera idea, si funciona, si es viable y demás). También comienzo a pensar en la estructura y sus acciones. 
+Semana 1: Realización del anteproyecto (la primera idea, si funciona, si es viable y demás). También comienzo a pensar en la estructura y sus acciones.
 
 Semana 1 y 2: Defino de que estará compuesta mi aplicación tras haberla estructurado con todas las funciones, que me viene mejor hacer antes, y que dejar de último.
 
@@ -164,6 +164,6 @@ Semana 3, 4, 5, 6 y 7: Desarrollo de la aplicación, desde lo más fácil e impo
 
 Semana 8, 9: Pruebas de la aplicación en local y después con una selección de clientes habituales. Estos tendrán la oportunidad de utilizar el sistema de fidelización y obtener recompensas desde un inicio. Aquí trataremos de arreglar cualquier problema que se presente.
 
-![GANTT](GANTT.png)
+![GANTT](img_1/gantt.png)
 
 [**<-Anterior**](../../README.md)

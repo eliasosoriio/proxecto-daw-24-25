@@ -8,7 +8,7 @@
 
 ## 1- Diagrama da arquitectura
 
-![DIAGRAMA DE ARQUITECTURA](diagrama_arquitectura.png)
+![DIAGRAMA DE ARQUITECTURA](img_3/diagrama_arquitectura.png)
 
 En el diagrama de arquitectura se pueden observar las dos secciones principales, el frontend y el backend. La primera está compuesta por el repositorio de GitHub, que contiene el proyecto con su código, este se despliega en Vercel. Esto permitirá que, al realizar cualquier cambio en el código del repositorio, automáticamente se refleje la nueva versión en la página web. Una vez desplegada, el frontend recibe las solicitudes de los usuarios y se comunica con el backend (alojado en Hostinger) mediante llamadas a la API. El backend está compuesto por la API y la BD, en lenguaje PHP. Aquí se procesan las solicitudes recibidas del frontend.
 
@@ -19,7 +19,7 @@ Un ejemplo sería el siguiente:
 
 ## 2- Casos de uso
 
-![DIAGRAMA UML](casos_de_uso.png)
+![DIAGRAMA UML](img_3/casos_de_uso.png)
 
 Con este diagrama de casos de uso, se observa que a la página
 principal podrían acceder todos los usuarios y navegar por las
