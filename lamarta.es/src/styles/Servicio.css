@@ -1,0 +1,27 @@
+/*=============================================
+=            SERVICIO            =
+=============================================*/
+.servicios--apartado {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+.servicios--apartado--titulo {
+    align-items: baseline;
+    gap: 1rem;
+}
+.servicios--apartado span {
+    font-size: 2.5rem;
+}
+.servicios--apartado h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+.servicios--apartado p {
+    font-size: 1.4rem;
+    color: var(--light-dark-color);
+}
+
+/*=====  End of SERVICIO  ======*/
+

@@ -1,0 +1,60 @@
+/*=============================================
+=            CABECERA            =
+=============================================*/
+.cabecera {
+    background-color: var(--dark-color);
+    padding: var(--padding-container);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .5rem solid var(--yellow-color);
+}
+ 
+.cabecera--logo {
+    color: var(--gray-white-color);
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+.cabecera--logo img {
+    width: 10rem;
+}
+
+.cabecera--nav {
+    font-size: 1.4rem;
+    gap: 3rem;
+}
+
+.cabecera--nav .link {
+    color: var(--white-color);
+    transition: 1s;
+}
+.cabecera--nav .link:hover {
+    color: var(--orange-color);
+}
+
+.cabecera--contacto {
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+} 
+.cabecera--contacto span {
+    font-size: 3rem;
+    color: var(--yellow-color);
+}
+.cabecera--contacto .separador {
+    background-color: var(--gray-white-color);
+    height: 3rem;
+    width: .1rem;
+}
+
+@media (min-width: 960px) {
+    .cabecera--nav {
+        display: flex;
+    }
+}
+
+/*=====  End of CABECERA  ======*/
+ 

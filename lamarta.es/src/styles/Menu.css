@@ -1,0 +1,57 @@
+/*=============================================
+=            MENÚ DESPLEGABLE            =
+=============================================*/
+.desplegable {
+    align-items: center;
+    justify-content: center;
+}
+
+.desplegable--boton {
+    background-color: var(--yellow-color);
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    border-radius: 3rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.desplegable--opciones {
+    background-color: var(--yellow-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+.desplegable--opciones li {
+    width: 100%;
+}
+
+.desplegable input:checked ~ .desplegable--opciones {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 3rem;
+    font-weight: 700;
+    text-align: center;
+    gap: 3rem;
+}
+
+@media (min-width: 960px) {
+    .desplegable {
+        display: none;
+    }
+}
+
+/*=====  End of MENÚ DESPLEGABLE  ======*/

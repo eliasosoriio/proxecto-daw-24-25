@@ -1,0 +1,26 @@
+/*=============================================
+=            PIE            =
+=============================================*/
+.pie {
+    background-color: var(--yellow-color);
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    text-align: center;
+}
+.pie a {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.pie--politicas {
+    font-size: .8rem;
+    gap: 2rem;
+}
+.pie--copy {
+    font-size: 1.2rem;
+    border-top: .5px solid var(--gray-white-color);
+    padding-top: 2rem;
+}
+
+/*=====  End of PIE  ======*/
+ 
