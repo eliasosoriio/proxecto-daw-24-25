@@ -1,0 +1,15 @@
+{
+    "builds": [
+      {
+        "src": "lamarta.es/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/lamarta.es/$1"
+      }
+    ]
+  }
+  
