@@ -34,13 +34,11 @@ puntos, canjear recompensas, etc.).
 
 ## 3- Diagrama de Base de Datos
 
-> *EXPLICACIÓN:* Neste apartado incluiranse os diagramas relacionados coa Base de Datos:
->
-> - Modelo Entidade/relación
-
 ![MODELO RELACIONAL](img_3/modelo_relacional.png)
+![DIAGRAMA ER](img_3/diagrama_er.png)
 
-En el modelo relacional se observa como está organizada la información de los usuarios normales, administradores y afiliados. Por un lado, tiene tablas para cada tipo de usuario, otra para registrar las transacciones de puntos y la última para las recompensas disponibles.
+En el modelo relacional y diagrama de entidad-relación se observa cómo está organizada la información de los usuarios y cómo interactúan entre ellos. Por un lado, tiene tablas para cada tipo de usuario, otra para registrar las transacciones de puntos y la última para las recompensas disponibles.
+
 
 ## 4- Deseño de interface de usuarios
 
