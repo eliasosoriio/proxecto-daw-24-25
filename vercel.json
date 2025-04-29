@@ -1,15 +1,34 @@
 {
-    "builds": [
-      {
-        "src": "lamarta.es/**/*",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/lamarta.es/$1"
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "lamarta.es/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/blog",
+      "dest": "/lamarta.es/index.html"
+    },
+    {
+      "src": "/conocenos",
+      "dest": "/lamarta.es/index.html"
+    },
+    {
+      "src": "/carta",
+      "dest": "/lamarta.es/index.html"
+    },
+    {
+      "src": "/contacto",
+      "dest": "/lamarta.es/index.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/lamarta.es/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/lamarta.es/$1"
+    }
+  ]
+}
