@@ -1,12 +1,12 @@
 import "./styles/App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Menu from "./components/Menu";
-import Inicio from "./components/Inicio";
-import Conocenos from "./components/Conocenos";
-import Carta from "./components/Carta";
-import Blog from "./components/Blog";
+import Header from "./components/general/Header";
+import Footer from "./components/general/Footer";
+import Menu from "./components/general/Menu";
+import Inicio from "./components/inicio/Inicio";
+import Conocenos from "./components/conocenos/Conocenos";
+import Carta from "./components/carta/Carta";
+import Blog from "./components/blog/Blog";
 
 function App() {
    return (

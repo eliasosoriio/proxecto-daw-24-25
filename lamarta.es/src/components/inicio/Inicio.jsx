@@ -1,4 +1,4 @@
-import "../styles/Inicio.css";
+import "../../styles/inicio/Inicio.css";
 import React from 'react'
 import Servicio from "./Servicio";
 import { Link } from "react-router-dom";

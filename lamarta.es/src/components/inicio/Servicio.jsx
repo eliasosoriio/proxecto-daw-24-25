@@ -1,4 +1,4 @@
-import '../styles/Servicio.css'
+import '../../styles/inicio/Servicio.css'
 import React from 'react'
 
 function Servicio({icono, nombre, descripcion}) {
