@@ -10,9 +10,9 @@
 
 ## 1- Descrición Xeral
 
-El proyecto contará con la web de LAMARTA y el sistema de puntos. En la página se podrán ver diferentes secciones. Inicio, blog, conócenos, carta, contacto y LAMARTA Club. 
+El proyecto contará con la web de LAMARTA y el sistema de puntos. En la página se podrán ver diferentes secciones. Inicio, blog, conócenos, carta, contacto y LAMARTA Club.
 
-El usuario podrá navegar por todas partes y crearse una cuenta en el club para poder comenzar a  acumular puntos. Una vez introducidos los datos y que la cuenta esté creada, se visualizará la tarjeta LAMARTA. En ella, estará el número de socio y los puntos que la persona tenga. Más abajo están las recompensas, cada una con su valor en puntos. 
+El usuario podrá navegar por todas partes y crearse una cuenta en el club para poder comenzar a  acumular puntos. Una vez introducidos los datos y que la cuenta esté creada, se visualizará la tarjeta LAMARTA. En ella, estará el número de socio y los puntos que la persona tenga. Más abajo están las recompensas, cada una con su valor en puntos.
 
 Cuando el cliente de LAMARTA realice una compra en el local, le podrá indicar al camarero o persona al cargo, su número de socio para ingresar los puntos correspondientes. Un euro será un punto. Estos se sumarán automáticamente a la cuenta. Tras la compra, el usuario puede revisar sus puntos en su panel.
 
@@ -39,17 +39,17 @@ Habrá 3 tipos de usuarios:
 
 ## 4- Contorno operacional
 
-Los recursos necesarios para un usuario tan solo serían tener un dispositivo con acceso a internet, el navegador actualizado y en caso de querer emplear el sistema de puntos, la información necesaria para crear una cuenta. 
+Los recursos necesarios para un usuario tan solo serían tener un dispositivo con acceso a internet, el navegador actualizado y en caso de querer emplear el sistema de puntos, la información necesaria para crear una cuenta.
 
 ## 5- Normativa
 
 El proyecto estará acorde a la normativa de protección de datos, establecida por la [Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDPGDD)](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673), y por el [Reglamento General de Protección de Datos (RGPD)](https://eur-lex.europa.eu/eli/reg/2016/679/oj), ya que se encuentra en el espacio europeo. Para ello, se redactará un aviso legal, una política de privacidad, una política de cookies y una declaración de accesibilidad.
 
-El aviso legal informará sobre el titular de la web, los datos del responsable y las condiciones de uso. En la de privacidad, se explican los datos personales que son recogidos, su finalidad y los derechos de los usuarios. En la de cookies, se explica que son, si hay, y como aceptarlas o denegarlas. Por último, incluirá una declaración de accesibilidad acorde con el [Real Decreto 1112/2018, del 7 de septiembre](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-12699).
+El aviso legal informará sobre el titular de la web (LAMARTA S.L), los datos del responsable (LAMARTA S.L) y las condiciones de uso. En la de privacidad, se explican los datos personales que son recogidos, su finalidad y los derechos de los usuarios. En la de cookies, se explica que son, si hay, y como aceptarlas o denegarlas (habrá un menú desplegable para administrarlas en cualquier instante). Los datos recogidos además de la información de registro, serán los de Google Analytics para tener estadísticas. Por último, incluirá una declaración de accesibilidad acorde con el [Real Decreto 1112/2018, del 7 de septiembre](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2018-12699).
 
 ## 6- Melloras futuras
 
-La primera mejora se centraría en la forma de añadir puntos y de canjear recompensas. Al principio los trabajadores realizan estas acciones, pero en el futuro la idea es que lo haga el usuario. 
+La primera mejora se centraría en la forma de añadir puntos y de canjear recompensas. Al principio los trabajadores realizan estas acciones, pero en el futuro la idea es que lo haga el usuario.
 
 También existe la idea de en el futuro realizar encuestas con el público para que participe. Por ejemplo, eligiendo qué promoción hay este mes o qué producto nuevo se añade. Acompañado de esto habría una newsletter para anunciar todo.
 
