@@ -5,9 +5,8 @@
 
 .blog--secciones {
     gap: 2rem;
-    margin: 2rem 0;
-    align-items: center;
-    justify-content: center;
+    margin: 2rem auto;
+    max-width: 90vw;
 }
 
 /*=====  End of Blog  ======*/

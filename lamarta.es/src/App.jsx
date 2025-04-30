@@ -7,6 +7,8 @@ import Inicio from "./components/inicio/Inicio";
 import Conocenos from "./components/conocenos/Conocenos";
 import Carta from "./components/carta/Carta";
 import Blog from "./components/blog/Blog";
+import Contacto from "./components/contacto/Contacto";
+import NotFound from "./components/general/NotFound";
 
 function App() {
    return (
@@ -19,6 +21,8 @@ function App() {
                <Route path="/blog" element={<Blog />}></Route>
                <Route path="/conocenos" element={<Conocenos />}></Route>
                <Route path="/carta" element={<Carta />}></Route>
+               <Route path="/contacto" element={<Contacto />}></Route>
+               <Route path="/*" element={<NotFound />}></Route>
             </Routes>
          </main>
          <Footer />

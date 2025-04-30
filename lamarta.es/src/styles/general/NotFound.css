@@ -1,0 +1,22 @@
+
+/*=============================================
+=            NotFound            =
+=============================================*/
+
+.not-found-404 {
+    background-color: var(--dark-color);
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+.not-found-404 h1 {
+    color: var(--white-color);
+    font-size: 3rem;
+}
+.not-found-404 a {
+    font-size: 2rem;
+    color: var(--orange-color);
+}
+
+/*=====  End of NotFound  ======*/
+
