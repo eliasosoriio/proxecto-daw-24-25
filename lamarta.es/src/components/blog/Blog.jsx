@@ -5,7 +5,7 @@ import Articulo from './Articulo'
 
 const articulos = [
   {
-    imagen: "https://i.ytimg.com/an_webp/VtM4N8R3szc/mqdefault_6s.webp?du=3000&sqp=CP78ycAG&rs=AOn4CLDhmCP_kaKSarrcztVRvAC_XuAeGQ",
+    imagen: "src/assets/img/blog/youtube1.webp",
     titulo: "POV: Bienvenidos a Lamarta",
     descripcion: "Esto no es un video de hamburguesas cualquiera. Durante 11 minutos vas a ver todo lo que pasa cuando en Lamarta nos lo tomamos en serio.",
     link: "https://www.youtube.com/watch?v=VtM4N8R3szc"
@@ -14,10 +14,10 @@ const articulos = [
     imagen: "https://img.lavdg.com/sc/c5wgFUbVaMfbWQ0uRC4NnsmLFBs=/768x/2025/03/11/00121741722721960771850/Foto/AM12C4F5_205056.jpg",
     titulo: "La mejor hamburguesa de Galicia se prepara en Lamarta de Vilagarcía",
     descripcion: "Su Onion Ring mejorada competirá con otras cinco «burguers» por el campeonato de España en el Salón Gourmets.",
-    link: "https://www.diariodearousa.com/articulo/vilagarcia/tercera-mejor-hamburguesa-espana-esta-vilagarcia-5247559"
+    link: "https://www.lavozdegalicia.es/noticia/arousa/vilagarcia-de-arousa/2025/03/12/mejor-hamburguesa-galicia-prepara-lamarta-vilagarcia/0003_202503A12C4992.htm"
   },
   {
-    imagen: "https://i.ytimg.com/an_webp/TTJGlW3XNv8/mqdefault_6s.webp?du=3000&sqp=COvNycAG&rs=AOn4CLAr8X-XV3YpXWM1Vf3DADsZ51ix2A",
+    imagen: "src/assets/img/blog/youtube2.webp",
     titulo: "POV: Parece tranquilo...Pero así empieza TODO",
     descripcion: "No hay gritos, no hay prisas… solo plancha caliente, queso derritiéndose y patatas esperando su destino.",
     link: "https://www.youtube.com/watch?v=TTJGlW3XNv8"
@@ -32,10 +32,10 @@ const articulos = [
     imagen: "https://img.lavdg.com/sc/l4kUT-wVx0ssb3AgA8bhUyD4BhM=/768x/2025/04/07/00121744048562147263235/Foto/AA8C5F2_19555.jpg",
     titulo: "Onion Belly: una de las mejores hamburguesas de España",
     descripcion: "José Jamardo, de Lamarta, ha ganado el tercer premio en el Burger Combat nacional.",
-    link: "https://www.diariodearousa.com/articulo/vilagarcia/tercera-mejor-hamburguesa-espana-esta-vilagarcia-5247559"
+    link: "https://www.lavozdegalicia.es/noticia/arousa/vilagarcia-de-arousa/2025/04/08/hamburguesa-medalla-vilagarcia/0003_202504A8C5992.htm"
   },
   {
-    imagen: "https://i.ytimg.com/an_webp/MOo3qj1dx8k/mqdefault_6s.webp?du=3000&sqp=CIbXycAG&rs=AOn4CLARUydKN6u5AnhQG7J3yH94cRyBrw",
+    imagen: "src/assets/img/blog/youtube3.webp",
     titulo: "POV: Esto se nos fue de las manos",
     descripcion: "Durante 11 minutos vas a ver todo lo que pasa cuando en Lamarta nos lo tomamos en serio.",
     link: "https://www.youtube.com/watch?v=MOo3qj1dx8k&t=546s"
@@ -46,6 +46,7 @@ function Blog() {
   return (
     <>
       <HeaderSeccion nombre="Blog" />
+      <h2 className='blog--consejo'>HAZ CLICK EN CUALQUIERA</h2>
       <section className="blog--secciones d-flex-col">
         {[...articulos].reverse().map((a, i) => (
           <a href={a.link} key={i} className="articulo--link" target="_blank" rel="noopener noreferrer">
