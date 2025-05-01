@@ -1,0 +1,30 @@
+
+/*=============================================
+=            Seccion            =
+=============================================*/
+
+.conocenos--seccion {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 40rem;
+}
+.conocenos--seccion img {
+    max-width: 40rem;
+    max-height: 20rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.conocenos--seccion p {
+    font-family: var(--second-font);
+    max-width: 500px;
+    font-size: 1.1rem;
+}
+
+/*=====  End of Seccion  ======*/
+

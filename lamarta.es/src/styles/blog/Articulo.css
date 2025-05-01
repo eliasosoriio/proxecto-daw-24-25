@@ -4,7 +4,7 @@
 =============================================*/
 
 .blog--articulo {
-    outline: .2rem solid var(--light-dark-color);
+    outline: .2rem solid var(--dark-color);
     border-radius: 2rem;
     overflow: hidden;
     max-width: 50rem;
