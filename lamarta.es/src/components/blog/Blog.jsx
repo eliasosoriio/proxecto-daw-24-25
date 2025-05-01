@@ -5,7 +5,7 @@ import Articulo from './Articulo'
 
 const articulos = [
   {
-    imagen: "src/assets/img/blog/youtube1.webp",
+    imagen: "https://i.imgur.com/SwJknTF.jpeg",
     titulo: "POV: Bienvenidos a Lamarta",
     descripcion: "Esto no es un video de hamburguesas cualquiera. Durante 11 minutos vas a ver todo lo que pasa cuando en Lamarta nos lo tomamos en serio.",
     link: "https://www.youtube.com/watch?v=VtM4N8R3szc"
@@ -17,7 +17,7 @@ const articulos = [
     link: "https://www.lavozdegalicia.es/noticia/arousa/vilagarcia-de-arousa/2025/03/12/mejor-hamburguesa-galicia-prepara-lamarta-vilagarcia/0003_202503A12C4992.htm"
   },
   {
-    imagen: "src/assets/img/blog/youtube2.webp",
+    imagen: "https://i.imgur.com/SwJknTF.jpeg",
     titulo: "POV: Parece tranquilo...Pero así empieza TODO",
     descripcion: "No hay gritos, no hay prisas… solo plancha caliente, queso derritiéndose y patatas esperando su destino.",
     link: "https://www.youtube.com/watch?v=TTJGlW3XNv8"
@@ -35,7 +35,7 @@ const articulos = [
     link: "https://www.lavozdegalicia.es/noticia/arousa/vilagarcia-de-arousa/2025/04/08/hamburguesa-medalla-vilagarcia/0003_202504A8C5992.htm"
   },
   {
-    imagen: "src/assets/img/blog/youtube3.webp",
+    imagen: "https://i.imgur.com/SwJknTF.jpeg",
     titulo: "POV: Esto se nos fue de las manos",
     descripcion: "Durante 11 minutos vas a ver todo lo que pasa cuando en Lamarta nos lo tomamos en serio.",
     link: "https://www.youtube.com/watch?v=MOo3qj1dx8k&t=546s"
