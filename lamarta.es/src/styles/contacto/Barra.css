@@ -1,0 +1,25 @@
+
+/*=============================================
+=            Barra            =
+=============================================*/
+
+.barra {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    gap: 1rem;
+    transition: transform 0.7s;
+    text-transform: none;
+    min-width: 30rem;
+}
+.barra:hover {
+    color: var(--yellow-color);
+    transform: scale(1.05);
+}
+.barra i {
+    color: var(--yellow-color);
+}
+
+/*=====  End of Barra  ======*/
+

@@ -8,6 +8,13 @@
     align-items: center;
 }
 
+.conocenos--final {
+    text-align: center;
+    max-width: 90vw;
+    margin: 2rem auto;
+    font-size: 2rem;
+}
+
 @media screen and (min-width: 960px) {
     .conocenos--secciones {
         flex-direction: row;

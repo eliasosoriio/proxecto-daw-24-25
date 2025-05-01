@@ -1,0 +1,28 @@
+
+/*=============================================
+=            Contacto            =
+=============================================*/
+
+.contacto--contenido {
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: center;
+    justify-content: center;
+}
+.contacto--imagen {
+    max-width: 30rem;
+    max-height: 30rem;
+    border-radius: 2rem;
+}
+.contacto--social {
+    gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .contacto--contenido {
+        flex-direction: row-reverse;
+    }
+}
+
+/*=====  End of Contacto  ======*/
+

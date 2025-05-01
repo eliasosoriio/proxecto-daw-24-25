@@ -46,7 +46,6 @@ function Blog() {
   return (
     <>
       <HeaderSeccion nombre="Blog" />
-      <h2 className='blog--consejo'>HAZ CLICK EN CUALQUIERA</h2>
       <section className="blog--secciones d-flex-col">
         {[...articulos].reverse().map((a, i) => (
           <a href={a.link} key={i} className="articulo--link" target="_blank" rel="noopener noreferrer">
