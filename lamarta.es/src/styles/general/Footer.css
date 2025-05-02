@@ -3,6 +3,7 @@
 =============================================*/
 .pie {
     background-color: var(--yellow-color);
+    color: var(--dark-color);
     align-items: center;
     gap: 3rem;
     padding: 3rem;
@@ -13,13 +14,20 @@
     font-weight: 600;
 }
 .pie--politicas {
-    font-size: .8rem;
-    gap: 2rem;
+    font-size: 1.2rem;
+    gap: .5rem;
 }
 .pie--copy {
     font-size: 1.2rem;
     border-top: .5px solid var(--gray-white-color);
     padding-top: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+    .pie--politicas {
+        flex-direction: row;
+        gap: 2rem;
+    }
 }
 
 /*=====  End of PIE  ======*/

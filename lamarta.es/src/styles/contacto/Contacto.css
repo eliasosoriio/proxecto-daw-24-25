@@ -8,10 +8,12 @@
     margin: 2rem 0;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
 }
 .contacto--imagen {
-    max-width: 30rem;
+    max-width: 35rem;
     max-height: 30rem;
+    width: 100%;
     border-radius: 2rem;
 }
 .contacto--social {
@@ -21,6 +23,15 @@
 @media screen and (min-width: 600px) {
     .contacto--contenido {
         flex-direction: row-reverse;
+        margin: 10rem 0;
+
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .contacto--imagen {
+        max-width: 50rem;
+        max-height: 40rem;
     }
 }
 

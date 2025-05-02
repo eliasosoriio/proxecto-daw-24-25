@@ -8,7 +8,7 @@
     border-radius: 2rem;
     overflow: hidden;
     max-width: 50rem;
-    min-height: 10rem;
+    min-height: 15rem;
     transition: transform .7s;
 }
 .blog--articulo:hover {
@@ -30,8 +30,8 @@
 }
 
 .blog--articulo--contenido {
-    width: 100%;
-    padding: 2rem .5rem;
+    width: 50%;
+    padding: 2rem 1rem;
     justify-content: center;
 }
 .blog--articulo h3 {
@@ -42,6 +42,18 @@
     font-family: var( --second-font);
     color: var( --light-dark-color);
     font-size: 1.1rem;
+}
+
+@media screen and (min-width: 960px) {
+    .blog--articulo {
+        min-height: 20rem;
+    }
+    .blog--articulo h3 {
+        font-size: 1.7rem;
+    }
+    .blog--articulo p {
+        font-size: 1.4rem;
+    }
 }
 
 /*=====  End of Articulo  ======*/

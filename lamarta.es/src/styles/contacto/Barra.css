@@ -12,6 +12,8 @@
     transition: transform 0.7s;
     text-transform: none;
     min-width: 30rem;
+    font-size: 1.4rem;
+    align-items: center;
 }
 .barra:hover {
     color: var(--yellow-color);
@@ -19,6 +21,12 @@
 }
 .barra i {
     color: var(--yellow-color);
+}
+
+@media screen and (min-width: 1280px) {
+    .barra {
+        font-size: 1.8rem;
+    }
 }
 
 /*=====  End of Barra  ======*/

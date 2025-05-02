@@ -10,10 +10,11 @@
     justify-content: center;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 960px) {
     .blog--secciones {
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 5rem;
     }
 }
 

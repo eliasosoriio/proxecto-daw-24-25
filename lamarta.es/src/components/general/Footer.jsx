@@ -11,9 +11,9 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
         >
-            RÚA ARZOBISPO GELMÍREZ, 7 - 36600 VILAGARCÍA DE AROUSA
+            RÚA ARCEBISPO XELMÍREZ, 7 - 36600 VILAGARCÍA DE AROUSA
         </a>
-        <section className="pie--politicas d-flex-row">
+        <section className="pie--politicas d-flex-col">
             <p>Aviso Legal</p>   
             <p>Política de Privacidad</p>   
             <p>Política de Cookies</p>   

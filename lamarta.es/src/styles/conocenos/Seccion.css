@@ -22,8 +22,22 @@
 }
 .conocenos--seccion p {
     font-family: var(--second-font);
-    max-width: 500px;
-    font-size: 1.1rem;
+    max-width: 50rem;
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 600px) {
+    .conocenos--seccion {
+        max-width: 50vw;
+    }
+    .conocenos--seccion img {
+        max-width: 50vw;
+        max-height: 50vw;
+    }
+    .conocenos--seccion p {
+        max-width: 50vw;
+        font-size: 1.8rem;
+    }
 }
 
 /*=====  End of Seccion  ======*/
