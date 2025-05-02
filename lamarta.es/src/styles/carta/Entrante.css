@@ -1,0 +1,26 @@
+
+/*=============================================
+=            Entrante            =
+=============================================*/
+
+.entrante {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+}
+
+.entrante--nombre {
+    font-family: var(--second-font);
+}
+
+.entrante--precio {
+    background-color: var(--gray-white-color);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    min-width: 8rem;
+    text-align: center;
+}
+
+/*=====  End of Entrante  ======*/
+

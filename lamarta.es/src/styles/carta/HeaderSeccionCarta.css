@@ -1,0 +1,39 @@
+
+/*=============================================
+=            HeaderSeccionCarta            =
+=============================================*/
+
+.entrantes--header {
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 2rem auto;
+    width: 90vw;
+}
+.entrantes--header h2 {
+    font-size: 2.5rem;
+}
+.entrantes--header img {
+    max-width: 8rem;
+    max-height: 6rem;
+}
+
+@media screen and (min-width: 600px) {
+    .entrantes--header h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .entrantes--header {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .entrantes--header {
+        width: 50vw;
+    }
+}
+
+/*=====  End of HeaderSeccionCarta  ======*/
+

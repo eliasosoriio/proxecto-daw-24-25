@@ -1,0 +1,26 @@
+
+/*=============================================
+=            Carta            =
+=============================================*/
+
+.entrantes {
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 3rem auto;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 960px) {
+    .entrantes {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .entrantes {
+        width: 50vw;
+    }
+}
+/*=====  End of Carta  ======*/
+
