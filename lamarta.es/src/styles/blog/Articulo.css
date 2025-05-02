@@ -5,7 +5,7 @@
 
 .blog--articulo {
     outline: .2rem solid var(--dark-color);
-    border-radius: 2rem;
+    border-radius: 1rem;
     overflow: hidden;
     max-width: 50rem;
     min-height: 15rem;
@@ -42,17 +42,18 @@
     font-family: var( --second-font);
     color: var( --light-dark-color);
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1280px) {
     .blog--articulo {
         min-height: 20rem;
     }
     .blog--articulo h3 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
     .blog--articulo p {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 }
 
