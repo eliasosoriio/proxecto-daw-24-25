@@ -102,11 +102,11 @@ Lo principal sería el equipamiento informático (ordenador, teclado, etc..), ta
 
 #### 2.7.1- Custos
 
-Los costes fijos están compuestos por la cuota de autónomo (80 euros al mes el primer año), teléfono e internet (60 euros al mes), electricidad (20 euros al mes) y publicidad (50 euros al mes).
+Los costes fijos están compuestos por la cuota de autónomo (80 euros al mes el primer año), teléfono e internet (60 euros al mes), electricidad (20 euros al mes), publicidad (50 euros al mes) y un salario mínimo de 15876 euros (anual).
 
 Los variables serían el dominio y hosting (70 euros al año), la publicidad adicional (50 euros al mes), ordenador y hardware (900 euros) y mobiliario (200 euros).
 
-En resumen, los costes fijos serían de un total de 2520 euros anuales y los variables de 1770 euros anuales. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después).
+En resumen, los costes fijos serían de un total de 18396 euros anuales y los variables de 1770 euros anuales. Trimestralmente habría que liquidar el IVA (21%) sobre el precio de venta y el IRPF (7% el primer año al ser nuevo autónomo, 15% después).
 
 #### 2.7.2- Ingresos
 
@@ -134,11 +134,9 @@ La viabilidad técnica es prácticamente del 100%. Al haber aprendido Figma, HTM
 
 #### 2.8.2 - Viabilidade económica
 
-Si se estiman unos ingresos de 8100 euros teniendo unos costes totales de 4290 euros, los beneficios brutos son 3810 euros. Si calculamos el IVA que se va pagando trimestralmente, se deducen 1701 euros. El IRPF sería un 7% el primer año por lo que descontarían 567 euros. El beneficio neto es de 1542 euros.
+Si se estiman unos ingresos de 8100 euros teniendo unos costes totales de 20166 euros, las pérdidas serían de 12066 euros. Si calculamos el IVA que se va pagando trimestralmente, se deducen 1701 euros. El IRPF sería un 7% el primer año por lo que descontarían 567 euros.
 
-Con esta estimación el primer año se considera como uno con pérdidas ya que a pesar del cálculo positivo habría que extraer un salario mínimo de 15876 euros. Dejando así un total de -14334 euros.
-
-Con inversión en publicidad y en el crecimiendo del negocio en el tercer año ya se podrían esperar ganancias reales.
+Con esta estimación el primer año se considera como uno con pérdidas ya que da un total de -14334 euros. Con inversión en publicidad y en el crecimiendo del negocio en el tercer año ya se podrían esperar ganancias reales.
 
 #### 2.8.3- Conclusión
 
