@@ -96,6 +96,10 @@ Con nuestra página y sistema mejoramos la imagen, fidelizamos a sus clientes, a
 
 En este caso, autónomo, ya que se trata de un proyecto en el que voy a trabajar solo. Así consigo más flexibilidad, rapidez, menos costes y menos trámites. En el futuro, a medida que se vaya creciendo y haga falta expandir o contratar gente, se buscaría el cambio de forma jurídica.
 
+Según la tarifa plana para nuevos autónomos, mi cuota sería de sólo 80 euros durante los primeros 12 meses (que te pueden devolver mediante la subvención Cuota Cero). A esto se suman los gastos de gestoría para que te ayuden, que no superarían los 50 euros mensuales.
+
+Así, puedo comenzar mi actividad inmediatamente tras darme de alta, sin los trámites ni costes de constitución que requiere una sociedad limitada. 
+
 ### 2.7- Investimentos
 
 Lo principal sería el equipamiento informático (ordenador, teclado, etc..), también los programas o servicios a utilizar (Hostinger), mobiliario,  conexión a internet y publicidad.
