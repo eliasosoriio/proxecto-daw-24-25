@@ -16,62 +16,62 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ADMINISTRADOR`
+-- Table structure for table `administrador`
 --
 
-DROP TABLE IF EXISTS `ADMINISTRADOR`;
+DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ADMINISTRADOR` (
+CREATE TABLE `administrador` (
   `id_usuario` int NOT NULL,
   PRIMARY KEY (`id_usuario`),
-  CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `USUARIO` (`id_usuario`)
+  CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ADMINISTRADOR`
+-- Dumping data for table `administrador`
 --
 
-LOCK TABLES `ADMINISTRADOR` WRITE;
-/*!40000 ALTER TABLE `ADMINISTRADOR` DISABLE KEYS */;
-INSERT INTO `ADMINISTRADOR` VALUES (1);
-/*!40000 ALTER TABLE `ADMINISTRADOR` ENABLE KEYS */;
+LOCK TABLES `administrador` WRITE;
+/*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
+INSERT INTO `administrador` VALUES (1);
+/*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `AFILIADO`
+-- Table structure for table `afiliado`
 --
 
-DROP TABLE IF EXISTS `AFILIADO`;
+DROP TABLE IF EXISTS `afiliado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `AFILIADO` (
+CREATE TABLE `afiliado` (
   `id_usuario` int NOT NULL,
   `puntos` int DEFAULT '0',
   PRIMARY KEY (`id_usuario`),
-  CONSTRAINT `afiliado_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `USUARIO` (`id_usuario`)
+  CONSTRAINT `afiliado_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `AFILIADO`
+-- Dumping data for table `afiliado`
 --
 
-LOCK TABLES `AFILIADO` WRITE;
-/*!40000 ALTER TABLE `AFILIADO` DISABLE KEYS */;
-INSERT INTO `AFILIADO` VALUES (2,550);
-/*!40000 ALTER TABLE `AFILIADO` ENABLE KEYS */;
+LOCK TABLES `afiliado` WRITE;
+/*!40000 ALTER TABLE `afiliado` DISABLE KEYS */;
+INSERT INTO `afiliado` VALUES (2,550);
+/*!40000 ALTER TABLE `afiliado` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `RECOMPENSA`
+-- Table structure for table `recompensa`
 --
 
-DROP TABLE IF EXISTS `RECOMPENSA`;
+DROP TABLE IF EXISTS `recompensa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `RECOMPENSA` (
+CREATE TABLE `recompensa` (
   `id_recompensa` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `descripcion` text,
@@ -81,22 +81,22 @@ CREATE TABLE `RECOMPENSA` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `RECOMPENSA`
+-- Dumping data for table `recompensa`
 --
 
-LOCK TABLES `RECOMPENSA` WRITE;
-/*!40000 ALTER TABLE `RECOMPENSA` DISABLE KEYS */;
-/*!40000 ALTER TABLE `RECOMPENSA` ENABLE KEYS */;
+LOCK TABLES `recompensa` WRITE;
+/*!40000 ALTER TABLE `recompensa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `recompensa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `TRANSACCION`
+-- Table structure for table `transaccion`
 --
 
-DROP TABLE IF EXISTS `TRANSACCION`;
+DROP TABLE IF EXISTS `transaccion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `TRANSACCION` (
+CREATE TABLE `transaccion` (
   `id_transaccion` int NOT NULL AUTO_INCREMENT,
   `id_usuario_admin` int NOT NULL,
   `id_usuario_afiliado` int NOT NULL,
@@ -106,29 +106,29 @@ CREATE TABLE `TRANSACCION` (
   PRIMARY KEY (`id_transaccion`),
   KEY `id_usuario_admin` (`id_usuario_admin`),
   KEY `id_usuario_afiliado` (`id_usuario_afiliado`),
-  CONSTRAINT `transaccion_ibfk_1` FOREIGN KEY (`id_usuario_admin`) REFERENCES `ADMINISTRADOR` (`id_usuario`),
-  CONSTRAINT `transaccion_ibfk_2` FOREIGN KEY (`id_usuario_afiliado`) REFERENCES `AFILIADO` (`id_usuario`)
+  CONSTRAINT `transaccion_ibfk_1` FOREIGN KEY (`id_usuario_admin`) REFERENCES `administrador` (`id_usuario`),
+  CONSTRAINT `transaccion_ibfk_2` FOREIGN KEY (`id_usuario_afiliado`) REFERENCES `afiliado` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `TRANSACCION`
+-- Dumping data for table `transaccion`
 --
 
-LOCK TABLES `TRANSACCION` WRITE;
-/*!40000 ALTER TABLE `TRANSACCION` DISABLE KEYS */;
-INSERT INTO `TRANSACCION` VALUES (1,1,2,'Compra - Onion Belly Burger',50,'2025-05-01'),(2,1,2,'Compra - Onion Belly Burger',50,'2025-05-02'),(3,1,2,'Recurrencia - Programa fidelización',100,'2025-05-03'),(4,1,2,'Bonificación - Primer mes',300,'2025-05-05'),(5,1,2,'Recompensa - Onion Belly',-300,'2025-05-02'),(6,1,2,'Recompensa - La Classic',-150,'2025-05-04');
-/*!40000 ALTER TABLE `TRANSACCION` ENABLE KEYS */;
+LOCK TABLES `transaccion` WRITE;
+/*!40000 ALTER TABLE `transaccion` DISABLE KEYS */;
+INSERT INTO `transaccion` VALUES (1,1,2,'Compra - Onion Belly Burger',50,'2025-05-01'),(2,1,2,'Compra - Onion Belly Burger',50,'2025-05-02'),(3,1,2,'Recurrencia - Programa fidelización',100,'2025-05-03'),(4,1,2,'Bonificación - Primer mes',300,'2025-05-05'),(5,1,2,'Recompensa - Onion Belly',-300,'2025-05-02'),(6,1,2,'Recompensa - La Classic',-150,'2025-05-04');
+/*!40000 ALTER TABLE `transaccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `USUARIO`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `USUARIO`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `USUARIO` (
+CREATE TABLE `usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
@@ -141,13 +141,13 @@ CREATE TABLE `USUARIO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `USUARIO`
+-- Dumping data for table `usuario`
 --
 
-LOCK TABLES `USUARIO` WRITE;
-/*!40000 ALTER TABLE `USUARIO` DISABLE KEYS */;
-INSERT INTO `USUARIO` VALUES (1,'Admin','Lamarta','administrador@lamarta.es','9dbf7c1488382487931d10235fc84a74bff5d2f4','admin'),(2,'Cliente','Prueba','cliente@lamarta.es','d94019fd760a71edf11844bb5c601a4de95aacaf','afiliado');
-/*!40000 ALTER TABLE `USUARIO` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'Admin','Lamarta','administrador@lamarta.es','9dbf7c1488382487931d10235fc84a74bff5d2f4','admin'),(2,'Cliente','Prueba','cliente@lamarta.es','d94019fd760a71edf11844bb5c601a4de95aacaf','afiliado');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
