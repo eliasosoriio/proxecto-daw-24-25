@@ -152,7 +152,9 @@ A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y 
 
 - **Infraestructura:** Hostinger para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
 - **Backend:** API en PHP crudo.
-- **Frontend:** React, HTML, CSS y JavaScript.
+- **Frontend:** React, HTML y CSS.
+
+Vercel como plataforma de despliegue del frontend facilita todo gracias a su integración con GitHub y soporte para React. Para el backend y la base de datos, he optado por Hostinger, ya que permite alojar proyectos en PHP y gestionar bases de datos MySQL de forma eficiente.
 
 ## 4- Planificación
 

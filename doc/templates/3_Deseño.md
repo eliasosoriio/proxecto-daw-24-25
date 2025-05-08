@@ -37,9 +37,6 @@ puntos, canjear recompensas, etc.).
 ![MODELO RELACIONAL](img_3/modelo_relacional.png)
 ![DIAGRAMA ER](img_3/diagrama_er.png)
 
-En el modelo relacional y diagrama de entidad-relación se observa cómo está organizada la información de los usuarios y cómo interactúan entre ellos. Por un lado, tiene tablas para cada tipo de usuario, otra para registrar las transacciones de puntos y la última para las recompensas disponibles.
-
-
 ## 4- Deseño de interface de usuarios
 
 Como muestra, se pueden observar dos tipos de mockup, el de móvil y el de ordenador. En ellos, se puede simular lo que un usuario puede llegar a hacer (administrador, registrado o genérico) interactuando con diferentes secciones. Al hacer clic en cada imagen, se accederá al mockup correspondiente.
