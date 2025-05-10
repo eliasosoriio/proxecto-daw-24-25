@@ -1,6 +1,7 @@
 <?php
 include_once("globals.php");
 include_once("controller/Controller.php");
+include_once("controller/LoginController.php");
 //include_once("controller/AuthController.php");
 
 /**
@@ -14,7 +15,9 @@ $elemento = $uri[3];
 $id = $uri[4] ?? null;
 
 try {
-    $controlador = Controller::getController($elemento);
+    if($elemento != "login") {
+        $controlador = Controller::getController($elemento);
+    }
 } catch (ControllerException $th) {
     Controller::sendNotFound("Error obteniendo el elemento " . $elemento);
     die();
@@ -24,17 +27,22 @@ if (count($uri) < 3) {
     throw new Exception("URI incompleta");
 }
 
-/*$token = $_SERVER["HTTP_X_API_KEY"];
-$auth = AuthController::checkAccess($elemento,$metodo,$token);
-if(!$auth){
-    Controller::sendNotFound("No tienes permisos.");
-    die();
-}*/
+    /*if ($elemento !== 'login') {
+        $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
+        if (!AuthController::checkAccess($elemento, $metodo, $token)) {
+            Controller::sendNotFound("No tienes permisos.");
+            die();
+        }
+    }*/
 
     switch ($metodo) {
     case 'POST':
         $json = file_get_contents('php://input');
-        $controlador->insert($json);
+        if($elemento == "login") {
+            LoginController::singIn($json);
+        } else {
+            $controlador->insert($json);
+        }
         break;
     case 'GET':
         if (isset($id)) {
