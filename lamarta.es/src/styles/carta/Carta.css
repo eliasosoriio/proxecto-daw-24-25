@@ -11,16 +11,25 @@
     gap: 2rem;
 }
 
+.hamburguesas {
+    width: 90vw;
+    margin: 0 auto 3rem auto;
+    gap: 2rem;
+}
+
 @media screen and (min-width: 960px) {
-    .entrantes {
+    .entrantes,
+    .hamburguesas {
         width: 70vw;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .entrantes {
+    .entrantes,
+    .hamburguesas {
         width: 50vw;
     }
 }
+
 /*=====  End of Carta  ======*/
 

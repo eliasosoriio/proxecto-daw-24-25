@@ -1,0 +1,40 @@
+
+/*=============================================
+=            ExplicacionPrecios            =
+=============================================*/
+.corona {
+    width: 90vw;
+    justify-content: end;
+    margin: 1rem auto 0 auto;
+    padding: 0 2rem;
+}
+
+.explicacion--precios {
+    gap: 3rem;
+    width: 90vw;
+    padding: .4rem 1rem;
+    background-color: var(--yellow-color);
+    border-radius: .8rem;
+    margin: 1rem auto;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.8rem;
+    padding-right: 2rem;
+}
+
+@media screen and (min-width: 960px) {
+    .corona,
+    .explicacion--precios {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .corona,
+    .explicacion--precios {
+        width: 50vw;
+    }
+}
+
+/*=====  End of ExplicacionPrecios  ======*/
+

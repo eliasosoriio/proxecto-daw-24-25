@@ -1,0 +1,45 @@
+
+/*=============================================
+=            Hamburguesa            =
+=============================================*/
+
+.smash {
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.smash--contenido--carne,
+.smash--contenido--ingredientes {
+    font-family: var(--second-font);
+}
+.smash--contenido--carne {
+    font-size: 1.4rem;
+}
+.smash--contenido--ingredientes {
+    font-size: 1.4rem;
+    max-width: 60rem;
+}
+
+.smash--precios {
+    gap: .5rem;
+}
+.smash--precios p:first-child {
+    background-color: var(--gray-white-color);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    min-width: 8rem;
+    text-align: center;
+}
+.smash--precios p:last-child {
+    background-color: var(--yellow-color);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    min-width: 8rem;
+    text-align: center;
+}
+
+/*=====  End of Hamburguesa  ======*/
+
