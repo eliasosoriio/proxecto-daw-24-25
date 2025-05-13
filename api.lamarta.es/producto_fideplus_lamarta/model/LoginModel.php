@@ -4,9 +4,10 @@ include_once("ModelObject.php");
 
 class Login extends ModelObject{
 
-    public string $usuario;
+    public string $id_usuario;
+    public string $usuario = '';
     public string $contrasenia;
-    public string $tipo;
+    public string $tipo = '';
     public string $token;
 
     public static function fromJson($json): ModelObject {
@@ -22,8 +23,28 @@ class Login extends ModelObject{
     }
 
     /**
+     * Get the value of id_usuario
+     */
+    public function getId_usuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set the value of id_usuario
+     *
+     * @return  self
+     */
+    public function setId_usuario($id_usuario)
+    {
+        $this->id_usuario = $id_usuario;
+
+        return $this;
+    }
+
+    /**
      * Get the value of usuario
-     */ 
+     */
     public function getUsuario()
     {
         return $this->usuario;
@@ -33,7 +54,7 @@ class Login extends ModelObject{
      * Set the value of usuario
      *
      * @return  self
-     */ 
+     */
     public function setUsuario($usuario)
     {
         $this->usuario = $usuario;
@@ -43,7 +64,7 @@ class Login extends ModelObject{
 
     /**
      * Get the value of contrasenia
-     */ 
+     */
     public function getContrasenia()
     {
         return $this->contrasenia;
@@ -53,7 +74,7 @@ class Login extends ModelObject{
      * Set the value of contrasenia
      *
      * @return  self
-     */ 
+     */
     public function setContrasenia($contrasenia)
     {
         $this->contrasenia = $contrasenia;
@@ -63,7 +84,7 @@ class Login extends ModelObject{
 
      /**
      * Get the value of tipo
-     */ 
+     */
     public function getTipo()
     {
         return $this->tipo;
@@ -73,7 +94,7 @@ class Login extends ModelObject{
      * Set the value of tipo
      *
      * @return  self
-     */ 
+     */
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
@@ -83,7 +104,7 @@ class Login extends ModelObject{
 
      /**
      * Get the value of token
-     */ 
+     */
     public function getToken()
     {
         return $this->token;
@@ -93,7 +114,7 @@ class Login extends ModelObject{
      * Set the value of token
      *
      * @return  self
-     */ 
+     */
     public function setToken($token)
     {
         $this->token = $token;
@@ -106,8 +127,8 @@ class Login extends ModelObject{
 class LoginModel extends Model
 {
 
-    public function singIn($login): Login{
-        $sql = "SELECT correo AS usuario, contrasenia, tipo FROM usuario WHERE correo=?";
+    public function singIn($login): Login | null{
+        $sql = "SELECT id_usuario, correo, contrasenia, tipo FROM usuario WHERE correo=?";
         $pdo = self::getConnection();
         $resultado = null;
         try {
@@ -117,17 +138,18 @@ class LoginModel extends Model
             if($u = $stmt->fetch()){
                 $hola = password_verify($login->getContrasenia(), $u["contrasenia"]);
 
-               //$hash = password_hash("cliente", PASSWORD_DEFAULT);
+               $hash = password_hash("cliente", PASSWORD_DEFAULT);
 
                 if (password_verify($login->getContrasenia(), $u["contrasenia"])) {
                     $resultado = new Login();
-                    $resultado->setUsuario($u["usuario"]);
+                    $resultado->setId_usuario($u["id_usuario"]);
+                    $resultado->setUsuario($u["correo"]);
                     $resultado->setTipo($u["tipo"]);
                 }
             }
-            
+
         } catch (Throwable $th) {
-            error_log("Error LoginModel->singIn($login->getUsuario()");
+            error_log("Error LoginModel->singIn(".$login->getUsuario().")");
             error_log($th->getMessage());
         } finally {
             $stmt = null;

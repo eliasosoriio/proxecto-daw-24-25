@@ -1,5 +1,7 @@
 <?php
 include_once("globals.php");
+include_once("Recursos.php");
+include_once("Constantes.php");
 include_once("controller/Controller.php");
 include_once("controller/LoginController.php");
 //include_once("controller/AuthController.php");
@@ -27,15 +29,19 @@ if (count($uri) < 3) {
     throw new Exception("URI incompleta");
 }
 
-    /*if ($elemento !== 'login') {
-        $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
-        if (!AuthController::checkAccess($elemento, $metodo, $token)) {
-            Controller::sendNotFound("No tienes permisos.");
-            die();
-        }
-    }*/
+if ($elemento == "login" && ($_SERVER['REQUEST_METHOD'] != 'POST' && $_SERVER['REQUEST_METHOD'] != 'GET')) {
+    throw new Exception("Método no permitido.");
+}
 
-    switch ($metodo) {
+/*if ($elemento !== 'login') {
+    $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
+    if (!AuthController::autentificarAccion($elemento, $metodo, $token, time())) {
+        Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesión.");
+        die();
+    }
+}*/
+
+switch ($metodo) {
     case 'POST':
         $json = file_get_contents('php://input');
         if($elemento == "login") {
@@ -65,8 +71,8 @@ if (count($uri) < 3) {
         } else {
             Controller::sendNotFound("Es necesario indicar el id correcto de la transacción a actualizar.");
         }
-
         break;
     default:
         Controller::sendNotFound("Método HTTP no disponible.");
+        break;
 }

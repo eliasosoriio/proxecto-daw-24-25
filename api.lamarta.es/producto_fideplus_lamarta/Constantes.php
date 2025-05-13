@@ -1,0 +1,4 @@
+<?php
+
+define("CONSTANTE_USUARIO_TIPO_ADMIN_CODIGO","admin");
+define("CONSTANTE_USUARIO_TIPO_AFILIADO_CODIGO","afiliado");
