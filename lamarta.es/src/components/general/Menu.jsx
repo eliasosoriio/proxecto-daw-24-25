@@ -8,9 +8,9 @@ function Menu() {
   const cambiarMenu = () => {
     setEstadoMenu((estadoMenu) => !estadoMenu);
   };
- 
+
   return (
-    <nav className="desplegable d-flex-col">
+    <nav className="desplegable d-flex-col" aria-label="Menú desplegable">
       <input
         id="menu"
         type="checkbox"
@@ -62,6 +62,8 @@ function Menu() {
             onClick={cambiarMenu}
             href="https://r.qamarero.com/lamarta?mode=PICKUP"
             aria-label="Realizar un pedido para recoger"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Pide para recoger
           </a>
