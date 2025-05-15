@@ -14,7 +14,7 @@
 .servicios--apartado span {
     font-size: 2.5rem;
 }
-.servicios--apartado h2 {
+.servicios--apartado h3 {
     font-size: 1.8rem;
     text-transform: uppercase;
 }
@@ -24,4 +24,3 @@
 }
 
 /*=====  End of SERVICIO  ======*/
-
