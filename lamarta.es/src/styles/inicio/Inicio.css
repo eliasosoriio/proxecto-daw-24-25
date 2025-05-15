@@ -2,8 +2,8 @@
 =            INICIO            =
 =============================================*/
 .portada {
-    background-image: 
-        linear-gradient(100deg, #000, #00000050), 
+    background-image:
+        linear-gradient(100deg, #000, #00000050),
         url(https://lamarta.es/assets/oniongringhero.jpg)
     ;
     background-position: center;
@@ -11,7 +11,7 @@
     place-content: center;
     height: 60vh;
 }
- 
+
 .portada--contenido {
     padding: var(--padding-container);
     align-items: center;
@@ -78,6 +78,9 @@
 
 .productos--cajas {
     gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .productos--cajas .caja {
     display: grid;

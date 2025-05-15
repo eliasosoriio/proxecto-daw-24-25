@@ -3,13 +3,13 @@ import React from 'react'
 
 function Servicio({icono, nombre, descripcion}) {
   return (
-    <section className="servicios--apartado d-flex-col">
-        <div className='servicios--apartado--titulo d-flex-row'>
-            <h2>{nombre}</h2>
+    <article className="servicios--apartado d-flex-col">
+        <header className='servicios--apartado--titulo d-flex-row'>
+            <h3>{nombre}</h3>
             <span className={icono}></span>
-        </div>
+        </header>
         <p>{descripcion}</p>
-    </section>
+    </article>
   )
 }
 
