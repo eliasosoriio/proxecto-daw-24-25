@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { BrowserRouter, Route, Routes, ScrollRestoration } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/general/Header";
 import Footer from "./components/general/Footer";
 import Menu from "./components/general/Menu";
@@ -14,7 +14,6 @@ import NotFound from "./components/general/NotFound";
 function App() {
    return (
       <BrowserRouter>
-         <ScrollRestoration />
          <Header />
          <Menu />
          <main id="contenido-principal" className="contenedor d-flex-col" role="main">
