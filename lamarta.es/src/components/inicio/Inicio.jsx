@@ -2,10 +2,12 @@ import "../../styles/inicio/Inicio.css";
 import React from 'react'
 import Servicio from "./Servicio";
 import { Link } from "react-router-dom";
+import ScrollArriba from "../general/ScrollArriba";
 
 function Inicio() {
   return (
     <>
+      <ScrollArriba />
       <header className="portada" aria-labelledby="portada-titulo">
         <div className="portada--contenido d-flex-col">
           <h1 id="portada-titulo">LAMARTA - THE BEST BURGUER BAR</h1>

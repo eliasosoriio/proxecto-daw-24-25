@@ -2,6 +2,8 @@ import '../../styles/blog/Blog.css'
 import React from 'react'
 import HeaderSeccion from '../general/HeaderSeccion'
 import Articulo from './Articulo'
+import ScrollArriba from '../general/ScrollArriba'
+
 
 const articulos = [
   {
@@ -45,6 +47,7 @@ const articulos = [
 function Blog() {
   return (
     <>
+      <ScrollArriba />
       <HeaderSeccion nombre="Blog" />
       <section className="blog--secciones d-flex-col">
         {[...articulos].reverse().map((a, i) => (

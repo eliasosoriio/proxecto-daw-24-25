@@ -6,6 +6,8 @@ import HeaderSeccionCarta from './HeaderSeccionCarta';
 import ExplicacionMenu from './ExplicacionMenu';
 import Hamburguesa from './Hamburguesa';
 import ExplicacionPrecios from './ExplicacionPrecios';
+import ScrollArriba from '../general/ScrollArriba'
+
 
 const $d = document,
 $entrantesBody = $d.querySelector('#entrantes-body'),
@@ -237,6 +239,7 @@ const mascotas = [
 function Carta() {
   return (
     <>
+        <ScrollArriba />
         <HeaderSeccion nombre={"Carta"}></HeaderSeccion>
         <HeaderSeccionCarta titulo={"ENTRANTES"} imagen={"https://lamarta.es/assets/papas.svg"} />
         <section className="entrantes d-flex-col">

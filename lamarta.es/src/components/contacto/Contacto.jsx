@@ -2,10 +2,12 @@ import '../../styles/contacto/Contacto.css'
 import React from 'react'
 import HeaderSeccion from '../general/HeaderSeccion'
 import Barra from './Barra'
+import ScrollArriba from '../general/ScrollArriba'
 
 function Contacto() {
   return (
-    <div>
+    <>
+      <ScrollArriba />
       <HeaderSeccion nombre="Contacto" />
       <section className='contacto--contenido d-flex-col'>
           <section className='contacto--social d-flex-col'>
@@ -32,7 +34,7 @@ function Contacto() {
           </section>
           <img className='contacto--imagen' src="https://vilagarciavirtual.com/uploads/imagenes-negocio/lamarta_01.jpg" alt="Imagen del interior del local de LAMARTA" />
       </section>
-    </div>
+    </>
   )
 }
 

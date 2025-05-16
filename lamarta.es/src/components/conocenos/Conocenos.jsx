@@ -2,10 +2,12 @@ import React from 'react'
 import HeaderSeccion from '../general/HeaderSeccion'
 import Seccion from './Seccion'
 import '../../styles/conocenos/Conocenos.css'
+import ScrollArriba from '../general/ScrollArriba'
 
 function Conocenos() {
   return (
     <>
+      <ScrollArriba />
       <HeaderSeccion nombre={"Conócenos"}></HeaderSeccion>
       <section className="conocenos--secciones d-flex-col">
         <Seccion 

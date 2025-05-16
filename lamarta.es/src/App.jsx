@@ -10,13 +10,13 @@ import Blog from "./components/blog/Blog";
 import Contacto from "./components/contacto/Contacto";
 import NotFound from "./components/general/NotFound";
 
-
 function App() {
    return (
       <BrowserRouter>
          <Header />
          <Menu />
          <main id="contenido-principal" className="contenedor d-flex-col" role="main">
+         
             <Routes>
                <Route path="/" element={<Inicio />}></Route>
                <Route path="/blog" element={<Blog />}></Route>
