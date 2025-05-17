@@ -1,6 +1,6 @@
 <?php
 include_once("Controller.php");
-include_once("AuthController.php");
+include_once("TokenController.php");
 include_once(PATH_MODEL."LoginModel.php");
 
 class LoginController {
@@ -17,18 +17,19 @@ class LoginController {
             Controller::sendNotFound("El usuario y/o la contraseña es incorrecto.");
             die();
         } else {
-            $tipo = $login->getTipo();
+            $tipo = $login->getId_tipo();
             $id_usuario = $login->getId_usuario();
-            $token = AuthController::generarToken($id_usuario, $tipo);
+            $token = TokenController::generarToken($id_usuario);
+            
 
             $_SESSION["id_usuario"] = $id_usuario;
-            $_SESSION["tipo"] = $tipo;
+            $_SESSION["id_tipo"] = $tipo;
             $_SESSION["token"] = $token;
             $_SESSION["timestamp"] = time();
 
             $response = [
                 "usuario" => $id_usuario,
-                "tipo" => $tipo,
+                "id_tipo" => $tipo,
                 "token" => $token
             ];
 

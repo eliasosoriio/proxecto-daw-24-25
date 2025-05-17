@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 06, 2025 at 07:40 PM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Servidor: mariadb:3306
+-- Tiempo de generación: 17-05-2025 a las 14:56:44
+-- Versión del servidor: 10.6.19-MariaDB
+-- Versión de PHP: 8.2.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,25 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `producto_fideplus_lamarta`
+-- Base de datos: `producto_fideplus_lamarta`
 --
-
-DROP DATABASE IF EXISTS `producto_fideplus_lamarta`;
-CREATE DATABASE `producto_fideplus_lamarta`;
-USE `producto_fideplus_lamarta`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrador`
+-- Estructura de tabla para la tabla `administrador`
 --
 
 CREATE TABLE `administrador` (
-  `id_usuario` int NOT NULL
+  `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `administrador`
+-- Volcado de datos para la tabla `administrador`
 --
 
 INSERT INTO `administrador` (`id_usuario`) VALUES
@@ -45,16 +41,16 @@ INSERT INTO `administrador` (`id_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `afiliado`
+-- Estructura de tabla para la tabla `afiliado`
 --
 
 CREATE TABLE `afiliado` (
-  `id_usuario` int NOT NULL,
-  `puntos` int DEFAULT '0'
+  `id_usuario` int(11) NOT NULL,
+  `puntos` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `afiliado`
+-- Volcado de datos para la tabla `afiliado`
 --
 
 INSERT INTO `afiliado` (`id_usuario`, `puntos`) VALUES
@@ -63,33 +59,84 @@ INSERT INTO `afiliado` (`id_usuario`, `puntos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recompensa`
+-- Estructura de tabla para la tabla `permiso`
+--
+
+CREATE TABLE `permiso` (
+  `id_tipo` int(11) NOT NULL,
+  `controlador` varchar(100) NOT NULL,
+  `metodos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`metodos`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `permiso`
+--
+
+INSERT INTO `permiso` (`id_tipo`, `controlador`, `metodos`) VALUES
+(1, 'recompensa', '[\"GET\", \"POST\", \"PUT\", \"DELETE\"]'),
+(2, 'recompensa', '[\"GET\"]');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `recompensa`
 --
 
 CREATE TABLE `recompensa` (
-  `id_recompensa` int NOT NULL,
+  `id_recompensa` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `descripcion` text,
-  `precio` int NOT NULL
+  `descripcion` text DEFAULT NULL,
+  `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaccion`
+-- Estructura de tabla para la tabla `tipo`
+--
+
+CREATE TABLE `tipo` (
+  `id_tipo` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id_tipo`, `nombre`) VALUES
+(1, 'admin'),
+(2, 'afiliado');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `token`
+--
+
+CREATE TABLE `token` (
+  `id_usuario` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `validez` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `transaccion`
 --
 
 CREATE TABLE `transaccion` (
-  `id_transaccion` int NOT NULL,
-  `id_usuario_admin` int NOT NULL,
-  `id_usuario_afiliado` int NOT NULL,
+  `id_transaccion` int(11) NOT NULL,
+  `id_usuario_admin` int(11) NOT NULL,
+  `id_usuario_afiliado` int(11) NOT NULL,
   `concepto` varchar(255) NOT NULL,
-  `importe` int NOT NULL,
+  `importe` int(11) NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `transaccion`
+-- Volcado de datos para la tabla `transaccion`
 --
 
 INSERT INTO `transaccion` (`id_transaccion`, `id_usuario_admin`, `id_usuario_afiliado`, `concepto`, `importe`, `fecha`) VALUES
@@ -103,50 +150,68 @@ INSERT INTO `transaccion` (`id_transaccion`, `id_usuario_admin`, `id_usuario_afi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `contrasenia` varchar(100) NOT NULL,
-  `tipo` enum('admin','afiliado') NOT NULL
+  `id_tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellidos`, `correo`, `contrasenia`, `tipo`) VALUES
-(1, 'Admin', 'Lamarta', 'administrador@lamarta.es', '9dbf7c1488382487931d10235fc84a74bff5d2f4', 'admin'),
-(2, 'Cliente', 'Prueba', 'cliente@lamarta.es', 'd94019fd760a71edf11844bb5c601a4de95aacaf', 'afiliado');
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellidos`, `correo`, `contrasenia`, `id_tipo`) VALUES
+(1, 'Admin', 'Lamarta', 'administrador@lamarta.es', '$2y$10$h9mJkarsJr0jRmyJhiWf6.vK4L3Att/0JouRRy09kxK5VBLRWef36', 1),
+(2, 'Cliente', 'Prueba', 'cliente@lamarta.es', '$2y$10$BqwkiebmH8bE1bjn/dPafO5/zwX/MsmGRM0jkcyy4yACZaEHqSPIy', 2);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `administrador`
+-- Indices de la tabla `administrador`
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indexes for table `afiliado`
+-- Indices de la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indexes for table `recompensa`
+-- Indices de la tabla `permiso`
+--
+ALTER TABLE `permiso`
+  ADD KEY `id_tipo` (`id_tipo`);
+
+--
+-- Indices de la tabla `recompensa`
 --
 ALTER TABLE `recompensa`
   ADD PRIMARY KEY (`id_recompensa`);
 
 --
--- Indexes for table `transaccion`
+-- Indices de la tabla `tipo`
+--
+ALTER TABLE `tipo`
+  ADD PRIMARY KEY (`id_tipo`);
+
+--
+-- Indices de la tabla `token`
+--
+ALTER TABLE `token`
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Indices de la tabla `transaccion`
 --
 ALTER TABLE `transaccion`
   ADD PRIMARY KEY (`id_transaccion`),
@@ -154,56 +219,75 @@ ALTER TABLE `transaccion`
   ADD KEY `id_usuario_afiliado` (`id_usuario_afiliado`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
-  ADD UNIQUE KEY `correo` (`correo`);
+  ADD UNIQUE KEY `correo` (`correo`),
+  ADD KEY `id_tipo` (`id_tipo`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `recompensa`
+-- AUTO_INCREMENT de la tabla `recompensa`
 --
 ALTER TABLE `recompensa`
-  MODIFY `id_recompensa` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_recompensa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transaccion`
+-- AUTO_INCREMENT de la tabla `transaccion`
 --
 ALTER TABLE `transaccion`
-  MODIFY `id_transaccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `administrador`
+-- Filtros para la tabla `administrador`
 --
 ALTER TABLE `administrador`
   ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Constraints for table `afiliado`
+-- Filtros para la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
   ADD CONSTRAINT `afiliado_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Constraints for table `transaccion`
+-- Filtros para la tabla `permiso`
+--
+ALTER TABLE `permiso`
+  ADD CONSTRAINT `permiso_ibfk_1` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`);
+
+--
+-- Filtros para la tabla `token`
+--
+ALTER TABLE `token`
+  ADD CONSTRAINT `token_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+
+--
+-- Filtros para la tabla `transaccion`
 --
 ALTER TABLE `transaccion`
   ADD CONSTRAINT `transaccion_ibfk_1` FOREIGN KEY (`id_usuario_admin`) REFERENCES `administrador` (`id_usuario`),
   ADD CONSTRAINT `transaccion_ibfk_2` FOREIGN KEY (`id_usuario_afiliado`) REFERENCES `afiliado` (`id_usuario`);
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

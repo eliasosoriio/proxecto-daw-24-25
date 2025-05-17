@@ -1,22 +1,12 @@
 <?php
 include_once("Controller.php");
-//include_once(PATH_MODEL."AuthModel.php");
+include_once(PATH_MODEL."TokenModel.php");
 
-class AuthController {
+class TokenController {
     
     public static function autentificarAccion($controlador, $metodo, $token, $timestamp): bool {
         $permiso = false;
         
-        //Comprueba que el token del usuario que ha realizado la petición pertenece a un usuario.
-        $usuario = self::obtenerUsuarioPorToken($token, $timestamp);
-        
-        //Si el usuario existe, se comprueba que puede realizar algo en ese controlador
-        $controlador = false;
-        if ($usuario) {
-            $controlador = self::verificarPermiso($usuario, $controlador, $metodo);
-        }
-
-        //Se devuelve si finalmente se permite o no
         return $permiso;
     }
 
@@ -28,30 +18,34 @@ class AuthController {
     public static function verificarPermiso($usuario, $controlador, $metodo): bool {
         $permiso = false;
         
-        switch ($usuario->getTipo()) {
-            case CONSTANTE_USUARIO_TIPO_ADMIN_CODIGO:
-                switch ($controlador) {
-                    case RECURSO_CONTROLADOR_ADMINISTRADOR_TRANSACCION:
-                        $permiso = true;
-                        break;
-                    
-                }
-                break;
-            
-            case CONSTANTE_USUARIO_TIPO_AFILIADO_CODIGO:
-                break;
-        }
         
         return $permiso;
     }
 
-    public static function generarToken($usuario, $tipo) {
-        $timestamp = time();
-        $random = bin2hex(random_bytes(16)); 
-        $raw = $usuario . "|" . $tipo . "|" . $timestamp . "|" . $random;
-        $token = base64_encode($raw); 
-        return $token;
+    public static function generarToken($id_usuario) {
+        $model = new TokenModel();
+        $token = new Token();
+
+        $tokenCadena = bin2hex(random_bytes(16));
+        $tokenCadena = base64_encode($tokenCadena);
+
+        $token->setId_usuario($id_usuario);
+        $token->setToken($tokenCadena);
+        $token->setValidez(time());
+
+        try {
+            if ($model->existe($id_usuario)) {
+                $model->update($token);
+            } else {
+                $model->insert($token);
+            }
+        } catch (Exception $e) {
+            Controller::sendNotFound("No se ha podido insertar/actualizar el token.");
+        }
+
+        return $tokenCadena;
     }
+
 
     /*public static function verificarToken($tokenEsperadoTipo, $tokenRecibido) {
         $decoded = base64_decode($tokenRecibido);

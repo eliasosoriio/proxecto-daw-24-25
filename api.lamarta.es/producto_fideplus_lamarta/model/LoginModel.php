@@ -4,10 +4,10 @@ include_once("ModelObject.php");
 
 class Login extends ModelObject{
 
-    public string $id_usuario;
+    public int $id_usuario;
     public string $usuario = '';
     public string $contrasenia;
-    public string $tipo = '';
+    public int $id_tipo = 0;
     public string $token;
 
     public static function fromJson($json): ModelObject {
@@ -83,21 +83,21 @@ class Login extends ModelObject{
     }
 
      /**
-     * Get the value of tipo
+     * Get the value of id_tipo
      */
-    public function getTipo()
+    public function getId_tipo()
     {
-        return $this->tipo;
+        return $this->id_tipo;
     }
 
     /**
-     * Set the value of tipo
+     * Set the value of id_tipo
      *
      * @return  self
      */
-    public function setTipo($tipo)
+    public function setId_tipo($id_tipo)
     {
-        $this->tipo = $tipo;
+        $this->id_tipo = $id_tipo;
 
         return $this;
     }
@@ -128,7 +128,7 @@ class LoginModel extends Model
 {
 
     public function singIn($login): Login | null{
-        $sql = "SELECT id_usuario, correo, contrasenia, tipo FROM usuario WHERE correo=?";
+        $sql = "SELECT id_usuario, correo, contrasenia, id_tipo FROM usuario WHERE correo=?";
         $pdo = self::getConnection();
         $resultado = null;
         try {
@@ -144,7 +144,7 @@ class LoginModel extends Model
                     $resultado = new Login();
                     $resultado->setId_usuario($u["id_usuario"]);
                     $resultado->setUsuario($u["correo"]);
-                    $resultado->setTipo($u["tipo"]);
+                    $resultado->setId_tipo($u["id_tipo"]);
                 }
             }
 
