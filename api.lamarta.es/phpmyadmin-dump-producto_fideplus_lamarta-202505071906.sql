@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mariadb:3306
--- Tiempo de generación: 17-05-2025 a las 14:56:44
+-- Tiempo de generación: 17-05-2025 a las 16:59:44
 -- Versión del servidor: 10.6.19-MariaDB
 -- Versión de PHP: 8.2.25
 
@@ -74,7 +74,8 @@ CREATE TABLE `permiso` (
 
 INSERT INTO `permiso` (`id_tipo`, `controlador`, `metodos`) VALUES
 (1, 'recompensa', '[\"GET\", \"POST\", \"PUT\", \"DELETE\"]'),
-(2, 'recompensa', '[\"GET\"]');
+(2, 'recompensa', '[\"GET\"]'),
+(1, 'transaccion', '[\"GET\", \"POST\", \"PUT\", \"DELETE\"]');
 
 -- --------------------------------------------------------
 
@@ -88,6 +89,16 @@ CREATE TABLE `recompensa` (
   `descripcion` text DEFAULT NULL,
   `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `recompensa`
+--
+
+INSERT INTO `recompensa` (`id_recompensa`, `nombre`, `descripcion`, `precio`) VALUES
+(1, 'LAMARTA', 'DOBLE SMASH BURGER (VACA Y BUEY 200 G) - Queso cheddar, cochinita', 3300),
+(2, 'LA MB', 'DOBLE SMASH BURGER (VACA Y BUEY 200 G) - Crema de queso cabra y cebolla caramelizada', 3950),
+(3, 'ONION RING', 'DOBLE SMASH BURGER (VACA Y BUEY 200 G) - Cebolla al estilo Oklahoma, queso cheddar, pepinillos, queso camembert y salsa LAMARTA', 4000),
+(4, 'LA MOZZAPARMA', 'SMASH BURGER (VACA Y BUEY 100 G) - Pasta de tomate deshidratado, queso mozzarella, champiñones, rúcula y canónigos, lascas de queso parmesano y cebolla crispy', 3950);
 
 -- --------------------------------------------------------
 
@@ -119,6 +130,14 @@ CREATE TABLE `token` (
   `token` varchar(255) NOT NULL,
   `validez` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `token`
+--
+
+INSERT INTO `token` (`id_usuario`, `token`, `validez`) VALUES
+(1, 'MTI2ZDJiNjRkOWFkYmJjMzU1MTE2MjM5YzM1YzU2NjI=', '2025-05-17 16:29:14'),
+(2, 'ZTczMzdjOTY5YzU2ZGNmZjZkNmE2ODIwODE4YjhjMTA=', '2025-05-17 16:20:34');
 
 -- --------------------------------------------------------
 
@@ -234,7 +253,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `recompensa`
 --
 ALTER TABLE `recompensa`
-  MODIFY `id_recompensa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_recompensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `transaccion`

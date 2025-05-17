@@ -1,11 +1,13 @@
 <?php
 include_once("TransaccionController.php");
+include_once("RecompensaController.php");
 
 
 /**
  * Definicion de los nombres asociados a cada controlador en la URI.
  */
 define("CONTROLLER_TRANSACCION", "transaccion");
+define("CONTROLLER_RECOMPENSA", "recompensa");
 
 class ControllerException extends Exception{
     function __construct()
@@ -31,6 +33,9 @@ abstract class Controller
         switch ($nombre) {
             case CONTROLLER_TRANSACCION:
                 $controller = new TransaccionController();
+                break;
+            case CONTROLLER_RECOMPENSA:
+                $controller = new RecompensaController();
                 break;
             default:
                 throw new ControllerException();

@@ -133,25 +133,123 @@ class TokenModel extends Model
     }
 
     public function update($token): bool {
-    $sql = "UPDATE token SET token = ?, validez = CURRENT_TIMESTAMP WHERE id_usuario = ?";
-    $pdo = self::getConnection();
-    $resultado = false;
-    try {
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(1, $token->getToken(), PDO::PARAM_STR);
-        $stmt->bindValue(2, $token->getId_usuario(), PDO::PARAM_INT);
-        if ($stmt->execute()) {
-            $resultado = true;
+        $sql = "UPDATE token SET token = ?, validez = CURRENT_TIMESTAMP WHERE id_usuario = ?";
+        $pdo = self::getConnection();
+        $resultado = false;
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(1, $token->getToken(), PDO::PARAM_STR);
+            $stmt->bindValue(2, $token->getId_usuario(), PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                $resultado = true;
+            }
+        } catch (Throwable $th) {
+            error_log("Error TokenModel->update(" . $token->getId_usuario() . ")");
+            error_log($th->getMessage());
+        } finally {
+            $stmt = null;
+            $pdo = null;
         }
-    } catch (Throwable $th) {
-        error_log("Error TokenModel->update(" . $token->getId_usuario() . ")");
-        error_log($th->getMessage());
-    } finally {
-        $stmt = null;
-        $pdo = null;
+
+        return $resultado;
     }
 
-    return $resultado;
-}
+    public function obtenerUsuarioPorToken(string $token): ?int {
+        $sql = "SELECT id_usuario FROM token WHERE token = ? LIMIT 1";
+        $pdo = self::getConnection();
+        $id_usuario = null;
+
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(1, $token, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($fila) {
+                $id_usuario = (int) $fila['id_usuario'];
+            }
+        } catch (Throwable $th) {
+            error_log("Error TokenModel->obtenerUsuarioPorToken('$token')");
+            error_log($th->getMessage());
+        } finally {
+            $stmt = null;
+            $pdo = null;
+        }
+
+        return $id_usuario;
+    }
+
+    public function comprobarValidez(string $token): bool {
+        $sql = "SELECT validez FROM token WHERE token = ? LIMIT 1";
+        $pdo = self::getConnection();
+        $resultado = false;
+
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(1, $token, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $t = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($t) {
+                $validez = strtotime($t['validez']);
+                $ahora = time();
+
+                if (($validez + 1800) > $ahora) {
+                    $resultado = true;
+                }
+            }
+        } catch (Throwable $th) {
+            error_log("Error TokenModel->comprobarValidez('$token')");
+            error_log($th->getMessage());
+        } finally {
+            $stmt = null;
+            $pdo = null;
+        }
+
+        return $resultado;
+    }
+
+
+    public function comprobarPermiso(int $id_usuario, string $metodoHTTP, string $controlador): bool {
+        $sql = "SELECT p.metodos
+                FROM usuario u
+                JOIN permiso p ON u.id_tipo = p.id_tipo
+                WHERE u.id_usuario = ? AND p.controlador = ?";
+        $pdo = self::getConnection();
+        $tienePermiso = false;
+
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(1, $id_usuario, PDO::PARAM_INT);
+            $stmt->bindValue(2, $controlador, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($fila) {
+                $metodos = json_decode($fila['metodos'], true);
+
+                if (is_array($metodos)) {
+                    $metodosMayus = [];
+                    foreach ($metodos as $m) {
+                        $metodosMayus[] = strtoupper($m);
+                    }
+
+                    $metodoMayus = strtoupper($metodoHTTP);
+
+                    if (in_array($metodoMayus, $metodosMayus)) {
+                        $tienePermiso = true;
+                    }
+                }
+            }
+        } catch (Throwable $th) {
+            error_log("Error en TokenModel->comprobarPermiso");
+            error_log($th->getMessage());
+        } finally {
+            $stmt = null;
+            $pdo = null;
+        }
+
+        return $tienePermiso;
+    }
 
 }

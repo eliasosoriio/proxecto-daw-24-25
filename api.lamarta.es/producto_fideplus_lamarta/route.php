@@ -33,13 +33,14 @@ if ($elemento == "login" && ($_SERVER['REQUEST_METHOD'] != 'POST' && $_SERVER['R
     throw new Exception("Método no permitido.");
 }
 
-/*if ($elemento !== 'login') {
+if ($elemento !== 'login') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
-    if (!AuthController::autentificarAccion($elemento, $metodo, $token, time())) {
-        Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesión.");
+    if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
+        Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");
+        //header("Location: /lamartaclub/login");
         die();
     }
-}*/
+}
 
 switch ($metodo) {
     case 'POST':
