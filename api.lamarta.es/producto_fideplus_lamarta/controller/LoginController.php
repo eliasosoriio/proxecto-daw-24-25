@@ -17,19 +17,10 @@ class LoginController {
             Controller::sendNotFound("El usuario y/o la contraseña es incorrecto.");
             die();
         } else {
-            $tipo = $login->getId_tipo();
             $id_usuario = $login->getId_usuario();
             $token = TokenController::generarToken($id_usuario);
             
-
-            $_SESSION["id_usuario"] = $id_usuario;
-            $_SESSION["id_tipo"] = $tipo;
-            $_SESSION["token"] = $token;
-            $_SESSION["timestamp"] = time();
-
             $response = [
-                "usuario" => $id_usuario,
-                "id_tipo" => $tipo,
                 "token" => $token
             ];
 
