@@ -18,10 +18,12 @@ class LoginController {
             die();
         } else {
             $id_usuario = $login->getId_usuario();
+            $tipo = $login->getTipo();
             $token = TokenController::generarToken($id_usuario);
             
             $response = [
-                "token" => $token
+                "token" => $token,
+                "tipo" => $tipo
             ];
 
             echo json_encode($response);

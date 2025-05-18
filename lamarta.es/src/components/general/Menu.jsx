@@ -52,7 +52,7 @@ function Menu() {
           </Link>
         </li>
         <li>
-          <Link  className="desplegable--opciones--link" onClick={cambiarMenu} to="/club">
+          <Link  className="desplegable--opciones--link" onClick={cambiarMenu} to="/club/login">
             Lamarta Club
           </Link>
         </li>

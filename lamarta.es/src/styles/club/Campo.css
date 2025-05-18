@@ -1,0 +1,34 @@
+
+/*=============================================
+=            Campo            =
+=============================================*/
+
+.campo--label {
+    color: var(--white-color);
+    font-size: 2rem;
+}
+
+.campo--input {
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    width: 70vw;
+    border: none;
+}
+.campo--input:focus {
+    outline: .3rem solid var(--yellow-color);
+}
+
+@media screen and (min-width: 960px) {
+    .campo--input {
+        width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .campo--input {
+        width: 40vw;
+    }
+}
+
+/*=====  End of Campo  ======*/
+

@@ -8,6 +8,7 @@ class Login extends ModelObject{
     public string $usuario = '';
     public string $contrasenia;
     public int $id_tipo = 0;
+    public string $tipo = '';
     public string $token;
 
     public static function fromJson($json): ModelObject {
@@ -121,6 +122,26 @@ class Login extends ModelObject{
 
         return $this;
     }
+
+     /**
+     * Get the value of tipo
+     */ 
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Set the value of tipo
+     *
+     * @return  self
+     */ 
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
+    }
 }
 
 
@@ -128,7 +149,18 @@ class LoginModel extends Model
 {
 
     public function singIn($login): Login | null{
-        $sql = "SELECT id_usuario, correo, contrasenia, id_tipo FROM usuario WHERE correo=?";
+       $sql = "
+                SELECT 
+                    usuario.id_usuario, 
+                    usuario.correo, 
+                    usuario.contrasenia, 
+                    usuario.id_tipo, 
+                    tipo.nombre AS tipo
+                FROM usuario
+                JOIN tipo ON usuario.id_tipo = tipo.id_tipo
+                WHERE usuario.correo = ?
+            ";
+
         $pdo = self::getConnection();
         $resultado = null;
         try {
@@ -136,15 +168,15 @@ class LoginModel extends Model
             $stmt->bindValue(1, $login->getUsuario(), PDO::PARAM_STR);
             $stmt->execute();
             if($u = $stmt->fetch()){
-                $hola = password_verify($login->getContrasenia(), $u["contrasenia"]);
-
-               $hash = password_hash("cliente", PASSWORD_DEFAULT);
+                
+                $debugContrasenia = password_verify($login->getContrasenia(), $u["contrasenia"]);
+                $hash = password_hash("cliente", PASSWORD_DEFAULT);
 
                 if (password_verify($login->getContrasenia(), $u["contrasenia"])) {
                     $resultado = new Login();
                     $resultado->setId_usuario($u["id_usuario"]);
                     $resultado->setUsuario($u["correo"]);
-                    $resultado->setId_tipo($u["id_tipo"]);
+                    $resultado->setTipo($u["tipo"]);
                 }
             }
 

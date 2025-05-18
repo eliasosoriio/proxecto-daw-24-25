@@ -1,4 +1,8 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, X-API-KEY");
+
 include_once("globals.php");
 include_once("Recursos.php");
 include_once("Constantes.php");
@@ -16,6 +20,12 @@ $uri = explode("/", $uri);
 $elemento = $uri[3];
 $id = $uri[4] ?? null;
 
+// Si es una preflight request, solo responde 200 y termina
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 try {
     if($elemento != "login") {
         $controlador = Controller::getController($elemento);
@@ -29,7 +39,7 @@ if (count($uri) < 3) {
     throw new Exception("URI incompleta");
 }
 
-if ($elemento == "login" && ($_SERVER['REQUEST_METHOD'] != 'POST' && $_SERVER['REQUEST_METHOD'] != 'GET')) {
+if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
     throw new Exception("Método no permitido.");
 }
 

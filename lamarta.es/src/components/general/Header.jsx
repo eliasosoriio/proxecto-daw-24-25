@@ -27,7 +27,7 @@ function Header() {
                     <Link className="link" to="/conocenos">Conócenos</Link>
                     <Link className="link" to="/carta">Carta</Link>
                     <Link className="link" to="/contacto">Contacto</Link>
-                    <Link  className="link" to="/club">Lamarta Club</Link>
+                    <Link  className="link" to="/club/login">Lamarta Club</Link>
                     <a  className="link"
                         href="https://r.qamarero.com/lamarta?mode=PICKUP"
                         target="_blank"
