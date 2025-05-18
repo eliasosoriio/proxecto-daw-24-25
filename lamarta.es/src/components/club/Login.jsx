@@ -1,9 +1,11 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import "../../styles/club/Login.css";
 import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
 
 const urlLogin = "http://localhost/producto_fideplus_lamarta/route.php/login";
+const urlToken = "http://localhost/producto_fideplus_lamarta/route.php/token";
+
 
 async function ajax(options) {
     const {url, method, data} = options;
@@ -42,12 +44,9 @@ async function singIn($usuario, $contrasenia) {
               contrasenia: $contrasenia.value
             }]
         });
-        console.log(json);
         if (json.token) {
-            console.log(json.token);
             sessionStorage.setItem('token', json.token);
             sessionStorage.setItem('tipo', json.tipo);
-            console.log(sessionStorage.getItem('token'));
 
             if (json.tipo === 'admin') {
                 window.location.href = '/club/panel/admin';
@@ -56,14 +55,30 @@ async function singIn($usuario, $contrasenia) {
                 window.location.href = '/club/panel/afiliado';
             }
         } else {
-            console.log('Usuario o contraseña incorrectos');
+            alert('Usuario o contraseña incorrectos');
         }
     } catch (error) {
         console.error(error);
     }
 }
 
-async function login(ev) {
+async function comprobarValidez($token) {
+    try {
+        const json = await ajax({
+            url: urlToken,
+            method: "POST",
+            data: [{ 
+              token: $token 
+            }]
+        });
+        return json == 1 || false;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+async function hacerLogin(ev) {
   ev.preventDefault();
   singIn(correo, password);
 }
@@ -73,11 +88,28 @@ function Login() {
   const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    const tipo = sessionStorage.getItem('tipo');
+
+    if (token && tipo) {
+      comprobarValidez(token).then((esValido) => {
+        if (esValido) {
+          if (tipo === 'admin') {
+            window.location.href = '/club/panel/admin';
+          } else {
+            window.location.href = '/club/panel/afiliado';
+          }
+        }
+      });
+    }
+  }, []);
+
   return (
     <>
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='login d-flex-col'>
-          <form className='login--form d-flex-col' onSubmit={login}>
+          <form className='login--form d-flex-col' onSubmit={hacerLogin}>
 
               <Campo 
                 id="correo" 

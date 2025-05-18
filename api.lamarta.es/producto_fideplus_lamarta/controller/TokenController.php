@@ -2,7 +2,7 @@
 include_once("Controller.php");
 include_once(PATH_MODEL."TokenModel.php");
 
-class TokenController {
+class TokenController extends Controller{
     
     public static function obtenerPermiso($token, $metodoHTTP, $controlador): bool {
         $permiso = false;
@@ -45,4 +45,17 @@ class TokenController {
 
         return $tokenCadena;
     }
+
+     public static function comprobarValidez($object) {
+        $data = json_decode($object, true);
+        $token = $data[0]['token'];
+        $model = new TokenModel();
+        echo $model->comprobarValidez($token);
+     }
+
+    public function get($id){}
+    public function getAll(){}
+    public function delete($id){}
+    public function update($id, $object){}
+    public function insert($object){}
 }

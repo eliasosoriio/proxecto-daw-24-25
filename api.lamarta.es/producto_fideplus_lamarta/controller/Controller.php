@@ -1,6 +1,7 @@
 <?php
 include_once("TransaccionController.php");
 include_once("RecompensaController.php");
+include_once("TokenController.php");
 
 
 /**
@@ -8,6 +9,7 @@ include_once("RecompensaController.php");
  */
 define("CONTROLLER_TRANSACCION", "transaccion");
 define("CONTROLLER_RECOMPENSA", "recompensa");
+define("CONTROLLER_TOKEN", "token");
 
 class ControllerException extends Exception{
     function __construct()
@@ -36,6 +38,9 @@ abstract class Controller
                 break;
             case CONTROLLER_RECOMPENSA:
                 $controller = new RecompensaController();
+                break;
+            case CONTROLLER_TOKEN:
+                $controller = new TokenController();
                 break;
             default:
                 throw new ControllerException();

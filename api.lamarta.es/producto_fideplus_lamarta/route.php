@@ -8,7 +8,7 @@ include_once("Recursos.php");
 include_once("Constantes.php");
 include_once("controller/Controller.php");
 include_once("controller/LoginController.php");
-//include_once("controller/AuthController.php");
+include_once("controller/TokenController.php");
 
 /**
  * Este fichero captura todas la peticiones a nuestra aplicación.
@@ -43,11 +43,10 @@ if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
     throw new Exception("Método no permitido.");
 }
 
-if ($elemento !== 'login') {
+if ($elemento !== 'login' && $elemento !== 'token') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
         Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");
-        //header("Location: /lamartaclub/login");
         die();
     }
 }
@@ -57,6 +56,8 @@ switch ($metodo) {
         $json = file_get_contents('php://input');
         if($elemento == "login") {
             LoginController::singIn($json);
+        } elseif($elemento == "token") {
+            TokenController::comprobarValidez($json);
         } else {
             $controlador->insert($json);
         }
