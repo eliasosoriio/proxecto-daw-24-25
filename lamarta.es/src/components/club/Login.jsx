@@ -49,10 +49,10 @@ async function singIn($usuario, $contrasenia) {
             sessionStorage.setItem('tipo', json.tipo);
 
             if (json.tipo === 'admin') {
-                window.location.href = '/club/panel/admin';
+                window.location.href = '/club/admin';
                 console.log(sessionStorage.getItem('token'));
             } else {
-                window.location.href = '/club/panel/afiliado';
+                window.location.href = '/club/afiliado';
             }
         } else {
             alert('Usuario o contraseña incorrectos');
@@ -96,9 +96,9 @@ function Login() {
       comprobarValidez(token).then((esValido) => {
         if (esValido) {
           if (tipo === 'admin') {
-            window.location.href = '/club/panel/admin';
+            window.location.href = '/club/admin';
           } else {
-            window.location.href = '/club/panel/afiliado';
+            window.location.href = '/club/afiliado';
           }
         }
       });

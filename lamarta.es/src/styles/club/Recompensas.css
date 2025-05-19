@@ -1,0 +1,42 @@
+
+/*=============================================
+=            Recompensas            =
+=============================================*/
+
+.recompensas {
+    border-radius: 2rem;
+    outline: .2rem solid var(--dark-color);
+    color: var(--dark-color);
+    height: 100%;
+    width: 90vw;
+    margin: 0 auto;
+    justify-content: start;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.recompensas--titulo {
+    text-align: start;
+    text-transform: uppercase;
+}
+
+.recompensas--desc {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 960px) {
+    .recompensas {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .recompensas {
+        width: 20vw;
+        height: 70vh;
+    }
+}
+
+/*=====  End of Recompensas  ======*/
+

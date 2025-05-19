@@ -28,13 +28,13 @@ function App() {
                <Route path="/contacto" element={<Contacto />}></Route>
                <Route path="/club/login" element={<Login />}></Route>
                
-               <Route path="/club/panel/admin" element={
+               <Route path="/club/admin" element={
                   <PrivateRoute rolPermitido="admin">
                      <PanelAdmin />
                   </PrivateRoute>
                } />
 
-               <Route path="/club/panel/afiliado" element={
+               <Route path="/club/afiliado" element={
                   <PrivateRoute rolPermitido="usuario">
                      <Carta />
                   </PrivateRoute>
