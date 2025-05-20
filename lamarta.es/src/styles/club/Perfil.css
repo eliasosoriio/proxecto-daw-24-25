@@ -1,0 +1,19 @@
+
+/*=============================================
+=            Perfil            =
+=============================================*/
+
+.perfil {
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    background-color: var(--dark-color);
+}
+
+.perfil--form {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/*=====  End of Perfil  ======*/
+

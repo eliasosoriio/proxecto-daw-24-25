@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 function Acciones() {
   return (
     <section className='acciones d-flex-col'>
-      <Link to="/" className='acciones--link' >
+      <Link to="/club/usuario" className='acciones--link'>
         <p className="acciones--opcion">Buscar afiliado</p>
       </Link>
-      <Link to="/" className='acciones--link' >
+      <Link to="/club/usuario" className='acciones--link' >
         <p className="acciones--opcion">Añadir puntos</p>
       </Link>
-      <Link to="/" className='acciones--link' >
+      <Link to="/club/usuario" className='acciones--link' >
         <p className="acciones--opcion">Canjear recompensa</p>
       </Link>
       <Link to="/" className='acciones--link' >

@@ -13,6 +13,10 @@ import Login from "./components/club/Login";
 import PrivateRoute from "./components/general/PrivateRoute";
 import PanelAdmin from "./components/club/PanelAdmin";
 import PanelAfiliado from "./components/club/PanelAfiliado";
+import BuscarUsuario from "./components/club/BuscarUsuario";
+import AnadirPuntos from "./components/club/AnadirPuntos";
+import Perfil from "./components/club/Perfil";
+import CanjearRecompensa from "./components/club/CanjearRecompensa";
 
 function App() {
    return (
@@ -38,6 +42,26 @@ function App() {
                <Route path="/club/afiliado" element={
                   <PrivateRoute rolPermitido="afiliado">
                      <PanelAfiliado />
+                  </PrivateRoute>
+               } />
+               <Route path="/club/usuario" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <BuscarUsuario />
+                  </PrivateRoute>
+               } />
+               <Route path="/usuario/perfil" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <Perfil />
+                  </PrivateRoute>
+               } />
+               <Route path="/usuario/anadir" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <AnadirPuntos />
+                  </PrivateRoute>
+               } />
+               <Route path="/usuario/canjear" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <CanjearRecompensa />
                   </PrivateRoute>
                } />
                <Route path="/*" element={<NotFound />}></Route>

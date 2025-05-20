@@ -1,0 +1,19 @@
+
+/*=============================================
+=            CanjearRecompensa            =
+=============================================*/
+
+.canjear--recompensa {
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    background-color: var(--dark-color);
+}
+
+.canjear--recompensa--form {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/*=====  End of CanjearRecompensa  ======*/
+
