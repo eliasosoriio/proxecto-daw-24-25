@@ -6,19 +6,22 @@ function Acciones() {
   return (
     <section className='acciones d-flex-col'>
       <Link to="/" className='acciones--link' >
-        <a href="" className="acciones--opcion">Buscar afiliado</a>
+        <p className="acciones--opcion">Buscar afiliado</p>
       </Link>
       <Link to="/" className='acciones--link' >
-        <a href="" className="acciones--opcion">Canjear recompensa</a>
+        <p className="acciones--opcion">Añadir puntos</p>
       </Link>
       <Link to="/" className='acciones--link' >
-        <a href="" className="acciones--opcion">Añadir recompensa</a>
+        <p className="acciones--opcion">Canjear recompensa</p>
       </Link>
       <Link to="/" className='acciones--link' >
-        <a href="" className="acciones--opcion">Editar recompensa</a>
+        <p className="acciones--opcion">Añadir recompensa</p>
       </Link>
       <Link to="/" className='acciones--link' >
-        <a href="" className="acciones--opcion">Eliminar recompensa</a>
+        <p className="acciones--opcion">Editar recompensa</p>
+      </Link>
+      <Link to="/" className='acciones--link' >
+        <p className="acciones--opcion">Eliminar recompensa</p>
       </Link>
     </section>
   )

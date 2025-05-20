@@ -66,7 +66,7 @@ function PrivateRoute({ children, rolPermitido }) {
     }, [token]);
 
     if (valido === null) {
-        return <div>Cargando...</div>;
+        return <h1 className="cargando d-flex-col">Cargando...</h1>;
     }
 
     if (!token || !valido) {

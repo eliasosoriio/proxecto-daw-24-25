@@ -3,6 +3,12 @@
 =            App            =
 =============================================*/
 
+.cargando {
+    height: 75vh;
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+}
 
 /*=====  End of App  ======*/
 

@@ -20,8 +20,13 @@
     margin: 2rem 0;
 }
 .saludo img:last-of-type {
-        margin: 2rem 0;
+    margin: 2rem 0;
     width: 10rem;
+}
+
+.saludo button {
+    margin-bottom: 2rem;
+    width: 50%;
 }
 
 @media screen and (min-width: 960px) {
@@ -34,6 +39,10 @@
     .saludo {
         width: 20vw;
         height: 70vh;
+    }
+    .saludo button {
+        margin-bottom: 2rem;
+        width: 80%;
     }
 }
 

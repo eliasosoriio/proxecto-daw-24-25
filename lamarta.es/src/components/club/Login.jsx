@@ -3,6 +3,7 @@ import "../../styles/club/Login.css";
 import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
 import BotonSubmit from './BotonSubmit';
+import ScrollArriba from '../general/ScrollArriba'
 
 const urlLogin = "http://localhost/producto_fideplus_lamarta/route.php/login";
 const urlToken = "http://localhost/producto_fideplus_lamarta/route.php/token";
@@ -108,6 +109,7 @@ function Login() {
 
   return (
     <>
+      <ScrollArriba />
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='login d-flex-col'>
           <form className='login--form d-flex-col' onSubmit={hacerLogin}>
