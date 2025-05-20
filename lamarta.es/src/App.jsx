@@ -36,7 +36,7 @@ function App() {
                } />
 
                <Route path="/club/afiliado" element={
-                  <PrivateRoute rolPermitido="usuario">
+                  <PrivateRoute rolPermitido="afiliado">
                      <PanelAfiliado />
                   </PrivateRoute>
                } />

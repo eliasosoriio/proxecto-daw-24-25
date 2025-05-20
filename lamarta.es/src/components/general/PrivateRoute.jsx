@@ -74,9 +74,11 @@ function PrivateRoute({ children, rolPermitido }) {
     }
 
     if (rolPermitido && tipo !== rolPermitido) {
-        return tipo === 'admin'
-            ? <Navigate to="/club/panel/admin" replace />
-            : <Navigate to="/club/panel/afiliado" replace />;
+        if(tipo=== "admin") {
+            return <Navigate to="/club/admin" replace />;
+        } else {
+            return <Navigate to="/club/afiliado" replace />;
+        }
     }
 
     return children;
