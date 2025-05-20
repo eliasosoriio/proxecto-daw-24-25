@@ -1,6 +1,6 @@
 
 /*=============================================
-=            PanelAdmin            =
+=            Panel            =
 =============================================*/
 
 .paneles {
@@ -13,9 +13,9 @@
         flex-direction: row;
     }
     .panel {
-        height: 70vh;
+        min-height: 70vh;
     }
 }
 
-/*=====  End of PanelAdmin  ======*/
+/*=====  End of Panel  ======*/
 

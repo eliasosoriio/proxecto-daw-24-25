@@ -1,0 +1,37 @@
+
+/*=============================================
+=            BotonSubmit            =
+=============================================*/
+
+.button--submit {
+    background-color: var(--yellow-color);
+    font-family: var(--first-font);
+    color: var(--dark-color);
+    border-radius: 2rem;
+    border: none;
+    padding: .5rem 3rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    width: 70vw;
+    transition: .5s;
+}
+.button--submit:hover {
+    color: var(--orange-color);
+    scale: 1.03;
+}
+
+@media screen and (min-width: 960px) {
+    .button--submit {
+        width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .button--submit {
+        width: 40vw;
+    }
+}
+
+/*=====  End of BotonSubmit  ======*/
+

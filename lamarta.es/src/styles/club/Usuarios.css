@@ -1,9 +1,9 @@
 
 /*=============================================
-=            Recompensas            =
+=            Usuarios            =
 =============================================*/
 
-.recompensas {
+.usuarios {
     border-radius: 2rem;
     outline: .2rem solid var(--dark-color);
     color: var(--dark-color);
@@ -15,28 +15,28 @@
     gap: 1rem;
 }
 
-.recompensas--titulo {
+.usuarios--titulo {
     text-align: start;
     text-transform: uppercase;
 }
 
-.recompensas--desc {
+.usuarios--desc {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 960px) {
-    .recompensas {
+    .usuarios {
         width: 40vw;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .recompensas {
+    .usuarios {
         width: 20vw;
-        min-height: 70vh;
+        height: min-70vh;
     }
 }
 
-/*=====  End of Recompensas  ======*/
+/*=====  End of Usuarios  ======*/
 

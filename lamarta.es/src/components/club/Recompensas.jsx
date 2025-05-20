@@ -1,19 +1,19 @@
 import React from 'react'
 import "../../styles/club/Recompensas.css";
-import PanelCampo from './CampoPanel';
+import CampoPanel from './CampoPanel';
 
 function Recompensas() {
   return (
     <section className='recompensas d-flex-col'>
         <div>
             <h2 className='recompensas--titulo'>Recompensas</h2>
-            <p className='recompensas--desc'>ACUMULA PUNTOS</p>
+            <p className='recompensas--desc'>CANJEA TU FAVORITA</p>
         </div>
             
-        <PanelCampo nombre={"Nombre"} descripcion={"Descripción"} precio={"3500"} />
-        <PanelCampo nombre={"Nombre"} descripcion={"Descripción"} precio={"3500"} />
-        <PanelCampo nombre={"Nombre"} descripcion={"Descripción"} precio={"3500"} />
-        <PanelCampo nombre={"Nombre"} descripcion={"Descripción"} precio={"3500"} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
     </section>
   )
 }

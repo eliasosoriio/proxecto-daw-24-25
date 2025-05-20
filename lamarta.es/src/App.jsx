@@ -12,6 +12,7 @@ import NotFound from "./components/general/NotFound";
 import Login from "./components/club/Login";
 import PrivateRoute from "./components/general/PrivateRoute";
 import PanelAdmin from "./components/club/PanelAdmin";
+import PanelAfiliado from "./components/club/PanelAfiliado";
 
 function App() {
    return (
@@ -36,7 +37,7 @@ function App() {
 
                <Route path="/club/afiliado" element={
                   <PrivateRoute rolPermitido="usuario">
-                     <Carta />
+                     <PanelAfiliado />
                   </PrivateRoute>
                } />
                <Route path="/*" element={<NotFound />}></Route>

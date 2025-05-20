@@ -3,9 +3,9 @@ import "../../styles/club/Panel.css";
 import Saludo from './Saludo'
 import Recompensas from './Recompensas'
 import Usuarios from './Usuarios'
-import Acciones from './Acciones';
+import Puntos from './Puntos';
 
-function PanelAdmin() {
+function PanelAfiliado() {
   return (
     <section className="paneles d-flex-col">
       <section className="panel d-flex-col">
@@ -20,10 +20,10 @@ function PanelAdmin() {
       </section>
 
       <section className="panel d-flex-col">
-        <Acciones /> 
+        <Puntos numero={"0001"} puntos={"3469"} /> 
       </section>
     </section>
   )
 }
 
-export default PanelAdmin
+export default PanelAfiliado

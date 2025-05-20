@@ -2,6 +2,7 @@ import {React, useState, useEffect} from 'react'
 import "../../styles/club/Login.css";
 import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
+import BotonSubmit from './BotonSubmit';
 
 const urlLogin = "http://localhost/producto_fideplus_lamarta/route.php/login";
 const urlToken = "http://localhost/producto_fideplus_lamarta/route.php/token";
@@ -126,7 +127,7 @@ function Login() {
                 onChange={(ev) => setPassword(ev.target.value)}
               />
 
-              <button id='loginBtn' className='login--button' type="submit">Iniciar Sesión</button>
+              <BotonSubmit mensaje={"Iniciar Sesión"} />
           </form>
       </section>
     </>

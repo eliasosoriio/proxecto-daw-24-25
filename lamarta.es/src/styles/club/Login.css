@@ -15,29 +15,5 @@
     gap: 1rem;
 }
 
-.login--button {
-    background-color: var(--yellow-color);
-    font-family: var(--first-font);
-    color: var(--dark-color);
-    border-radius: 2rem;
-    padding: .5rem 3rem;
-    font-size: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-    width: 70vw;
-}
-
-@media screen and (min-width: 960px) {
-    .login--button {
-        width: 60vw;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .login--button{
-        width: 40vw;
-    }
-}
-
 /*=====  End of Login  ======*/
 

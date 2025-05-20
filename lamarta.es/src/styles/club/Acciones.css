@@ -1,0 +1,50 @@
+
+/*=============================================
+=            Acciones            =
+=============================================*/
+
+.acciones {
+    background-color: var(--dark-color);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 90vw;
+    height: 100%;
+}
+
+.acciones--link {
+    width: 100%;
+}
+
+.acciones--opcion {
+    display: inline-flex;
+    width: 100%;
+    border-radius: 2rem;
+    background-color: var(--yellow-color);
+    padding: 1rem 2rem;
+    transition: .5s;
+}
+.acciones--opcion:hover {
+    color: var(--orange-color);
+    scale: 1.03;
+}
+
+@media screen and (min-width: 960px) {
+    .acciones {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .acciones {
+        width: 20vw;
+        height: 70vh;
+    }
+}
+
+/*=====  End of Acciones  ======*/
+
