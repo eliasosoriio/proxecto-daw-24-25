@@ -8,21 +8,15 @@ function Acciones() {
       <Link to="/club/usuario" className='acciones--link'>
         <p className="acciones--opcion">Buscar afiliado</p>
       </Link>
-      <Link to="/club/usuario" className='acciones--link' >
-        <p className="acciones--opcion">Añadir puntos</p>
-      </Link>
-      <Link to="/club/usuario" className='acciones--link' >
-        <p className="acciones--opcion">Canjear recompensa</p>
-      </Link>
-      <Link to="/" className='acciones--link' >
+      <Link to="/recompensa/anadir" className='acciones--link' >
         <p className="acciones--opcion">Añadir recompensa</p>
       </Link>
-      <Link to="/" className='acciones--link' >
+      {/* <Link to="/" className='acciones--link' >
         <p className="acciones--opcion">Editar recompensa</p>
       </Link>
       <Link to="/" className='acciones--link' >
         <p className="acciones--opcion">Eliminar recompensa</p>
-      </Link>
+      </Link> */}
     </section>
   )
 }

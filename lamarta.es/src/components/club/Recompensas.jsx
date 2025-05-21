@@ -10,10 +10,10 @@ function Recompensas() {
             <p className='recompensas--desc'>CANJEA TU FAVORITA</p>
         </div>
             
-        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} puedeBorrar={true} puedeEditar={true} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} puedeBorrar={true} puedeEditar={true} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} puedeBorrar={true} puedeEditar={true} />
+        <CampoPanel nombre={"Nombre"} descripcion={"Descripción"} puntos={"3500"} puedeBorrar={true} puedeEditar={true} />
     </section>
   )
 }

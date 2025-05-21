@@ -7,7 +7,7 @@
     border-radius: 2rem;
     outline: .2rem solid var(--dark-color);
     background-color: var(--white-color);
-    justify-content: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
     color: var(--dark-color);
 }
@@ -19,6 +19,21 @@
 .campo--panel p {
     font-family: var(--second-font);
     font-size: 1.5rem;
+}
+
+.campo--panel--iconos {
+    font-size: 2rem;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.campo--panel--iconos i {
+    transition: .5s;
+}
+.campo--panel--iconos i:hover {
+    scale: 1.08;
+    color: var(--yellow-color);
 }
 
 /*=====  End of CampoPanel  ======*/

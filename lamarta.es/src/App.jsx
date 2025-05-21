@@ -17,6 +17,7 @@ import BuscarUsuario from "./components/club/BuscarUsuario";
 import AnadirPuntos from "./components/club/AnadirPuntos";
 import Perfil from "./components/club/Perfil";
 import CanjearRecompensa from "./components/club/CanjearRecompensa";
+import AnadirRecompensa from "./components/club/AnadirRecompensa";
 
 function App() {
    return (
@@ -62,6 +63,11 @@ function App() {
                <Route path="/usuario/canjear" element={
                   <PrivateRoute rolPermitido="admin">
                      <CanjearRecompensa />
+                  </PrivateRoute>
+               } />
+               <Route path="/recompensa/anadir" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <AnadirRecompensa />
                   </PrivateRoute>
                } />
                <Route path="/*" element={<NotFound />}></Route>
