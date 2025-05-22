@@ -11,7 +11,7 @@ function PanelAdmin() {
     <section className="paneles d-flex-col">
       <ScrollArriba />
       <section className="panel d-flex-col">
-        <Saludo nombre={"Manuel Osorio"}/> 
+        <Saludo nombre={"Jose Cuñao"}/> 
       </section>
 
       <section className="panel d-flex-col">

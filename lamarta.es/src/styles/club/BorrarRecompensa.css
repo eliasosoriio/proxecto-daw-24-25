@@ -1,0 +1,27 @@
+
+/*=============================================
+=            BorrarRecompensa            =
+=============================================*/
+
+.borrar--recompensa {
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    background-color: var(--dark-color);
+}
+
+.borrar--recompensa--titulo {
+    color: var(--white-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.borrar--recomepensa--form {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/*=====  End of BorrarRecompensa  ======*/
+

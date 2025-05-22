@@ -1,14 +1,14 @@
 import {React, useState, useEffect} from 'react'
-import "../../styles/club/AnadirRecompensa.css";
+import "../../styles/club/EditarRecompensa.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 
-function AnadirRecompensa() {
+function EditarRecompensa() {
   return (
-    <section className='anadir--recompensa d-flex-col'>
+    <section className='editar--recompensa d-flex-col'>
     <ScrollArriba />
-        <form className='anadir--recompensa--form d-flex-col'>
+        <form className='editar--recompensa--form d-flex-col'>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 
@@ -25,10 +25,10 @@ function AnadirRecompensa() {
               placeholder={"1200"} 
               min={0}
             />
-            <BotonSubmit mensaje={"Añadir Recompensa"} />
+            <BotonSubmit mensaje={"Editar Recompensa"} />
         </form>
     </section>
   )
 }
 
-export default AnadirRecompensa
+export default EditarRecompensa

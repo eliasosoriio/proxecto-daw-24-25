@@ -1,0 +1,19 @@
+
+/*=============================================
+=            EditarRecompensa            =
+=============================================*/
+
+.editar--recompensa {
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    background-color: var(--dark-color);
+}
+
+.editar--recompensa--form {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/*=====  End of EditarRecompensa  ======*/
+

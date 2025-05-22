@@ -18,6 +18,8 @@ import AnadirPuntos from "./components/club/AnadirPuntos";
 import Perfil from "./components/club/Perfil";
 import CanjearRecompensa from "./components/club/CanjearRecompensa";
 import AnadirRecompensa from "./components/club/AnadirRecompensa";
+import EditarRecompensa from "./components/club/EditarRecompensa";
+import BorrarRecompensa from "./components/club/BorrarRecompensa";
 
 function App() {
    return (
@@ -68,6 +70,16 @@ function App() {
                <Route path="/recompensa/anadir" element={
                   <PrivateRoute rolPermitido="admin">
                      <AnadirRecompensa />
+                  </PrivateRoute>
+               } />
+               <Route path="/recompensa/editar" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <EditarRecompensa />
+                  </PrivateRoute>
+               } />
+               <Route path="/recompensa/borrar" element={
+                  <PrivateRoute rolPermitido="admin">
+                     <BorrarRecompensa />
                   </PrivateRoute>
                } />
                <Route path="/*" element={<NotFound />}></Route>
