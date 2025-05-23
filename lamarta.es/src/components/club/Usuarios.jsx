@@ -51,7 +51,7 @@ function Usuarios() {
     <section className='usuarios d-flex-col'>
         <div>
             <h2 className='usuarios--titulo'>Usuarios</h2>
-            <p className='usuarios--desc'>ACUMULA PUNTOS</p>
+            <p className='usuarios--desc'>LOS 5 CON MÁS PUNTOS</p>
         </div>
         
         <section className="usuarios--campo d-flex-col">

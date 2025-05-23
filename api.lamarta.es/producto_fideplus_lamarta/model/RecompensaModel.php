@@ -9,22 +9,24 @@ class Recompensa extends ModelObject{
     public string $descripcion;
     public int $precio;
 
-    function __construct($id_recompensa, $nombre, $descripcion, $precio)
-    {
-        $this->id_recompensa = $id_recompensa;
-        $this->nombre = $nombre;
-        $this->descripcion = $descripcion;
-        $this->precio = $precio;
-    }
-
     public static function fromJson($json): ModelObject {
         $data = json_decode($json, true)[0];
-        return new Recompensa(
-            $data['id_recompensa'], 
-            $data['nombre'],
-            $data['descripcion'],
-            $data['precio']
-        );
+        $recompensa = new Recompensa();
+
+        if(isset($data['id_recompensa'])) {
+            $recompensa->setId_recompensa($data['id_recompensa']);
+        }
+        if(isset($data['nombre'])) {
+            $recompensa->setNombre($data['nombre']);
+        }
+        if(isset($data['descripcion'])) {
+            $recompensa->setDescripcion($data['descripcion']);
+        }
+        if(isset($data['precio'])) {
+            $recompensa->setPrecio($data['precio']);
+        }
+
+        return $recompensa;
     }
 
     public function toJson():String{
@@ -118,19 +120,20 @@ class RecompensaModel extends Model
 
     public function getAll()
     {
-        $sql = "SELECT * FROM recompensa";
+        $sql = "SELECT * FROM recompensa ORDER BY precio ASC";
         $pdo = self::getConnection();
         $resultado = [];
         try {
             $stmt = $pdo->query($sql);
             $resultado = array();
             foreach($stmt as $r){
-                $recompensa =  new Recompensa(
-      $r['id_recompensa'], 
-             $r['nombre'],
-        $r['descripcion'],
-             $r['precio']
-                );
+                $recompensa = new Recompensa();
+
+                $recompensa->setId_recompensa($r['id_recompensa']);
+                $recompensa->setNombre($r['nombre']);
+                $recompensa->setDescripcion($r['descripcion']);
+                $recompensa->setPrecio($r['precio']);
+
                 $resultado[] = $recompensa;
             }
         } catch (PDOException $th) {
@@ -154,12 +157,14 @@ class RecompensaModel extends Model
             $stmt->bindValue(1, $id_recompensa, PDO::PARAM_INT);
             $stmt->execute();
             if($r = $stmt->fetch()){
-                $resultado =  new Recompensa(
-      $r['id_recompensa'], 
-             $r['nombre'],
-        $r['descripcion'],
-             $r['precio']
-                );
+                $recompensa = new Recompensa();
+
+                $recompensa->setId_recompensa($r['id_recompensa']);
+                $recompensa->setNombre($r['nombre']);
+                $recompensa->setDescripcion($r['descripcion']);
+                $recompensa->setPrecio($r['precio']);
+
+                $resultado = $recompensa;
             }
             
         } catch (Throwable $th) {
@@ -175,13 +180,12 @@ class RecompensaModel extends Model
 
     public function insert($recompensa)
     {
-        $sql = "INSERT INTO recompensa (id_recompensa, nombre, descripcion, precio) VALUES (:id_recompensa, :nombre, :descripcion, :precio)";
+        $sql = "INSERT INTO recompensa (nombre, descripcion, precio) VALUES (:nombre, :descripcion, :precio)";
 
         $pdo = self::getConnection();
         $resultado = false;
         try {
             $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(":id_recompensa", $recompensa->getId_recompensa(), PDO::PARAM_INT);
             $stmt->bindValue(":nombre", $recompensa->getNombre(), PDO::PARAM_STR);
             $stmt->bindValue(":descripcion", $recompensa->getDescripcion(), PDO::PARAM_STR);
             $stmt->bindValue(":precio", $recompensa->getPrecio(), PDO::PARAM_INT);

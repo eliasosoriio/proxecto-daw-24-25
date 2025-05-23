@@ -187,7 +187,7 @@ class UsuarioModel extends Model
 
     public function getAll()
     {
-        $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE id_tipo = 2";
+        $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE id_tipo = 2 ORDER BY a.puntos DESC LIMIT 5";
         $pdo = self::getConnection();
         $resultado = [];
         try {
