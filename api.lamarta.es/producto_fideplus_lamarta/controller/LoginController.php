@@ -23,7 +23,8 @@ class LoginController {
             
             $response = [
                 "token" => $token,
-                "tipo" => $tipo
+                "tipo" => $tipo,
+                "id" => $id_usuario
             ];
 
             echo json_encode($response);

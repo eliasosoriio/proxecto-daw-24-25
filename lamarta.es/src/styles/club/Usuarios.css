@@ -25,6 +25,10 @@
     margin-bottom: 1rem;
 }
 
+.usuarios--campo {
+    gap: 1rem;
+}
+
 @media screen and (min-width: 960px) {
     .usuarios {
         width: 40vw;

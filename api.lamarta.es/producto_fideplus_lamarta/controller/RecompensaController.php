@@ -28,34 +28,22 @@ class RecompensaController extends Controller{
         $model = new RecompensaModel();
         $recompensa = Recompensa::fromJson($object);
         if($model->insert($recompensa)){
-            echo "recompensa insertada.";
+            echo "Recompensa insertada.";
         }else{
             Controller::sendNotFound("No se ha podido insertar");
         }
     }
     
     public function delete($id) {
-
-        if(count($id)!=1){
-            Controller::sendNotFound("Las recompensas se identifican por un solo id.");
-            die();
-        }
-
         $model = new RecompensaModel();
-        if($model->delete($id[0])){
-            echo "recompensa eliminada.";
+        if($model->delete($id)){
+            echo "Recompensa eliminada.";
         }else{
             Controller::sendNotFound("No se ha podido eliminar la recompensa.");
         }
     }
 
     public function update($id, $object){
-
-        if(count($id)!=1){
-            Controller::sendNotFound("Las recompensas se identifican por un solo id.");
-            die();
-        }
-
         $model = new RecompensaModel();
         $recompensa = recompensa::fromJson($object);
 

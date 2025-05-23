@@ -30,13 +30,14 @@ async function ajax(options) {
     }
 }
 
-async function comprobarValidez($token) {
+async function comprobarValidez(id_usuario, token) {
     try {
         const json = await ajax({
             url: urlToken,
             method: "POST",
             data: [{ 
-              token: $token 
+              token: token,
+              id_usuario : id_usuario
             }]
         });
         return json == 1 || false;
@@ -49,6 +50,7 @@ async function comprobarValidez($token) {
 function PrivateRoute({ children, rolPermitido }) {
     const token = sessionStorage.getItem('token');
     const tipo = sessionStorage.getItem('tipo');
+    const id_usuario = sessionStorage.getItem('id_usuario');
 
     const [valido, setValido] = useState(null);
 
@@ -58,7 +60,7 @@ function PrivateRoute({ children, rolPermitido }) {
                 setValido(false);
                 return;
             }
-            const esValido = await comprobarValidez(token);
+            const esValido = await comprobarValidez(id_usuario, token);
             setValido(esValido);
         }
 

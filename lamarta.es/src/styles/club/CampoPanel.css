@@ -18,7 +18,12 @@
 
 .campo--panel p {
     font-family: var(--second-font);
+    font-weight: 700;
     font-size: 1.5rem;
+}
+.campo--panel p:last-of-type {
+    font-family: var(--first-font);
+    color: var(--orange-color);
 }
 
 .campo--panel--iconos {

@@ -36,23 +36,23 @@ async function ajax(options) {
     }
 }
 
-async function singIn($usuario, $contrasenia) {
+async function singIn(usuario, contrasenia) {
     try {
         const json = await ajax({
             url: urlLogin,
             method: "POST",
             data: [{
-              usuario: $usuario.value,
-              contrasenia: $contrasenia.value
+              usuario: usuario.value,
+              contrasenia: contrasenia.value
             }]
         });
         if (json.token) {
             sessionStorage.setItem('token', json.token);
             sessionStorage.setItem('tipo', json.tipo);
+            sessionStorage.setItem('id_usuario', json.id);
 
             if (json.tipo === 'admin') {
                 window.location.href = '/club/admin';
-                console.log(sessionStorage.getItem('token'));
             } else {
                 window.location.href = '/club/afiliado';
             }
@@ -64,13 +64,14 @@ async function singIn($usuario, $contrasenia) {
     }
 }
 
-async function comprobarValidez($token) {
+async function comprobarValidez(id_usuario, token) {
     try {
         const json = await ajax({
             url: urlToken,
             method: "POST",
             data: [{ 
-              token: $token 
+              token: token, 
+              id_usuario: id_usuario 
             }]
         });
         return json == 1 || false;
@@ -93,9 +94,10 @@ function Login() {
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     const tipo = sessionStorage.getItem('tipo');
+    const id_usuario = sessionStorage.getItem('id_usuario');
 
     if (token && tipo) {
-      comprobarValidez(token).then((esValido) => {
+      comprobarValidez(id_usuario, token).then((esValido) => {
         if (esValido) {
           if (tipo === 'admin') {
             window.location.href = '/club/admin';

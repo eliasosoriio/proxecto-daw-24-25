@@ -1,21 +1,71 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "../../styles/club/Usuarios.css";
 import CampoPanel from './CampoPanel';
 
-function Recompensas() {
+const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/usuario";
+
+async function ajax(options) {
+    const {url, method, data} = options;
+
+    try {
+        const resp = await fetch(url, {
+            method: method || "GET",
+            headers: {
+                "Content-type":"application/json; charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) throw new Error(`HTTP error! Status: ${resp.status}`);
+
+        const json = await resp.json();
+
+        return json;
+
+    } catch (error) {
+        return {
+            error: true,
+            status: error.status,
+            statusText: error.statusText || "Algo ha ocurrido"
+        };
+    }
+}
+
+function Usuarios() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    async function getUsuarios() {
+      try {
+        const json = await ajax({url:urlUsuarios});
+        setUsuarios(json);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    getUsuarios();
+  }, [])
+
   return (
     <section className='usuarios d-flex-col'>
         <div>
             <h2 className='usuarios--titulo'>Usuarios</h2>
             <p className='usuarios--desc'>ACUMULA PUNTOS</p>
         </div>
-            
-        <CampoPanel nombre={"Nombre"} descripcion={"Apellidos"} puntos={"4000"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Apellidos"} puntos={"2345"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Apellidos"} puntos={"7000"} />
-        <CampoPanel nombre={"Nombre"} descripcion={"Apellidos"} puntos={"3500"} />
+        
+        <section className="usuarios--campo d-flex-col">
+            {[...usuarios].map((u, i)  => (
+                <CampoPanel 
+                key={i}
+                nombre={u.nombre}
+                descripcion={u.apellidos}
+                puntos={u.puntos}
+                />
+            ))}
+        </section>
     </section>
   )
 }
 
-export default Recompensas
+export default Usuarios

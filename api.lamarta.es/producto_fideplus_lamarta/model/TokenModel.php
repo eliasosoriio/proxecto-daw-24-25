@@ -179,14 +179,15 @@ class TokenModel extends Model
         return $id_usuario;
     }
 
-    public function comprobarValidez(string $token): bool {
-        $sql = "SELECT validez FROM token WHERE token = ? LIMIT 1";
+    public function comprobarValidez($id_usuario, $token): bool {
+        $sql = "SELECT id_usuario, validez FROM token WHERE token = ? AND id_usuario = ? LIMIT 1";
         $pdo = self::getConnection();
         $resultado = false;
 
         try {
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(1, $token, PDO::PARAM_STR);
+            $stmt->bindValue(2, $id_usuario, PDO::PARAM_INT);
             $stmt->execute();
 
             $t = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -199,7 +200,7 @@ class TokenModel extends Model
                 }
             }
         } catch (Throwable $th) {
-            error_log("Error TokenModel->comprobarValidez('$token')");
+            error_log("Error TokenModel->comprobarValidez('$id_usuario')");
             error_log($th->getMessage());
         } finally {
             $stmt = null;

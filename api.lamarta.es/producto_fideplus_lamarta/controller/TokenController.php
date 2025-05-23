@@ -12,7 +12,7 @@ class TokenController extends Controller{
         
         $validez = false;
         if ($id_usuario) {
-            $validez = $model->comprobarValidez($token);
+            $validez = $model->comprobarValidez($id_usuario, $token);
         }
 
         if ($validez) {
@@ -49,8 +49,9 @@ class TokenController extends Controller{
      public static function comprobarValidez($object) {
         $data = json_decode($object, true);
         $token = $data[0]['token'];
+        $id_usuario = (int) $data[0]['id_usuario'];
         $model = new TokenModel();
-        echo $model->comprobarValidez($token);
+        echo $model->comprobarValidez($id_usuario, $token);
      }
 
     public function get($id){}

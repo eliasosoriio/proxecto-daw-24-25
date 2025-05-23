@@ -2,15 +2,20 @@
 include_once("TransaccionController.php");
 include_once("RecompensaController.php");
 include_once("TokenController.php");
+include_once("UsuarioController.php");
 
 
 /**
- * Definicion de los nombres asociados a cada controlador en la URI.
+ * Se definen como constantes los nombres de los controladores disponibles.
  */
 define("CONTROLLER_TRANSACCION", "transaccion");
 define("CONTROLLER_RECOMPENSA", "recompensa");
 define("CONTROLLER_TOKEN", "token");
+define("CONTROLLER_USUARIO", "usuario");
 
+/**
+ * Clase ControllerException para manejar excepciones.
+ */
 class ControllerException extends Exception{
     function __construct()
     {
@@ -18,9 +23,16 @@ class ControllerException extends Exception{
     }
 }
 
+/**
+ * Clase abstracta Controller que define que estructuta tienen estos mismos.
+ */
 abstract class Controller
 {
-
+    /**
+     * Método sendNotFound para los errores 404 cuando algo no se encuentra.
+     * @param string $mensaje
+     * @return void
+     */
     public static function sendNotFound($mensaje)
     {
         error_log($mensaje);
@@ -41,6 +53,9 @@ abstract class Controller
                 break;
             case CONTROLLER_TOKEN:
                 $controller = new TokenController();
+                break;
+            case CONTROLLER_USUARIO:
+                $controller = new UsuarioController();
                 break;
             default:
                 throw new ControllerException();

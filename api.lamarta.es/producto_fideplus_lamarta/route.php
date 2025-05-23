@@ -9,6 +9,7 @@ include_once("Constantes.php");
 include_once("controller/Controller.php");
 include_once("controller/LoginController.php");
 include_once("controller/TokenController.php");
+include_once("controller/UsuarioController.php");
 
 /**
  * Este fichero captura todas la peticiones a nuestra aplicación.
@@ -43,13 +44,13 @@ if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
     throw new Exception("Método no permitido.");
 }
 
-if ($elemento !== 'login' && $elemento !== 'token') {
+/*if ($elemento !== 'login' && $elemento !== 'token') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
         Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");
         die();
     }
-}
+}*/
 
 switch ($metodo) {
     case 'POST':
@@ -76,7 +77,7 @@ switch ($metodo) {
             Controller::sendNotFound("Es necesario indicar el id correcto de la transacción a eliminar.");
         }
         break;
-    case 'PUT':
+    case 'PATCH':
         if (isset($id)) {
             $json = file_get_contents('php://input');
             $controlador->update($id, $json);

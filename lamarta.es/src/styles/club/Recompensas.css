@@ -25,6 +25,10 @@
     margin-bottom: 1rem;
 }
 
+.recompensas--campo {
+    gap: 1rem;
+}
+
 @media screen and (min-width: 960px) {
     .recompensas {
         width: 40vw;
