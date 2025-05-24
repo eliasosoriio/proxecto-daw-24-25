@@ -65,10 +65,16 @@ switch ($metodo) {
         }
         break;
     case 'GET':
-        if (isset($id)) {
-            $controlador->get($id);
+        if ($elemento == 'transaccion') {
+            if (isset($id)) {
+                $controlador->getAll((int)$id);
+            }
         } else {
-            $controlador->getAll();
+            if (isset($id)) {
+                $controlador->get($id);
+            } else {
+                $controlador->getAll();
+            }
         }
         break;
     case 'DELETE':

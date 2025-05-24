@@ -161,13 +161,23 @@ class Transaccion extends ModelObject{
 class TransaccionModel extends Model
 {
 
-    public function getAll()
+    public function getAll($id_usuario)
     {
         $sql = "SELECT * FROM transaccion";
+        if($id_usuario != null) {
+            $sql.= " WHERE id_usuario_afiliado = ?";
+        }
+        $sql .= " ORDER BY fecha DESC LIMIT 5";
         $pdo = self::getConnection();
         $resultado = [];
         try {
-            $stmt = $pdo->query($sql);
+            $stmt = $pdo->prepare($sql);
+            if($id_usuario != null) {
+                $stmt->bindValue(1, $id_usuario, PDO::PARAM_INT);
+            }
+                 
+            $stmt->execute();
+
             $resultado = array();
             foreach($stmt as $t){
                 $transaccion = new Transaccion($t['id_usuario_admin'],$t['id_usuario_afiliado'],$t['concepto'],$t['importe'], $t['fecha'], $t['id_transaccion']);

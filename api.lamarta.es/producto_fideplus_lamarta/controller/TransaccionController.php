@@ -16,9 +16,9 @@ class TransaccionController extends Controller{
         echo $transaccion->toJson();
     }
 
-    public function getAll(){
+    public function getAll($id_usuario=null){
         $model = new TransaccionModel();
-        $transacciones = $model->getAll();
+        $transacciones = $model->getAll($id_usuario);
         echo json_encode($transacciones, JSON_PRETTY_PRINT);
     }
 
