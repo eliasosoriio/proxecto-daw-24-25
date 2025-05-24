@@ -8,13 +8,14 @@ import CampoPanel from './CampoPanel';
 const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
 
 async function ajax(options) {
-    const {url, method, data} = options;
+    const {url, method, data, headers} = options;
 
     try {
         const resp = await fetch(url, {
             method: method || "GET",
             headers: {
-                "Content-type":"application/json; charset=utf-8"
+                "Content-type":"application/json; charset=utf-8",
+                ...headers
             },
             body: JSON.stringify(data)
         });
@@ -44,16 +45,21 @@ function Perfil() {
   const { id } = useParams();
 
   useEffect(() => {
-    async function getUsuario(id) {
+    async function getUsuario(id, token) {
       try {
-        const json = await ajax({url:urlUsuarios.concat("/").concat(parseInt(id))});
+        const json = await ajax({
+          url:urlUsuarios.concat("/").concat(parseInt(id)),
+          headers: {
+            "x-api-key": token
+          }
+        });
         setUsuario(json);
       } catch (error) {
         console.error(error);
       }
     }
 
-    getUsuario(id);
+    getUsuario(id, sessionStorage.getItem('token'));
   }, [])
 
   return (

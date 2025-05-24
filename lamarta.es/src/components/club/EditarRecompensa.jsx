@@ -8,13 +8,14 @@ import ScrollArriba from '../general/ScrollArriba'
 const urlRecompensa = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
 
 async function ajax(options) {
-    const {url, method, data} = options;
+    const {url, method, data, headers} = options;
 
     try {
         const resp = await fetch(url, {
             method: method || "GET",
             headers: {
-                "Content-type":"application/json; charset=utf-8"
+                "Content-type":"application/json; charset=utf-8",
+                ...headers
             },
             body: JSON.stringify(data)
         });
@@ -34,7 +35,7 @@ async function ajax(options) {
     }
 }
 
-async function editarRecompensa(id, nombre, descripcion, precio) {
+async function editarRecompensa(id, nombre, descripcion, precio, token) {
     try {
         const json = await ajax({
             url: `${urlRecompensa}/${id}`,
@@ -44,7 +45,10 @@ async function editarRecompensa(id, nombre, descripcion, precio) {
               nombre: nombre,
               descripcion: descripcion,
               precio: precio
-            }]
+            }],
+            headers: {
+              "x-api-key": token
+            }
         });
 
         if (!json.error) {
@@ -61,7 +65,7 @@ async function editarRecompensa(id, nombre, descripcion, precio) {
 function realizarAccion(ev, accion, id, nombre, descripcion, precio) {
   ev.preventDefault();
   if(accion == "editar") {
-    editarRecompensa(id, nombre, descripcion, precio);
+    editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
   } else {
     window.location.href = `/club/admin`;
   }
@@ -75,9 +79,14 @@ function EditarRecompensa() {
   const { id } = useParams();
 
   useEffect(() => {
-      async function getRecompensa(id) {
+      async function getRecompensa(id, token) {
         try {
-          const json = await ajax({url:urlRecompensa.concat("/").concat(parseInt(id))});
+          const json = await ajax({
+            url:urlRecompensa.concat("/").concat(parseInt(id)),
+            headers: {
+              "x-api-key": token
+            }
+          });
           setRecompensa(json);
           setNombre(json.nombre);
           setDescripcion(json.descripcion);
@@ -87,7 +96,7 @@ function EditarRecompensa() {
         }
       }
   
-      getRecompensa(id);
+      getRecompensa(id, sessionStorage.getItem('token'));
     }, [])
 
   return (

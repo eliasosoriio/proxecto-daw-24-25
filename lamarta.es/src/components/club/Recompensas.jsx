@@ -5,13 +5,14 @@ import CampoPanel from './CampoPanel';
 const urlRecompensas = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
 
 async function ajax(options) {
-    const {url, method, data} = options;
+    const {url, method, data, headers} = options;
 
     try {
         const resp = await fetch(url, {
             method: method || "GET",
             headers: {
-                "Content-type":"application/json; charset=utf-8"
+                "Content-type":"application/json; charset=utf-8",
+                ...headers
             },
             body: JSON.stringify(data)
         });
@@ -36,16 +37,21 @@ function Recompensas() {
   const [recompensas, setRecompensas] = useState([]);
   
     useEffect(() => {
-      async function getRecompensas() {
+      async function getRecompensas(token) {
         try {
-          const json = await ajax({url:urlRecompensas});
+          const json = await ajax({
+            url:urlRecompensas,
+            headers: {
+              "x-api-key": token
+            }
+          });
           setRecompensas(json);
         } catch (error) {
           console.error(error);
         }
       }
   
-      getRecompensas();
+      getRecompensas(sessionStorage.getItem('token'));
     }, [])
 
   return (

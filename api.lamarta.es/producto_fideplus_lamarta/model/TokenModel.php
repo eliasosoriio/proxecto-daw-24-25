@@ -201,7 +201,9 @@ class TokenModel extends Model
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(1, $token, PDO::PARAM_STR);
             $stmt->bindValue(2, $id_usuario, PDO::PARAM_INT);
-            $stmt->bindValue(3, $tipo, PDO::PARAM_STR);
+            if ($tipo != null) {
+                $stmt->bindValue(3, $tipo, PDO::PARAM_STR);
+            }
             $stmt->execute();
 
             $t = $stmt->fetch(PDO::FETCH_ASSOC);

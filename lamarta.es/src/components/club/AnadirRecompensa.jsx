@@ -7,13 +7,14 @@ import ScrollArriba from '../general/ScrollArriba'
 const urlRecompensa = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
 
 async function ajax(options) {
-    const {url, method, data} = options;
+    const {url, method, data, headers} = options;
 
     try {
         const resp = await fetch(url, {
             method: method || "GET",
             headers: {
-                "Content-type":"application/json; charset=utf-8"
+                "Content-type":"application/json; charset=utf-8",
+                ...headers
             },
             body: JSON.stringify(data)
         });
@@ -49,7 +50,10 @@ function AnadirRecompensa() {
           nombre: nombre,
           descripcion: descripcion,
           precio: precio
-        }]
+        }],
+        headers: {
+          "x-api-key": sessionStorage.getItem('token')
+        }
       });
 
       if (!json.error) {

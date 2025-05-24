@@ -11,12 +11,6 @@ function Acciones() {
       <Link to="/recompensa/anadir" className='acciones--link' >
         <p className="acciones--opcion">Añadir recompensa</p>
       </Link>
-      {/* <Link to="/" className='acciones--link' >
-        <p className="acciones--opcion">Editar recompensa</p>
-      </Link>
-      <Link to="/" className='acciones--link' >
-        <p className="acciones--opcion">Eliminar recompensa</p>
-      </Link> */}
     </section>
   )
 }

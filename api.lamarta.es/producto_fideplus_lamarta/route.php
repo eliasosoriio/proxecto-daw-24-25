@@ -45,13 +45,13 @@ if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
     throw new Exception("Método no permitido.");
 }
 
-/*if ($elemento !== 'login' && $elemento !== 'token') {
+if ($elemento !== 'login' && $elemento !== 'token') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
         Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");
         die();
     }
-}*/
+}
 
 switch ($metodo) {
     case 'POST':

@@ -6,13 +6,14 @@ const tipo = sessionStorage.getItem('tipo');
 const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/"+tipo;
 
 async function ajax(options) {
-    const {url, method, data} = options;
+    const {url, method, data, headers} = options;
 
     try {
         const resp = await fetch(url, {
             method: method || "GET",
             headers: {
-                "Content-type":"application/json; charset=utf-8"
+                "Content-type":"application/json; charset=utf-8",
+                ...headers
             },
             body: JSON.stringify(data)
         });
@@ -42,16 +43,21 @@ function Saludo() {
   const [usuario, setUsuario] = useState({});
   
     useEffect(() => {
-      async function getUsuario(id) {
+      async function getUsuario(id, token) {
         try {
-          const json = await ajax({url:urlUsuarios.concat("/").concat(parseInt(id))});
+          const json = await ajax({
+            url:urlUsuarios.concat("/").concat(parseInt(id)),
+            headers: {
+              "x-api-key": token
+            }
+          });
           setUsuario(json);
         } catch (error) {
           console.error(error);
         }
       }
   
-      getUsuario(sessionStorage.getItem('id_usuario'));
+      getUsuario(sessionStorage.getItem('id_usuario'), sessionStorage.getItem('token'));
     }, [])
 
   return (
