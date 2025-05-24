@@ -27,7 +27,7 @@ class Transaccion extends ModelObject{
             $data['id_usuario_admin'], 
             $data['id_usuario_afiliado'],
             $data['concepto'],
-            ceil($data['importe'] * 10)
+            $data['importe']
         );
     }
 
@@ -211,7 +211,8 @@ class TransaccionModel extends Model
     public function insert($transaccion)
     {
         $sql = "INSERT INTO transaccion(id_usuario_admin, id_usuario_afiliado, concepto, importe, fecha) VALUES (:id_usuario_admin, :id_usuario_afiliado, :concepto, :importe, :fecha)";
-        $sql2 = "UPDATE afiliado SET puntos = puntos + ? WHERE id_usuario = ?";
+        $sql2 = "SELECT puntos FROM afiliado WHERE id_usuario = ?";
+        $sql3 = "UPDATE afiliado SET puntos = puntos + ? WHERE id_usuario = ?";
 
         $pdo = self::getConnection();
         $resultado = false;
@@ -228,10 +229,19 @@ class TransaccionModel extends Model
             $stmt->execute();
 
             $stmt2 = $pdo->prepare($sql2);
-            $stmt2->bindValue(1, $transaccion->getImporte(), PDO::PARAM_INT);
-            $stmt2->bindValue(2, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
-
+            $stmt2->bindValue(1, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
             $stmt2->execute();
+            $saldo = $stmt2->fetchColumn();
+
+            if ($saldo + $transaccion->getImporte() < 0) {
+                throw new PDOException("Saldo insuficiente para canjear esta recompensa.");
+            }
+
+            $stmt3 = $pdo->prepare($sql3);
+            $stmt3->bindValue(1, $transaccion->getImporte(), PDO::PARAM_INT);
+            $stmt3->bindValue(2, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
+
+            $stmt3->execute();
 
             $pdo->commit();
             $resultado = true;

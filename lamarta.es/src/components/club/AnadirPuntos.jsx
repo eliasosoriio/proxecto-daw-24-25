@@ -5,7 +5,6 @@ import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 
-const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
 const urlTransacciones = "http://localhost/producto_fideplus_lamarta/route.php/transaccion";
 
 async function ajax(options) {
@@ -67,7 +66,7 @@ function realizarAccion(ev, accion, id, concepto, importe) {
   if(accion == "cancelar") {
     window.location.href = `/usuario/perfil/${id}`;
   } else {
-    anadirPuntos(id, concepto, importe);
+    anadirPuntos(id, concepto, Math.ceil(importe * 10));
   }
 }
 
