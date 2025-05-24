@@ -64,14 +64,15 @@ async function singIn(usuario, contrasenia) {
     }
 }
 
-async function comprobarValidez(id_usuario, token) {
+async function comprobarValidez(id_usuario, token, tipo) {
     try {
         const json = await ajax({
             url: urlToken,
             method: "POST",
             data: [{ 
               token: token, 
-              id_usuario: id_usuario 
+              id_usuario: id_usuario,
+              tipo: tipo
             }]
         });
         return json == 1 || false;
@@ -97,7 +98,7 @@ function Login() {
     const id_usuario = sessionStorage.getItem('id_usuario');
 
     if (token && tipo) {
-      comprobarValidez(id_usuario, token).then((esValido) => {
+      comprobarValidez(id_usuario, token, tipo).then((esValido) => {
         if (esValido) {
           if (tipo === 'admin') {
             window.location.href = '/club/admin';

@@ -30,14 +30,15 @@ async function ajax(options) {
     }
 }
 
-async function comprobarValidez(id_usuario, token) {
+async function comprobarValidez(id_usuario, token, tipo) {
     try {
         const json = await ajax({
             url: urlToken,
             method: "POST",
             data: [{ 
               token: token,
-              id_usuario : id_usuario
+              id_usuario : id_usuario,
+              tipo: tipo
             }]
         });
         return json == 1 || false;
@@ -60,7 +61,7 @@ function PrivateRoute({ children, rolPermitido }) {
                 setValido(false);
                 return;
             }
-            const esValido = await comprobarValidez(id_usuario, token);
+            const esValido = await comprobarValidez(id_usuario, token, tipo);
             setValido(esValido);
         }
 

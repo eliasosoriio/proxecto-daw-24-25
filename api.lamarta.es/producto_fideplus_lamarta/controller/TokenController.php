@@ -50,8 +50,9 @@ class TokenController extends Controller{
         $data = json_decode($object, true);
         $token = $data[0]['token'];
         $id_usuario = (int) $data[0]['id_usuario'];
+        $tipo = $data[0]['tipo'];
         $model = new TokenModel();
-        echo $model->comprobarValidez($id_usuario, $token);
+        echo $model->comprobarValidez($id_usuario, $token, $tipo);
      }
 
     public function get($id){}

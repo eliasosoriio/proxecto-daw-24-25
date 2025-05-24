@@ -179,8 +179,21 @@ class TokenModel extends Model
         return $id_usuario;
     }
 
-    public function comprobarValidez($id_usuario, $token): bool {
-        $sql = "SELECT id_usuario, validez FROM token WHERE token = ? AND id_usuario = ? LIMIT 1";
+    public function comprobarValidez($id_usuario, $token, $tipo = null): bool {
+        $sql = "
+        SELECT t.id_usuario, t.validez
+        FROM token t
+        INNER JOIN usuario u ON u.id_usuario = t.id_usuario
+        INNER JOIN tipo ti ON ti.id_tipo = u.id_tipo
+        WHERE t.token = ? AND t.id_usuario = ?
+        ";
+
+        if ($tipo != null) {
+            $sql .= "AND ti.nombre = ? ";
+        }
+
+        $sql .= "LIMIT 1";
+
         $pdo = self::getConnection();
         $resultado = false;
 
@@ -188,6 +201,7 @@ class TokenModel extends Model
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(1, $token, PDO::PARAM_STR);
             $stmt->bindValue(2, $id_usuario, PDO::PARAM_INT);
+            $stmt->bindValue(3, $tipo, PDO::PARAM_STR);
             $stmt->execute();
 
             $t = $stmt->fetch(PDO::FETCH_ASSOC);
