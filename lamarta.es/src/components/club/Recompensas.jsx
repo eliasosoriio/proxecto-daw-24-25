@@ -64,6 +64,7 @@ function Recompensas() {
                   puntos={r.precio}
                   puedeBorrar={true} 
                   puedeEditar={true}
+                  id={r.id_recompensa}
                 />
             ))}
         </section>

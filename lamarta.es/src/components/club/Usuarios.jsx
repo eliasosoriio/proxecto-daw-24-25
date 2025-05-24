@@ -58,9 +58,11 @@ function Usuarios() {
             {[...usuarios].map((u, i)  => (
                 <CampoPanel 
                 key={i}
-                nombre={u.nombre}
+                nombre={'Nº ' + u.id_usuario + ' - ' + u.nombre}
                 descripcion={u.apellidos}
                 puntos={u.puntos}
+                puedePerfil={true}
+                id={u.id_usuario}
                 />
             ))}
         </section>

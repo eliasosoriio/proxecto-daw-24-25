@@ -2,8 +2,11 @@ import React from 'react'
 import "../../styles/club/CampoPanel.css";
 import { Link } from "react-router-dom";
 
-function CampoPanel({nombre, descripcion, puntos, puedeEditar=false, puedeBorrar=false}) {
+function CampoPanel({nombre, descripcion, puntos, puedeEditar=false, puedeBorrar=false, puedePerfil=false, id}) {
   const tipo = sessionStorage.getItem('tipo');
+  const editarRecompensa = `/recompensa/editar/${id}`;
+  const borrarRecompensa = `/recompensa/borrar/${id}`;
+  const verPerfil = `/usuario/perfil/${id}`;
   
   return (
     <article className='campo--panel d-flex-row'>
@@ -16,13 +19,18 @@ function CampoPanel({nombre, descripcion, puntos, puedeEditar=false, puedeBorrar
         {tipo === "admin" && (
           <>
             {puedeEditar && (
-              <Link to="/recompensa/editar" className='icon-link'>
+              <Link to={editarRecompensa} className='icon-link'>
                 <i className="fa-solid fa-pen-to-square"></i>
               </Link>
             )}
             {puedeBorrar && (
-              <Link to="/recompensa/borrar" className='icon-link'>
+              <Link to={borrarRecompensa} className='icon-link'>
                 <i className="fa-solid fa-trash"></i>
+              </Link>
+            )}
+            {puedePerfil && (
+              <Link to={verPerfil} className='icon-link'>
+                <i className="fa-solid fa-user"></i>
               </Link>
             )}
           </>

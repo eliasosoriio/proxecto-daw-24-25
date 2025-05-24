@@ -41,7 +41,6 @@ function App() {
                      <PanelAdmin />
                   </PrivateRoute>
                } />
-
                <Route path="/club/afiliado" element={
                   <PrivateRoute rolPermitido="afiliado">
                      <PanelAfiliado />
@@ -52,32 +51,32 @@ function App() {
                      <BuscarUsuario />
                   </PrivateRoute>
                } />
-               <Route path="/usuario/perfil" element={
+               <Route path="/usuario/perfil/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <Perfil />
                   </PrivateRoute>
                } />
-               <Route path="/usuario/anadir" element={
+               <Route path="/usuario/anadir/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <AnadirPuntos />
                   </PrivateRoute>
                } />
-               <Route path="/usuario/canjear" element={
+               <Route path="/usuario/canjear/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <CanjearRecompensa />
                   </PrivateRoute>
                } />
-               <Route path="/recompensa/anadir" element={
+               <Route path="/recompensa/anadir/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <AnadirRecompensa />
                   </PrivateRoute>
                } />
-               <Route path="/recompensa/editar" element={
+               <Route path="/recompensa/editar/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <EditarRecompensa />
                   </PrivateRoute>
                } />
-               <Route path="/recompensa/borrar" element={
+               <Route path="/recompensa/borrar/:id" element={
                   <PrivateRoute rolPermitido="admin">
                      <BorrarRecompensa />
                   </PrivateRoute>
