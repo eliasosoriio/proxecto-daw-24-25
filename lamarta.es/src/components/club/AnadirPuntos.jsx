@@ -10,12 +10,18 @@ function AnadirPuntos() {
     <ScrollArriba />
         <form className='anadir--puntos--form d-flex-col'>
             <Campo 
-              nombre="Introduce el importe del ticket:" 
+              nombre="Escribe un concepto" 
+              type={"text"} 
+              placeholder={"Pedido en el local"} 
+            />
+            <Campo 
+              nombre="Introduce el importe del ticket" 
               type={"number"} 
               placeholder={"18,97"} 
               min={0}
             />
             <BotonSubmit mensaje={"Añadir Puntos"} />
+            <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id, nombre, descripcion, precio)} />
         </form>
     </section>
   )

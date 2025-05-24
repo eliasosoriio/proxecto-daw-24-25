@@ -27,9 +27,14 @@ class AdminController extends Controller{
         $model = new AdminModel();
         $usuario = Admin::fromJson($object);
         if($model->insert($usuario)){
-            echo "Admin insertado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido insertar");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+            exit;
         }
     }
     /**
@@ -46,9 +51,14 @@ class AdminController extends Controller{
     public function delete($id) {
         $model = new AdminModel();
         if($model->delete($id)){
-            echo "Admin eliminado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido eliminar el usuario.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo eliminar."]);
+            exit;
         }
     }
 
@@ -57,9 +67,14 @@ class AdminController extends Controller{
         $usuario = Admin::fromJson($object);
 
         if($model->update($usuario,$id)){
-            echo "Admin modificado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido modificar el usuario.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo actualizar."]);
+            exit;
         }
     }
     /**

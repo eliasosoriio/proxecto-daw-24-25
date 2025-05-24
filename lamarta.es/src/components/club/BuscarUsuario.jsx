@@ -34,12 +34,7 @@ async function ajax(options) {
     }
 }
 
-function BuscarUsuario() {
-  const [id, setId] = useState();
-
-  const getUsuario = async (ev) => {
-    ev.preventDefault();
-
+async function getUsuario(id) {
     try {
       const json = await ajax({ 
         url: urlUsuarios.concat("/").concat(parseInt(id)),
@@ -57,13 +52,24 @@ function BuscarUsuario() {
       console.error(error);
       alert("Error al buscar el usuario.");
     }
-  }
+}
 
+function realizarAccion(ev, accion, id) {
+  ev.preventDefault();
+  if(accion == "cancelar") {
+    window.location.href = `/club/admin`;
+  } else {
+    getUsuario(id);
+  }
+}
+
+function BuscarUsuario() {
+  const [id, setId] = useState();
 
   return (
     <section className='buscar--usuario d-flex-col'>
     <ScrollArriba />
-        <form className='buscar--usuario--form d-flex-col' onSubmit={getUsuario} >
+        <form className='buscar--usuario--form d-flex-col'>
             <Campo 
               id="usuario" 
               nombre="Nº de Afiliado" 
@@ -74,7 +80,8 @@ function BuscarUsuario() {
                 setId(ev.target.value);
               }}
             />
-            <BotonSubmit mensaje={"Buscar Usuario"} />
+            <BotonSubmit mensaje={"Buscar Usuario"} button={true} onClick={(ev) => realizarAccion(ev, "buscar", id)} />
+            <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
         </form>
     </section>
   )

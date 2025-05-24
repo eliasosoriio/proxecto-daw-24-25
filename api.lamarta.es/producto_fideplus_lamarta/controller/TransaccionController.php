@@ -28,9 +28,14 @@ class TransaccionController extends Controller{
         $model = new TransaccionModel();
         $transaccion = Transaccion::fromJson($object);
         if($model->insert($transaccion)){
-            echo "Transacción insertada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido insertar");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+            exit;
         }
     }
     
@@ -43,9 +48,14 @@ class TransaccionController extends Controller{
 
         $model = new TransaccionModel();
         if($model->delete($id[0])){
-            echo "Transacción eliminada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido eliminar la transacción.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo eliminar."]);
+            exit;
         }
     }
 
@@ -60,9 +70,14 @@ class TransaccionController extends Controller{
         $transaccion = Transaccion::fromJson($object);
 
         if($model->update($transaccion,$id[0])){
-            echo "Transacción modificada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido modificar la transacción.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo actualizar."]);
+            exit;
         }
     }
 }

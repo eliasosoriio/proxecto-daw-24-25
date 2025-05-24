@@ -34,14 +34,7 @@ async function ajax(options) {
     }
 }
 
-function AnadirRecompensa() {
-  const [nombre, setNombre] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  const [precio, setPrecio] = useState(0);
-
-  const anadirRecompensa = async (ev) => {
-    ev.preventDefault();
-
+async function anadirRecompensa(nombre, descripcion, precio) {
     try {
       const json = await ajax({ 
         url: urlRecompensa,
@@ -65,12 +58,26 @@ function AnadirRecompensa() {
       console.error(error);
       alert("Error al insertar la recompensa.");
     }
+}
+
+function realizarAccion(ev, accion, nombre, descripcion, precio) {
+  ev.preventDefault();
+  if(accion == "anadir") {
+    anadirRecompensa(nombre, descripcion, precio);
+  } else {
+    window.location.href = `/club/admin`;
   }
+}
+
+function AnadirRecompensa() {
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [precio, setPrecio] = useState(0);
 
   return (
     <section className='anadir--recompensa d-flex-col'>
     <ScrollArriba />
-        <form className='anadir--recompensa--form d-flex-col' onSubmit={anadirRecompensa}>
+        <form className='anadir--recompensa--form d-flex-col'>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 
@@ -96,7 +103,8 @@ function AnadirRecompensa() {
                 setPrecio(ev.target.value);
               }}
             />
-            <BotonSubmit mensaje={"Añadir Recompensa"} />
+            <BotonSubmit mensaje={"Añadir Recompensa"}  button={true} onClick={(ev) => realizarAccion(ev, "anadir", nombre, descripcion, precio)} />
+            <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", nombre, descripcion, precio)} />
         </form>
     </section>
   )

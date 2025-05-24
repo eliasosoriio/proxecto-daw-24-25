@@ -8,12 +8,37 @@
     gap: 2rem;
 }
 
+.panel:first-of-type {
+    order: 1;
+}
+.panel:nth-of-type(2) {
+    order: 4;
+}
+.panel:nth-of-type(3) {
+    order: 3;
+}
+.panel:nth-of-type(4) {
+    order: 2;
+}
+
 @media screen and (min-width: 1280px) {
     .paneles {
         flex-direction: row;
     }
     .panel {
         min-height: 70vh;
+    }
+    .panel:first-of-type {
+        order: 1;
+    }
+    .panel:nth-of-type(2) {
+        order: 2;
+    }
+    .panel:nth-of-type(3) {
+        order: 3;
+    }
+    .panel:nth-of-type(4) {
+        order: 4;
     }
 }
 

@@ -27,9 +27,14 @@ class AfiliadoController extends Controller{
         $model = new AfiliadoModel();
         $usuario = Afiliado::fromJson($object);
         if($model->insert($usuario)){
-            echo "Afiliado insertado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido insertar");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+            exit;
         }
     }
     /**
@@ -46,9 +51,14 @@ class AfiliadoController extends Controller{
     public function delete($id) {
         $model = new AfiliadoModel();
         if($model->delete($id)){
-            echo "Afiliado eliminado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido eliminar el usuario.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo eliminar."]);
+            exit;
         }
     }
 
@@ -57,9 +67,14 @@ class AfiliadoController extends Controller{
         $usuario = Afiliado::fromJson($object);
 
         if($model->update($usuario,$id)){
-            echo "Afiliado modificado.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido modificar el usuario.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo actualizar."]);
+            exit;
         }
     }
     /**

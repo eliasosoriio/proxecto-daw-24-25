@@ -37,7 +37,11 @@ async function ajax(options) {
 
 function realizarAccion(ev, accion, id) {
   ev.preventDefault();
-  window.location.href = `/usuario/${accion}/${id}`;
+  if(accion == "cancelar") {
+    window.location.href = `/club/admin`;
+  } else {
+    window.location.href = `/usuario/${accion}/${id}`;
+  }
 }
 
 function Perfil() {
@@ -69,6 +73,7 @@ function Perfil() {
         <CampoPanel nombre={'Nº ' + usuario.id_usuario + ' - ' + usuario.nombre + ' ' + usuario.apellidos} descripcion={usuario.correo} puntos={usuario.puntos} />
         <BotonSubmit mensaje={"Añadir Puntos"} button={true} onClick={(ev) => realizarAccion(ev, "anadir", id)} />
         <BotonSubmit mensaje={"Canjear Recompensa"} button={true} onClick={(ev) => realizarAccion(ev, "canjear", id)} />
+        <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
       </form>
     </section>
   )
