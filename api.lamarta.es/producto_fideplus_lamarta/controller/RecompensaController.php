@@ -26,9 +26,14 @@ class RecompensaController extends Controller{
         $model = new RecompensaModel();
         $recompensa = Recompensa::fromJson($object);
         if($model->insert($recompensa)){
-            echo "Recompensa insertada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido insertar");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+            exit;
         }
     }
     

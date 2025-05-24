@@ -66,7 +66,7 @@ function App() {
                      <CanjearRecompensa />
                   </PrivateRoute>
                } />
-               <Route path="/recompensa/anadir/:id" element={
+               <Route path="/recompensa/anadir" element={
                   <PrivateRoute rolPermitido="admin">
                      <AnadirRecompensa />
                   </PrivateRoute>
