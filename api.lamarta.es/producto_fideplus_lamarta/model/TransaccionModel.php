@@ -27,7 +27,7 @@ class Transaccion extends ModelObject{
             $data['id_usuario_admin'], 
             $data['id_usuario_afiliado'],
             $data['concepto'],
-            $data['importe']
+            ceil($data['importe'] * 10)
         );
     }
 
@@ -211,17 +211,30 @@ class TransaccionModel extends Model
     public function insert($transaccion)
     {
         $sql = "INSERT INTO transaccion(id_usuario_admin, id_usuario_afiliado, concepto, importe, fecha) VALUES (:id_usuario_admin, :id_usuario_afiliado, :concepto, :importe, :fecha)";
+        $sql2 = "UPDATE afiliado SET puntos = puntos + ? WHERE id_usuario = ?";
 
         $pdo = self::getConnection();
         $resultado = false;
         try {
+            $pdo->beginTransaction();
+
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(":id_usuario_admin", $transaccion->getId_usuario_admin(), PDO::PARAM_INT);
             $stmt->bindValue(":id_usuario_afiliado", $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
             $stmt->bindValue(":concepto", $transaccion->getConcepto(), PDO::PARAM_STR);
             $stmt->bindValue(":importe", $transaccion->getImporte(), PDO::PARAM_INT);
             $stmt->bindValue(":fecha", $transaccion->getFecha() ?? date('Y-m-d'), PDO::PARAM_STR);
-            $resultado = $stmt->execute();
+
+            $stmt->execute();
+
+            $stmt2 = $pdo->prepare($sql2);
+            $stmt2->bindValue(1, $transaccion->getImporte(), PDO::PARAM_INT);
+            $stmt2->bindValue(2, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
+
+            $stmt2->execute();
+
+            $pdo->commit();
+            $resultado = true;
         } catch (PDOException $th) {
             error_log("Error TransaccionModel->insert(" . $transaccion->toJson. ")");
             error_log($th->getMessage());

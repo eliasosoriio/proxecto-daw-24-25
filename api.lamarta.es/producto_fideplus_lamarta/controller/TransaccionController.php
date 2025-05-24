@@ -8,8 +8,6 @@ class TransaccionController extends Controller{
         $model = new TransaccionModel();
         $transaccion = $model->get($id);
         
-        $transaccion = $model->get($id[0]);
-
         if($transaccion==null){
             Controller::sendNotFound("El id no se corresponde con ninguna transacción.");
             die();
@@ -40,14 +38,8 @@ class TransaccionController extends Controller{
     }
     
     public function delete($id) {
-
-        if(count($id)!=1){
-            Controller::sendNotFound("Las transacciones se identifican por un solo id.");
-            die();
-        }
-
         $model = new TransaccionModel();
-        if($model->delete($id[0])){
+        if($model->delete($id)){
             header('Content-Type: application/json');
             echo json_encode(["success" => true]);
             exit;
@@ -60,16 +52,10 @@ class TransaccionController extends Controller{
     }
 
     public function update($id, $object){
-
-        if(count($id)!=1){
-            Controller::sendNotFound("Las transacciones se identifican por un solo id.");
-            die();
-        }
-
         $model = new TransaccionModel();
         $transaccion = Transaccion::fromJson($object);
 
-        if($model->update($transaccion,$id[0])){
+        if($model->update($transaccion,$id)){
             header('Content-Type: application/json');
             echo json_encode(["success" => true]);
             exit;
