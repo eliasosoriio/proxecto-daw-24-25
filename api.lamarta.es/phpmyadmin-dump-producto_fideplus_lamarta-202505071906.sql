@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mariadb:3306
--- Tiempo de generación: 24-05-2025 a las 18:12:24
+-- Tiempo de generación: 24-05-2025 a las 18:58:13
 -- Versión del servidor: 10.6.19-MariaDB
 -- Versión de PHP: 8.2.25
 
@@ -83,7 +83,8 @@ INSERT INTO `permiso` (`id_tipo`, `controlador`, `metodos`) VALUES
 (1, 'transaccion', '[\"GET\", \"POST\", \"PATCH\", \"DELETE\"]'),
 (1, 'admin', '[\"GET\", \"POST\", \"PATCH\", \"DELETE\"]'),
 (1, 'afiliado', '[\"GET\", \"POST\", \"PATCH\", \"DELETE\"]'),
-(2, 'afiliado', '[\"GET\", \"POST\", \"PATCH\"]');
+(2, 'afiliado', '[\"GET\", \"POST\", \"PATCH\"]'),
+(2, 'transaccion', '[\"GET\"]');
 
 -- --------------------------------------------------------
 
@@ -145,10 +146,10 @@ CREATE TABLE `token` (
 --
 
 INSERT INTO `token` (`id_usuario`, `token`, `validez`) VALUES
-(1, 'Y2M0MDVlYjIyZjI5YjZhMjhiZmFhODExNTE3ZTNkMDY=', '2025-05-24 17:49:48'),
+(1, 'MjdjZTE1ZjM1YTM5Y2E2NDUwMDIyMTVlOTQ0ZDViZTI=', '2025-05-24 18:57:45'),
 (2, 'YTNhZmQ2ZWFkODk4ZWFjNjY0OGM5ZDY0NDBmYjNiN2U=', '2025-05-24 15:58:58'),
 (3, 'OTU1YmJiMDI2YjJiZTI1MzE4YjZjMGFmODk2MmFlMjE=', '2025-05-23 18:07:50'),
-(4, 'Yzg5NjM4MGEyNmQ4YjZlYjg4OGVjZDk5ZmMwODkxZjg=', '2025-05-23 18:08:20'),
+(4, 'NzcyNmM4ZmE4MmJhNDcyNDExNjllZDg3NWIwZjUzNGI=', '2025-05-24 18:38:08'),
 (5, 'NTg4NzUxNWI1MmNjMzJmOWE4ZmY0ZGIyMzgxOGE2MTM=', '2025-05-23 18:08:23'),
 (8, 'Yjg4MTcxMTY3Y2EwMTA3MzNkMzUzNDRlMmQxODc5NjM=', '2025-05-23 18:39:21'),
 (9, '328e9d860a14dee406da7d7a0ed3fcb9', '2025-05-23 19:57:19');
@@ -179,8 +180,8 @@ INSERT INTO `transaccion` (`id_transaccion`, `id_usuario_admin`, `id_usuario_afi
 (14, 1, 5, 'Bono Inicial', 500, '2025-05-24'),
 (15, 1, 8, 'Bono Inicial', 500, '2025-05-24'),
 (16, 1, 9, 'Bono Inicial', 500, '2025-05-24'),
-(21, 1, 4, 'Take Away', 456, '2025-05-24'),
-(22, 1, 4, 'Canjeo: Patatas - 800', -800, '2025-05-24');
+(21, 1, 4, 'Take Away', 456, '2025-05-28'),
+(22, 1, 4, 'Canjeo: Patatas - 800', -800, '2025-06-01');
 
 -- --------------------------------------------------------
 
@@ -280,7 +281,7 @@ ALTER TABLE `recompensa`
 -- AUTO_INCREMENT de la tabla `transaccion`
 --
 ALTER TABLE `transaccion`
-  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_transaccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
