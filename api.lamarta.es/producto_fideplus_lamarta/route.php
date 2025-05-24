@@ -9,7 +9,8 @@ include_once("Constantes.php");
 include_once("controller/Controller.php");
 include_once("controller/LoginController.php");
 include_once("controller/TokenController.php");
-include_once("controller/UsuarioController.php");
+include_once("controller/AdminController.php");
+include_once("controller/AfiliadoController.php");
 
 /**
  * Este fichero captura todas la peticiones a nuestra aplicación.

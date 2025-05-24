@@ -8,8 +8,6 @@ class RecompensaController extends Controller{
         $model = new RecompensaModel();
         $recompensa = $model->get($id);
         
-        $recompensa = $model->get($id[0]);
-
         if($recompensa==null){
             Controller::sendNotFound("El id no se corresponde con ninguna recompensa.");
             die();
@@ -45,10 +43,10 @@ class RecompensaController extends Controller{
 
     public function update($id, $object){
         $model = new RecompensaModel();
-        $recompensa = recompensa::fromJson($object);
+        $recompensa = Recompensa::fromJson($object);
 
-        if($model->update($recompensa,$id[0])){
-            echo "recompensa modificada.";
+        if($model->update($recompensa,$id)){
+            echo "Recompensa modificada.";
         }else{
             Controller::sendNotFound("No se ha podido modificar la recompensa.");
         }

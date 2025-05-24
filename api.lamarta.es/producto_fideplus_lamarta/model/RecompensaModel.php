@@ -209,7 +209,7 @@ class RecompensaModel extends Model
         $resultado = false;
         try {
             $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(":id_recompensa", $recompensa->getId_recompensa(), PDO::PARAM_INT);
+            $stmt->bindValue(":id_recompensa", $id_recompensa, PDO::PARAM_INT);
             $stmt->bindValue(":nombre", $recompensa->getNombre(), PDO::PARAM_STR);
             $stmt->bindValue(":descripcion", $recompensa->getDescripcion(), PDO::PARAM_STR);
             $stmt->bindValue(":precio", $recompensa->getPrecio(), PDO::PARAM_INT);

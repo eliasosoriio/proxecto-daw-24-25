@@ -2,7 +2,8 @@
 include_once("TransaccionController.php");
 include_once("RecompensaController.php");
 include_once("TokenController.php");
-include_once("UsuarioController.php");
+include_once("AdminController.php");
+include_once("AfiliadoController.php");
 
 
 /**
@@ -11,7 +12,9 @@ include_once("UsuarioController.php");
 define("CONTROLLER_TRANSACCION", "transaccion");
 define("CONTROLLER_RECOMPENSA", "recompensa");
 define("CONTROLLER_TOKEN", "token");
-define("CONTROLLER_USUARIO", "usuario");
+define("CONTROLLER_ADMIN", "admin");
+define("CONTROLLER_AFILIADO", "afiliado");
+
 
 /**
  * Clase ControllerException para manejar excepciones.
@@ -54,8 +57,11 @@ abstract class Controller
             case CONTROLLER_TOKEN:
                 $controller = new TokenController();
                 break;
-            case CONTROLLER_USUARIO:
-                $controller = new UsuarioController();
+            case CONTROLLER_ADMIN:
+                $controller = new AdminController();
+                break;
+            case CONTROLLER_AFILIADO:
+                $controller = new AfiliadoController();
                 break;
             default:
                 throw new ControllerException();

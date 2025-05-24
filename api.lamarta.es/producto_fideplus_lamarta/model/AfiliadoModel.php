@@ -2,7 +2,7 @@
 include_once("Model.php");
 include_once("ModelObject.php");
 
-class Usuario extends ModelObject{
+class Afiliado extends ModelObject{
 
     public int $id_usuario;
     public string $nombre;
@@ -15,7 +15,7 @@ class Usuario extends ModelObject{
 
     public static function fromJson($json): ModelObject {
         $data = json_decode($json, true)[0];
-        $usuario = new Usuario();
+        $usuario = new Afiliado();
 
         if(isset($data['id_usuario'])) {
             $usuario->setId_usuario($data['id_usuario']);
@@ -182,7 +182,7 @@ class Usuario extends ModelObject{
 }
 
 
-class UsuarioModel extends Model
+class AfiliadoModel extends Model
 {
 
     public function getAll()
@@ -194,7 +194,7 @@ class UsuarioModel extends Model
             $stmt = $pdo->query($sql);
             $resultado = array();
             foreach($stmt as $u){
-                $usuario = new Usuario();
+                $usuario = new Afiliado();
 
                 $usuario->setId_usuario($u['id_usuario']);
                 $usuario->setNombre($u['nombre']);
@@ -206,7 +206,7 @@ class UsuarioModel extends Model
                 $resultado[] = $usuario;
             }
         } catch (PDOException $th) {
-            error_log("Error UsuarioModel->getAll()");
+            error_log("Error AfiliadoModel->getAll()");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -216,7 +216,7 @@ class UsuarioModel extends Model
         return $resultado;
     }
 
-    public function get($id_usuario) : Usuario | null
+    public function get($id_usuario) : Afiliado | null
     {
         $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE u.id_usuario=?";
         $pdo = self::getConnection();
@@ -226,7 +226,7 @@ class UsuarioModel extends Model
             $stmt->bindValue(1, $id_usuario, PDO::PARAM_INT);
             $stmt->execute();
             if($u = $stmt->fetch()){
-                $usuario = new Usuario();
+                $usuario = new Afiliado();
 
                 $usuario->setId_usuario($u['id_usuario']);
                 $usuario->setNombre($u['nombre']);
@@ -238,7 +238,7 @@ class UsuarioModel extends Model
                 $resultado = $usuario;
             }
         } catch (Throwable $th) {
-            error_log("Error UsuarioModel->get($id_usuario)");
+            error_log("Error AfiliadoModel->get($id_usuario)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -251,7 +251,7 @@ class UsuarioModel extends Model
     public function insert($usuario)
     {
         $sql = "INSERT INTO usuario (nombre, apellidos, correo, contrasenia, id_tipo) VALUES (:nombre, :apellidos, :correo, :contrasenia, :id_tipo)";
-        $sql2 = "INSERT INTO afiliado (id_usuario) VALUES (:id_usuario)";
+        $sql2 = "INSERT INTO administrador (id_usuario) VALUES (:id_usuario)";
         $sql3 = "INSERT INTO token (id_usuario, token) VALUES (:id_usuario, :token)";
 
         $pdo = self::getConnection();
@@ -268,15 +268,15 @@ class UsuarioModel extends Model
 
             $stmt->execute();
 
-            $idUsuario = $pdo->lastInsertId();
+            $idAfiliado = $pdo->lastInsertId();
 
             $stmt2 = $pdo->prepare($sql2);
-            $stmt2->bindValue(":id_usuario", $idUsuario, PDO::PARAM_INT);
+            $stmt2->bindValue(":id_usuario", $idAfiliado, PDO::PARAM_INT);
 
             $stmt2->execute();
 
             $stmt3 = $pdo->prepare($sql3);
-            $stmt3->bindValue(":id_usuario", $idUsuario, PDO::PARAM_INT);
+            $stmt3->bindValue(":id_usuario", $idAfiliado, PDO::PARAM_INT);
             $stmt3->bindValue(":token", bin2hex(random_bytes(16)), PDO::PARAM_STR);
 
             $stmt3->execute();
@@ -285,7 +285,7 @@ class UsuarioModel extends Model
             $resultado = true;
         } catch (PDOException $th) {
             $pdo->rollBack();
-            error_log("Error UsuarioModel->insert(" . $usuario->toJson. ")");
+            error_log("Error AfiliadoModel->insert(" . $usuario->toJson. ")");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -320,7 +320,7 @@ class UsuarioModel extends Model
             $resultado = $stmt->execute();
             $resultado = $stmt->rowCount() == 1;
         } catch (PDOException $th) {
-            error_log("Error UsuarioModel->update(" . implode(",", $usuario) . ", $id_usuario)");
+            error_log("Error AfiliadoModel->update(" . implode(",", $usuario) . ", $id_usuario)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -358,7 +358,7 @@ class UsuarioModel extends Model
             $resultado = true;
         } catch (PDOException $th) {
             $pdo->rollBack();
-            error_log("Error UsuarioModel->delete($id_usuario)");
+            error_log("Error AfiliadoModel->delete($id_usuario)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;

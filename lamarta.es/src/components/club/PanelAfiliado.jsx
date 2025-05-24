@@ -10,7 +10,7 @@ function PanelAfiliado() {
     <section className="paneles d-flex-col">
       <ScrollArriba />
       <section className="panel d-flex-col">
-        <Saludo nombre={"Manuel Osorio"}/> 
+        <Saludo /> 
       </section>
 
       <section className="panel d-flex-col">
@@ -18,7 +18,7 @@ function PanelAfiliado() {
       </section>
 
       <section className="panel d-flex-col">
-        <Puntos numero={"0001"} puntos={"3469"} /> 
+        <Puntos /> 
       </section>
     </section>
   )

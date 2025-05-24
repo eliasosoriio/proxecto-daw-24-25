@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/club/Usuarios.css";
 import CampoPanel from './CampoPanel';
 
-const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/usuario";
+const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
 
 async function ajax(options) {
     const {url, method, data} = options;
