@@ -56,9 +56,14 @@ class RecompensaController extends Controller{
         $recompensa = Recompensa::fromJson($object);
 
         if($model->update($recompensa,$id)){
-            echo "Recompensa modificada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido modificar la recompensa.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo actualizar."]);
+            exit;
         }
     }
 }
