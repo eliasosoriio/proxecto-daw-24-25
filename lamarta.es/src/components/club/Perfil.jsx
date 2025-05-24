@@ -36,7 +36,6 @@ async function ajax(options) {
 
 function realizarAccion(ev, accion, id) {
   ev.preventDefault();
-  console.log(accion);
   window.location.href = `/usuario/${accion}/${id}`;
 }
 

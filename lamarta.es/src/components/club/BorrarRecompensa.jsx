@@ -1,25 +1,90 @@
 import {React, useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
 import "../../styles/club/BorrarRecompensa.css";
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
 
-function realizarAccion(ev, accion) {
+const urlRecompensa = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
+
+async function ajax(options) {
+    const {url, method, data} = options;
+
+    try {
+        const resp = await fetch(url, {
+            method: method || "GET",
+            headers: {
+                "Content-type":"application/json; charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) throw new Error(`HTTP error! Status: ${resp.status}`);
+
+        const json = await resp.json();
+
+        return json;
+
+    } catch (error) {
+        return {
+            error: true,
+            status: error.status,
+            statusText: error.statusText || "Algo ha ocurrido"
+        };
+    }
+}
+
+async function borrarRecompensa(id) {
+    try {
+        const json = await ajax({
+            url: `${urlRecompensa}/${id}`,
+            method: "DELETE"
+        });
+
+        if (!json.error) {
+          window.location.href = `/club/admin`;
+        } else {
+          alert("Recompensa no eliminada.");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function realizarAccion(ev, accion, id) {
   ev.preventDefault();
-  if(accion == "")
-  console.log(accion);
-  window.location.href = `/usuario/${accion}`;
+  if(accion == "eliminar") {
+    borrarRecompensa(id);
+  } else {
+    window.location.href = `/club/admin`;
+  }
 }
 
 function BorrarRecompensa() {
+  const [recompensa, setRecompensa] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function getRecompensa(id) {
+      try {
+        const json = await ajax({url:urlRecompensa.concat("/").concat(parseInt(id))});
+        setRecompensa(json);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    getRecompensa(id);
+  }, [])
+  
   return (
     <section className='borrar--recompensa d-flex-col'>
     <ScrollArriba />
       <h1 className="borrar--recompensa--titulo">¿Estás seguro de que quieres borrar esta recompensa?</h1>
       <form className='borrar--recompensa--form d-flex-col'>
-        <CampoPanel nombre={"Recompensa"} descripcion={"Descripción"} puntos={"3475"} />
-        <BotonSubmit mensaje={"Eliminar"} button={true} onClick={(ev) => realizarAccion(ev, "eliminar")} />
-        <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar")} />
+        <CampoPanel nombre={recompensa.nombre} descripcion={recompensa.descripcion} puntos={recompensa.precio} />
+        <BotonSubmit mensaje={"Eliminar"} button={true} onClick={(ev) => realizarAccion(ev, "eliminar", id)} />
+        <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
       </form>
     </section>
   )

@@ -40,9 +40,14 @@ class RecompensaController extends Controller{
     public function delete($id) {
         $model = new RecompensaModel();
         if($model->delete($id)){
-            echo "Recompensa eliminada.";
+            header('Content-Type: application/json');
+            echo json_encode(["success" => true]);
+            exit;
         }else{
-            Controller::sendNotFound("No se ha podido eliminar la recompensa.");
+           header('Content-Type: application/json');
+            http_response_code(400);
+            echo json_encode(["success" => false, "error" => "No se pudo eliminar."]);
+            exit;
         }
     }
 
