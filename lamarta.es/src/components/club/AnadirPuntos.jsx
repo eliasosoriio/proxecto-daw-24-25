@@ -78,7 +78,7 @@ function AnadirPuntos() {
   return (
     <section className='anadir--puntos d-flex-col'>
     <ScrollArriba />
-        <form className='anadir--puntos--form d-flex-col'>
+        <form className='anadir--puntos--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", id, concepto, importe)}>
             <Campo 
               nombre="Escribe un concepto" 
               type={"text"} 
@@ -92,11 +92,12 @@ function AnadirPuntos() {
               type={"number"} 
               placeholder={"18,97"} 
               min={0}
+              step={true}
               onChange={(ev) => {
                 setImporte(ev.target.value);
               }}
             />
-            <BotonSubmit mensaje={"Añadir Puntos"} button={true} onClick={(ev) => realizarAccion(ev, "anadir", id, concepto, importe)} />
+            <BotonSubmit mensaje={"Añadir Puntos"} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id, concepto, importe)} />
         </form>
     </section>

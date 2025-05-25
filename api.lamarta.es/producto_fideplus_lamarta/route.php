@@ -1,8 +1,29 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE");
+//Dominios permitidos para las peticiones
+$permitidos = [
+    "https://lamarta.es",
+    "https://lamartaes.vercel.app",
+    "http://localhost:5173"
+];
+
+//Comprueba que el dominio tiene permiso
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $permitidos)) {
+    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+}
+
+//Métodos permitidos
+header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS");
+
+//Headers permitidos
 header("Access-Control-Allow-Headers: Content-Type, X-API-KEY");
 
+//Si es una preflight request, solo responde 200 y termina
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+//Ficheros que se utilizan
 include_once("globals.php");
 include_once("Recursos.php");
 include_once("Constantes.php");
@@ -12,23 +33,15 @@ include_once("controller/TokenController.php");
 include_once("controller/AdminController.php");
 include_once("controller/AfiliadoController.php");
 
-/**
- * Este fichero captura todas la peticiones a nuestra aplicación.
- * Aqui se parsea la uri para decidir el controlador y la acción que debemos ejecutar.
- */
+//Se parsea la uri para decidir el controlador y la acción que debemos ejecutar
 $metodo = $_SERVER["REQUEST_METHOD"];
 $uri = $_SERVER["REQUEST_URI"];
 $uri = explode("/", $uri);
 $elemento = $uri[3];
 $id = $uri[4] ?? null;
 
-// Si es una preflight request, solo responde 200 y termina
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
-
 try {
+    //Se crea el controlador si no es login
     if($elemento != "login") {
         $controlador = Controller::getController($elemento);
     }
@@ -37,14 +50,17 @@ try {
     die();
 }
 
+//Se comprueba que la uri viene completa
 if (count($uri) < 3) {
     throw new Exception("URI incompleta");
 }
 
+//Si el controlador es login y el método no es POST ni GET, se rechaza
 if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
     throw new Exception("Método no permitido.");
 }
 
+//Cuando no es login ni token se comprueba si el usuario tiene permiso
 if ($elemento !== 'login' && $elemento !== 'token') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
@@ -53,6 +69,7 @@ if ($elemento !== 'login' && $elemento !== 'token') {
     }
 }
 
+//Se filtra la acción en función del método
 switch ($metodo) {
     case 'POST':
         $json = file_get_contents('php://input');

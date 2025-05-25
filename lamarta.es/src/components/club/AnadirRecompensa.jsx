@@ -77,7 +77,7 @@ function AnadirRecompensa() {
   return (
     <section className='anadir--recompensa d-flex-col'>
     <ScrollArriba />
-        <form className='anadir--recompensa--form d-flex-col'>
+        <form className='anadir--recompensa--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", nombre, descripcion, precio)}>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 
@@ -103,7 +103,7 @@ function AnadirRecompensa() {
                 setPrecio(ev.target.value);
               }}
             />
-            <BotonSubmit mensaje={"Añadir Recompensa"}  button={true} onClick={(ev) => realizarAccion(ev, "anadir", nombre, descripcion, precio)} />
+            <BotonSubmit mensaje={"Añadir Recompensa"} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", nombre, descripcion, precio)} />
         </form>
     </section>

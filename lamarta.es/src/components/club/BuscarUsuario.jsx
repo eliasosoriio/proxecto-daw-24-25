@@ -69,7 +69,7 @@ function BuscarUsuario() {
   return (
     <section className='buscar--usuario d-flex-col'>
     <ScrollArriba />
-        <form className='buscar--usuario--form d-flex-col'>
+        <form className='buscar--usuario--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "buscar", id)}>
             <Campo 
               id="usuario" 
               nombre="Nº de Afiliado" 
@@ -80,7 +80,7 @@ function BuscarUsuario() {
                 setId(ev.target.value);
               }}
             />
-            <BotonSubmit mensaje={"Buscar Usuario"} button={true} onClick={(ev) => realizarAccion(ev, "buscar", id)} />
+            <BotonSubmit mensaje={"Buscar Usuario"} />
             <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
         </form>
     </section>
