@@ -33,7 +33,7 @@ class ControllerException extends Exception{
 }
 
 /**
- * Clase abstracta Controller que define que estructuta tienen estos mismos.
+ * Clase abstracta Controller que define que estructura tienen estos mismos.
  */
 abstract class Controller
 {

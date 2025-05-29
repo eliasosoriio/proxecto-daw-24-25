@@ -1,8 +1,17 @@
 <?php
+/**
+ * @file TransaccionModel.php
+ * @description Define la clase TransaccionModel que maneja la entidad Transaccion.
+ * @author Elías Osorio Pouseu
+ */
 include_once("Model.php");
 include_once("ModelObject.php");
 
-class Transaccion extends ModelObject{
+/**
+ * Clase Transaccion, que define las variables, el método fromJson, el método toJson, getters y setters.
+ */
+class Transaccion extends ModelObject
+{
 
     public int $id_transaccion;
     public int $id_usuario_admin;
@@ -11,6 +20,15 @@ class Transaccion extends ModelObject{
     public int $importe;
     public string $fecha;
 
+    /**
+     * Constructor de Transaccion que se usa para instanciar una.
+     * @param int $id_usuario_admin
+     * @param int $id_usuario_afiliado
+     * @param string $concepto
+     * @param int $importe
+     * @param string $fecha
+     * @param int $id_transaccion
+     */
     function __construct($id_usuario_admin, $id_usuario_afiliado, $concepto, $importe, $fecha = null, $id_transaccion = 0)
     {
         $this->id_usuario_admin = $id_usuario_admin;
@@ -21,7 +39,13 @@ class Transaccion extends ModelObject{
         $this->id_transaccion = $id_transaccion;
     }
 
-    public static function fromJson($json): ModelObject {
+    /**
+     * Método fromJson que convierte un json al objeto correspondiente.
+     * @param string $json
+     * @return Transaccion
+     */
+    public static function fromJson($json): ModelObject 
+    {
         $data = json_decode($json, true)[0];
         return new Transaccion(
             $data['id_usuario_admin'], 
@@ -31,12 +55,17 @@ class Transaccion extends ModelObject{
         );
     }
 
-    public function toJson():String{
+    /**
+     * Método toJson que convierte el objeto en json
+     * @return string
+     */
+    public function toJson():String
+    {
         return json_encode($this,JSON_PRETTY_PRINT);
     }
 
     /**
-     * Get the value of id_transaccion
+     * Obtiene el valor de id_transaccion
      */ 
     public function getId_transaccion()
     {
@@ -44,7 +73,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of id_transaccion
+     * Establece el valor de id_transaccion
      *
      * @return  self
      */ 
@@ -56,7 +85,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Get the value of id_usuario_admin
+     * Obtiene el valor de id_usuario_admin
      */ 
     public function getId_usuario_admin()
     {
@@ -64,7 +93,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of id_usuario_admin
+     * Establece el valor de id_usuario_admin
      *
      * @return  self
      */ 
@@ -76,7 +105,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Get the value of id_usuario_afiliado
+     * Obtiene el valor de id_usuario_afiliado
      */ 
     public function getId_usuario_afiliado()
     {
@@ -84,7 +113,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of id_usuario_afiliado
+     * Establece el valor de id_usuario_afiliado
      *
      * @return  self
      */ 
@@ -96,7 +125,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Get the value of concepto
+     * Obtiene el valor de concepto
      */ 
     public function getConcepto()
     {
@@ -104,7 +133,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of concepto
+     * Establece el valor de concepto
      *
      * @return  self
      */ 
@@ -116,7 +145,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Get the value of importe
+     * Obtiene el valor de importe
      */ 
     public function getImporte()
     {
@@ -124,7 +153,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of importe
+     * Establece el valor de importe
      *
      * @return  self
      */ 
@@ -136,7 +165,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Get the value of fecha
+     * Obtiene el valor de fecha
      */ 
     public function getFecha()
     {
@@ -144,7 +173,7 @@ class Transaccion extends ModelObject{
     }
 
     /**
-     * Set the value of fecha
+     * Establece el valor de fecha
      *
      * @return  self
      */ 
@@ -157,27 +186,44 @@ class Transaccion extends ModelObject{
 
 }
 
-
+/**
+ * Clase TransaccionModel, contiene sus métodos CRUD que conectan con la base de datos.
+ */
 class TransaccionModel extends Model
 {
 
+    /**
+     * Método getAll que recupera todos los registros.
+     * @return Transaccion[]
+     */
     public function getAll($id_usuario)
     {
+        //Defino la sentencia a utilizar.
         $sql = "SELECT * FROM transaccion";
+
+        //Si viene un $id_usuario se buscan todas las de él.
         if($id_usuario != null) {
             $sql.= " WHERE id_usuario_afiliado = ?";
         }
+
         $sql .= " ORDER BY fecha DESC LIMIT 5";
+
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = [];
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
+            //Si viene el $id_usuario se asigna el parámetro.
             if($id_usuario != null) {
                 $stmt->bindValue(1, $id_usuario, PDO::PARAM_INT);
             }
                  
+            //Se ejecuta.
             $stmt->execute();
 
+            //Por cada transaccion, se genera su objeto transaccion y se asigna al array de transacciones.
             $resultado = array();
             foreach($stmt as $t){
                 $transaccion = new Transaccion($t['id_usuario_admin'],$t['id_usuario_afiliado'],$t['concepto'],$t['importe'], $t['fecha'], $t['id_transaccion']);
@@ -194,21 +240,36 @@ class TransaccionModel extends Model
         return $resultado;
     }
 
-    public function get($idTransaccion) : Transaccion | null
+    /**
+     * Método get que recupera un registro mediante id.
+     * @param int $id_transaccion
+     * @return Recompensa|null
+     */
+    public function get($id_transaccion) : Transaccion | null
     {
+        //Defino la sentencia a utilizar.
         $sql = "SELECT * FROM transaccion WHERE id_transaccion=?";
+
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = null;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(1, $idTransaccion, PDO::PARAM_INT);
+
+            //Se asigna el parámetro.
+            $stmt->bindValue(1, $id_transaccion, PDO::PARAM_INT);
+
+            //Se ejecuta.
             $stmt->execute();
+
+            //En caso de encontrar una transaccion, crea el objeto y se asigna al resultado.
             if($t = $stmt->fetch()){
                 $resultado = new Transaccion($t['id_usuario_admin'],$t['id_usuario_afiliado'],$t['concepto'],$t['importe'], $t['fecha'], $t['id_transaccion']);
             }
             
         } catch (Throwable $th) {
-            error_log("Error TransaccionModel->get($idTransaccion)");
+            error_log("Error TransaccionModel->get($id_transaccion)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -218,44 +279,69 @@ class TransaccionModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método insert que crea un nuevo registro.
+     * @param object $transaccion
+     * @return bool
+     */
     public function insert($transaccion)
     {
+        //Defino las sentencias a utilizar.
         $sql = "INSERT INTO transaccion(id_usuario_admin, id_usuario_afiliado, concepto, importe, fecha) VALUES (:id_usuario_admin, :id_usuario_afiliado, :concepto, :importe, :fecha)";
         $sql2 = "SELECT puntos FROM afiliado WHERE id_usuario = ?";
         $sql3 = "UPDATE afiliado SET puntos = puntos + ? WHERE id_usuario = ?";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = false;
         try {
+            //Se realiza un beginTransaction ya que se insertan diferentes registros.
             $pdo->beginTransaction();
 
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
+            //Primero se registra la transaccion.
             $stmt->bindValue(":id_usuario_admin", $transaccion->getId_usuario_admin(), PDO::PARAM_INT);
             $stmt->bindValue(":id_usuario_afiliado", $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
             $stmt->bindValue(":concepto", $transaccion->getConcepto(), PDO::PARAM_STR);
             $stmt->bindValue(":importe", $transaccion->getImporte(), PDO::PARAM_INT);
             $stmt->bindValue(":fecha", $transaccion->getFecha() ?? date('Y-m-d'), PDO::PARAM_STR);
 
+            //Se ejecuta
             $stmt->execute();
 
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt2 = $pdo->prepare($sql2);
+
+            //Después, se obtiene el saldo.
             $stmt2->bindValue(1, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
+
+            //Se ejecuta y se coge el saldo.
             $stmt2->execute();
             $saldo = $stmt2->fetchColumn();
 
+            //Se comprueba que en función del saldo la transacción es viable.
             if ($saldo + $transaccion->getImporte() < 0) {
                 throw new PDOException("Saldo insuficiente para canjear esta recompensa.");
             }
 
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt3 = $pdo->prepare($sql3);
+
+            //Por último, se realiza la transacción y se actualiza el saldo.
             $stmt3->bindValue(1, $transaccion->getImporte(), PDO::PARAM_INT);
             $stmt3->bindValue(2, $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
 
+            //Se ejecuta
             $stmt3->execute();
 
+            //Si ha llegado todo hasta aquí y no a saltado ningún error. Se confirma la transacción.
             $pdo->commit();
             $resultado = true;
         } catch (PDOException $th) {
+            //Si hubise saltado algún error no hubiese aplicado ninguna acción de dentro de la transacción.
+            $pdo->rollBack();
             error_log("Error TransaccionModel->insert(" . $transaccion->toJson. ")");
             error_log($th->getMessage());
         } finally {
@@ -266,49 +352,30 @@ class TransaccionModel extends Model
         return $resultado;
     }
 
-    public function update($transaccion, $idTransaccion)
+    /**
+     * Método delete que elimina un registro mediante su id.
+     * @param int $id_transaccion
+     * @return bool
+     */
+    public function delete($id_transaccion)
     {
-        /*  NO SE USA ACTUALMENTE*/
-        /*$sql = "UPDATE transaccion SET id_usuario_admin=:id_usuario_admin, id_usuario_afiliado=:id_usuario_afiliado,
-            concepto=:concepto, importe=:importe fecha=:fecha
-            WHERE id_transaccion=:id_transaccion";
-
-        $pdo = self::getConnection();
-        $resultado = false;
-        try {
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(":id_usuario_admin", $transaccion->getId_usuario_admin(), PDO::PARAM_INT);
-            $stmt->bindValue(":id_usuario_afiliado", $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
-            $stmt->bindValue(":concepto", $transaccion->getConcepto(), PDO::PARAM_STR);
-            $stmt->bindValue(":importe", $transaccion->getImporte(), PDO::PARAM_INT);
-            $stmt->bindValue(":fecha", $transaccion->getFecha() ?? date('Y-m-d'), PDO::PARAM_STR);
-            $stmt->bindValue(":id_transaccion", $idTransaccion, PDO::PARAM_INT);
-
-            $resultado = $stmt->execute();
-            $resultado = $stmt->rowCount() == 1;
-        } catch (PDOException $th) {
-            error_log("Error TransaccionModel->update(" . implode(",", $transaccion) . ", $idTransaccion)");
-            error_log($th->getMessage());
-        } finally {
-            $stmt = null;
-            $pdo = null;
-        }
-
-        return $resultado;*/
-    }
-
-    public function delete($idTransaccion)
-    {
+        //Defino la sentencia a utilizar.
         $sql = "DELETE FROM transaccion WHERE id_transaccion = ?";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = false;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(1, $idTransaccion, PDO::PARAM_INT);
+
+            //Se asigna el parámetro.
+            $stmt->bindValue(1, $id_transaccion, PDO::PARAM_INT);
+
+            //Se ejecuta y asigna true si todo salió bien.
             $resultado = $stmt->execute();
         } catch (PDOException $th) {
-            error_log("Error TransaccionModel->delete($idTransaccion)");
+            error_log("Error TransaccionModel->delete($id_transaccion)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;

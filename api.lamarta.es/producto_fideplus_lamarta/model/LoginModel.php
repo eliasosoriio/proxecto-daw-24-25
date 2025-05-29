@@ -1,8 +1,17 @@
 <?php
+/**
+ * @file LoginModel.php
+ * @description Define la clase LoginModel que maneja la entidad Login.
+ * @author Elías Osorio Pouseu
+ */
 include_once("Model.php");
 include_once("ModelObject.php");
 
-class Login extends ModelObject{
+/**
+ * Clase Login, que define las variables, el método fromJson, el método toJson, getters y setters.
+ */
+class Login extends ModelObject
+{
 
     public int $id_usuario;
     public string $usuario = '';
@@ -11,7 +20,13 @@ class Login extends ModelObject{
     public string $tipo = '';
     public string $token;
 
-    public static function fromJson($json): ModelObject {
+    /**
+     * Método fromJson que convierte un json al objeto correspondiente.
+     * @param string $json
+     * @return Login
+     */
+    public static function fromJson($json): ModelObject 
+    {
         $data = json_decode($json, true);
         $login = new Login();
         $login->setUsuario($data["usuario"]);
@@ -19,12 +34,17 @@ class Login extends ModelObject{
         return $login;
     }
 
-    public function toJson():String{
+    /**
+     * Método toJson que convierte el objeto en json
+     * @return string
+     */
+    public function toJson():String
+    {
         return json_encode($this,JSON_PRETTY_PRINT);
     }
 
     /**
-     * Get the value of id_usuario
+     * Obtiene el valor de id_usuario
      */
     public function getId_usuario()
     {
@@ -32,7 +52,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of id_usuario
+     * Establece el valor de id_usuario
      *
      * @return  self
      */
@@ -44,7 +64,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Get the value of usuario
+     * Obtiene el valor de usuario
      */
     public function getUsuario()
     {
@@ -52,7 +72,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of usuario
+     * Establece el valor de usuario
      *
      * @return  self
      */
@@ -64,7 +84,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Get the value of contrasenia
+     * Obtiene el valor de contrasenia
      */
     public function getContrasenia()
     {
@@ -72,7 +92,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of contrasenia
+     * Establece el valor de contrasenia
      *
      * @return  self
      */
@@ -84,7 +104,7 @@ class Login extends ModelObject{
     }
 
      /**
-     * Get the value of id_tipo
+     * Obtiene el valor de id_tipo
      */
     public function getId_tipo()
     {
@@ -92,7 +112,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of id_tipo
+     * Establece el valor de id_tipo
      *
      * @return  self
      */
@@ -104,7 +124,7 @@ class Login extends ModelObject{
     }
 
      /**
-     * Get the value of token
+     * Obtiene el valor de token
      */
     public function getToken()
     {
@@ -112,7 +132,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of token
+     * Establece el valor de token
      *
      * @return  self
      */
@@ -124,7 +144,7 @@ class Login extends ModelObject{
     }
 
      /**
-     * Get the value of tipo
+     * Obtiene el valor de tipo
      */ 
     public function getTipo()
     {
@@ -132,7 +152,7 @@ class Login extends ModelObject{
     }
 
     /**
-     * Set the value of tipo
+     * Establece el valor de tipo
      *
      * @return  self
      */ 
@@ -144,34 +164,37 @@ class Login extends ModelObject{
     }
 }
 
-
+/**
+ * Clase LoginModel, contiene el método signIn que conecta con la base de datos.
+ */
 class LoginModel extends Model
 {
 
-    public function singIn($login): Login | null{
-       $sql = "
-                SELECT 
-                    usuario.id_usuario, 
-                    usuario.correo, 
-                    usuario.contrasenia, 
-                    usuario.id_tipo, 
-                    tipo.nombre AS tipo
-                FROM usuario
-                JOIN tipo ON usuario.id_tipo = tipo.id_tipo
-                WHERE usuario.correo = ?
-            ";
+    /**
+     * Método signIn que se encarga se realizar el inicio de sesión.
+     * @param object $login
+     * @return Login|null
+     */
+    public function singIn($login): Login | null
+    {
+        //Defino la sentencia a utilizar.
+        $sql = " SELECT usuario.id_usuario, usuario.correo, usuario.contrasenia, usuario.id_tipo, tipo.nombre AS tipo FROM usuario JOIN tipo ON usuario.id_tipo = tipo.id_tipo WHERE usuario.correo = ? ";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = null;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(1, $login->getUsuario(), PDO::PARAM_STR);
-            $stmt->execute();
-            if($u = $stmt->fetch()){
-                
-                $debugContrasenia = password_verify($login->getContrasenia(), $u["contrasenia"]);
-                $hash = password_hash("cliente", PASSWORD_DEFAULT);
 
+            //Se asigna el parámetro.
+            $stmt->bindValue(1, $login->getUsuario(), PDO::PARAM_STR);
+
+            //Se ejecuta.
+            $stmt->execute();
+
+            //En caso de encontrar un usuario con ese correo y contraseña, crea el objeto y se asigna al resultado.
+            if($u = $stmt->fetch()){
                 if (password_verify($login->getContrasenia(), $u["contrasenia"])) {
                     $resultado = new Login();
                     $resultado->setId_usuario($u["id_usuario"]);

@@ -1,15 +1,30 @@
 <?php
+/**
+ * @file RecompensaModel.php
+ * @description Define la clase RecompensaModel que maneja la entidad Recompensa.
+ * @author Elías Osorio Pouseu
+ */
 include_once("Model.php");
 include_once("ModelObject.php");
 
-class Recompensa extends ModelObject{
+/**
+ * Clase Recompensa, que define las variables, el método fromJson, el método toJson, getters y setters.
+ */
+class Recompensa extends ModelObject
+{
 
     public int $id_recompensa;
     public string $nombre;
     public string $descripcion;
     public int $precio;
 
-    public static function fromJson($json): ModelObject {
+    /**
+     * Método fromJson que convierte un json al objeto correspondiente.
+     * @param string $json
+     * @return Recompensa
+     */
+    public static function fromJson($json): ModelObject 
+    {
         $data = json_decode($json, true)[0];
         $recompensa = new Recompensa();
 
@@ -29,12 +44,17 @@ class Recompensa extends ModelObject{
         return $recompensa;
     }
 
-    public function toJson():String{
+    /**
+     * Método toJson que convierte el objeto en json
+     * @return string
+     */
+    public function toJson():String
+    {
         return json_encode($this,JSON_PRETTY_PRINT);
     }
 
      /**
-     * Get the value of id_recompensa
+     * Obtiene el valor de id_recompensa
      */ 
     public function getId_recompensa()
     {
@@ -42,7 +62,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Set the value of id_recompensa
+     * Establece el valor de id_recompensa
      *
      * @return  self
      */ 
@@ -54,7 +74,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Get the value of nombre
+     * Obtiene el valor de nombre
      */ 
     public function getNombre()
     {
@@ -62,7 +82,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Set the value of nombre
+     * Establece el valor de nombre
      *
      * @return  self
      */ 
@@ -74,7 +94,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Get the value of descripcion
+     * Obtiene el valor de descripcion
      */ 
     public function getDescripcion()
     {
@@ -82,7 +102,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Set the value of descripcion
+     * Establece el valor de descripcion
      *
      * @return  self
      */ 
@@ -94,7 +114,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Get the value of precio
+     * Obtiene el valor de precio
      */ 
     public function getPrecio()
     {
@@ -102,7 +122,7 @@ class Recompensa extends ModelObject{
     }
 
     /**
-     * Set the value of precio
+     * Establece el valor de precio
      *
      * @return  self
      */ 
@@ -114,18 +134,30 @@ class Recompensa extends ModelObject{
     }
 }
 
-
+/**
+ * Clase RecompensaModel, contiene sus métodos CRUD que conectan con la base de datos.
+ */
 class RecompensaModel extends Model
 {
 
+    /**
+     * Método getAll que recupera todos los registros.
+     * @return Recompensa[]
+     */
     public function getAll()
     {
+        //Defino la sentencia a utilizar.
         $sql = "SELECT * FROM recompensa ORDER BY precio ASC";
+
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = [];
         try {
+            //Se realiza la búsqueda fija.
             $stmt = $pdo->query($sql);
             $resultado = array();
+
+            //Por cada recompensa, se genera su objeto recompensa y se asigna al array de recompensas.
             foreach($stmt as $r){
                 $recompensa = new Recompensa();
 
@@ -147,15 +179,30 @@ class RecompensaModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método get que recupera un registro mediante id.
+     * @param int $id_recompensa
+     * @return Recompensa|null
+     */
     public function get($id_recompensa) : Recompensa | null
     {
+        //Defino la sentencia a utilizar.
         $sql = "SELECT * FROM recompensa WHERE id_recompensa=?";
+
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = null;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
+            //Se asigna el parámetro.
             $stmt->bindValue(1, $id_recompensa, PDO::PARAM_INT);
+
+            //Se ejecuta.
             $stmt->execute();
+
+            //En caso de encontrar una recompensa, crea el objeto y se asigna al resultado.
             if($r = $stmt->fetch()){
                 $recompensa = new Recompensa();
 
@@ -178,17 +225,29 @@ class RecompensaModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método insert que crea un nuevo registro.
+     * @param object $recompensa
+     * @return bool
+     */
     public function insert($recompensa)
     {
+        //Defino la sentencia a utilizar.
         $sql = "INSERT INTO recompensa (nombre, descripcion, precio) VALUES (:nombre, :descripcion, :precio)";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = false;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
+            //Se asignan los parámetros.
             $stmt->bindValue(":nombre", $recompensa->getNombre(), PDO::PARAM_STR);
             $stmt->bindValue(":descripcion", $recompensa->getDescripcion(), PDO::PARAM_STR);
             $stmt->bindValue(":precio", $recompensa->getPrecio(), PDO::PARAM_INT);
+            
+            //Se ejecuta y asigna true si todo salió bien.
             $resultado = $stmt->execute();
         } catch (PDOException $th) {
             error_log("Error RecompensaModel->insert(" . $recompensa->toJson. ")");
@@ -201,23 +260,36 @@ class RecompensaModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método update que actualiza un registro.
+     * @param object $recompensa
+     * @param int $id_recompensa
+     * @return bool
+     */
     public function update($recompensa, $id_recompensa)
     {
+        //Defino la sentencia a utilizar.
         $sql = "UPDATE recompensa SET nombre = :nombre, descripcion = :descripcion, precio = :precio WHERE id_recompensa = :id_recompensa";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = false;
         try {
+             //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
             $stmt->bindValue(":id_recompensa", $id_recompensa, PDO::PARAM_INT);
             $stmt->bindValue(":nombre", $recompensa->getNombre(), PDO::PARAM_STR);
             $stmt->bindValue(":descripcion", $recompensa->getDescripcion(), PDO::PARAM_STR);
             $stmt->bindValue(":precio", $recompensa->getPrecio(), PDO::PARAM_INT);
 
+            //Se ejecuta.
             $resultado = $stmt->execute();
+
+            //Si tras ejecutar exitosamente solo hay una fila se devuelve true.
             $resultado = $stmt->rowCount() == 1;
         } catch (PDOException $th) {
-            error_log("Error RecompensaModel->update(" . implode(",", $recompensa) . ", $id_recompensa)");
+            error_log("Error RecompensaModel->update(" . $recompensa->getNombre() . ", $id_recompensa)");
             error_log($th->getMessage());
         } finally {
             $stmt = null;
@@ -227,15 +299,27 @@ class RecompensaModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método delete que elimina un registro mediante su id.
+     * @param int $id_recompensa
+     * @return bool
+     */
     public function delete($id_recompensa)
     {
+        //Defino la sentencia a utilizar.
         $sql = "DELETE FROM recompensa WHERE id_recompensa = ?";
 
+        //La conexión se abre.
         $pdo = self::getConnection();
         $resultado = false;
         try {
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
             $stmt = $pdo->prepare($sql);
+
+            //Se asigna el parámetro.
             $stmt->bindValue(1, $id_recompensa, PDO::PARAM_INT);
+
+            //Se ejecuta y asigna true si todo salió bien.
             $resultado = $stmt->execute();
         } catch (PDOException $th) {
             error_log("Error RecompensaModel->delete($id_recompensa)");

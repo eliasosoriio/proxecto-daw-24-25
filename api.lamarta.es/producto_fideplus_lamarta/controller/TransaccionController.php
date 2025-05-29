@@ -92,25 +92,10 @@ class TransaccionController extends Controller{
     }
 
     /**
-     * Método update que actualiza un registro.
+     * Método update que actualiza un registro (No se utiliza aquí).
      * @param int $id
      * @param object $object
      * @return void
      */
-    public function update($id, $object){
-        $model = new TransaccionModel();
-        $transaccion = Transaccion::fromJson($object);
-
-        //En función del resultado se manda una respuesta.
-        if($model->update($transaccion,$id)){
-            header('Content-Type: application/json');
-            echo json_encode(["success" => true]);
-            exit;
-        }else{
-           header('Content-Type: application/json');
-            http_response_code(400);
-            echo json_encode(["success" => false, "error" => "No se pudo actualizar."]);
-            exit;
-        }
-    }
+    public function update($id, $object){}
 }
