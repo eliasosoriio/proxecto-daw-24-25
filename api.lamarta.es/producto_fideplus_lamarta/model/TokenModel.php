@@ -26,9 +26,20 @@ class Token extends ModelObject
     {
         $data = json_decode($json, true);
         $token = new Token();
-        $token->setId_usuario($data["id_usuario"]);
-        $token->setToken($data["token"]);
-        $token->setValidez($data["validez"]);
+
+        if (isset($data['id_usuario']) && filter_var((int) $data['id_usuario'], FILTER_VALIDATE_INT)) {
+            $token->setId_usuario((int) $data['id_usuario']);
+        }
+
+        if (isset($data['token'])) {
+            $tokenStr = trim($data['token']);
+            $token->setToken($tokenStr);
+        }
+
+        if (isset($data['validez']) && strtotime($data['validez']) !== false) {
+            $token->setValidez($data['validez']);
+        }
+
         return $token;
     }
 

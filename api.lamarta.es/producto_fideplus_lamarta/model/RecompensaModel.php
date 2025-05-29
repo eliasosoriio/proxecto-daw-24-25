@@ -28,17 +28,19 @@ class Recompensa extends ModelObject
         $data = json_decode($json, true)[0];
         $recompensa = new Recompensa();
 
-        if(isset($data['id_recompensa'])) {
-            $recompensa->setId_recompensa($data['id_recompensa']);
+        if(isset($data['id_recompensa']) && filter_var((int) $data['id_recompensa'], FILTER_VALIDATE_INT)) {
+            $recompensa->setId_recompensa((int) $data['id_recompensa']);
         }
         if(isset($data['nombre'])) {
-            $recompensa->setNombre($data['nombre']);
+            $nombre = trim($data['nombre']);
+            $recompensa->setNombre($nombre);
         }
         if(isset($data['descripcion'])) {
-            $recompensa->setDescripcion($data['descripcion']);
+            $descripcion = trim($data['descripcion']);
+            $recompensa->setDescripcion($descripcion);
         }
-        if(isset($data['precio'])) {
-            $recompensa->setPrecio($data['precio']);
+        if(isset($data['precio']) && filter_var((int) $data['precio'], FILTER_VALIDATE_INT)) {
+            $recompensa->setPrecio((int) $data['precio']);
         }
 
         return $recompensa;

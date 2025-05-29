@@ -29,8 +29,16 @@ class Login extends ModelObject
     {
         $data = json_decode($json, true);
         $login = new Login();
-        $login->setUsuario($data["usuario"]);
-        $login->setContrasenia($data["contrasenia"]);
+
+        if (isset($data["usuario"])) {
+            $usuario = trim($data["usuario"]);
+            $login->setUsuario($usuario);
+        }
+        if (isset($data["contrasenia"])) {
+            $contrasenia = $data["contrasenia"];
+            $login->setContrasenia($contrasenia);
+        }
+
         return $login;
     }
 

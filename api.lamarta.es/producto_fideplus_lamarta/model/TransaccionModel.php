@@ -47,12 +47,16 @@ class Transaccion extends ModelObject
     public static function fromJson($json): ModelObject 
     {
         $data = json_decode($json, true)[0];
-        return new Transaccion(
-            $data['id_usuario_admin'], 
-            $data['id_usuario_afiliado'],
-            $data['concepto'],
-            $data['importe']
-        );
+    
+        $id_admin = isset($data['id_usuario_admin']) && filter_var((int) $data['id_usuario_admin'], FILTER_VALIDATE_INT) ? (int) $data['id_usuario_admin'] : null;
+
+        $id_afiliado = isset($data['id_usuario_afiliado']) && filter_var((int) $data['id_usuario_afiliado'], FILTER_VALIDATE_INT) ? (int) $data['id_usuario_afiliado'] : null;
+
+        $concepto = isset($data['concepto']) ? trim($data['concepto']) : null;
+
+        $importe = isset($data['importe']) && filter_var((int) $data['importe'], FILTER_VALIDATE_INT) ? (int) $data['importe'] : null;
+
+        return new Transaccion($id_admin, $id_afiliado, $concepto, $importe);
     }
 
     /**

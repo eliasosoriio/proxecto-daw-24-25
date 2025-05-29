@@ -30,20 +30,26 @@ class Admin extends ModelObject
         $data = json_decode($json, true)[0];
         $usuario = new Admin();
 
-        if(isset($data['id_usuario'])) {
-            $usuario->setId_usuario($data['id_usuario']);
+        if(isset($data['id_usuario']) && filter_var((int) $data['id_usuario'], FILTER_VALIDATE_INT)) {
+            $usuario->setId_usuario((int) $data['id_usuario']);
         }
         if(isset($data['nombre'])) {
-            $usuario->setNombre($data['nombre']);
+            $nombre = trim($data['nombre']);
+            $usuario->setNombre($nombre);
         }
         if(isset($data['apellidos'])) {
-            $usuario->setApellidos($data['apellidos']);
+            $apellidos = trim($data['apellidos']);
+            $usuario->setApellidos($apellidos);
         }
         if(isset($data['correo'])) {
-            $usuario->setCorreo($data['correo']);
+            $correo = trim($data['correo']);
+            if ($correo && filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+                $usuario->setCorreo($correo);
+            }
         }
         if(isset($data['contrasenia'])) {
-            $usuario->setContrasenia(password_hash($data['contrasenia'], PASSWORD_DEFAULT));
+            $contrasenia = trim($data['contrasenia']);
+            $usuario->setContrasenia(password_hash($contrasenia, PASSWORD_DEFAULT));
         }
 
         return $usuario;
