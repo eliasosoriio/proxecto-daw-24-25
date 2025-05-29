@@ -1,3 +1,0 @@
-<?php
-
-define("RECURSO_CONTROLADOR_ADMINISTRADOR_TRANSACCION","transaccion");

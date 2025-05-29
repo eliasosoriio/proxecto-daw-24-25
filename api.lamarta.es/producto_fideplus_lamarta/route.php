@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file route.php
+ * @description Maneja las peticiones que entran a la API.
+ * @author Elías Osorio Pouseu
+ */
+
 //Dominios permitidos para las peticiones
 $permitidos = [
     "https://lamarta.es",

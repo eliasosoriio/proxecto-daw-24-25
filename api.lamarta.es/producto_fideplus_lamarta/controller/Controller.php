@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file Controller.php
+ * @description Define la clase Controller de la que extenderán los controladores.
+ * @author Elías Osorio Pouseu
+ */
+
 include_once("TransaccionController.php");
 include_once("RecompensaController.php");
 include_once("TokenController.php");
@@ -44,6 +50,12 @@ abstract class Controller
         echo json_encode($mensaje, JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Método getController que se encarga de definir el controlador.
+     * @param string $nombre
+     * @throws \ControllerException
+     * @return Controller
+     */
     public static function getController($nombre): Controller
     {
         $controller = null;
@@ -69,9 +81,38 @@ abstract class Controller
         return $controller;
     }
 
+    /**
+     * Método get que recupera un registro en concreto de una entidad mediante un id.
+     * @param int $id
+     * @return void
+     */
     public abstract function get($id);
+
+    /**
+     * Método getAll que recupera todos los registros de una entidad o todos los de un usuario.
+     * @return void
+     */
     public abstract function getAll();
+
+    /**
+     * Método delete que borra un registro mediante id.
+     * @param int $id
+     * @return void
+     */
     public abstract function delete($id);
+
+    /**
+     * Método update que actualiza un registro.
+     * @param int $id
+     * @param object $object
+     * @return void
+     */
     public abstract function update($id, $object);
+
+    /**
+     * Método insert que crea un nuevo registro en una entidad.
+     * @param object $object
+     * @return void
+     */
     public abstract function insert($object);
 }
