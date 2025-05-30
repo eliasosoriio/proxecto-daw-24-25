@@ -5,8 +5,8 @@ import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 
-const urlRecompensas = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
-const urlTransacciones = "http://localhost/producto_fideplus_lamarta/route.php/transaccion";
+const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
+const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;

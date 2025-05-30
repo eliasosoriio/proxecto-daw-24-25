@@ -5,7 +5,7 @@ import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
 
-const urlRecompensa = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
+const urlRecompensa = "https://lamarta.es/api/route.php/recompensa";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;

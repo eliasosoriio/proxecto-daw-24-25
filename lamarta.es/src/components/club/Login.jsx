@@ -5,8 +5,8 @@ import HeaderSeccion from '../general/HeaderSeccion'
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 
-const urlLogin = "http://localhost/producto_fideplus_lamarta/route.php/login";
-const urlToken = "http://localhost/producto_fideplus_lamarta/route.php/token";
+const urlLogin = "https://lamarta.es/api/route.php/login";
+const urlToken = "https://lamarta.es/api/route.php/token";
 
 
 async function ajax(options) {

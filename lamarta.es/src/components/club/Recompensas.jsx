@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/club/Recompensas.css";
 import CampoPanel from './CampoPanel';
 
-const urlRecompensas = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
+const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;
