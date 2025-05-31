@@ -8,23 +8,26 @@ import ScrollArriba from '../general/ScrollArriba'
 
 function PanelAdmin() {
   return (
-    <section className="paneles d-flex-col">
-      <ScrollArriba />
-      <section className="panel d-flex-col">
-        <Saludo /> 
-      </section>
+    <>
+      <h1 className='paneles--titulo'>LAMARTA CLUB</h1>
+      <section className="paneles d-flex-col">
+        <ScrollArriba />
+        <section className="panel d-flex-col">
+          <Saludo /> 
+        </section>
 
-      <section className="panel d-flex-col">
-        <Usuarios /> 
-      </section>
-      <section className="panel d-flex-col">
-        <Recompensas /> 
-      </section>
+        <section className="panel d-flex-col">
+          <Usuarios /> 
+        </section>
+        <section className="panel d-flex-col">
+          <Recompensas /> 
+        </section>
 
-      <section className="panel d-flex-col">
-        <Acciones /> 
+        <section className="panel d-flex-col">
+          <Acciones /> 
+        </section>
       </section>
-    </section>
+    </>
   )
 }
 

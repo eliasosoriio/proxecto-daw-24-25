@@ -9,10 +9,12 @@
 }
 
 .campo--input {
+    font-family: var(--second-font);
     border-radius: 2rem;
     padding: 1rem 2rem;
     width: 70vw;
     border: none;
+    font-size: 1.6rem;
 }
 .campo--input:focus {
     outline: .3rem solid var(--yellow-color);

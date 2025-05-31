@@ -19,17 +19,17 @@ function CampoPanel({nombre, descripcion, puntos, puedeEditar=false, puedeBorrar
         {tipo === "admin" && (
           <>
             {puedeEditar && (
-              <Link to={editarRecompensa} className='icon-link'>
+              <Link to={editarRecompensa} className='icon-link' aria-label={'Acción editar: '+ nombre}>
                 <i className="fa-solid fa-pen-to-square"></i>
               </Link>
             )}
             {puedeBorrar && (
-              <Link to={borrarRecompensa} className='icon-link'>
+              <Link to={borrarRecompensa} className='icon-link' aria-label={'Acción borrar: '+ nombre}>
                 <i className="fa-solid fa-trash"></i>
               </Link>
             )}
             {puedePerfil && (
-              <Link to={verPerfil} className='icon-link'>
+              <Link to={verPerfil} className='icon-link' aria-label={'Acción ver perfil: '+ nombre}>
                 <i className="fa-solid fa-user"></i>
               </Link>
             )}

@@ -8,24 +8,27 @@ import ScrollArriba from '../general/ScrollArriba'
 
 function PanelAfiliado() {
   return (
-    <section className="paneles d-flex-col">
-      <ScrollArriba />
-      <section className="panel d-flex-col">
-        <Saludo /> 
-      </section>
+    <>
+      <h1 className='paneles--titulo'>LAMARTA CLUB</h1>
+      <section className="paneles d-flex-col">
+        <ScrollArriba />
+        <section className="panel d-flex-col">
+          <Saludo /> 
+        </section>
 
-      <section className="panel d-flex-col">
-        <Recompensas /> 
-      </section>
+        <section className="panel d-flex-col">
+          <Recompensas /> 
+        </section>
 
-      <section className="panel d-flex-col">
-        <Transacciones /> 
-      </section>
+        <section className="panel d-flex-col">
+          <Transacciones /> 
+        </section>
 
-      <section className="panel d-flex-col">
-        <Puntos /> 
+        <section className="panel d-flex-col">
+          <Puntos /> 
+        </section>
       </section>
-    </section>
+    </>
   )
 }
 

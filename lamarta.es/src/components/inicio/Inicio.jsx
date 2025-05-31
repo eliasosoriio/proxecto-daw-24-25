@@ -67,7 +67,7 @@ function Inicio() {
           to="/carta"
           aria-label="Ir a la carta"
         >
-          Ver más
+          Ver carta
         </Link>
       </section>
 

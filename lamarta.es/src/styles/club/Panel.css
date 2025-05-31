@@ -8,6 +8,12 @@
     gap: 2rem;
 }
 
+.paneles--titulo {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
 .panel:first-of-type {
     order: 1;
 }

@@ -18,7 +18,7 @@ function Menu() {
         checked={estadoMenu}
         onChange={cambiarMenu}
       />
-      <label htmlFor="menu" className="desplegable--boton d-flex-row">
+      <label htmlFor="menu" className="desplegable--boton d-flex-row" aria-label={estadoMenu ? "Cerrar menú" : "Abrir menú"}>
         {estadoMenu ? (
             <span className="fa-solid fa-x d-flex-row"></span>
         ) : (

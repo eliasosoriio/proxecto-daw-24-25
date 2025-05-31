@@ -49,6 +49,7 @@ function Blog() {
     <>
       <ScrollArriba />
       <HeaderSeccion nombre="Blog" />
+      <h2 className='blog--titulo'>PULSA EN UN ARTÍCULO O VÍDEO</h2>
       <section className="blog--secciones d-flex-col">
         {[...articulos].reverse().map((a, i) => (
           <a href={a.link} key={i} className="articulo--link" target="_blank" rel="noopener noreferrer">

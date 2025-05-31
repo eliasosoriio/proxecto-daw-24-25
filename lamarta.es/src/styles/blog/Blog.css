@@ -2,6 +2,13 @@
 /*=============================================
 =            Blog            =
 =============================================*/
+
+.blog--titulo {
+    margin: 2rem auto 0 auto;
+    max-width: 90vw;
+    font-size: 2.2rem;
+}
+
 .blog--secciones {
     gap: 2rem;
     margin: 2rem auto;
@@ -11,10 +18,14 @@
 }
 
 @media screen and (min-width: 1280px) {
+    .blog--titulo {
+        font-size: 2.5rem;
+    }
+
     .blog--secciones {
         flex-direction: row;
         flex-wrap: wrap;
-        margin: 10rem auto;
+        margin: 2rem auto 4rem auto;
         gap: 5rem;
     }
 }

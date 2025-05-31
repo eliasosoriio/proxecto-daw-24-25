@@ -6,6 +6,7 @@
 .conocenos--secciones {
     justify-content: center;
     align-items: end;
+    margin: 0 auto;
 }
 
 .conocenos--final {

@@ -7,7 +7,6 @@
     align-self: center;
     align-items: center;
     justify-content: center;
-    text-align: justify;
     gap: 2rem;
     padding: 2rem;
     max-width: 40rem;
@@ -28,14 +27,14 @@
 
 @media screen and (min-width: 600px) {
     .conocenos--seccion {
-        max-width: 50vw;
+        max-width: 60vw;
     }
     .conocenos--seccion img {
-        max-width: 50vw;
-        max-height: 50vw;
+        max-width: 60vw;
+        max-height: 10vw;
     }
     .conocenos--seccion p {
-        max-width: 50vw;
+        max-width: 60vw;
         font-size: 1.8rem;
     }
 }
