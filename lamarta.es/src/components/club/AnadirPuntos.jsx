@@ -4,6 +4,8 @@ import "../../styles/club/AnadirPuntos.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
 
@@ -51,10 +53,17 @@ async function anadirPuntos(id, concepto, importe) {
             }
         });
 
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
         if (!json.error) {
           window.location.href = `/usuario/perfil/${id}`;
         } else {
-          alert("Transacción no realizada.");
+          notyf.error('Transacción no realizada.');
         }
     } catch (error) {
         console.error(error);

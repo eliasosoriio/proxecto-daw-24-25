@@ -10,5 +10,12 @@
     justify-content: center;
 }
 
+.notyf__toast {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    min-width: 25rem;
+    max-width: 40rem;
+}
+
 /*=====  End of App  ======*/
 

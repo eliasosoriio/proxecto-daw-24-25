@@ -4,6 +4,8 @@ import "../../styles/club/CanjearRecompensa.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
 const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
@@ -52,10 +54,17 @@ async function canjearRecompensa(id, concepto, importe) {
             }
         });
 
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
         if (!json.error) {
           window.location.href = `/usuario/perfil/${id}`;
         } else {
-          alert("Ha ocurrido un error o el saldo es insuficiente.");
+          notyf.error('Ha ocurrido un error o el saldo es insuficiente.');
         }
     } catch (error) {
         console.error(error);
@@ -107,10 +116,16 @@ function CanjearRecompensa() {
             </select>
             <BotonSubmit mensaje={"Canjear Recompensa"} button={true} onClick={(ev) => {
               ev.preventDefault();
+              const notyf = new Notyf({
+                  position: {
+                      x: 'right',
+                      y: 'top'
+                  }
+              });
               if (recompensa && recompensa.nombre && recompensa.precio) {
                 realizarAccion(ev, "canjear", id, 'Canjeo: ' + recompensa.nombre + ' - ' + recompensa.precio, recompensa.precio);
               } else {
-                alert("Selecciona una recompensa válida.");
+                notyf.error('Selecciona una recompensa válida.');
               }
             }} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />

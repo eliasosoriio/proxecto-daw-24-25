@@ -4,6 +4,8 @@ import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlLogin = "https://lamarta.es/api/route.php/login";
 const urlToken = "https://lamarta.es/api/route.php/token";
@@ -46,18 +48,26 @@ async function singIn(usuario, contrasenia) {
               contrasenia: contrasenia.value
             }]
         });
+
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
         if (json.token) {
             sessionStorage.setItem('token', json.token);
             sessionStorage.setItem('tipo', json.tipo);
             sessionStorage.setItem('id_usuario', json.id);
-
+            
             if (json.tipo === 'admin') {
                 window.location.href = '/club/admin';
             } else {
                 window.location.href = '/club/afiliado';
             }
         } else {
-            alert('Usuario o contraseña incorrectos');
+            notyf.error('El usuario o la contraseña son incorrectos.');
         }
     } catch (error) {
         console.error(error);

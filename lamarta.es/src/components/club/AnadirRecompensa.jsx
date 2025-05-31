@@ -3,6 +3,8 @@ import "../../styles/club/AnadirRecompensa.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlRecompensa = "https://lamarta.es/api/route.php/recompensa";
 
@@ -49,14 +51,20 @@ async function anadirRecompensa(nombre, descripcion, precio) {
         }
       });
 
+      const notyf = new Notyf({
+          position: {
+              x: 'right',
+              y: 'top'
+          }
+      });
+
       if (!json.error) {
         window.location.href = `/club/admin`;
       } else {
-        alert("Recompensa no insertada.");
+        notyf.error('Recompensa no insertada.');
       }
     } catch (error) {
-      console.error(error);
-      alert("Error al insertar la recompensa.");
+      console.error('Error al insertar la recompensa.');
     }
 }
 

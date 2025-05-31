@@ -3,6 +3,8 @@ import "../../styles/club/BuscarUsuario.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
 
@@ -36,21 +38,27 @@ async function ajax(options) {
 
 async function getUsuario(id) {
     try {
-      const json = await ajax({ 
-        url: urlUsuarios.concat("/").concat(parseInt(id)),
-        headers: {
-          "x-api-key": sessionStorage.getItem('token')
-        }
-      });
+        const json = await ajax({ 
+            url: urlUsuarios.concat("/").concat(parseInt(id)),
+            headers: {
+                "x-api-key": sessionStorage.getItem('token')
+            }
+        });
 
-      if (json.id_usuario) {
-        window.location.href = `/usuario/perfil/${id}`;
-      } else {
-        alert("Usuario no encontrado.");
-      }
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
+        if (json.id_usuario) {
+            window.location.href = `/usuario/perfil/${id}`;
+        } else {
+            notyf.error('Usuario no encontrado.');
+        }
     } catch (error) {
       console.error(error);
-      alert("Error al buscar el usuario.");
     }
 }
 

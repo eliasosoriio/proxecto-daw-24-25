@@ -4,6 +4,8 @@ import "../../styles/club/BorrarRecompensa.css";
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
 const urlRecompensa = "https://lamarta.es/api/route.php/recompensa";
 
@@ -45,10 +47,17 @@ async function borrarRecompensa(id, token) {
             }
         });
 
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
         if (!json.error) {
           window.location.href = `/club/admin`;
         } else {
-          alert("Recompensa no eliminada.");
+          notyf.error('Recompensa no eliminada.');
         }
     } catch (error) {
         console.error(error);
