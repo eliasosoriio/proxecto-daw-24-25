@@ -28,7 +28,7 @@
     line-height: 1.1;
 }
 .portada--contenido p span {
-    color: var(--orange-color);
+    color: var(--light-orange-color);
 }
 .portada--contenido a {
     margin: 2rem auto;
