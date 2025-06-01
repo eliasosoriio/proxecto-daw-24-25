@@ -6,7 +6,6 @@
   - [3- Innovación](#3--innovación)
   - [4- Probas](#4--probas)
 
-> Este documento explica como se debe realizar a fase de codificación e probas.
 
 ## 1- Codificación
 
@@ -20,6 +19,9 @@ Las diferentes pantallas se seguían desarrollando con normalidad, cambiando peq
 
 Cuando ya estaban las pantallas, fue el momento de comenzar a privatizar las que se deben mostrar tras el login. Tras varios tipos y formas vistas, empleé un componente que vuelve una ruta privada para un rol, ya que me facilita después la comprobación de permisos y acceso. Cada vez que se cargue una página, comprobará que todo está correcto. En caso de que no, hará logout y redirigirá al login. No tuve muchas complicaciones gracias a las diferentes explicaciones y múltiples ejemplos de [esta página (4geeks)](https://4geeks.com/es/lesson/rutas-privadas-con-react-router).
 
+En este punto, dejé a un lado el front y comencé a hacer la API para ya seguir con el login una vez acabada. A partir del modelo de una que hicimos en DWCS, comencé a desarrollar los diferentes controladores y modelos. Paralelamente, iba realizando solicitudes HTTP en Chrome de prueba con la extensión [Talend API Tester](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm). 
+
+En el route.php se comprueba que el dominio del que proviene la solicitud HTTP es aceptado, que el método sea válido y qué cabeceras se permiten. Los navegadores envían primero una [solicitud del tipo OPTIONS](https://www.arsys.es/blog/cors-que-es-como-funciona-y-configuracion#tree-4) de prueba para verificar la seguridad de la petición y el acceso, ya que utilizan el mecanismo [CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CORS). Este asegura que controles cuáles y desde dónde vienen las peticiones.
 
 ## 2- Prototipos
 
