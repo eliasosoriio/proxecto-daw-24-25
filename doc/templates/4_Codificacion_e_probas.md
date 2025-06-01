@@ -23,6 +23,10 @@ En este punto, dejé a un lado el front y comencé a hacer la API para ya seguir
 
 En el route.php se comprueba que el dominio del que proviene la solicitud HTTP es aceptado, que el método sea válido y qué cabeceras se permiten. Los navegadores envían primero una [solicitud del tipo OPTIONS](https://www.arsys.es/blog/cors-que-es-como-funciona-y-configuracion#tree-4) de prueba para verificar la seguridad de la petición y el acceso, ya que utilizan el mecanismo [CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CORS). Este asegura que controles cuáles y desde dónde vienen las peticiones.
 
+Para la contraseña utilicé [password_hash](https://www.php.net/manual/es/function.password-hash.php) y [password_verify](https://www.php.net/manual/es/function.password-verify.php). Al principio, iba a utilizar sha1 para encriptarla. Pero buscando, en todos los sitios hablaba de su poca seguridad, ya que permite millones de intentos por fuerza bruta en un segundo. [Con password_hash se utiliza](https://stackoverflow.com/questions/30279321/how-to-use-phps-password-hash-to-hash-and-verify-passwords) un algoritmo con el que nunca se puede repetir el hash a pesar de ser la misma contraseña. Cuando quieres comprobar si la contraseña coincide, se hace password_verify, que utiliza el hash de la base de datos para cifrar la introducida por el usuario y, si después coinciden, es que es correcta.
+
+También tuve que emplear [PDO Transaction](https://www.phptutorial.net/php-pdo/php-pdo-transaction/), ya que realizo más de una query en algunos métodos y esto me ayuda a controlar los fallos no ejecutando las queries hasta que todas estén listas. Si están listas, se hace un commit para confirmar y, en caso de error en el catch, realizo un rollback que cancela estas sentencias.
+
 ## 2- Prototipos
 
 Como muestra, se pueden observar dos tipos de mockup, el de móvil y el de ordenador. En ellos, se puede simular lo que un usuario puede llegar a hacer (administrador, registrado o genérico) interactuando con diferentes secciones. Al hacer clic en cada imagen, se accederá al mockup correspondiente.
