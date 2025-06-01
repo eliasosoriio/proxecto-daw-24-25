@@ -81,6 +81,9 @@ function App() {
                      <BorrarRecompensa />
                   </PrivateRoute>
                } />
+               <Route path="/club/register/acceso" element={
+                  <Carta />
+               } />
                <Route path="/*" element={<NotFound />}></Route>
             </Routes>
          </main>

@@ -7,7 +7,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import PrivateRoute from '../general/PrivateRoute';
 
-const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
+const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;
