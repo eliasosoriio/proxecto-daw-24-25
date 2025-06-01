@@ -41,6 +41,8 @@ Siempre que carga algo de una zona privada, comprueba que todas las credenciales
 
 Hasta aquí, para comunicar al usuario los errores o avisos, utilizaba los alert de Javascript. Me puse a buscar alguna librería que pudiese mejorar estas alertas además de hacerlas más bonitas. Encontré y utilicé [Notyf](https://github.com/caroso1222/notyf), que se encarga de mostrar estas notificaciones de forma muy simple. Para instalarlo, solo tuve que realizar el _npm install notyf_. Después, con las mismas explicaciones del repositorio fue suficiente.
 
+A continuación me puse a pulir detalles y realizar las validaciones restantes tanto en el front como en el back. También comencé a desplegar la API y la página.
+
 ## 2- Prototipos
 
 Como muestra, se pueden observar dos tipos de mockup, el de móvil y el de ordenador. En ellos, se puede simular lo que un usuario puede llegar a hacer (administrador, registrado o genérico) interactuando con diferentes secciones. Al hacer clic en cada imagen, se accederá al mockup correspondiente.
