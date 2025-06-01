@@ -13,7 +13,7 @@
 }
 .blog--articulo:hover {
     outline-color: var(--yellow-color);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 .articulo--link {
     text-transform: none;

@@ -26,14 +26,14 @@
 .smash--precios {
     gap: .5rem;
 }
-.smash--precios p:first-child {
+.smash--precios li:first-child {
     background-color: var(--gray-white-color);
     border-radius: 1rem;
     padding: .5rem 1rem;
     min-width: 8rem;
     text-align: center;
 }
-.smash--precios p:last-child {
+.smash--precios li:last-child {
     background-color: var(--yellow-color);
     border-radius: 1rem;
     padding: .5rem 1rem;

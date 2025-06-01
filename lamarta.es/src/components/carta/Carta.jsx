@@ -8,15 +8,6 @@ import Hamburguesa from './Hamburguesa';
 import ExplicacionPrecios from './ExplicacionPrecios';
 import ScrollArriba from '../general/ScrollArriba'
 
-
-const $d = document,
-$entrantesBody = $d.querySelector('#entrantes-body'),
-$entrantesVeggieBody = $d.querySelector('#entrantes-veggie-body'),
-$smashBody = $d.querySelector('#smash-body'),
-$chickenBody = $d.querySelector('#chicken-body'),
-$veggieBody = $d.querySelector('#veggie-body'),
-$glutenFreeBody = $d.querySelector('#gluten-free-body');
-
 const entrantes = [
     {
         nombre: 'Patatas',
@@ -241,8 +232,10 @@ function Carta() {
     <>
         <ScrollArriba />
         <HeaderSeccion nombre={"Carta"}></HeaderSeccion>
+
+        {/* ENTRANTES */}
         <HeaderSeccionCarta titulo={"ENTRANTES"} imagen={"https://lamarta.es/assets/papas.svg"} />
-        <section className="entrantes d-flex-col">
+        <ul className="entrantes d-flex-col" role='list'>
             {[...entrantes].map((e, i)  => (
                 <Entrante 
                 key={i}
@@ -250,10 +243,11 @@ function Carta() {
                 precio={e.precio}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* ENTRANTES VEGGIE */}
         <HeaderSeccionCarta titulo={"ENTRANTES VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
-        <section className="entrantes d-flex-col">
+        <ul className="entrantes d-flex-col" role='list'>
             {[...entrantesVeggie].map((e, i)  => (
                 <Entrante 
                 key={i}
@@ -261,12 +255,13 @@ function Carta() {
                 precio={e.precio}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* SMASHHHH */}
         <HeaderSeccionCarta titulo={"SMASHHHH"} imagen={"https://lamarta.es/assets/burguer.svg"} />
         <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
         <ExplicacionPrecios />
-        <section className="hamburguesas d-flex-col">
+        <ul className="hamburguesas d-flex-col" role='list'>
             {[...smash].map((s, i)  => (
                 <Hamburguesa 
                 key={i}
@@ -277,12 +272,13 @@ function Carta() {
                 precioMenu={s.precioMenu}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* CHICKEN */}
         <HeaderSeccionCarta titulo={"CHICKEN"} imagen={"https://lamarta.es/assets/burguer.svg"} />
         <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
         <ExplicacionPrecios />
-        <section className="hamburguesas d-flex-col">
+        <ul className="hamburguesas d-flex-col" role='list'>
             {[...chicken].map((s, i)  => (
                 <Hamburguesa 
                 key={i}
@@ -293,12 +289,13 @@ function Carta() {
                 precioMenu={s.precioMenu}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* VEGGIE */}
         <HeaderSeccionCarta titulo={"VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
         <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
         <ExplicacionPrecios />
-        <section className="hamburguesas d-flex-col">
+        <ul className="hamburguesas d-flex-col" role='list'>
             {[...veggie].map((s, i)  => (
                 <Hamburguesa 
                 key={i}
@@ -309,12 +306,13 @@ function Carta() {
                 precioMenu={s.precioMenu}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* SIN GLUTEN */}
         <HeaderSeccionCarta titulo={"SIN GLUTEN"} imagen={"https://lamarta.es/assets/glutenfree.png"} />
         <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
         <ExplicacionPrecios />
-        <section className="hamburguesas d-flex-col">
+        <ul className="hamburguesas d-flex-col" role='list'>
             {[...glutenFree].map((s, i)  => (
                 <Hamburguesa 
                 key={i}
@@ -325,12 +323,13 @@ function Carta() {
                 precioMenu={s.precioMenu}
                 />
             ))}
-        </section>
+        </ul>
 
+        {/* MASCOTAS */}
         <HeaderSeccionCarta titulo={"MASCOTAS"} imagen={"https://lamarta.es/assets/dog.png"} />
         <ExplicacionMenu explicacion={"MENÚ = BOWL + AGUA + CHURU LÍQUIDO (ATÚN), CHURU SÓLIDO (POLLO) O GALLETAS CANAGAN"} />
         <ExplicacionPrecios />
-        <section className="hamburguesas d-flex-col">
+        <ul className="hamburguesas d-flex-col" role='list'>
             {[...mascotas].map((s, i)  => (
                 <Hamburguesa 
                 key={i}
@@ -341,7 +340,7 @@ function Carta() {
                 precioMenu={s.precioMenu}
                 />
             ))}
-        </section>
+        </ul>
         
     </>
   )

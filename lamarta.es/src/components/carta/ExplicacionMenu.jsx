@@ -3,9 +3,9 @@ import '../../styles/carta/ExplicacionMenu.css'
 
 function ExplicacionMenu({explicacion}) {
   return (
-    <div className='menu--explicacion'>
+    <aside className='menu--explicacion'>
       <p>{explicacion}</p>
-    </div>
+    </aside>
   )
 }
 

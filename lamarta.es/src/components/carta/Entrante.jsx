@@ -3,10 +3,10 @@ import '../../styles/carta/Entrante.css'
 
 function Entrante({nombre, precio}) {
   return (
-    <div className='entrante d-flex-row'>
+    <li className='entrante d-flex-row' role='listitem'>
         <p className='entrante--nombre'>{nombre}</p>
         <p className='entrante--precio'>{precio}</p>
-    </div>
+    </li>
   )
 }
 
