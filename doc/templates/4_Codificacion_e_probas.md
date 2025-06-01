@@ -41,7 +41,7 @@ Siempre que carga algo de una zona privada, comprueba que todas las credenciales
 
 Hasta aquí, para comunicar al usuario los errores o avisos, utilizaba los alert de Javascript. Me puse a buscar alguna librería que pudiese mejorar estas alertas además de hacerlas más bonitas. Encontré y utilicé [Notyf](https://github.com/caroso1222/notyf), que se encarga de mostrar estas notificaciones de forma muy simple. Para instalarlo, solo tuve que realizar el _npm install notyf_. Después, con las mismas explicaciones del repositorio fue suficiente.
 
-A continuación me puse a pulir detalles y realizar las validaciones restantes tanto en el front como en el back. También comencé a desplegar la API y la página.
+A continuación me puse a pulir detalles y realizar las validaciones restantes, tanto en el front como en el back. También comencé a desplegar la API y la página. La fase de pruebas comenzará a partir de este punto. Diferentes personas participarán en la fase beta hasta que salga para todo el mundo. Para crear una cuenta, hace falta una contraseña que se le dará a los participantes.
 
 ## 2- Prototipos
 
@@ -55,7 +55,9 @@ Los diseños tienen partes inspiradas en dos páginas principalmente y en elemen
 
 ## 3- Innovación
 
-No caso de utilizar tecnoloxías diferentes ás estudadas no ciclo formativo, fai unha descrición dos retos asumidos e como se resolveron.
+A pesar de haber dado React durante el curso, todavía no sabía realizar en este lenguaje muchas cosas que hacía en Javascript crudo. Esa quizás fue la mayor dificultad hasta coger soltura. Aprender a adaptar las cosas, como manejar las rutas, como utilizar los hooks y qué son e implementar una librería, entre otras cosas. 
+
+También a la hora de desplegar el proyecto, tuve que aprender lo básico de Vercel para poder conectarlo a mi repositorio de GitHub. El backend finalmente fue desplegado en IONOS, ya que Lamarta disponía de un servidor contratado previamente. La base de datos fue muy fácil de crear y conectar, ya que hacen tutorial paso a paso y es un phpMyAdmin. 
 
 ## 4- Probas
 
