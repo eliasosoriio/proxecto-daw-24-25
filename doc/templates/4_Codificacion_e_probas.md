@@ -11,7 +11,7 @@
 
 La carpeta que contiene el código del frontend es [lamarta.es](../../lamarta.es/) y la del backend [api.lamarta.es](../../api.lamarta.es/). 
 
-Al comienzo del desarrollo de la página, en la sección de incio, blog, conócenos, carta y contacto no hubo apenas cambios y es igual al prototipo. El menú desplegable y de la cabecera requirió informarse sobre [como utilizar las rutas en React](https://www.w3schools.com/react/react_router.asp). 
+Al comienzo del desarrollo de la página, en la sección de incio, blog, conócenos, carta y contacto no hubo apenas cambios y es igual al prototipo. El menú desplegable y de la cabecera requirió informarse sobre [como utilizar las rutas en React](https://www.w3schools.com/react/react_router.asp). Para usarlo tuve que realizar _npm install react-dom-router._
 
 Un nuevo problema que surgió fue al cambiar entre secciones, por ejemplo, de la carta al blog. Si habías scrolleado hacia abajo y abres la otra sección, se mostraba abajo también, lo que quiere decir que mantiene la posición del scroll. Para solucionarlo, creé un componente que al cargar llevase al principio de la página con una transición. Aquí aprendí cómo usar un hook nuevo, [useEffects](https://www.w3schools.com/react/react_useeffect.asp). Con él, una vez que el componente está cargado, realiza el scroll hacia arriba. La transición fue gracias a un ejemplo que encontré en un foro buscando cómo funcionaba el [window.scrollTo()](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div).
 
@@ -27,10 +27,19 @@ Para la contraseña utilicé [password_hash](https://www.php.net/manual/es/funct
 
 También tuve que emplear [PDO Transaction](https://www.phptutorial.net/php-pdo/php-pdo-transaction/), ya que realizo más de una query en algunos métodos y esto me ayuda a controlar los fallos no ejecutando las queries hasta que todas estén listas. Si están listas, se hace un commit para confirmar y, en caso de error en el catch, realizo un rollback que cancela estas sentencias.
 
+La base de datos se creó casi como estaba prevista, solo que añadiendo las tablas de validación y modificando cosas pequeñas. Estas tablas de seguridad son la de token y permiso sumadas a usuario, tipo, administrador, afiliado, transaccion y recompensa. Una vez que la base de datos estaba completada y con la información básica, se realiza un dump de ella. De esta forma, te aseguras de que no hay ningún fallo a la hora de importarla en el futuro.
+
 Una vez ya casi acabada la API, volví al front para empezar con las solicitudes. La primera fue en el login, utilizando la función ajax que se aprendió durante el curso en DWCC. Una vez que ya devolvía si el login era correcto o no, me puse a hacer el resto de la misma forma. La diferencia vino a la hora de recuperar algo más que un true o false. Antes hacía una función de render, pero ahora los pinto directamente [con un map](https://es.react.dev/learn/rendering-lists) del array recibido de la API.
 
+En cuanto a la seguridad y validaciones, lo primero fue empezar a pensar en cómo lo iba a hacer. Primero hice un boceto simple y rápido sobre el flujo de funcionamiento del login y acceso a otras páginas. Cuando hace login, se devuelve un token que se utiliza de ahí en adelante para validar o hacer todo.
 
 ![BOCETO DE LA SEGURIDAD Y VALIDACIONES](../img/img_4/boceto_permisos.png)
+
+La idea de cómo funciona está inspirada un poco en el proyecto en el que trabajo en la empresa. Un usuario tiene un rol y este rol tiene diferentes permisos. Siempre se comprueba el tipo de usuario desde la base de datos y en una tabla se comprueba que tiene acceso a un controlador y al método. Finalmente, quedó con los métodos obtenerPermiso, comprobarValidez y generarToken. 
+
+Siempre que carga algo de una zona privada, comprueba que todas las credenciales son válidas, que el token es válido y que no está caducado. En caso de que algo esté cambiado o mal, lo echará de la sesión inmediatamente. Cada media hora hay que volver a iniciar sesión, ya que el token caduca.
+
+Hasta aquí, para comunicar al usuario los errores o avisos, utilizaba los alert de Javascript. Me puse a buscar alguna librería que pudiese mejorar estas alertas además de hacerlas más bonitas. Encontré y utilicé [Notyf](https://github.com/caroso1222/notyf), que se encarga de mostrar estas notificaciones de forma muy simple. Para instalarlo, solo tuve que realizar el _npm install notyf_. Después, con las mismas explicaciones del repositorio fue suficiente.
 
 ## 2- Prototipos
 
@@ -38,9 +47,9 @@ Como muestra, se pueden observar dos tipos de mockup, el de móvil y el de orden
 
 Los diseños tienen partes inspiradas en dos páginas principalmente y en elementos ya creados por la agencia de imagen de LAMARTA, aunque cambiados y adaptados a lo que se busca en esta nueva web. Estas son [Rhode](https://www.rhodeskin.com/) y [818 Tequila](https://drink818.com/).
 
-[![Mockup del diseño móvil](img_3/mockup_movil.png)](https://www.figma.com/proto/zO9sNT6X0FoEEX13Ay6Qvc/LAMARTA-TFC?node-id=1-6&starting-point-node-id=188%3A989&t=NKvcscD7Izcht6oB-1&scaling=contain&content-scaling=fixed)
+[![Mockup del diseño móvil](../img/img_3/mockup_movil.png)](https://www.figma.com/proto/zO9sNT6X0FoEEX13Ay6Qvc/LAMARTA-TFC?node-id=1-6&starting-point-node-id=188%3A989&t=NKvcscD7Izcht6oB-1&scaling=contain&content-scaling=fixed)
 
-[![Mockup del diseño en ordenador](img_3/mockup_ordenador.png)](https://www.figma.com/proto/zO9sNT6X0FoEEX13Ay6Qvc/LAMARTA-TFC?node-id=1-3&starting-point-node-id=1%3A3&scaling=contain&content-scaling=fixed&t=bfQ5Gvp2NxJfSmVQ-1)
+[![Mockup del diseño en ordenador](../img/img_3/mockup_ordenador.png)](https://www.figma.com/proto/zO9sNT6X0FoEEX13Ay6Qvc/LAMARTA-TFC?node-id=1-3&starting-point-node-id=1%3A3&scaling=contain&content-scaling=fixed&t=bfQ5Gvp2NxJfSmVQ-1)
 
 ## 3- Innovación
 
