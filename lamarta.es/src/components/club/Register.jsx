@@ -1,0 +1,183 @@
+import {React, useState, useEffect} from 'react'
+import "../../styles/club/Login.css";
+import Campo from './Campo';
+import HeaderSeccion from '../general/HeaderSeccion'
+import BotonSubmit from './BotonSubmit';
+import ScrollArriba from '../general/ScrollArriba'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+import { Link } from "react-router-dom";
+
+const urlAfiliado = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
+const urlRegistro = "http://localhost/producto_fideplus_lamarta/route.php/register";
+
+async function ajax(options) {
+    const {url, method, data} = options;
+
+    try {
+        const resp = await fetch(url, {
+            method: method || "GET",
+            headers: {
+                "Content-type":"application/json; charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) throw new Error(`HTTP error! Status: ${resp.status}`);
+
+        const json = await resp.json();
+
+        return json;
+
+    } catch (error) {
+        return {
+            error: true,
+            status: error.status,
+            statusText: error.statusText || "Algo ha ocurrido"
+        };
+    }
+}
+
+async function comprobarRegistro(contrasenia) {
+    try {
+        const json = await ajax({
+            url: urlRegistro,
+            method: "POST",
+            data: [{
+              contrasenia: contrasenia
+            }]
+        });
+
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
+        if (json.success) {
+          notyf.success('¡Gana 500 puntos de bienvenida si te registras ahora!')
+          return true;
+        } else {
+            window.location.href = '/club/registro/acceso';
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function register(nombre, apellidos, correo, contrasenia) {
+    try {
+        const json = await ajax({
+            url: urlAfiliado,
+            method: "POST",
+            data: [{
+              nombre: nombre,
+              apellidos: apellidos,
+              correo: correo,
+              contrasenia: contrasenia
+            }]
+        });
+
+        const notyf = new Notyf({
+            position: {
+                x: 'right',
+                y: 'top'
+            }
+        });
+
+        if (json.success) {
+            window.location.href = '/club/login';
+        } else {
+            notyf.error('Ha ocurrido un error en el registro.');
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function hacerRegister(ev, nombre, apellidos, correo, password, password2) {
+  ev.preventDefault();
+
+  const notyf = new Notyf({
+      position: {
+          x: 'right',
+          y: 'top'
+      }
+  });
+
+  if(password == password2) {
+    const regex = /^[^@]+@[^@]+\.[^@]+$/;
+    if(nombre && apellidos && regex.test(correo) && password) {
+      register(nombre, apellidos, correo, password);
+    } else {
+      notyf.error('Un campo está vacío o no tiene el formato adecuado.');
+    }
+  } else {
+    notyf.error('Las contraseñas no coinciden.');
+  }
+}
+
+
+function Register() {
+  const [nombre, setNombre] = useState('');
+  const [apellidos, setApellidos] = useState('');
+  const [correo, setCorreo] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+
+  useEffect(() => {
+    comprobarRegistro(sessionStorage.getItem('contraseniaRegistro'));
+  }, []);
+  
+  return (
+    <>
+      <ScrollArriba />
+      <HeaderSeccion nombre="LAMARTA CLUB" />
+      <section className='login d-flex-col'>
+          <form className='login--form d-flex-col' onSubmit={(ev) => hacerRegister(ev, nombre, apellidos, correo, password, password2)}>
+
+              <Campo 
+                id="nombre" 
+                nombre="Nombre" 
+                type={"text"} 
+                placeholder={"Pablo"} 
+                onChange={(ev) => setNombre(ev.target.value)}
+              />
+              <Campo 
+                id="apellidos" 
+                nombre="Apellidos" 
+                type={"text"} 
+                placeholder={"Gómez Sandoval"} 
+                onChange={(ev) => setApellidos(ev.target.value)}
+              />
+              <Campo 
+                id="correo" 
+                nombre="Correo electrónico" 
+                type={"email"} 
+                placeholder={"tucorreo@ejemplo.com"} 
+                onChange={(ev) => setCorreo(ev.target.value)}
+              />
+              <Campo 
+                id="password" 
+                nombre="Contraseña" 
+                type={"password"} 
+                placeholder={"Introduce tu contraseña"} 
+                onChange={(ev) => setPassword(ev.target.value)}
+              />
+              <Campo 
+                id="password2" 
+                nombre="Confirma tu contraseña" 
+                type={"password"} 
+                placeholder={"Repite tu contraseña"} 
+                onChange={(ev) => setPassword2(ev.target.value)}
+              />
+
+              <BotonSubmit mensaje={"Registrarse"} />
+          </form>
+      </section>
+    </>
+  )
+}
+
+export default Register

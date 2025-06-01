@@ -68,7 +68,7 @@ if (($elemento == "login" || $elemento == "register") && ($metodo != 'POST')) {
 }
 
 //Cuando no es login ni token se comprueba si el usuario tiene permiso
-if ($elemento !== 'login' && $elemento !== 'token' && $elemento !== 'register') {
+if ($elemento !== 'login' && $elemento !== 'token' && $elemento !== 'register' && ($elemento !== 'afiliado' && $metodo == 'POST')) {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
         Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");

@@ -6,6 +6,8 @@
  */
 include_once("Controller.php");
 
+define("CONTRASENIA_REGISTRO","Lamarta-Club-2026");
+
 /**
  * Clase RegisterController, contiene el método de comprobarRegistro.
  */

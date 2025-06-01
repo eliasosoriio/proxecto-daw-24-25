@@ -121,7 +121,7 @@ function EditarRecompensa() {
       getRecompensa(id, sessionStorage.getItem('token'));
     }, [])
 
-  if (!recompensa) return <p>Cargando...</p>;
+  if (!recompensa) return <p className="cargando d-flex-col">Cargando...</p>;
 
   return (
     <section className='editar--recompensa d-flex-col'>

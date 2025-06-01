@@ -210,7 +210,7 @@ class TransaccionModel extends Model
             $sql.= " WHERE id_usuario_afiliado = ?";
         }
 
-        $sql .= " ORDER BY fecha DESC LIMIT 5";
+        $sql .= " ORDER BY id_transaccion DESC LIMIT 10";
 
         //La conexión se abre.
         $pdo = self::getConnection();
@@ -310,7 +310,7 @@ class TransaccionModel extends Model
             $stmt->bindValue(":id_usuario_afiliado", $transaccion->getId_usuario_afiliado(), PDO::PARAM_INT);
             $stmt->bindValue(":concepto", $transaccion->getConcepto(), PDO::PARAM_STR);
             $stmt->bindValue(":importe", $transaccion->getImporte(), PDO::PARAM_INT);
-            $stmt->bindValue(":fecha", $transaccion->getFecha() ?? date('Y-m-d'), PDO::PARAM_STR);
+            $stmt->bindValue(":fecha", $transaccion->getFecha() ?? date("Y-m-d H:i:s"), PDO::PARAM_STR);
 
             //Se ejecuta
             $stmt->execute();

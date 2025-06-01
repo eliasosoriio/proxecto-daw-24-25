@@ -57,7 +57,7 @@ function Usuarios() {
     <section className='panel usuarios d-flex-col'>
         <header>
             <h2 className='usuarios--titulo'>Usuarios</h2>
-            <p className='usuarios--desc'>LOS 5 CON MÁS PUNTOS</p>
+            <p className='usuarios--desc'>LOS 10 CON MÁS PUNTOS</p>
         </header>
         
         <ul className="usuarios--campo d-flex-col"  aria-label="Lista de usuarios" role='list'>

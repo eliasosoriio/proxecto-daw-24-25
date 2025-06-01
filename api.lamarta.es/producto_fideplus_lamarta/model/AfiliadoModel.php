@@ -219,7 +219,7 @@ class AfiliadoModel extends Model
     public function getAll()
     {
         //Defino la sentencia a utilizar.
-        $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE id_tipo = 2 ORDER BY a.puntos DESC LIMIT 5";
+        $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE id_tipo = 2 ORDER BY a.puntos DESC LIMIT 10";
         
         //La conexión se abre.
         $pdo = self::getConnection();
@@ -309,8 +309,9 @@ class AfiliadoModel extends Model
     {
         //Defino las sentencias a utilizar.
         $sql = "INSERT INTO usuario (nombre, apellidos, correo, contrasenia, id_tipo) VALUES (:nombre, :apellidos, :correo, :contrasenia, :id_tipo)";
-        $sql2 = "INSERT INTO administrador (id_usuario) VALUES (:id_usuario)";
+        $sql2 = "INSERT INTO afiliado (id_usuario, puntos) VALUES (:id_usuario, :puntos)";
         $sql3 = "INSERT INTO token (id_usuario, token) VALUES (:id_usuario, :token)";
+        $sql4 = "INSERT INTO transaccion (id_usuario_admin, id_usuario_afiliado, concepto, importe, fecha) VALUES (:id_usuario_admin, :id_usuario_afiliado, :concepto, :importe, :fecha)";
 
         //La conexión se abre.
         $pdo = self::getConnection();
@@ -340,6 +341,7 @@ class AfiliadoModel extends Model
 
             //Después, se inserta en la tabla Afiliado
             $stmt2->bindValue(":id_usuario", $idAfiliado, PDO::PARAM_INT);
+            $stmt2->bindValue(":puntos", 500, PDO::PARAM_INT);
 
             //Se ejecuta.
             $stmt2->execute();
@@ -353,6 +355,19 @@ class AfiliadoModel extends Model
 
             //Se ejecuta.
             $stmt3->execute();
+
+            //Se hace un prepare para evitar inyecciones SQL por el parámetro.
+            $stmt4 = $pdo->prepare($sql4);
+
+            //Se inserta en la tabla Transacciones el bono de bienvenida.
+            $stmt4->bindValue(":id_usuario_admin", 1, PDO::PARAM_INT);
+            $stmt4->bindValue(":id_usuario_afiliado", $idAfiliado, PDO::PARAM_INT);
+            $stmt4->bindValue(":concepto", "Bono de bienvenida.", PDO::PARAM_STR);
+            $stmt4->bindValue(":importe", 500, PDO::PARAM_INT);
+            $stmt4->bindValue(":fecha", date("Y-m-d H:i:s"), PDO::PARAM_STR);
+            
+            //Se ejecuta.
+            $stmt4->execute();
 
             //Si ha llegado todo hasta aquí y no a saltado ningún error. Se confirma la transacción.
             $pdo->commit();

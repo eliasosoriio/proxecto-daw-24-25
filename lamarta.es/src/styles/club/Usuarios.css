@@ -38,7 +38,16 @@
 @media screen and (min-width: 1280px) {
     .usuarios {
         width: 20vw;
-        height: min-70vh;
+        height: 70vh;
+    }
+    .usuarios--campo {
+        padding: 1rem;
+        max-height: 100%; 
+        padding-right: 1rem;
+        overflow-y: auto;
+    }
+    .usuarios--campo::-webkit-scrollbar-track {
+        border-radius: 2rem;
     }
 }
 

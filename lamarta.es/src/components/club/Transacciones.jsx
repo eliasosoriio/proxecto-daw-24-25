@@ -58,18 +58,19 @@ function Transacciones() {
     <section className='panel transacciones d-flex-col'>
         <header>
             <h2 className='transacciones--titulo'>Transacciones</h2>
-            <p className='transacciones--desc'>TUS ÚLTIMAS 5</p>
+            <p className='transacciones--desc'>TUS ÚLTIMAS 10</p>
         </header>
 
         <section className="transacciones--campo d-flex-col" aria-label="Lista de transacciones" role='list'>
-            {[...transacciones].map((t, i)  => (
-                <CampoPanel 
-                  key={i}
-                  nombre={t.concepto}
-                  descripcion={t.fecha}
-                  puntos={t.importe}
-                />
-            ))}
+            {transacciones &&
+              [...transacciones].map((t, i)  => (
+                  <CampoPanel 
+                    key={i}
+                    nombre={t.concepto}
+                    descripcion={t.fecha}
+                    puntos={t.importe}
+                  />
+              ))}
         </section>
     </section>
   )

@@ -156,7 +156,7 @@ function Login() {
 
               <BotonSubmit mensaje={"Iniciar Sesión"} />
 
-              <Link className='register--acceso' to={'/club/register/acceso'}>
+              <Link className='register--acceso' to={'/club/registro/acceso'}>
                 <p>No tengo cuenta, quiero registrarme</p>
               </Link>
           </form>

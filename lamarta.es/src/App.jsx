@@ -20,6 +20,8 @@ import CanjearRecompensa from "./components/club/CanjearRecompensa";
 import AnadirRecompensa from "./components/club/AnadirRecompensa";
 import EditarRecompensa from "./components/club/EditarRecompensa";
 import BorrarRecompensa from "./components/club/BorrarRecompensa";
+import AccesoRegistro from "./components/club/AccesoRegistro";
+import Register from "./components/club/Register";
 
 function App() {
    return (
@@ -81,8 +83,11 @@ function App() {
                      <BorrarRecompensa />
                   </PrivateRoute>
                } />
-               <Route path="/club/register/acceso" element={
-                  <Carta />
+               <Route path="/club/registro/acceso" element={
+                  <AccesoRegistro />
+               } />
+               <Route path="/club/registro" element={
+                  <Register />
                } />
                <Route path="/*" element={<NotFound />}></Route>
             </Routes>
