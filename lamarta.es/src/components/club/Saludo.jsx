@@ -3,7 +3,7 @@ import "../../styles/club/Saludo.css";
 import "../../styles/club/BotonSubmit.css";
 
 const tipo = sessionStorage.getItem('tipo');
-const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/"+tipo;
+const urlUsuarios = "https://lamarta.es/api/route.php/"+tipo;
 
 async function ajax(options) {
     const {url, method, data, headers} = options;

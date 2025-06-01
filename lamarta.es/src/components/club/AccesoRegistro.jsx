@@ -7,7 +7,7 @@ import ScrollArriba from '../general/ScrollArriba'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
-const urlRegistro = "http://localhost/producto_fideplus_lamarta/route.php/register";
+const urlRegistro = "https://lamarta.es/api/route.php/register";
 
 
 async function ajax(options) {
