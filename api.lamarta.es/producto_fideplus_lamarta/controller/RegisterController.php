@@ -1,13 +1,13 @@
 <?php
 /**
  * @file RegisterController.php
- * @description Define la clase RegisterController que maneja el inicio de sesión.
+ * @description Define la clase RegisterController que maneja el comprobarRegistro.
  * @author Elías Osorio Pouseu
  */
 include_once("Controller.php");
 
 /**
- * Clase RegisterController, contiene el método de iniciar sesión.
+ * Clase RegisterController, contiene el método de comprobarRegistro.
  */
 class RegisterController {
 
