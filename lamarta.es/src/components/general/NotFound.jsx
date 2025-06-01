@@ -7,7 +7,7 @@ function NotFound() {
     <>
       <ScrollArriba />
       <section className="not-found-404 d-flex-col">
-        <h1>Error 404: Not Found</h1>
+        <h1>Error 404: No se ha encontrado esta página.</h1>
         <a href="/">Ir a inicio</a>
       </section>
     </>

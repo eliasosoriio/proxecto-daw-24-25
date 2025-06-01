@@ -35,14 +35,14 @@ class LoginController {
             $token = TokenController::generarToken($id_usuario);
             
             //Se genera la respuesta que va a almacenar el usuario
-            $response = [
+            $respuesta = [
                 "token" => $token,
                 "tipo" => $tipo,
                 "id" => $id_usuario
             ];
 
             //Devuelve la respuesta
-            echo json_encode($response);
+            echo json_encode($respuesta);
         }
     }
 }

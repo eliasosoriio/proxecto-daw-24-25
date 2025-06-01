@@ -60,7 +60,7 @@ Además, [en este artículo de SimplotFoods](https://www.simplotfoods.com/au/es/
 
 La necesidad que se pretende cumplir es que los comercios locales tengan una página única y moderna, con el sistema de fidelización para sus clientes mediante un pago único no tan elevado. De esta forma, se consigue que obtengan algo propio, que puedan digitalizarse, que no les suponga un coste mensual de por vida y mantener más clientes habitualmente generando por lo tanto más ingresos. El modelo se puede adaptar a cualquier tipo de negocio, desde un taller, a un restaurante, a un centro de estética y demás.
 
-![DAFO](img_1/dafo.jpg)
+![DAFO](../img/img_1/dafo.jpg)
 
 
 ### 2.3- Segmento de clientes
@@ -168,6 +168,6 @@ Semana 3, 4, 5, 6 y 7: Desarrollo de la aplicación, desde lo más fácil e impo
 
 Semana 8, 9: Pruebas de la aplicación en local y después con una selección de clientes habituales. Estos tendrán la oportunidad de utilizar el sistema de fidelización y obtener recompensas desde un inicio. Aquí trataremos de arreglar cualquier problema que se presente.
 
-![GANTT](img_1/gantt.png)
+![GANTT](../img/img_1/gantt.png)
 
 [**<-Anterior**](../../README.md)
