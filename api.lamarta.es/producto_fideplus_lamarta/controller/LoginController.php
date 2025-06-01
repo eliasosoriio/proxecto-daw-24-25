@@ -8,6 +8,8 @@ include_once("Controller.php");
 include_once("TokenController.php");
 include_once(PATH_MODEL."LoginModel.php");
 
+define("CONTRASENIA_REGISTRO","Lamarta-Club-2026");
+
 /**
  * Clase LoginController, contiene el método de iniciar sesión.
  */

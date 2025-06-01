@@ -38,6 +38,7 @@ include_once("controller/LoginController.php");
 include_once("controller/TokenController.php");
 include_once("controller/AdminController.php");
 include_once("controller/AfiliadoController.php");
+include_once("controller/RegisterController.php");
 
 //Se parsea la uri para decidir el controlador y la acción que debemos ejecutar
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -48,7 +49,7 @@ $id = $uri[4] ?? null;
 
 try {
     //Se crea el controlador si no es login
-    if($elemento != "login") {
+    if($elemento != "login" && $elemento != "register") {
         $controlador = Controller::getController($elemento);
     }
 } catch (ControllerException $th) {
@@ -61,13 +62,13 @@ if (count($uri) < 3) {
     throw new Exception("URI incompleta");
 }
 
-//Si el controlador es login y el método no es POST ni GET, se rechaza
-if ($elemento == "login" && ($metodo != 'POST' && $metodo != 'GET')) {
+//Si el controlador es login/register y el método no es POST, se rechaza
+if (($elemento == "login" || $elemento == "register") && ($metodo != 'POST')) {
     throw new Exception("Método no permitido.");
 }
 
 //Cuando no es login ni token se comprueba si el usuario tiene permiso
-if ($elemento !== 'login' && $elemento !== 'token') {
+if ($elemento !== 'login' && $elemento !== 'token' && $elemento !== 'register') {
     $token = $_SERVER["HTTP_X_API_KEY"] ?? '';
     if (!TokenController::obtenerPermiso($token, $_SERVER['REQUEST_METHOD'], $elemento)) {
         Controller::sendNotFound("No tienes permiso o necesitas volver a inciar sesion.");
@@ -83,6 +84,8 @@ switch ($metodo) {
             LoginController::singIn($json);
         } elseif($elemento == "token") {
             TokenController::comprobarValidez($json);
+        } elseif($elemento == "register") {
+            RegisterController::comprobarRegistro($json);
         } else {
             $controlador->insert($json);
         }
