@@ -9,34 +9,34 @@ function CampoPanel({nombre, descripcion, puntos, puedeEditar=false, puedeBorrar
   const verPerfil = `/usuario/perfil/${id}`;
   
   return (
-    <article className='campo--panel d-flex-row'>
-      <div className='d-flex-col'>
+    <li className='campo--panel d-flex-row' role='listitem'>
+      <section className='d-flex-col'>
         <h3>{nombre}</h3>
         <p>{descripcion}</p>
         <p>{puntos} puntos.</p>
-      </div>
+      </section>
       <div className='campo--panel--iconos d-flex-row'>
         {tipo === "admin" && (
           <>
             {puedeEditar && (
               <Link to={editarRecompensa} className='icon-link' aria-label={'Acción editar: '+ nombre}>
-                <i className="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-pen-to-square" aria-hidden="true"></i>
               </Link>
             )}
             {puedeBorrar && (
               <Link to={borrarRecompensa} className='icon-link' aria-label={'Acción borrar: '+ nombre}>
-                <i className="fa-solid fa-trash"></i>
+                <i className="fa-solid fa-trash" aria-hidden="true"></i>
               </Link>
             )}
             {puedePerfil && (
               <Link to={verPerfil} className='icon-link' aria-label={'Acción ver perfil: '+ nombre}>
-                <i className="fa-solid fa-user"></i>
+                <i className="fa-solid fa-user" aria-hidden="true"></i>
               </Link>
             )}
           </>
         )}
       </div>
-    </article>
+    </li>
   )
 }
 

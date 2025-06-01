@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Acciones() {
   return (
-    <section className='acciones d-flex-col'>
+    <section className='panel acciones d-flex-col'>
       <Link to="/club/usuario" className='acciones--link'>
         <p className="acciones--opcion">Buscar afiliado</p>
       </Link>

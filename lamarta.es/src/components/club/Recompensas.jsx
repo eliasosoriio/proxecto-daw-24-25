@@ -55,13 +55,13 @@ function Recompensas() {
     }, [])
 
   return (
-    <section className='recompensas d-flex-col'>
-        <div>
+    <section className='panel recompensas d-flex-col'>
+        <header>
             <h2 className='recompensas--titulo'>Recompensas</h2>
             <p className='recompensas--desc'>CANJEA TU FAVORITA</p>
-        </div>
+        </header>
 
-        <section className="recompensas--campo d-flex-col">
+        <section className="recompensas--campo d-flex-col" aria-label="Lista de recompensas" role='list'>
             {[...recompensas].map((r, i)  => (
                 <CampoPanel 
                   key={i}

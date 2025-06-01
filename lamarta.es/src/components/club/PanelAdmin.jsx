@@ -12,20 +12,14 @@ function PanelAdmin() {
       <h1 className='paneles--titulo'>LAMARTA CLUB</h1>
       <section className="paneles d-flex-col">
         <ScrollArriba />
-        <section className="panel d-flex-col">
-          <Saludo /> 
-        </section>
+        
+        <Saludo />
 
-        <section className="panel d-flex-col">
-          <Usuarios /> 
-        </section>
-        <section className="panel d-flex-col">
-          <Recompensas /> 
-        </section>
+        <Usuarios /> 
+          
+        <Recompensas /> 
 
-        <section className="panel d-flex-col">
-          <Acciones /> 
-        </section>
+        <Acciones /> 
       </section>
     </>
   )

@@ -5,6 +5,7 @@ import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
 
@@ -76,7 +77,8 @@ function BuscarUsuario() {
 
   return (
     <section className='buscar--usuario d-flex-col'>
-    <ScrollArriba />
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
         <form className='buscar--usuario--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "buscar", id)}>
             <Campo 
               id="usuario" 
@@ -87,10 +89,11 @@ function BuscarUsuario() {
               onChange={(ev) => {
                 setId(ev.target.value);
               }}
-            />
+              />
             <BotonSubmit mensaje={"Buscar Usuario"} />
             <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
         </form>
+      </PrivateRoute>
     </section>
   )
 }

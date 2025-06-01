@@ -6,6 +6,7 @@ import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlRecompensa = "https://lamarta.es/api/route.php/recompensa";
 
@@ -110,7 +111,8 @@ function EditarRecompensa() {
 
   return (
     <section className='editar--recompensa d-flex-col'>
-    <ScrollArriba />
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
         <form className='editar--recompensa--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "editar", id, nombre, descripcion, precio)}>
             <Campo 
               nombre="Nombre de la recompensa" 
@@ -143,6 +145,7 @@ function EditarRecompensa() {
             <BotonSubmit mensaje={"Editar Recompensa"} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id, nombre, descripcion, precio)} />
         </form>
+      </PrivateRoute>
     </section>
   )
 }

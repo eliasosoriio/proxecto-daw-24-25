@@ -4,6 +4,7 @@ import "../../styles/club/Perfil.css";
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
 
@@ -68,13 +69,15 @@ function Perfil() {
 
   return (
     <section className='perfil d-flex-col'>
-    <ScrollArriba />
-      <form className='perfil--form d-flex-col'>
-        <CampoPanel nombre={'Nº ' + usuario.id_usuario + ' - ' + usuario.nombre + ' ' + usuario.apellidos} descripcion={usuario.correo} puntos={usuario.puntos} />
-        <BotonSubmit mensaje={"Añadir Puntos"} button={true} onClick={(ev) => realizarAccion(ev, "anadir", id)} />
-        <BotonSubmit mensaje={"Canjear Recompensa"} button={true} onClick={(ev) => realizarAccion(ev, "canjear", id)} />
-        <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
-      </form>
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
+        <form className='perfil--form d-flex-col'>
+          <CampoPanel nombre={'Nº ' + usuario.id_usuario + ' - ' + usuario.nombre + ' ' + usuario.apellidos} descripcion={usuario.correo} puntos={usuario.puntos} />
+          <BotonSubmit mensaje={"Añadir Puntos"} button={true} onClick={(ev) => realizarAccion(ev, "anadir", id)} />
+          <BotonSubmit mensaje={"Canjear Recompensa"} button={true} onClick={(ev) => realizarAccion(ev, "canjear", id)} />
+          <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
+        </form>
+      </PrivateRoute>
     </section>
   )
 }

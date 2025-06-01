@@ -6,6 +6,7 @@ import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
 
@@ -86,7 +87,8 @@ function AnadirPuntos() {
 
   return (
     <section className='anadir--puntos d-flex-col'>
-    <ScrollArriba />
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
         <form className='anadir--puntos--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", id, concepto, importe)}>
             <Campo 
               nombre="Escribe un concepto" 
@@ -109,6 +111,7 @@ function AnadirPuntos() {
             <BotonSubmit mensaje={"Añadir Puntos"} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id, concepto, importe)} />
         </form>
+      </PrivateRoute>
     </section>
   )
 }

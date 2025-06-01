@@ -6,6 +6,7 @@ import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
 const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
@@ -105,7 +106,8 @@ function CanjearRecompensa() {
 
   return (
     <section className='canjear--recompensa d-flex-col'>
-    <ScrollArriba />
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
         <form className='canjear--recompensa--form d-flex-col'>
             <label className='campo--label' htmlFor="recompensas">Selecciona la recompensa a canjear:</label>
             <select className='campo--input' name="recompensas" id="recompensas" onChange={(ev) => setRecompensa(recompensas[ev.target.value])}>
@@ -130,6 +132,7 @@ function CanjearRecompensa() {
             }} />
             <BotonSubmit mensaje={"Cancelar"}  button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
         </form>
+      </PrivateRoute>
     </section>
   )
 }

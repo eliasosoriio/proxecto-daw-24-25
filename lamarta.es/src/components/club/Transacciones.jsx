@@ -55,13 +55,13 @@ function Transacciones() {
     }, [])
 
   return (
-    <section className='transacciones d-flex-col'>
-        <div>
+    <section className='panel transacciones d-flex-col'>
+        <header>
             <h2 className='transacciones--titulo'>Transacciones</h2>
             <p className='transacciones--desc'>TUS ÚLTIMAS 5</p>
-        </div>
+        </header>
 
-        <section className="transacciones--campo d-flex-col">
+        <section className="transacciones--campo d-flex-col" aria-label="Lista de transacciones" role='list'>
             {[...transacciones].map((t, i)  => (
                 <CampoPanel 
                   key={i}

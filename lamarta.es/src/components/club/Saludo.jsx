@@ -61,7 +61,7 @@ function Saludo() {
     }, [])
 
   return (
-    <section className='saludo d-flex-col'>
+    <section className='panel saludo d-flex-col'>
         <img src="https://lamarta.es/assets/favicon-lamarta.png" alt="Corona Lamarta en el saludo." />
         <p>¡Bienvenido/a</p>
         <p>{usuario.nombre}!</p>

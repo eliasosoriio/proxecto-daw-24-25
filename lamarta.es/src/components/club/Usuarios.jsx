@@ -54,13 +54,13 @@ function Usuarios() {
   }, [])
 
   return (
-    <section className='usuarios d-flex-col'>
-        <div>
+    <section className='panel usuarios d-flex-col'>
+        <header>
             <h2 className='usuarios--titulo'>Usuarios</h2>
             <p className='usuarios--desc'>LOS 5 CON MÁS PUNTOS</p>
-        </div>
+        </header>
         
-        <section className="usuarios--campo d-flex-col">
+        <ul className="usuarios--campo d-flex-col"  aria-label="Lista de usuarios" role='list'>
             {[...usuarios].map((u, i)  => (
                 <CampoPanel 
                 key={i}
@@ -71,7 +71,7 @@ function Usuarios() {
                 id={u.id_usuario}
                 />
             ))}
-        </section>
+        </ul>
     </section>
   )
 }

@@ -12,21 +12,14 @@ function PanelAfiliado() {
       <h1 className='paneles--titulo'>LAMARTA CLUB</h1>
       <section className="paneles d-flex-col">
         <ScrollArriba />
-        <section className="panel d-flex-col">
-          <Saludo /> 
-        </section>
 
-        <section className="panel d-flex-col">
-          <Recompensas /> 
-        </section>
+        <Saludo /> 
 
-        <section className="panel d-flex-col">
-          <Transacciones /> 
-        </section>
+        <Recompensas /> 
 
-        <section className="panel d-flex-col">
-          <Puntos /> 
-        </section>
+        <Transacciones /> 
+
+        <Puntos /> 
       </section>
     </>
   )

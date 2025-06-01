@@ -6,6 +6,7 @@ import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import PrivateRoute from '../general/PrivateRoute';
 
 const urlRecompensa = "https://lamarta.es/api/route.php/recompensa";
 
@@ -97,13 +98,15 @@ function BorrarRecompensa() {
   
   return (
     <section className='borrar--recompensa d-flex-col'>
-    <ScrollArriba />
-      <h1 className="borrar--recompensa--titulo">¿Estás seguro de que quieres borrar esta recompensa?</h1>
-      <form className='borrar--recompensa--form d-flex-col'>
-        <CampoPanel nombre={recompensa.nombre} descripcion={recompensa.descripcion} puntos={recompensa.precio} />
-        <BotonSubmit mensaje={"Eliminar"} button={true} onClick={(ev) => realizarAccion(ev, "eliminar", id)} />
-        <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
-      </form>
+      <ScrollArriba />
+      <PrivateRoute rolPermitido="admin">
+        <h1 className="borrar--recompensa--titulo">¿Estás seguro de que quieres borrar esta recompensa?</h1>
+        <form className='borrar--recompensa--form d-flex-col'>
+          <CampoPanel nombre={recompensa.nombre} descripcion={recompensa.descripcion} puntos={recompensa.precio} />
+          <BotonSubmit mensaje={"Eliminar"} button={true} onClick={(ev) => realizarAccion(ev, "eliminar", id)} />
+          <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
+        </form>
+      </PrivateRoute>
     </section>
   )
 }
