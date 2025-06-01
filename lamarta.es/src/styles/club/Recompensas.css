@@ -38,7 +38,16 @@
 @media screen and (min-width: 1280px) {
     .recompensas {
         width: 20vw;
-        min-height: 70vh;
+        height: 70vh;
+    }
+    .recompensas--campo {
+        padding: 1rem;
+        max-height: 100%; /* Esto le dice: usa todo el alto disponible */
+        padding-right: 1rem;
+        overflow-y: auto;
+    }
+    .recompensas--campo::-webkit-scrollbar-track {
+        border-radius: 2rem;
     }
 }
 

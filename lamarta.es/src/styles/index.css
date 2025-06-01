@@ -30,15 +30,15 @@ body {
   min-height: 100vh;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--dark-color);
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--yellow-color);
   border-radius: 20px;
   height: 10px;
