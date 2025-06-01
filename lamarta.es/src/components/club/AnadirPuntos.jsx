@@ -73,10 +73,22 @@ async function anadirPuntos(id, concepto, importe) {
 
 function realizarAccion(ev, accion, id, concepto, importe) {
   ev.preventDefault();
+
+  const notyf = new Notyf({
+        position: {
+            x: 'right',
+            y: 'top'
+        }
+    });
+
   if(accion == "cancelar") {
     window.location.href = `/usuario/perfil/${id}`;
   } else {
-    anadirPuntos(id, concepto, Math.ceil(importe * 10));
+    if(isNaN(id) || !concepto || isNaN(importe) || importe <= 0) {
+        notyf.error('Alguno de los campos está vacío o no tiene un formato válido.');
+    } else {
+        anadirPuntos(id, concepto, Math.ceil(importe * 10));
+    }
   }
 }
 

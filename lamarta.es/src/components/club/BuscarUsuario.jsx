@@ -65,10 +65,22 @@ async function getUsuario(id) {
 
 function realizarAccion(ev, accion, id) {
   ev.preventDefault();
+
+  const notyf = new Notyf({
+      position: {
+          x: 'right',
+          y: 'top'
+      }
+  });
+
   if(accion == "cancelar") {
     window.location.href = `/club/admin`;
   } else {
-    getUsuario(id);
+    if(isNaN(id)) {
+      notyf.error('Debes introducir un número.');
+    } else {
+      getUsuario(id);
+    }
   }
 }
 

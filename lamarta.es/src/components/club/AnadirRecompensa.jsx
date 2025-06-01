@@ -71,10 +71,22 @@ async function anadirRecompensa(nombre, descripcion, precio) {
 
 function realizarAccion(ev, accion, nombre, descripcion, precio) {
   ev.preventDefault();
-  if(accion == "anadir") {
-    anadirRecompensa(nombre, descripcion, precio);
+
+  const notyf = new Notyf({
+      position: {
+          x: 'right',
+          y: 'top'
+      }
+  });
+
+  if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+    notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
   } else {
-    window.location.href = `/club/admin`;
+    if(accion == "anadir") {
+      anadirRecompensa(nombre, descripcion, precio);
+    } else {
+      window.location.href = `/club/admin`;
+    }
   }
 }
 

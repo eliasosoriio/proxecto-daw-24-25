@@ -74,10 +74,22 @@ async function editarRecompensa(id, nombre, descripcion, precio, token) {
 
 function realizarAccion(ev, accion, id, nombre, descripcion, precio) {
   ev.preventDefault();
-  if(accion == "editar") {
-    editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
+
+  const notyf = new Notyf({
+      position: {
+          x: 'right',
+          y: 'top'
+      }
+  });
+
+  if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+    notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
   } else {
-    window.location.href = `/club/admin`;
+    if(accion == "editar") {
+      editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
+    } else {
+      window.location.href = `/club/admin`;
+    }
   }
 }
 
@@ -100,7 +112,7 @@ function EditarRecompensa() {
           setRecompensa(json);
           setNombre(json.nombre);
           setDescripcion(json.descripcion);
-          setPrecio(json.precio);
+          setPrecio(Number(json.precio));
         } catch (error) {
           console.error(error);
         }
@@ -108,6 +120,8 @@ function EditarRecompensa() {
   
       getRecompensa(id, sessionStorage.getItem('token'));
     }, [])
+
+  if (!recompensa) return <p>Cargando...</p>;
 
   return (
     <section className='editar--recompensa d-flex-col'>
@@ -138,7 +152,7 @@ function EditarRecompensa() {
               placeholder={"1200"} 
               min={0}
               onChange={(ev) => {
-                setPrecio(ev.target.value);
+                setPrecio(Number(ev.target.value));
               }}
               defaultValue={recompensa.precio}
             />

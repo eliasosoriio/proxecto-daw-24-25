@@ -94,7 +94,18 @@ async function comprobarValidez(id_usuario, token, tipo) {
 
 async function hacerLogin(ev) {
   ev.preventDefault();
-  singIn(correo, password);
+  const notyf = new Notyf({
+      position: {
+          x: 'right',
+          y: 'top'
+      }
+  });
+  const regex = /^[^@]+@[^@]+\.[^@]+$/;
+  if(regex.test(correo.value) && password.value.length) {
+    singIn(correo, password);
+  } else {
+    notyf.error('El email no tiene un formato válido o el campo contraseña está vacío.');
+  }
 }
 
 
