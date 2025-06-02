@@ -3,11 +3,6 @@
 - [FASE DE IMPLANTACIÓN](#fase-de-implantación)
   - [1- Manual técnico](#1--manual-técnico)
     - [1.1- Instalación](#11--instalación)
-      - [Requisitos mínimos de hardware recomendados](#requisitos-mínimos-de-hardware-recomendados)
-      - [Software necesario](#software-necesario)
-      - [Carga inicial de datos](#carga-inicial-de-datos)
-      - [Usuarios](#usuarios)
-      - [Esquema de despliegue local final](#esquema-de-despliegue-local-final)
     - [1.2- Administración do sistema](#12--administración-do-sistema)
   - [2- Manual de usuario](#2--manual-de-usuario)
   - [3- Melloras futuras](#3--melloras-futuras)
@@ -16,24 +11,24 @@
 
 ### 1.1- Instalación
 
-#### Requisitos mínimos de hardware recomendados
+Requisitos mínimos de hardware recomendados:
 
 - Un equipo con al menos 8 GB de RAM.
 - Espacio libre en el disco duro para los contenedores y la base de datos.
 - Conexión a internet para la instalación de dependencias.
 
-#### Software necesario
+Software necesario:
 
 - [Git](https://git-scm.com/) para clonar el repositorio del proyecto.
 - [Node.js](https://nodejs.org/) para la instalación de dependencias _npm install_ y ejecución del front _npm run dev_.
 - [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/) para levantar los contenedores del entorno (api y base de datos).
 - Navegador moderno y actualizado para acceder a la interfaz del frontend.
 
-#### Carga inicial de datos
+Carga inicial de datos:
 
 Una vez levantados los contenedores, se accede a phpMyAdmin en el puerto 8080 y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
 
-#### Usuarios
+Usuarios:
 
 Hay dos tipos de usuarios:
 
@@ -42,7 +37,7 @@ Hay dos tipos de usuarios:
 
 Las cuentas que vienen en el dump, tienen como contraseña la primera parte del correo electrónico. Por ejemplo, si una cuenta tiene el correo de **prueba**@lamarta.es, la contraseña es **prueba**.
 
-#### Esquema de despliegue local final
+Esquema de despliegue local final:
 
 - Frontend (React).
 - Backend (API) desplegado en Docker.

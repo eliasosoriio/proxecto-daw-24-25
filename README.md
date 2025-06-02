@@ -11,12 +11,10 @@
   - [Guía de contribución](#guía-de-contribución)
   - [Links](#links)
 
-> *EXPLICACIÓN*: Este documento será a "*páxina de aterrizaxe*" do teu proxecto. Será ou primeiro que vexan vos que se interesen por el. Cúida a sua redacción con todo ou mimo. Elimina posteriormente todas as lineas "EXPLICACIÓN*" cando creas finalizada a súa redacción.
-> Podes acompañar á redacción deste ficheiro con imaxes ou gifs, pero non abuses deles.
 
 ## Taboleiro do proyecto
 
-> *EXPLICACIÓN:* neste punto indica se o proyecto está en fase de desenrolo ou finalizado.
+Actualmente _Fideplus_ se encuentra en fase de pruebas. [Acceder](https://lamartaes.vercel.app)
 
 ## Descrición
 
