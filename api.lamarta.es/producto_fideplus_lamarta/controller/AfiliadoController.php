@@ -58,14 +58,21 @@ class AfiliadoController extends Controller{
         $usuario = Afiliado::fromJson($object);
 
         //En función del resultado se manda una respuesta.
-        if($model->insert($usuario)){
+        if(!$model->getByCorreo($usuario->getCorreo())) {
+            if($model->insert($usuario)){
+                header('Content-Type: application/json');
+                echo json_encode(["success" => true]);
+                exit;
+            }else{
+                header('Content-Type: application/json');
+                http_response_code(400);
+                echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+                exit;
+            }
+        } else {
             header('Content-Type: application/json');
-            echo json_encode(["success" => true]);
-            exit;
-        }else{
-           header('Content-Type: application/json');
             http_response_code(400);
-            echo json_encode(["success" => false, "error" => "No se pudo insertar."]);
+            echo json_encode(["success" => false, "email" => "Email ya existe."]);
             exit;
         }
     }

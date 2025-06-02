@@ -86,10 +86,14 @@ async function register(nombre, apellidos, correo, contrasenia) {
             }
         });
 
-        if (json.success) {
-            window.location.href = '/club/login';
+        if(json.email) {
+          notyf.error('Este email ya está registrado.');
         } else {
+          if (json.success) {
+            window.location.href = '/club/login';
+          } else {
             notyf.error('Ha ocurrido un error en el registro.');
+          }
         }
     } catch (error) {
         console.error(error);

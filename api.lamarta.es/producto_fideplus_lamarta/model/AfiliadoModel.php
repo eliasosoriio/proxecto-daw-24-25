@@ -497,4 +497,50 @@ class AfiliadoModel extends Model
         return $resultado;
     }
 
+    /**
+     * Método get que recupera un registro mediante correo.
+     * @param string $correo
+     * @return Afiliado|null
+     */
+    public function getByCorreo(string $correo) : Afiliado | null
+    {
+        // Defino la sentencia a utilizar.
+        $sql = "SELECT u.*, a.puntos FROM usuario u INNER JOIN afiliado a ON u.id_usuario = a.id_usuario WHERE u.correo = ?";
+        
+        // La conexión se abre.
+        $pdo = self::getConnection();
+        $resultado = null;
+        try {
+            // Se hace un prepare para evitar inyecciones SQL por el parámetro.
+            $stmt = $pdo->prepare($sql);
+
+            // Se asigna el parámetro.
+            $stmt->bindValue(1, $correo, PDO::PARAM_STR);
+
+            // Se ejecuta.
+            $stmt->execute();
+
+            // En caso de encontrar un usuario, crea el objeto y se asigna al resultado.
+            if ($u = $stmt->fetch()) {
+                $usuario = new Afiliado();
+
+                $usuario->setId_usuario($u['id_usuario']);
+                $usuario->setNombre($u['nombre']);
+                $usuario->setApellidos($u['apellidos']);
+                $usuario->setCorreo($u['correo']);
+                $usuario->setId_tipo($u['id_tipo']);
+                $usuario->setPuntos($u['puntos']);
+
+                $resultado = $usuario;
+            }
+        } catch (Throwable $th) {
+            error_log("Error AfiliadoModel->getByCorreo($correo)");
+            error_log($th->getMessage());
+        } finally {
+            $stmt = null;
+            $pdo = null;
+        }
+
+        return $resultado;
+    }
 }
