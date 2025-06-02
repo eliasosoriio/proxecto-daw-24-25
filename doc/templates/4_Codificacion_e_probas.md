@@ -57,7 +57,9 @@ También a la hora de desplegar el proyecto, tuve que aprender lo básico de Ver
 
 ## 4- Probas
 
-Durante el desarrollo del frontend, las pruebas consistieron en probar si son responsive todas las pantallas y, en caso de tener funciones, que estas vayan. Un problema que surgió fue al cambiar entre secciones, por ejemplo, de la carta al blog. Si habías scrolleado hacia abajo y abres la otra sección, se mostraba abajo también, lo que quiere decir que mantiene la posición del scroll. Para solucionarlo, creé un componente que al cargar llevase al principio de la página con una transición. Aquí aprendí cómo usar un hook nuevo, [useEffects](https://www.w3schools.com/react/react_useeffect.asp). Con él, una vez que el componente está cargado, realiza el scroll hacia arriba. La transición fue gracias a un ejemplo que encontré en un foro buscando cómo funcionaba el [window.scrollTo()](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div).
+Durante el desarrollo del frontend, las pruebas consistieron en probar si son responsive todas las pantallas y, en caso de tener funciones, que estas vayan.
+
+Un problema que surgió fue al cambiar entre secciones, por ejemplo, de la carta al blog. Si habías scrolleado hacia abajo y abres la otra sección, se mostraba abajo también, lo que quiere decir que mantiene la posición del scroll. Para solucionarlo, creé un componente que al cargar llevase al principio de la página con una transición. Aquí aprendí cómo usar un hook nuevo, [useEffects](https://www.w3schools.com/react/react_useeffect.asp). Con él, una vez que el componente está cargado, realiza el scroll hacia arriba. La transición fue gracias a un ejemplo que encontré en un foro buscando cómo funcionaba el [window.scrollTo()](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div).
 
 Las diferentes pantallas se seguían desarrollando con normalidad, cambiando pequeños detalles en comparación con el primer diseño en Figma. No hubo complicaciones más allá del tiempo que tardé en acabar todas. Los productos de la carta se almacenan en arrays y son pintados mediante Javascript, como en los ejercicios de clase.
 
