@@ -86,7 +86,6 @@ async function register(nombre, apellidos, correo, contrasenia) {
             }
         });
 
-        console.log(json);
         if(json.email) {
           notyf.error('Este email ya está registrado.');
         } else {
@@ -111,16 +110,26 @@ async function hacerRegister(ev, nombre, apellidos, correo, password, password2)
       }
   });
 
-  if(password == password2) {
-    const regex = /^[^@]+@[^@]+\.[^@]+$/;
-    if(nombre && apellidos && regex.test(correo) && password) {
-      register(nombre, apellidos, correo, password);
+  const regexEmail = /^[^@]+@[^@]+\.[^@]+$/;
+  const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
+  if(nombre && apellidos && password) {
+    if(regexEmail.test(correo)) {
+      if(password.length > 8 && regexPass.test(password)) {
+        if(password == password2) {
+          register(nombre, apellidos, correo, password);
+        } else {
+          notyf.error('Las contraseñas no coinciden.');
+        }
+      } else {
+        notyf.error('El campo contraseña debe tener al menos entre 8 y 16 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
+      }
     } else {
-      notyf.error('Un campo está vacío o no tiene el formato adecuado.');
+      notyf.error('El email no tiene un formato válido o está vacío.');
     }
   } else {
-    notyf.error('Las contraseñas no coinciden.');
+    notyf.error('Un campo está vacío o no tiene el formato adecuado.');
   }
+
 }
 
 
