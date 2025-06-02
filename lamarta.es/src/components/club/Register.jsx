@@ -86,6 +86,7 @@ async function register(nombre, apellidos, correo, contrasenia) {
             }
         });
 
+        console.log(json);
         if(json.email) {
           notyf.error('Este email ya está registrado.');
         } else {

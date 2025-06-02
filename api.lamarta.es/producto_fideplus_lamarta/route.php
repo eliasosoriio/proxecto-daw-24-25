@@ -31,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 //Ficheros que se utilizan
 include_once("globals.php");
-include_once("Recursos.php");
-include_once("Constantes.php");
 include_once("controller/Controller.php");
 include_once("controller/LoginController.php");
 include_once("controller/TokenController.php");
