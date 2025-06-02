@@ -35,7 +35,7 @@ Hay dos tipos de usuarios:
 - **Administrador:** Tiene acceso a un panel para gestionar a los afiliados y a las recompensas.
 - **Afiliado:** Puede ver los puntos que va acumulando y las recompensas disponibles.
 
-Las cuentas que vienen en el dump, tienen como contraseña la primera parte del correo electrónico. Por ejemplo, si una cuenta tiene el correo de **prueba**@lamarta.es, la contraseña es **prueba**.
+Las cuentas que vienen en el dump, tienen como contraseña Abc1234.. las de afiliado y Admin1234.. la de administrador.
 
 Esquema de despliegue local final:
 

@@ -45,8 +45,8 @@ async function singIn(usuario, contrasenia) {
             url: urlLogin,
             method: "POST",
             data: [{
-              usuario: usuario.value,
-              contrasenia: contrasenia.value
+              usuario: usuario,
+              contrasenia: contrasenia
             }]
         });
 
@@ -93,7 +93,7 @@ async function comprobarValidez(id_usuario, token, tipo) {
     }
 }
 
-async function hacerLogin(ev) {
+async function hacerLogin(ev, correo, password) {
   ev.preventDefault();
   const notyf = new Notyf({
       position: {
@@ -101,11 +101,16 @@ async function hacerLogin(ev) {
           y: 'top'
       }
   });
-  const regex = /^[^@]+@[^@]+\.[^@]+$/;
-  if(regex.test(correo.value) && password.value.length) {
-    singIn(correo, password);
+  const regexEmail = /^[^@]+@[^@]+\.[^@]+$/;
+  const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
+  if(regexEmail.test(correo)) {
+    if(password.length > 8 && regexPass.test(password)) {
+      singIn(correo, password);
+    } else {
+      notyf.error('El campo contraseña debe tener al menos entre 8 y 16 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
+    }
   } else {
-    notyf.error('El email no tiene un formato válido o el campo contraseña está vacío.');
+    notyf.error('El email no tiene un formato válido.');
   }
 }
 
@@ -137,7 +142,7 @@ function Login() {
       <ScrollArriba />
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='login d-flex-col'>
-          <form className='login--form d-flex-col' onSubmit={hacerLogin}>
+          <form className='login--form d-flex-col' onSubmit={(ev) => hacerLogin(ev, correo, password)}>
 
               <Campo 
                 id="correo" 
