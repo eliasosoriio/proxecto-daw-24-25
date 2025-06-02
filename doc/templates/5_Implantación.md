@@ -3,6 +3,11 @@
 - [FASE DE IMPLANTACIÓN](#fase-de-implantación)
   - [1- Manual técnico](#1--manual-técnico)
     - [1.1- Instalación](#11--instalación)
+      - [Requisitos mínimos de hardware recomendados](#requisitos-mínimos-de-hardware-recomendados)
+      - [Software necesario](#software-necesario)
+      - [Carga inicial de datos](#carga-inicial-de-datos)
+      - [Usuarios](#usuarios)
+      - [Esquema final](#esquema-final)
     - [1.2- Administración do sistema](#12--administración-do-sistema)
   - [2- Manual de usuario](#2--manual-de-usuario)
   - [3- Melloras futuras](#3--melloras-futuras)
@@ -11,22 +16,45 @@
 
 ### 1.1- Instalación
 
-> *EXPLICACIÓN:* Neste apartado describiranse todos os pasos necesarios para que calquera persoa poida descargar o código do proxecto e continuar o seu desenvolvemento.
->
-> Como:
-> 
-> - Requirimentos de hardware, servidores na nube, etc.
-> - Software necesario: servidores (Exemplo servidor Web), software externo co que interaciona a nosa aplicación, contenedores, etc.
-> - Carga inicial de datos na base de datos. Migración de datos xa existentes noutros formatos.
-> - Usuarios da aplicación.
-> - Diagrama final de despregue (se hai variacións con respecto ó realizado na anterior fase).
+#### Requisitos mínimos de hardware recomendados
+
+- Un equipo con al menos 8 GB de RAM.
+- Espacio libre en el disco duro para los contenedores y la base de datos.
+- Conexión a internet para la instalación de dependencias.
+
+#### Software necesario
+
+- [Git](https://git-scm.com/) para clonar el repositorio del proyecto.
+- [Node.js](https://nodejs.org/) para la instalación de dependencias _npm install_ y ejecución del front _npm run dev_.
+- [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/) para levantar los contenedores del entorno (api y base de datos).
+- Navegador moderno y actualizado para acceder a la interfaz del frontend.
+
+#### Carga inicial de datos
+
+Una vez levantados los contenedores, se accede a phpMyAdmin en el puerto 8080 y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
+
+#### Usuarios
+
+Hay dos tipos de usuarios:
+
+- **Administrador:** Tiene acceso a un panel para gestionar a los afiliados y a las recompensas.
+- **Afiliado:** Puede ver los puntos que va acumulando y las recompensas disponibles.
+
+Las cuentas que vienen en el dump, tienen como contraseña la primera parte del correo electrónico. Por ejemplo, si una cuenta tiene el correo de **prueba**@lamarta.es, la contraseña es **prueba**.
+
+#### Esquema final
+
+- Frontend (React) desplegado en Vercel.
+- Backend (API REST Node.js) desplegado en IONOS.
+- Base de datos MySQL en el mismo servidor de IONOS.
+
 
 ### 1.2- Administración do sistema
 
 > *EXPLICACIÓN:* Neste apartado indicarase información relativa á administración do sistema, é dicir, tarefas que se deberán realizar unha vez que o sistema estea funcionando.
 >
 > Como:
-> 
+>
 > - Copias de seguridade do sistema.
 > - Copias de seguridade da base de datos.
 > - Xestión de usuarios.
