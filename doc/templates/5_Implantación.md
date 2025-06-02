@@ -7,7 +7,7 @@
       - [Software necesario](#software-necesario)
       - [Carga inicial de datos](#carga-inicial-de-datos)
       - [Usuarios](#usuarios)
-      - [Esquema final](#esquema-final)
+      - [Esquema de despliegue local final](#esquema-de-despliegue-local-final)
     - [1.2- Administración do sistema](#12--administración-do-sistema)
   - [2- Manual de usuario](#2--manual-de-usuario)
   - [3- Melloras futuras](#3--melloras-futuras)
@@ -42,11 +42,12 @@ Hay dos tipos de usuarios:
 
 Las cuentas que vienen en el dump, tienen como contraseña la primera parte del correo electrónico. Por ejemplo, si una cuenta tiene el correo de **prueba**@lamarta.es, la contraseña es **prueba**.
 
-#### Esquema final
+#### Esquema de despliegue local final
 
-- Frontend (React) desplegado en Vercel.
-- Backend (API REST Node.js) desplegado en IONOS.
-- Base de datos MySQL en el mismo servidor de IONOS.
+- Frontend (React).
+- Backend (API) desplegado en Docker.
+- Base de datos (MySQL) en Docker también.
+
 
 
 ### 1.2- Administración do sistema
