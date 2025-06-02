@@ -9,17 +9,13 @@
 
 ## 1- Codificación
 
-La carpeta que contiene el código del frontend es [lamarta.es](../../lamarta.es/) y la del backend [api.lamarta.es](../../api.lamarta.es/). 
+La carpeta que contiene el código del frontend es [lamarta.es](../../lamarta.es/) y la del backend [api.lamarta.es](../../api.lamarta.es/).
 
 Al comienzo del desarrollo de la página, en la sección de incio, blog, conócenos, carta y contacto no hubo apenas cambios y es igual al prototipo. El menú desplegable y de la cabecera requirió informarse sobre [como utilizar las rutas en React](https://www.w3schools.com/react/react_router.asp). Para usarlo tuve que realizar _npm install react-dom-router._
 
-Un nuevo problema que surgió fue al cambiar entre secciones, por ejemplo, de la carta al blog. Si habías scrolleado hacia abajo y abres la otra sección, se mostraba abajo también, lo que quiere decir que mantiene la posición del scroll. Para solucionarlo, creé un componente que al cargar llevase al principio de la página con una transición. Aquí aprendí cómo usar un hook nuevo, [useEffects](https://www.w3schools.com/react/react_useeffect.asp). Con él, una vez que el componente está cargado, realiza el scroll hacia arriba. La transición fue gracias a un ejemplo que encontré en un foro buscando cómo funcionaba el [window.scrollTo()](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div).
-
-Las diferentes pantallas se seguían desarrollando con normalidad, cambiando pequeños detalles en comparación con el primer diseño en Figma. No hubo complicaciones más allá del tiempo que tardé en acabar todas. Los productos de la carta se almacenan en arrays y son pintados mediante Javascript, como en los ejercicios de clase.
-
 Cuando ya estaban las pantallas, fue el momento de comenzar a privatizar las que se deben mostrar tras el login. Tras varios tipos y formas vistas, empleé un componente que vuelve una ruta privada para un rol, ya que me facilita después la comprobación de permisos y acceso. Cada vez que se cargue una página, comprobará que todo está correcto. En caso de que no, hará logout y redirigirá al login. No tuve muchas complicaciones gracias a las diferentes explicaciones y múltiples ejemplos de [esta página (4geeks)](https://4geeks.com/es/lesson/rutas-privadas-con-react-router).
 
-En este punto, dejé a un lado el front y comencé a hacer la API para ya seguir con el login una vez acabada. A partir del modelo de una que hicimos en DWCS, comencé a desarrollar los diferentes controladores y modelos. Paralelamente, iba realizando solicitudes HTTP en Chrome de prueba con la extensión [Talend API Tester](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm). 
+En este punto, dejé a un lado el front y comencé a hacer la API para ya seguir con el login una vez acabada. A partir del modelo de una que hicimos en DWCS, comencé a desarrollar los diferentes controladores y modelos. Paralelamente, iba realizando solicitudes HTTP en Chrome de prueba con la extensión [Talend API Tester](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm).
 
 En el route.php se comprueba que el dominio del que proviene la solicitud HTTP es aceptado, que el método sea válido y qué cabeceras se permiten. Los navegadores envían primero una [solicitud del tipo OPTIONS](https://www.arsys.es/blog/cors-que-es-como-funciona-y-configuracion#tree-4) de prueba para verificar la seguridad de la petición y el acceso, ya que utilizan el mecanismo [CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CORS). Este asegura que controles cuáles y desde dónde vienen las peticiones.
 
@@ -35,7 +31,7 @@ En cuanto a la seguridad y validaciones, lo primero fue empezar a pensar en cóm
 
 ![BOCETO DE LA SEGURIDAD Y VALIDACIONES](../img/img_4/boceto_permisos.png)
 
-La idea de cómo funciona está inspirada un poco en el proyecto en el que trabajo en la empresa. Un usuario tiene un rol y este rol tiene diferentes permisos. Siempre se comprueba el tipo de usuario desde la base de datos y en una tabla se comprueba que tiene acceso a un controlador y al método. Finalmente, quedó con los métodos obtenerPermiso, comprobarValidez y generarToken. 
+La idea de cómo funciona está inspirada un poco en el proyecto en el que trabajo en la empresa. Un usuario tiene un rol y este rol tiene diferentes permisos. Siempre se comprueba el tipo de usuario desde la base de datos y en una tabla se comprueba que tiene acceso a un controlador y al método. Finalmente, quedó con los métodos obtenerPermiso, comprobarValidez y generarToken.
 
 Siempre que carga algo de una zona privada, comprueba que todas las credenciales son válidas, que el token es válido y que no está caducado. En caso de que algo esté cambiado o mal, lo echará de la sesión inmediatamente. Cada media hora hay que volver a iniciar sesión, ya que el token caduca.
 
@@ -55,12 +51,18 @@ Los diseños tienen partes inspiradas en dos páginas principalmente y en elemen
 
 ## 3- Innovación
 
-A pesar de haber dado React durante el curso, todavía no sabía realizar en este lenguaje muchas cosas que hacía en Javascript crudo. Esa quizás fue la mayor dificultad hasta coger soltura. Aprender a adaptar las cosas, como manejar las rutas, como utilizar los hooks y qué son e implementar una librería, entre otras cosas. 
+A pesar de haber dado lo básico de React durante el curso, todavía no sabía realizar en este lenguaje muchas cosas que hacía en Javascript crudo. Esa quizás fue la mayor dificultad hasta coger soltura. Aprender a adaptar las cosas, como manejar las rutas, como utilizar los hooks y qué son e implementar una librería, entre otras cosas.
 
-También a la hora de desplegar el proyecto, tuve que aprender lo básico de Vercel para poder conectarlo a mi repositorio de GitHub. El backend finalmente fue desplegado en IONOS, ya que Lamarta disponía de un servidor contratado previamente. La base de datos fue muy fácil de crear y conectar, ya que hacen tutorial paso a paso y es un phpMyAdmin. 
+También a la hora de desplegar el proyecto, tuve que aprender lo básico de Vercel para poder conectarlo a mi repositorio de GitHub. El backend finalmente fue desplegado en IONOS, ya que Lamarta disponía de un servidor contratado previamente. La base de datos fue muy fácil de crear y conectar, ya que hacen tutorial paso a paso y es un phpMyAdmin.
 
 ## 4- Probas
 
-Deben describirse as probas realizadas e conclusión obtidas. Describir os problemas atopados e como foron solucionados.
+Durante el desarrollo del frontend, las pruebas consistieron en probar si son responsive todas las pantallas y, en caso de tener funciones, que estas vayan. Un problema que surgió fue al cambiar entre secciones, por ejemplo, de la carta al blog. Si habías scrolleado hacia abajo y abres la otra sección, se mostraba abajo también, lo que quiere decir que mantiene la posición del scroll. Para solucionarlo, creé un componente que al cargar llevase al principio de la página con una transición. Aquí aprendí cómo usar un hook nuevo, [useEffects](https://www.w3schools.com/react/react_useeffect.asp). Con él, una vez que el componente está cargado, realiza el scroll hacia arriba. La transición fue gracias a un ejemplo que encontré en un foro buscando cómo funcionaba el [window.scrollTo()](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div).
+
+Las diferentes pantallas se seguían desarrollando con normalidad, cambiando pequeños detalles en comparación con el primer diseño en Figma. No hubo complicaciones más allá del tiempo que tardé en acabar todas. Los productos de la carta se almacenan en arrays y son pintados mediante Javascript, como en los ejercicios de clase.
+
+En el backend, todo se resolvió a través del debugger y no hubo problemas mayores. Las pruebas fueron con [Talend API Tester](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm) y con la aplicación.
+
+A continuación, empiezan pruebas más reales con varias personas para buscar posibles errores y ver cómo va. Esto acompañado de un plan de pruebas en Excel en el que se intentará también cubrir todas las casuísticas.
 
 [**<-Anterior**](../../README.md)
