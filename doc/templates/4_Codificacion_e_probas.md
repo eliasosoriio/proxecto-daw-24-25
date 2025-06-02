@@ -67,4 +67,6 @@ En el backend, todo se resolvió a través del debugger y no hubo problemas mayo
 
 A continuación, empiezan pruebas más reales con varias personas para buscar posibles errores y ver cómo va. Esto acompañado de un plan de pruebas en Excel en el que se intentará también cubrir todas las casuísticas.
 
+[Archivo .odt de los casos de prueba.](./registro_casos_de_prueba.ods)
+
 [**<-Anterior**](../../README.md)
