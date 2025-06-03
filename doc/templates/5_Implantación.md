@@ -26,7 +26,7 @@ Software necesario:
 
 Carga inicial de datos:
 
-Una vez levantados los contenedores, se accede a phpMyAdmin en el puerto 8080 y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
+Una vez levantados los contenedores, se accede a phpMyAdmin en el puerto 8000 y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
 
 Usuarios:
 

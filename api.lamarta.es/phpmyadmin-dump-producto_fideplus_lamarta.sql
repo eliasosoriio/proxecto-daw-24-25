@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mariadb:3306
--- Tiempo de generación: 24-05-2025 a las 18:58:13
+-- Tiempo de generación: 03-06-2025 a las 19:39:54
 -- Versión del servidor: 10.6.19-MariaDB
 -- Versión de PHP: 8.2.25
 
@@ -56,10 +56,7 @@ CREATE TABLE `afiliado` (
 INSERT INTO `afiliado` (`id_usuario`, `puntos`) VALUES
 (2, 500),
 (3, 500),
-(4, 156),
-(5, 500),
-(8, 500),
-(9, 500);
+(4, 500);
 
 -- --------------------------------------------------------
 
@@ -107,8 +104,7 @@ INSERT INTO `recompensa` (`id_recompensa`, `nombre`, `descripcion`, `precio`) VA
 (1, 'Lamarta', 'Smash.', 3300),
 (3, 'Onion Ring', 'Smash.', 4000),
 (4, 'Tequeños', 'Entrante.', 3700),
-(5, 'Patatas', 'Entrante.', 800),
-(12, 'La Mexi', 'Mejor de España 2026.', 7580);
+(5, 'Patatas', 'Entrante.', 800);
 
 -- --------------------------------------------------------
 
@@ -146,13 +142,10 @@ CREATE TABLE `token` (
 --
 
 INSERT INTO `token` (`id_usuario`, `token`, `validez`) VALUES
-(1, 'MjdjZTE1ZjM1YTM5Y2E2NDUwMDIyMTVlOTQ0ZDViZTI=', '2025-05-24 18:57:45'),
-(2, 'YTNhZmQ2ZWFkODk4ZWFjNjY0OGM5ZDY0NDBmYjNiN2U=', '2025-05-24 15:58:58'),
+(1, 'MTlkMTQ1MjQ4YmQ4OTExZDhjZTVmMjE2ODFlMjhhMmE=', '2025-06-03 19:38:42'),
+(2, 'MzI3MzNjOWJlZTI0ZjczODIxMTZmZDk3MzIwZTJiNWQ=', '2025-06-03 19:38:34'),
 (3, 'OTU1YmJiMDI2YjJiZTI1MzE4YjZjMGFmODk2MmFlMjE=', '2025-05-23 18:07:50'),
-(4, 'NzcyNmM4ZmE4MmJhNDcyNDExNjllZDg3NWIwZjUzNGI=', '2025-05-24 18:38:08'),
-(5, 'NTg4NzUxNWI1MmNjMzJmOWE4ZmY0ZGIyMzgxOGE2MTM=', '2025-05-23 18:08:23'),
-(8, 'Yjg4MTcxMTY3Y2EwMTA3MzNkMzUzNDRlMmQxODc5NjM=', '2025-05-23 18:39:21'),
-(9, '328e9d860a14dee406da7d7a0ed3fcb9', '2025-05-23 19:57:19');
+(4, 'NzcyNmM4ZmE4MmJhNDcyNDExNjllZDg3NWIwZjUzNGI=', '2025-05-24 18:38:08');
 
 -- --------------------------------------------------------
 
@@ -174,14 +167,9 @@ CREATE TABLE `transaccion` (
 --
 
 INSERT INTO `transaccion` (`id_transaccion`, `id_usuario_admin`, `id_usuario_afiliado`, `concepto`, `importe`, `fecha`) VALUES
-(11, 1, 2, 'Bono Inicial', 500, '2025-05-24'),
-(12, 1, 3, 'Bono Inicial', 500, '2025-05-24'),
-(13, 1, 4, 'Bono Inicial', 500, '2025-05-24'),
-(14, 1, 5, 'Bono Inicial', 500, '2025-05-24'),
-(15, 1, 8, 'Bono Inicial', 500, '2025-05-24'),
-(16, 1, 9, 'Bono Inicial', 500, '2025-05-24'),
-(21, 1, 4, 'Take Away', 456, '2025-05-28'),
-(22, 1, 4, 'Canjeo: Patatas - 800', -800, '2025-06-01');
+(1, 1, 2, 'Bono Inicial', 500, '2025-05-24'),
+(2, 1, 3, 'Bono Inicial', 500, '2025-05-24'),
+(3, 1, 4, 'Bono Inicial', 500, '2025-05-24');
 
 -- --------------------------------------------------------
 
@@ -203,13 +191,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellidos`, `correo`, `contrasenia`, `id_tipo`) VALUES
-(1, 'Jose Luis', 'Lamarta', 'administrador@lamarta.es', '$2y$10$h9mJkarsJr0jRmyJhiWf6.vK4L3Att/0JouRRy09kxK5VBLRWef36', 1),
-(2, 'Elías', 'Osorio Pouseu', 'elias@lamarta.es', '$2y$10$HZniUo2TF5hAfgrznUBmX.1GLi4kndBVp3tT3NSUlH3JGo34T4DR.', 2),
-(3, 'Lucía', 'Vidal Porto', 'lucia@lamarta.es', '$2y$10$AuizYTg9.tP00d0ohVKKCee3JlKGXk/E0NLLtjoNxP2tt270a4L3C', 2),
-(4, 'Laura', 'Vidal Porto', 'laura@lamarta.es', '$2y$10$.mlcc5K3bfON.ea.642q6OzmcVbd/1BOCqCMosvIg.PUUgwKiNxZ2', 2),
-(5, 'Manuel', 'Osorio Lozano', 'manuel@lamarta.es', '$2y$10$RSu9baMPFLjBLXb/t8EEkuRtokfG7JnbKlJ8FDFnS82rYDr0NTRoO', 2),
-(8, 'Lorenzo', 'Pérez Gómez', 'lorenzo@lamarta.es', '$2y$10$.C7dp6TomwEEoeK9b37GzeCnG0eQITikT79gu.bc.9/n3k9uMYuv6', 2),
-(9, 'Susi', 'Pouseu Costas', 'susi@lamarta.es', '$2y$10$dpViLB5QgxmNzGYQ0HX1FOgcrUE4ACJKRoeG4csutf.6gkyQ4A8oe', 2);
+(1, 'Camarero', 'Lamarta', 'administrador@lamarta.es', '$2y$10$SKIUapXyYhJO6nVQ95faN.Fmgwj9Yk1zrnrW5IxWkW7qB.R3nZZF.', 1),
+(2, 'Elías', 'Osorio Pouseu', 'elias@lamarta.es', '$2y$10$/AtQ/i6/gY8V.TA811CaBeBlsSPN8zu7yiU9S/iHlQc9KeCTm3kyy', 2),
+(3, 'DAW', 'Cotarelo', 'daw@lamarta.es', '$2y$10$/AtQ/i6/gY8V.TA811CaBeBlsSPN8zu7yiU9S/iHlQc9KeCTm3kyy', 2),
+(4, 'Lucía', 'Vidal Porto', 'lucia@lamarta.es', '$2y$10$/AtQ/i6/gY8V.TA811CaBeBlsSPN8zu7yiU9S/iHlQc9KeCTm3kyy', 2);
 
 --
 -- Índices para tablas volcadas
