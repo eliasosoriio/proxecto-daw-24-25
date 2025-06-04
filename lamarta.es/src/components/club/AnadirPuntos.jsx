@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import "../../styles/club/AnadirPuntos.css";
+import "../../styles/club/VentanaSecundaria.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
@@ -98,10 +98,10 @@ function AnadirPuntos() {
   const { id } = useParams();
 
   return (
-    <section className='anadir--puntos d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='anadir--puntos--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", id, concepto, importe)}>
+        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", id, concepto, importe)}>
             <Campo 
               nombre="Escribe un concepto" 
               type={"text"} 

@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import "../../styles/club/Perfil.css";
+import "../../styles/club/VentanaSecundaria.css";
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
@@ -68,10 +68,10 @@ function Perfil() {
   }, [])
 
   return (
-    <section className='perfil d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='perfil--form d-flex-col'>
+        <form className='ventana--secundaria--form d-flex-col'>
           <CampoPanel nombre={'Nº ' + usuario.id_usuario + ' - ' + usuario.nombre + ' ' + usuario.apellidos} descripcion={usuario.correo} puntos={usuario.puntos} />
           <BotonSubmit mensaje={"Añadir Puntos"} button={true} onClick={(ev) => realizarAccion(ev, "anadir", id)} />
           <BotonSubmit mensaje={"Canjear Recompensa"} button={true} onClick={(ev) => realizarAccion(ev, "canjear", id)} />

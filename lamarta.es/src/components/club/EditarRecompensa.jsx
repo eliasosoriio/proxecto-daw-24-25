@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { data, useParams } from 'react-router-dom';
-import "../../styles/club/EditarRecompensa.css";
+import "../../styles/club/VentanaSecundaria.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
@@ -124,10 +124,10 @@ function EditarRecompensa() {
   if (!recompensa) return <p className="cargando d-flex-col">Cargando...</p>;
 
   return (
-    <section className='editar--recompensa d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='editar--recompensa--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "editar", id, nombre, descripcion, precio)}>
+        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "editar", id, nombre, descripcion, precio)}>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 

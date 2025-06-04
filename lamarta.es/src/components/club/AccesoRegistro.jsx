@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import "../../styles/club/Login.css";
+import "../../styles/club/Form.css";
 import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
 import BotonSubmit from './BotonSubmit';
@@ -90,8 +90,8 @@ function AccesoRegistro() {
     <>
       <ScrollArriba />
       <HeaderSeccion nombre="LAMARTA CLUB" />
-      <section className='login d-flex-col'>
-          <form className='login--form d-flex-col' onSubmit={(ev) => hacerRegistro(ev, password)}>
+      <section className='form d-flex-col'>
+          <form className='form--campos d-flex-col' onSubmit={(ev) => hacerRegistro(ev, password)}>
               <Campo 
                 id="password" 
                 nombre="Desbloquea el registro" 

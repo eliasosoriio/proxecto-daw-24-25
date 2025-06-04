@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/club/Transacciones.css";
+import "../../styles/club/PanelLista.css";
 import CampoPanel from './CampoPanel';
 
 const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
@@ -55,13 +55,13 @@ function Transacciones() {
     }, [])
 
   return (
-    <section className='panel transacciones d-flex-col'>
+    <section className='panel panel--lista d-flex-col'>
         <header>
-            <h2 className='transacciones--titulo'>Transacciones</h2>
-            <p className='transacciones--desc'>TUS ÚLTIMAS 10</p>
+            <h2 className='panel--lista--titulo'>Transacciones</h2>
+            <p className='panel--lista--desc'>TUS ÚLTIMAS 10</p>
         </header>
 
-        <section className="transacciones--campo d-flex-col" aria-label="Lista de transacciones" role='list'>
+        <section className="panel--lista--campo d-flex-col" aria-label="Lista de transacciones" role='list'>
             {transacciones &&
               [...transacciones].map((t, i)  => (
                   <CampoPanel 

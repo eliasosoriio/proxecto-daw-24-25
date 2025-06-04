@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import "../../styles/club/BorrarRecompensa.css";
+import "../../styles/club/VentanaSecundaria.css";
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
 import CampoPanel from './CampoPanel';
@@ -97,11 +97,11 @@ function BorrarRecompensa() {
   }, [])
   
   return (
-    <section className='borrar--recompensa d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <h1 className="borrar--recompensa--titulo">¿Estás seguro de que quieres borrar esta recompensa?</h1>
-        <form className='borrar--recompensa--form d-flex-col'>
+        <h1 className="ventana--secundaria--titulo">¿Estás seguro de que quieres borrar esta recompensa?</h1>
+        <form className='ventana--secundaria--form d-flex-col'>
           <CampoPanel nombre={recompensa.nombre} descripcion={recompensa.descripcion} puntos={recompensa.precio} />
           <BotonSubmit mensaje={"Eliminar"} button={true} onClick={(ev) => realizarAccion(ev, "eliminar", id)} />
           <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />

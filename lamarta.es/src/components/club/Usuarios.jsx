@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/club/Usuarios.css";
+import "../../styles/club/PanelLista.css";
 import CampoPanel from './CampoPanel';
 
 const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
@@ -54,13 +54,13 @@ function Usuarios() {
   }, [])
 
   return (
-    <section className='panel usuarios d-flex-col'>
+    <section className='panel panel--lista d-flex-col'>
         <header>
-            <h2 className='usuarios--titulo'>Usuarios</h2>
-            <p className='usuarios--desc'>LOS 10 CON MÁS PUNTOS</p>
+            <h2 className='panel--lista--titulo'>Usuarios</h2>
+            <p className='panel--lista--desc'>LOS 10 CON MÁS PUNTOS</p>
         </header>
         
-        <ul className="usuarios--campo d-flex-col"  aria-label="Lista de usuarios" role='list'>
+        <ul className="panel--lista--campo d-flex-col"  aria-label="Lista de usuarios" role='list'>
             {[...usuarios].map((u, i)  => (
                 <CampoPanel 
                 key={i}

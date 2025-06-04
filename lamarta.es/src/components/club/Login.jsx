@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import "../../styles/club/Login.css";
+import "../../styles/club/Form.css";
 import Campo from './Campo';
 import HeaderSeccion from '../general/HeaderSeccion'
 import BotonSubmit from './BotonSubmit';
@@ -102,12 +102,11 @@ async function hacerLogin(ev, correo, password) {
       }
   });
   const regexEmail = /^[^@]+@[^@]+\.[^@]+$/;
-  const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
   if(regexEmail.test(correo)) {
-    if(password.length > 8 && regexPass.test(password)) {
+    if(password.length > 0) {
       singIn(correo, password);
     } else {
-      notyf.error('El campo contraseña debe tener al menos entre 8 y 16 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
+      notyf.error('Debes introducir una contraseña para iniciar sesión.');
     }
   } else {
     notyf.error('El email no tiene un formato válido.');
@@ -141,8 +140,8 @@ function Login() {
     <>
       <ScrollArriba />
       <HeaderSeccion nombre="LAMARTA CLUB" />
-      <section className='login d-flex-col'>
-          <form className='login--form d-flex-col' onSubmit={(ev) => hacerLogin(ev, correo, password)}>
+      <section className='form d-flex-col'>
+          <form className='form--campos d-flex-col' onSubmit={(ev) => hacerLogin(ev, correo, password)}>
 
               <Campo 
                 id="correo" 

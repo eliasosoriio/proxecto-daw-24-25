@@ -1,9 +1,9 @@
 
 /*=============================================
-=            Recompensas            =
+=            PanelLista            =
 =============================================*/
 
-.recompensas {
+.panel--lista {
     border-radius: 2rem;
     outline: .2rem solid var(--dark-color);
     color: var(--dark-color);
@@ -15,41 +15,41 @@
     gap: 1rem;
 }
 
-.recompensas--titulo {
+.panel--lista--titulo {
     text-align: start;
     text-transform: uppercase;
 }
 
-.recompensas--desc {
+.panel--lista--desc {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.recompensas--campo {
+.panel--lista--campo {
     gap: 1rem;
 }
 
 @media screen and (min-width: 960px) {
-    .recompensas {
+    .panel--lista {
         width: 60vw;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .recompensas {
+    .panel--lista {
         width: 20vw;
         height: 70vh;
     }
-    .recompensas--campo {
+    .panel--lista--campo {
         padding: 1rem;
         max-height: 100%; 
         padding-right: 1rem;
         overflow-y: auto;
     }
-    .recompensas--campo::-webkit-scrollbar-track {
+    .panel--lista--campo::-webkit-scrollbar-track {
         border-radius: 2rem;
     }
 }
 
-/*=====  End of Recompensas  ======*/
+/*=====  End of PanelLista  ======*/
 

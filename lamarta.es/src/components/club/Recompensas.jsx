@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "../../styles/club/Recompensas.css";
+import "../../styles/club/PanelLista.css";
 import CampoPanel from './CampoPanel';
 
 const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
@@ -55,13 +55,13 @@ function Recompensas() {
     }, [])
 
   return (
-    <section className='panel recompensas d-flex-col'>
+    <section className='panel panel--lista d-flex-col'>
         <header>
-            <h2 className='recompensas--titulo'>Recompensas</h2>
-            <p className='recompensas--desc'>CANJEA TU FAVORITA</p>
+            <h2 className='panel--lista--titulo'>Recompensas</h2>
+            <p className='panel--lista--desc'>CANJEA TU FAVORITA</p>
         </header>
 
-        <section className="recompensas--campo d-flex-col" aria-label="Lista de recompensas" role='list'>
+        <section className="panel--lista--campo d-flex-col" aria-label="Lista de recompensas" role='list'>
             {[...recompensas].map((r, i)  => (
                 <CampoPanel 
                   key={i}

@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import "../../styles/club/AnadirRecompensa.css";
+import "../../styles/club/VentanaSecundaria.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
@@ -96,10 +96,10 @@ function AnadirRecompensa() {
   const [precio, setPrecio] = useState(0);
 
   return (
-    <section className='anadir--recompensa d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='anadir--recompensa--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", nombre, descripcion, precio)}>
+        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "anadir", nombre, descripcion, precio)}>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 

@@ -1,16 +1,16 @@
 
 /*=============================================
-=            BorrarRecompensa            =
+=            VentanaSecundaria            =
 =============================================*/
 
-.borrar--recompensa {
+.ventana--secundaria {
     align-items: center;
     justify-content: center;
     height: 65vh;
     background-color: var(--dark-color);
 }
 
-.borrar--recompensa--titulo {
+.ventana--secundaria--titulo {
     color: var(--white-color);
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -18,10 +18,10 @@
     padding: 1rem;
 }
 
-.borrar--recomepensa--form {
+.ventana--secundaria--form {
     margin-top: 1rem;
     gap: 1rem;
 }
 
-/*=====  End of BorrarRecompensa  ======*/
+/*=====  End of VentanaSecundaria  ======*/
 

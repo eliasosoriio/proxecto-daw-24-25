@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react'
-import "../../styles/club/BuscarUsuario.css";
+import "../../styles/club/VentanaSecundaria.css";
 import Campo from './Campo';
 import BotonSubmit from './BotonSubmit';
 import ScrollArriba from '../general/ScrollArriba'
@@ -56,7 +56,7 @@ async function getUsuario(id) {
         if (json.id_usuario) {
             window.location.href = `/usuario/perfil/${id}`;
         } else {
-            notyf.error('Usuario no encontrado.');
+            notyf.error('Afiliado no encontrado.');
         }
     } catch (error) {
       console.error(error);
@@ -88,10 +88,10 @@ function BuscarUsuario() {
   const [id, setId] = useState();
 
   return (
-    <section className='buscar--usuario d-flex-col'>
+    <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='buscar--usuario--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "buscar", id)}>
+        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "buscar", id)}>
             <Campo 
               id="usuario" 
               nombre="Nº de Afiliado" 
@@ -102,7 +102,7 @@ function BuscarUsuario() {
                 setId(ev.target.value);
               }}
               />
-            <BotonSubmit mensaje={"Buscar Usuario"} />
+            <BotonSubmit mensaje={"Buscar Afiliado"} />
             <BotonSubmit mensaje={"Cancelar"} button={true} onClick={(ev) => realizarAccion(ev, "cancelar", id)} />
         </form>
       </PrivateRoute>
