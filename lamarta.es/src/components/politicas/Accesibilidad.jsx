@@ -24,7 +24,7 @@ function AvisoLegal() {
                 <li>Informar sobre cualquier posible incumplimiento por parte de este sitio web</li>
                 <li>Transmitir otras dificultades de acceso al contenido</li>
                 <li>Formular cualquier otra consulta o sugerencia de mejora relativa a la accesibilidad del sitio web
-                    Escribiendo un email a info@lamarta.es o a través del número de teléfono (+34) 664 36 86 61.</li>
+                    Escribiendo un email a grupolamarta@gmail.com o a través del número de teléfono (+34) 664 36 86 61.</li>
             </ul>
             <p>Puede presentar:</p>
             <ul>

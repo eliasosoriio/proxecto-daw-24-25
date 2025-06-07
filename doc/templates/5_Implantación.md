@@ -64,17 +64,7 @@ Las cuentas que vienen en el dump, tienen como contraseña *Abc1234..* las de af
 
 ### 1.2- Administración do sistema
 
-> *EXPLICACIÓN:* Neste apartado indicarase información relativa á administración do sistema, é dicir, tarefas que se deberán realizar unha vez que o sistema estea funcionando.
->
-> Como:
->
-> - Copias de seguridade do sistema.
-> - Copias de seguridade da base de datos.
-> - Xestión de usuarios.
-> - Xestión seguridade.
-> - Xestión de incidencias, que poden ser de dous tipos: de sistema (accesos non autorizados á BD, etc) ou de fallos no software.
->
-> No caso de que sexan precisas.
+El repositorio de GitHub sirve para controlar las versiones y como copias de seguridad del frontend y backend. En caso de que algo falle o salga mal siempre se puede hacer rollback y volver atrás. Después, de forma diaria, se realiza una copia de seguridad en el servidor de la base de datos. De esta forma, protegemos la información y puntos de cada afiliado en caso de que algo ocurriese. También se almacenan los logs del servidor para detectar posibles fallos o accesos no autorizados.
 
 ## 2- Manual de usuario
 
