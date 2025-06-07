@@ -100,7 +100,7 @@ async function register(nombre, apellidos, correo, contrasenia) {
     }
 }
 
-async function hacerRegister(ev, nombre, apellidos, correo, password, password2) {
+async function hacerRegister(ev, nombre, apellidos, correo, password, password2, privacidad) {
   ev.preventDefault();
 
   const notyf = new Notyf({
@@ -112,24 +112,27 @@ async function hacerRegister(ev, nombre, apellidos, correo, password, password2)
 
   const regexEmail = /^[^@]+@[^@]+\.[^@]+$/;
   const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
-  if(nombre && apellidos && password) {
-    if(regexEmail.test(correo)) {
-      if(password.length > 8 && regexPass.test(password)) {
-        if(password == password2) {
-          register(nombre, apellidos, correo, password);
+  if(privacidad) {
+    if(nombre && apellidos && password) {
+      if(regexEmail.test(correo)) {
+        if(password.length > 8 && regexPass.test(password)) {
+          if(password == password2) {
+            register(nombre, apellidos, correo, password);
+          } else {
+            notyf.error('Las contraseñas no coinciden.');
+          }
         } else {
-          notyf.error('Las contraseñas no coinciden.');
+          notyf.error('El campo contraseña debe tener al menos entre 8 y 16 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
         }
       } else {
-        notyf.error('El campo contraseña debe tener al menos entre 8 y 16 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
+        notyf.error('El email no tiene un formato válido o está vacío.');
       }
     } else {
-      notyf.error('El email no tiene un formato válido o está vacío.');
+      notyf.error('Un campo está vacío o no tiene el formato adecuado.');
     }
   } else {
-    notyf.error('Un campo está vacío o no tiene el formato adecuado.');
+    notyf.error('Debes aceptar las políticas de privacidad.');
   }
-
 }
 
 
@@ -139,6 +142,7 @@ function Register() {
   const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+  const [privacidad, setPrivacidad] = useState(false);
 
   useEffect(() => {
     comprobarRegistro(sessionStorage.getItem('contraseniaRegistro'));
@@ -149,43 +153,48 @@ function Register() {
       <ScrollArriba />
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='form d-flex-col'>
-          <form className='form--campos d-flex-col' onSubmit={(ev) => hacerRegister(ev, nombre, apellidos, correo, password, password2)}>
+          <form className='form--campos d-flex-col' onSubmit={(ev) => hacerRegister(ev, nombre, apellidos, correo, password, password2, privacidad)}>
 
               <Campo 
                 id="nombre" 
-                nombre="Nombre" 
+                nombre="* Nombre" 
                 type={"text"} 
                 placeholder={"Pablo"} 
                 onChange={(ev) => setNombre(ev.target.value)}
               />
               <Campo 
                 id="apellidos" 
-                nombre="Apellidos" 
+                nombre="* Apellidos" 
                 type={"text"} 
                 placeholder={"Gómez Sandoval"} 
                 onChange={(ev) => setApellidos(ev.target.value)}
               />
               <Campo 
                 id="correo" 
-                nombre="Correo electrónico" 
+                nombre="* Correo electrónico" 
                 type={"email"} 
                 placeholder={"tucorreo@ejemplo.com"} 
                 onChange={(ev) => setCorreo(ev.target.value)}
               />
               <Campo 
                 id="password" 
-                nombre="Contraseña" 
+                nombre="* Contraseña" 
                 type={"password"} 
                 placeholder={"Introduce tu contraseña"} 
                 onChange={(ev) => setPassword(ev.target.value)}
               />
               <Campo 
                 id="password2" 
-                nombre="Confirma tu contraseña" 
+                nombre="* Confirma tu contraseña" 
                 type={"password"} 
                 placeholder={"Repite tu contraseña"} 
                 onChange={(ev) => setPassword2(ev.target.value)}
               />
+
+              <section className="register--politicas d-flex-row">
+                <label className='register--privacidad' htmlFor="privacidad"><a href="https://lamarta.es/privacidad">* Acepta la política de privacidad:</a></label>
+                <input type="checkbox" name="privacidad" id="privacidad" onChange={() => setPrivacidad(!privacidad)} />
+              </section>
 
               <BotonSubmit mensaje={"Registrarse"} />
           </form>
