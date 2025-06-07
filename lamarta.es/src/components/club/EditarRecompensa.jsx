@@ -83,18 +83,18 @@ function realizarAccion(ev, accion, id, nombre, descripcion, precio, recompensa)
   });
 
 
-  if(recompensa.nombre == nombre && recompensa.descripcion == descripcion && recompensa.precio == precio) {
-    notyf.error("Debes editar algún campo de la recompensa.");
-  } else {
-    if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
-      notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
+  if(accion == "editar") {
+    if(recompensa.nombre == nombre && recompensa.descripcion == descripcion && recompensa.precio == precio) {
+      notyf.error("Debes editar algún campo de la recompensa.");
     } else {
-      if(accion == "editar") {
-        editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
+      if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+        notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
       } else {
-        window.location.href = `/club/admin`;
+        editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
       }
     }
+  } else {
+    window.location.href = `/club/admin`;
   }
 }
 
