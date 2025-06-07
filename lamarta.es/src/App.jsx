@@ -23,6 +23,9 @@ import BorrarRecompensa from "./components/club/BorrarRecompensa";
 import AccesoRegistro from "./components/club/AccesoRegistro";
 import Register from "./components/club/Register";
 import AvisoLegal from "./components/politicas/AvisoLegal";
+import Cookies from "./components/politicas/Cookies";
+import Privacidad from "./components/politicas/Privacidad";
+import Accesibilidad from "./components/politicas/Accesibilidad";
 
 function App() {
    return (
@@ -91,6 +94,9 @@ function App() {
                   <Register />
                } />
                <Route path="/avisolegal" element={<AvisoLegal />}></Route>
+               <Route path="/cookies" element={<Cookies />}></Route>
+               <Route path="/privacidad" element={<Privacidad />}></Route>
+               <Route path="/accesibilidad" element={<Accesibilidad />}></Route>
                <Route path="/*" element={<NotFound />}></Route>
             </Routes>
          </main>
