@@ -72,7 +72,7 @@ async function editarRecompensa(id, nombre, descripcion, precio, token) {
 }
 
 
-function realizarAccion(ev, accion, id, nombre, descripcion, precio) {
+function realizarAccion(ev, accion, id, nombre, descripcion, precio, recompensa) {
   ev.preventDefault();
 
   const notyf = new Notyf({
@@ -82,13 +82,18 @@ function realizarAccion(ev, accion, id, nombre, descripcion, precio) {
       }
   });
 
-  if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
-    notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
+
+  if(recompensa.nombre == nombre && recompensa.descripcion == descripcion && recompensa.precio == precio) {
+    notyf.error("Debes editar algún campo de la recompensa.");
   } else {
-    if(accion == "editar") {
-      editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
+    if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+      notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
     } else {
-      window.location.href = `/club/admin`;
+      if(accion == "editar") {
+        editarRecompensa(id, nombre, descripcion, precio, sessionStorage.getItem('token'));
+      } else {
+        window.location.href = `/club/admin`;
+      }
     }
   }
 }
@@ -127,7 +132,7 @@ function EditarRecompensa() {
     <section className='ventana--secundaria d-flex-col'>
       <ScrollArriba />
       <PrivateRoute rolPermitido="admin">
-        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "editar", id, nombre, descripcion, precio)}>
+        <form className='ventana--secundaria--form d-flex-col' onSubmit={(ev) => realizarAccion(ev, "editar", id, nombre, descripcion, precio, recompensa)}>
             <Campo 
               nombre="Nombre de la recompensa" 
               type={"text"} 
