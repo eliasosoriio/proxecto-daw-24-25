@@ -22,6 +22,7 @@ import EditarRecompensa from "./components/club/EditarRecompensa";
 import BorrarRecompensa from "./components/club/BorrarRecompensa";
 import AccesoRegistro from "./components/club/AccesoRegistro";
 import Register from "./components/club/Register";
+import AvisoLegal from "./components/politicas/AvisoLegal";
 
 function App() {
    return (
@@ -89,6 +90,7 @@ function App() {
                <Route path="/club/registro" element={
                   <Register />
                } />
+               <Route path="/avisolegal" element={<AvisoLegal />}></Route>
                <Route path="/*" element={<NotFound />}></Route>
             </Routes>
          </main>

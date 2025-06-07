@@ -14,10 +14,10 @@ function Footer() {
             RÚA ARCEBISPO XELMÍREZ, 7 - 36600 VILAGARCÍA DE AROUSA
         </a>
         <ul className="pie--politicas d-flex-col">
-            <li>Aviso Legal</li>   
-            <li>Política de Privacidad</li>   
-            <li>Política de Cookies</li>   
-            <li>Declaración de Accesibilidad</li>   
+            <li><a href="/avisolegal">Aviso Legal</a></li>   
+            <li><a href="/privacidad">Política de Privacidad</a></li>   
+            <li><a href="/cookies">Política de Cookies</a></li>   
+            <li><a href="/accesibilidad">Declaración de Accesibilidad</a></li>   
         </ul>
         <p className="pie--copy">&copy; Lamarta. Todos los derechos reservados.</p>
     </footer>

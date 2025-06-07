@@ -1,4 +1,4 @@
-import "../../styles/general/NotFound.css";
+import "../../styles/App.css";
 import React from 'react'
 import ScrollArriba from '../general/ScrollArriba'
 
