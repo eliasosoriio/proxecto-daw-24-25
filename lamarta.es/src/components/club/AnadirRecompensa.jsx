@@ -79,15 +79,15 @@ function realizarAccion(ev, accion, nombre, descripcion, precio) {
       }
   });
 
-  if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
-    notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
-  } else {
-    if(accion == "anadir") {
-      anadirRecompensa(nombre, descripcion, precio);
+  if(accion == "anadir") {
+      if(!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+        notyf.error("Alguno de los campos está vacío o no tiene un formato válido.");
+      } else {
+        anadirRecompensa(nombre, descripcion, precio);
+      }
     } else {
       window.location.href = `/club/admin`;
     }
-  }
 }
 
 function AnadirRecompensa() {

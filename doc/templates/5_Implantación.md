@@ -30,7 +30,7 @@ Pasos para el despliegue:
 
 - Clonamos el repositorio mediante Git.
 - Accedemos a la carpeta _lamarta.es_ y hacemos un _npm install_ para instalar las dependencias.
-- Una vez instaladas, hacemos _npm run dev_ para desplegar el frontend. Por defecto, en el puerto 5173,
+- Una vez instaladas, hacemos _npm run dev_ para desplegar el frontend. Por defecto, en el puerto 5173.
 - Para el backend, accedemos a _api.lamarta.es_ y levantamos los contenedores con _docker-compose up_.
 - Una vez levantados, accedemos a _phpMyAdmin_, generalmente en el puerto 8000. Y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
 
@@ -41,7 +41,7 @@ Con todo esto listo, ya podríamos iniciar sesión en el club con cualquiera de 
 
 Software necesario:
 
-- Disponer de un servidor que permita desplegar proyectos de React y archivos PHP.
+- Disponer de un servidor que permita desplegar proyectos de React, archivos PHP y crear una base de datos MySQL.
 
 Pasos para el despliegue:
 
@@ -78,15 +78,17 @@ Las cuentas que vienen en el dump, tienen como contraseña *Abc1234..* las de af
 
 ## 2- Manual de usuario
 
-> *EXPLICACIÓN:* Neste apartado fara
->
-> - Indicar se será necesario formar ós usuarios. En caso afirmativo planificar.
-> - Manual de usuario, FAQ ou outro xeito que sexa o máis adecuado para que os usuarios saiban usar a nosa aplicación informática.
->
-> Todo esto se a aplicación require de manual de usuario.
+Los afiliados no necesitan ninguna formación debido a que su panel es informativo. En cambio, los administradores reciben un manual con las indicaciones sobre cómo realizar las diferentes acciones de la aplicación.
+
+[Acceder al manual](./fideplus_manual_admin.pdf).
 
 ## 3- Melloras futuras
 
-> *EXPLICACIÓN:* Neste apartado incluiranse as posibilidades de mellora da aplicación no futuro.
->
+Las principales mejoras a futuro son:
+
+- En vez de que los trabajadores canjeen las recompensas, que sean los propios usuarios. 
+- Realizar un sistema de votaciones para hacer encuestas para que los afiliados voten que recompensas quieren.
+- Añadir un sistema de reservas para el restaurante. Así los afiliado también tienen la opción de reservar mesa.
+- Crear una newsletter que envíe información y promociones a los afiliados.
+
 [**<-Anterior**](../../README.md)
