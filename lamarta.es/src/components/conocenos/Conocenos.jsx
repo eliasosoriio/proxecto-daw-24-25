@@ -16,7 +16,7 @@ function Conocenos() {
           alt={"Imagen de la sección conócenos de una premium bacon."}
         />
         <Seccion 
-          imagen={"https://lamarta.es/assets/gracias.jpg"}
+          imagen={"https://lamarta.es/assets/popsdepollo.jpg"}
           textos={["En LAMARTA estamos profundamente comprometidos con nuestros clientes, buscando siempre incluiros y haceros participar en la experiencia del restaurante. Hemos puesto todo nuestro empeño y dedicación para crear un espacio acogedor y único.", "Hemos ganado el BURGER COMBAT REGIONAL 2024 a la mejor hamburguesa con la ONIONG RING y el premio como la tercera mejor hamburguesa de España en el BURGER COMBAT NACIONAL 2025. Agradecemos a todos nuestros clientes por su continuo apoyo y preferencia ya que sin vosotros no hubiese sido posible."]}
           alt={"Imagen de la sección conócenos del equipo dando las gracias."}
         />

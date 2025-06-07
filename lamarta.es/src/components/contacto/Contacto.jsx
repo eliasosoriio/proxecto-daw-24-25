@@ -31,6 +31,11 @@ function Contacto() {
               icono={"fa-brands fa-instagram"}
               titulo={"@lamarta_bbb"}
             />
+            <Barra
+              enlace={"https://www.youtube.com/@LAMARTABBB"}
+              icono={"fa-brands fa-youtube"}
+              titulo={"LAMARTA Youtube"}
+            />
           </section>
           <img className='contacto--imagen' src="https://vilagarciavirtual.com/uploads/imagenes-negocio/lamarta_01.jpg" alt="Imagen del interior del local de LAMARTA" />
       </section>
