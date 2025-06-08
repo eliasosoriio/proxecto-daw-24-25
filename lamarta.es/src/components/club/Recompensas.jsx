@@ -58,7 +58,7 @@ function Recompensas() {
     <section className='panel panel--lista d-flex-col'>
         <header>
             <h2 className='panel--lista--titulo'>Recompensas</h2>
-            <p className='panel--lista--desc'>CANJEA TU FAVORITA</p>
+            <p className='panel--lista--desc'>CANJEA TU FAVORITA ANTES DE PAGAR</p>
         </header>
 
         <section className="panel--lista--campo d-flex-col" aria-label="Lista de recompensas" role='list'>

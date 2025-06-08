@@ -30,7 +30,7 @@
     transition: 1s;
 }
 .cabecera--nav .link:hover {
-    color: var(--orange-color);
+    color: var(--light-orange-color);
 }
 
 .cabecera--contacto {

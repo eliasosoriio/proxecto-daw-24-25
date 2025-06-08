@@ -58,7 +58,7 @@ function Transacciones() {
     <section className='panel panel--lista d-flex-col'>
         <header>
             <h2 className='panel--lista--titulo'>Transacciones</h2>
-            <p className='panel--lista--desc'>TUS ÚLTIMAS 10</p>
+            <p className='panel--lista--desc'>LAS 10 MÁS RECIENTES</p>
         </header>
 
         <section className="panel--lista--campo d-flex-col" aria-label="Lista de transacciones" role='list'>
