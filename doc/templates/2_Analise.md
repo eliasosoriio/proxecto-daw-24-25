@@ -10,7 +10,7 @@
 
 ## 1- Descrición Xeral
 
-El proyecto contará con la web de LAMARTA y el sistema de puntos. En la página se podrán ver diferentes secciones. Inicio, blog, conócenos, carta, contacto y LAMARTA Club.
+El proyecto contará con la web de LAMARTA y el sistema de puntos _Fideplus_. En la página se podrán ver diferentes secciones. Inicio, blog, conócenos, carta, contacto y LAMARTA Club.
 
 El usuario podrá navegar por todas partes y crearse una cuenta en el club para poder comenzar a  acumular puntos. Una vez introducidos los datos y que la cuenta esté creada, se visualizará la tarjeta LAMARTA. En ella, estará el número de socio y los puntos que la persona tenga. Más abajo están las recompensas, cada una con su valor en puntos.
 

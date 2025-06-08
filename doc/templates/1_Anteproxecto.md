@@ -22,7 +22,7 @@
 
 ## 1- Descrición do proxecto
 
-El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa.  La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento.
+El proyecto consiste en diseñar una página web con un sistema de fidelización para una empresa real, en este caso el restaurante LAMARTA, en Vilagarcía de Arousa. La clave es proporcionar un diseño diferente, único y atractivo, que la mayoría no tienen y que no sea una plantilla cualquiera, sino algo personalizado adecuando la página a la imagen del negocio. Además, se incluiría un sistema básico de puntos, en el que los clientes podrán obtenerlos al realizar pagos en el establecimiento. Este sistema se llamará _Fideplus_.
 
 La mayoría de comercios locales por esta zona aún no disponen de página web y los que sí, muchos no tienen una original o diferente a lo que se suele ver. También muchos de ellos aún recurren a métodos de fidelización físicos como pueden ser los bonos en papel. Cada cliente podría crear una cuenta y en cada compra el dependiente le añadirá los puntos o le canjeará las recompensas correspondientes.
 
@@ -150,7 +150,7 @@ A medida que se vaya creciendo los costes bajarán, reduciendo las pérdidas, y 
 
 ## 3- Requirimentos técnicos
 
-- **Infraestructura:** Hostinger para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
+- **Infraestructura:** IONOS para alojar la API, Vercel para desplegar el frontend y MySQL para la base de datos.
 - **Backend:** API en PHP crudo.
 - **Frontend:** React, HTML y CSS.
 
