@@ -54,6 +54,7 @@ function Puntos() {
 
   return (
     <section className='panel puntos d-flex-col'>
+        <p>1€ = 100 puntos</p>
         <img src="https://lamarta.es/assets/favicon-lamarta.png" alt="Corona Lamarta en los puntos." />
         <p>Eres el afiliado</p>
         <p className='puntos--orange'> Nº {usuario.id_usuario}</p>
