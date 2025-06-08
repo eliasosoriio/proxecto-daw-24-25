@@ -87,7 +87,7 @@ function realizarAccion(ev, accion, id, concepto, importe) {
     if(isNaN(id) || !concepto || isNaN(importe) || importe <= 0) {
         notyf.error('Alguno de los campos está vacío o no tiene un formato válido.');
     } else {
-        anadirPuntos(id, concepto, Math.ceil(importe * 10));
+        anadirPuntos(id, concepto, Math.ceil(importe * 100));
     }
   }
 }
