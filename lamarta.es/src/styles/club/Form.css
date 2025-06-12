@@ -11,6 +11,11 @@
     background-color: var(--dark-color);
 }
 
+.form--titulo--h2 {
+    color: var(--light-orange-color);
+    text-transform: uppercase;
+}
+
 .form--campos {
     margin-top: 1rem;
     gap: 1rem;
