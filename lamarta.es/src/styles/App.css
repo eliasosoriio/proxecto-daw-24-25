@@ -3,6 +3,10 @@
 =            App            =
 =============================================*/
 
+#contenido-principal {
+    min-height: 80vh;
+}
+
 .cargando {
     height: 75vh;
     font-size: 3rem;

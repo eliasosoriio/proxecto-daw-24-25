@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HeaderSeccion from '../general/HeaderSeccion'
 import '../../styles/carta/Carta.css'
 import Entrante from './Entrante';
@@ -7,6 +7,7 @@ import ExplicacionMenu from './ExplicacionMenu';
 import Hamburguesa from './Hamburguesa';
 import ExplicacionPrecios from './ExplicacionPrecios';
 import ScrollArriba from '../general/ScrollArriba'
+import FiltroCarta from './FiltroCarta';
 
 const entrantes = [
     {
@@ -228,120 +229,161 @@ const mascotas = [
 ];
 
 function Carta() {
+  const [categoria, setCategoria] = useState('Todos');
+
   return (
     <>
         <ScrollArriba />
         <HeaderSeccion nombre={"Carta"}></HeaderSeccion>
 
-        {/* ENTRANTES */}
-        <HeaderSeccionCarta titulo={"ENTRANTES"} imagen={"https://lamarta.es/assets/papas.svg"} />
-        <ul className="entrantes d-flex-col" role='list'>
-            {[...entrantes].map((e, i)  => (
-                <Entrante 
-                key={i}
-                nombre={e.nombre}
-                precio={e.precio}
-                />
-            ))}
+        <ul className='filtros d-flex-row'>
+            <li><FiltroCarta mensaje={'Todos'} onClick={() => setCategoria('Todos')} className={categoria=='Todos'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Entrantes'} onClick={() => setCategoria('Entrantes')} className={categoria=='Entrantes'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Entrantes Veggie'} onClick={() => setCategoria('EntrantesVeggie')} className={categoria=='EntrantesVeggie'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Smashhhh'} onClick={() => setCategoria('Smash')} className={categoria=='Smash'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Chicken'} onClick={() => setCategoria('Chicken')} className={categoria=='Chicken'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Veggie'} onClick={() => setCategoria('Veggie')} className={categoria=='Veggie'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Sin Gluten'} onClick={() => setCategoria('SinGluten')} className={categoria=='SinGluten'?'activo':''} /></li>
+            <li><FiltroCarta mensaje={'Mascotas'} onClick={() => setCategoria('Mascotas')} className={categoria=='Mascotas'?'activo':''} /></li>
         </ul>
+
+
+        {/* ENTRANTES */}
+        {(categoria == 'Todos' || categoria == 'Entrantes') && (
+            <>
+                <HeaderSeccionCarta titulo={"ENTRANTES"} imagen={"https://lamarta.es/assets/papas.svg"} />
+                <ul className="entrantes d-flex-col" role='list'>
+                    {[...entrantes].map((e, i)  => (
+                        <Entrante 
+                        key={i}
+                        nombre={e.nombre}
+                        precio={e.precio}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* ENTRANTES VEGGIE */}
-        <HeaderSeccionCarta titulo={"ENTRANTES VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
-        <ul className="entrantes d-flex-col" role='list'>
-            {[...entrantesVeggie].map((e, i)  => (
-                <Entrante 
-                key={i}
-                nombre={e.nombre}
-                precio={e.precio}
-                />
-            ))}
-        </ul>
+        {(categoria == 'Todos' || categoria == 'EntrantesVeggie') && (
+            <>
+                <HeaderSeccionCarta titulo={"ENTRANTES VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
+                <ul className="entrantes d-flex-col" role='list'>
+                    {[...entrantesVeggie].map((e, i)  => (
+                        <Entrante 
+                        key={i}
+                        nombre={e.nombre}
+                        precio={e.precio}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* SMASHHHH */}
-        <HeaderSeccionCarta titulo={"SMASHHHH"} imagen={"https://lamarta.es/assets/burguer.svg"} />
-        <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
-        <ExplicacionPrecios />
-        <ul className="hamburguesas d-flex-col" role='list'>
-            {[...smash].map((s, i)  => (
-                <Hamburguesa 
-                key={i}
-                nombre={s.nombre}
-                carne={s.carne}
-                ingredientes={s.ingredientes}
-                precio={s.precio}
-                precioMenu={s.precioMenu}
-                />
-            ))}
-        </ul>
+        {(categoria == 'Todos' || categoria == 'Smash') && (
+            <>
+                <HeaderSeccionCarta titulo={"SMASHHHH"} imagen={"https://lamarta.es/assets/burguer.svg"} />
+                <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
+                <ExplicacionPrecios />
+                <ul className="hamburguesas d-flex-col" role='list'>
+                    {[...smash].map((s, i)  => (
+                        <Hamburguesa 
+                        key={i}
+                        nombre={s.nombre}
+                        carne={s.carne}
+                        ingredientes={s.ingredientes}
+                        precio={s.precio}
+                        precioMenu={s.precioMenu}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* CHICKEN */}
-        <HeaderSeccionCarta titulo={"CHICKEN"} imagen={"https://lamarta.es/assets/burguer.svg"} />
-        <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
-        <ExplicacionPrecios />
-        <ul className="hamburguesas d-flex-col" role='list'>
-            {[...chicken].map((s, i)  => (
-                <Hamburguesa 
-                key={i}
-                nombre={s.nombre}
-                carne={s.carne}
-                ingredientes={s.ingredientes}
-                precio={s.precio}
-                precioMenu={s.precioMenu}
-                />
-            ))}
-        </ul>
+        {(categoria == 'Todos' || categoria == 'Chicken') && (
+            <>
+                <HeaderSeccionCarta titulo={"CHICKEN"} imagen={"https://lamarta.es/assets/burguer.svg"} />
+                <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
+                <ExplicacionPrecios />
+                <ul className="hamburguesas d-flex-col" role='list'>
+                    {[...chicken].map((s, i)  => (
+                        <Hamburguesa 
+                        key={i}
+                        nombre={s.nombre}
+                        carne={s.carne}
+                        ingredientes={s.ingredientes}
+                        precio={s.precio}
+                        precioMenu={s.precioMenu}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* VEGGIE */}
-        <HeaderSeccionCarta titulo={"VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
-        <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
-        <ExplicacionPrecios />
-        <ul className="hamburguesas d-flex-col" role='list'>
-            {[...veggie].map((s, i)  => (
-                <Hamburguesa 
-                key={i}
-                nombre={s.nombre}
-                carne={s.carne}
-                ingredientes={s.ingredientes}
-                precio={s.precio}
-                precioMenu={s.precioMenu}
-                />
-            ))}
-        </ul>
+        {(categoria == 'Todos' || categoria == 'Veggie') && (
+            <>
+                <HeaderSeccionCarta titulo={"VEGGIE"} imagen={"https://lamarta.es/assets/vegan.png"} />
+                <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
+                <ExplicacionPrecios />
+                <ul className="hamburguesas d-flex-col" role='list'>
+                    {[...veggie].map((s, i)  => (
+                        <Hamburguesa 
+                        key={i}
+                        nombre={s.nombre}
+                        carne={s.carne}
+                        ingredientes={s.ingredientes}
+                        precio={s.precio}
+                        precioMenu={s.precioMenu}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* SIN GLUTEN */}
-        <HeaderSeccionCarta titulo={"SIN GLUTEN"} imagen={"https://lamarta.es/assets/glutenfree.png"} />
-        <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
-        <ExplicacionPrecios />
-        <ul className="hamburguesas d-flex-col" role='list'>
-            {[...glutenFree].map((s, i)  => (
-                <Hamburguesa 
-                key={i}
-                nombre={s.nombre}
-                carne={s.carne}
-                ingredientes={s.ingredientes}
-                precio={s.precio}
-                precioMenu={s.precioMenu}
-                />
-            ))}
-        </ul>
+        {(categoria == 'Todos' || categoria == 'SinGluten') && (
+            <>
+                <HeaderSeccionCarta titulo={"SIN GLUTEN"} imagen={"https://lamarta.es/assets/glutenfree.png"} />
+                <ExplicacionMenu explicacion={"MENÚ = BURGER + PATATAS Y SALSA DE QUESO + BEBIDA"} />
+                <ExplicacionPrecios />
+                <ul className="hamburguesas d-flex-col" role='list'>
+                    {[...glutenFree].map((s, i)  => (
+                        <Hamburguesa 
+                        key={i}
+                        nombre={s.nombre}
+                        carne={s.carne}
+                        ingredientes={s.ingredientes}
+                        precio={s.precio}
+                        precioMenu={s.precioMenu}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
 
         {/* MASCOTAS */}
-        <HeaderSeccionCarta titulo={"MASCOTAS"} imagen={"https://lamarta.es/assets/dog.png"} />
-        <ExplicacionMenu explicacion={"MENÚ = BOWL + AGUA + CHURU LÍQUIDO (ATÚN), CHURU SÓLIDO (POLLO) O GALLETAS CANAGAN"} />
-        <ExplicacionPrecios />
-        <ul className="hamburguesas d-flex-col" role='list'>
-            {[...mascotas].map((s, i)  => (
-                <Hamburguesa 
-                key={i}
-                nombre={s.nombre}
-                carne={s.carne}
-                ingredientes={s.ingredientes}
-                precio={s.precio}
-                precioMenu={s.precioMenu}
-                />
-            ))}
-        </ul>
-        
+        {(categoria == 'Todos' || categoria == 'Mascotas') && (
+            <>
+                <HeaderSeccionCarta titulo={"MASCOTAS"} imagen={"https://lamarta.es/assets/dog.png"} />
+                <ExplicacionMenu explicacion={"MENÚ = BOWL + AGUA + CHURU LÍQUIDO (ATÚN), CHURU SÓLIDO (POLLO) O GALLETAS CANAGAN"} />
+                <ExplicacionPrecios />
+                <ul className="hamburguesas d-flex-col" role='list'>
+                    {[...mascotas].map((s, i)  => (
+                        <Hamburguesa 
+                        key={i}
+                        nombre={s.nombre}
+                        carne={s.carne}
+                        ingredientes={s.ingredientes}
+                        precio={s.precio}
+                        precioMenu={s.precioMenu}
+                        />
+                    ))}
+                </ul>
+            </>
+        )}
     </>
   )
 }
