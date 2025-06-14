@@ -92,6 +92,7 @@ function AccesoRegistro() {
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='form d-flex-col'>
           <form className='form--campos d-flex-col' onSubmit={(ev) => hacerRegistro(ev, password)}>
+              <h2 className='form--titulo--h2'>INVITACIÓN NECESARIA</h2>
               <Campo 
                 id="password" 
                 nombre="Desbloquea el registro" 

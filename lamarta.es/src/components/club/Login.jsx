@@ -142,7 +142,7 @@ function Login() {
       <HeaderSeccion nombre="LAMARTA CLUB" />
       <section className='form d-flex-col'>
           <form className='form--campos d-flex-col' onSubmit={(ev) => hacerLogin(ev, correo, password)}>
-          <h2 className='form--titulo--h2'>Próximamente para todo el público</h2>
+          <h2 className='form--titulo--h2'>FASE BETA</h2>
               <Campo 
                 id="correo" 
                 nombre="Correo electrónico" 

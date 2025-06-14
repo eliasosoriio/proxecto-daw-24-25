@@ -14,26 +14,41 @@
 
 ## Taboleiro do proyecto
 
-Actualmente _Fideplus_ se encuentra en fase de pruebas. [Acceder](https://lamartaes.vercel.app)
+Actualmente _Fideplus_ se encuentra finalizado y en fase BETA. [Acceder](https://lamarta.es)
 
 ## Descrición
 
-> *EXPLICACIÓN*: Realiza unha breve descrición do proxecto. Non menos de 100 palabras e non máis de 300. Resalta o fundamental *coas túas propias palabras**. Utiliza unha linguaxe correcta, *pero natural**, que o entenda todo o mundo, mesmo e en especial, as persoas que non teñan un coñecemento técnico avanzado. Pode ser un estracto ou resumo de apartados que xa contemples noutros ficheiros.
-> Descrición básica das ferramentas/tecnoloxías/linguaxes de programación,... empregados.
+El sistema *Fideplus* se encarga de dar una oportunidad al comercio local para disponer de una plataforma web sencilla, fácil, moderna y a la altura del momento en el que estamos. 
+
+¿Cómo se consigue esto? Lo primero, dando un diseño único y que realmente represente la identidad de la marca. Una página en la que el usuario sienta que pertenece al negocio. Además, todo esto acompañado del sistema de fidelización. 
+
+Esta aplicación consigue aumentar el número de clientes que vuelven repetidamente al local. Mantener la clientela genera más ingresos para el negocio que seguir buscando nueva.
+
+Fideplus gestiona unas recompensas que el usuario puede observar desde su panel, además de sus puntos como afiliado. Un euro gastado en el negocio equivale a cien puntos. El administrador o gerente del local dispone de su propio panel en el que se podrán añadir, modificar y editar esas recompensas. Otra de las opciones es buscar a un afiliado accediendo a su información y saldo. Desde esta pantalla se pueden añadir más puntos a un usuario o canjear una recompensa. 
+
+La parte visual, la que todos vemos (frontend), está desarrollada en React y la parte del servidor (backend), que es la API y la base de datos (MySQL), está desarrollada en PHP crudo. Toda esta aplicación está alojada en IONOS.
 
 ## Instalación / Posta en marcha
 
-> *EXPLICACIÓN*: Neste apartado describe con toda precisión e a poder ser coa maior simplicidade/facilidade posible, como poñer en marcha a túa aplicación para probala (nun ambiente local). Valorarase moi positivamente que este proceso sexa o máis fácil posible, cunha simple instrución (p. e. un script de instalación, descarga e posta en marcha dun contedor,...).
->
+Lo primero es clonar o descargar el repositorio de GitHub. Una vez hecho, abrimos la carpeta _lamarta.es_ donde se encuentra el frontend y realizamos un _npm install_ desde la terminal para instalar las dependencias. Cuando haya finalizado la instalación, podremos hacer un _npm run dev_ para desplegar en local.
+
+El último paso sería acceder a la carpeta _api.lamarta.es_ y realizar un _docker-compose up_. Cuando ya ha acabado, se importa el dump de la base de datos en el phpMyAdmin y ya estaría la aplicación completamente desplegada.
 
 ## Uso
 
-> *EXPLICACIÓN*: É este apartado describe brevemente como se usará a aplicación Web do proxecto. Describe o uso da interface web *só o uso** (a modo de sumario) *dos aspectos máis relevantes do seu funcionamento** (máxima brevidade, coma se fose un anuncio reclamo ou comercial).
->
+El administrador dispone de un panel en el que puede visualizar toda la información básica y necesaria. Las recompensas se pueden editar y borrar desde esta misma pantalla. Se pueden visualizar los diez usuarios con más puntos y acceder al perfil de estos desde la pantalla. También habrá unos botones con el resto de acciones, como buscar un usuario o añadir una recompensa. En el perfil de un usuario podremos añadir puntos o canjear una recompensa. 
+
+El usuario/afiliado dispone de un panel en el que puede revisar su información principal. Esta información sería su número de afiliado y los puntos que actualmente tiene. También podrá visualizar las recompensas disponibles en el local y sus últimas diez transacciones en este mismo.
 
 ## Sobre o autor
 
-> *EXPLICACIÓN*: Realiza unha breve descrición de quen es (perfil profesional), os teus puntos fortes, ou tecnoloxías que máis dominas... a motivación do proxecto, tendo sobre todo en conta un nicho de mercado sen explotar.. *Non máis de 200 palabras**. Indica a forma fiable de contactar contigo durante o proceso de creación do proxecto.
+Soy Elías Osorio Pouseu, estudiante de 2º de Desarrollo de Aplicaciones Web en el IES Armando Cotarelo Valledor. Domino tecnologías como HTML, CSS, JS, PHP, SQL, FIGMA y un poco de React. 
+
+Me considero alguien que busca la simplicidad y bastante perfeccionista, sobre todo en el diseño y en lo que ve la gente. Cuando mi hermano me habló sobre hacer la página y posteriormente el sistema, tenía claro que una de las cosas principales que quería era representar la marca de una manera única. Que la gente se acuerde de la página de Lamarta. 
+
+El comercio local aún no está completamente digitalizado ni con un sistema de fidelización. Además, hay comercio que ya dispone de una página, pero que no define ni ensalza la imagen de la marca ni deja huella en los clientes.
+
+Cualquier consulta se puede realizar al siguiente correo: 2004eliasosorio@gmail.co
 
 ## Licenza
 
