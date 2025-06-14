@@ -48,15 +48,13 @@ Me considero alguien que busca la simplicidad y bastante perfeccionista, sobre t
 
 El comercio local aún no está completamente digitalizado ni con un sistema de fidelización. Además, hay comercio que ya dispone de una página, pero que no define ni ensalza la imagen de la marca ni deja huella en los clientes.
 
-Cualquier consulta se puede realizar al siguiente correo: 2004eliasosorio@gmail.co
+Cualquier consulta se puede realizar al siguiente correo: 2004eliasosorio@gmail.com
 
 ## Licenza
 
-> *EXPLICACIÓN*: É requisito INDISPENSABLE o licenciar explicitamente o proxecto software. Recoméndase licenciar con GNU Free Documentation License Version 1.3*. Crear un ficheiro `LICENSE` na raiz do repo, co teu ficheiro de licenza. Lembra que se empregas unha licenza de software libre estás a autorizar a derivación da túa obra baixo a mesma licenza que elixas, podendo dar continuidade, p. e. outro alumno, para continuar o teu proxecto noutro curso.
+Se utiliza [GNU General Public License v3.0](./LICENSE). Esta, permite el uso, modificación, copia y distribución del software, incluso con fines comerciales, siempre que se mantenga el código abierto y se distribuyan también las modificaciones bajo la misma licencia.
 
 ## Índice
-
-> *EXPLICACIÓN*: Simplemente indexa ordenadamente todo o tey proxecto.
 
 1. [Anteproyecto](doc/templates/1_Anteproxecto.md)
 2. [Análise](doc/templates/2_Analise.md)
@@ -68,7 +66,13 @@ Cualquier consulta se puede realizar al siguiente correo: 2004eliasosorio@gmail.
 
 ## Guía de contribución
 
-> EXPLICACIÓN*: Tratándose dun proxecto de software libre, é moi importante que expoñas como se pode contribuír co teu proxecto. Algúns exemplos disto son realizar novas funcionalidades, corrección e/o optimización do código, realización de tests automatizados, novas interfaces de integración, desenvolvemento de plugins etc. Se o máis conciso que poidas.
+Puedes contribuir a este proyecto de varias formas: 
+
+- Desarrollando nuevas funcionalidades.
+- Corrigiendo errores.
+- Optimizando el código.
+
+Si te decides a hacerlo haz un fork del repositorio. Después, crea una rama específica para tus cambios. Realiza las modificaciones necesarias y realiza pruebas para asegurarte de que no fastidie el resto del proyecto. Envía una pull request explicando claramente las mejoras o correcciones realizadas.
 
 ## Links
 
