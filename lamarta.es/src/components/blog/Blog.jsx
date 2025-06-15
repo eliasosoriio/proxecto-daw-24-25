@@ -19,7 +19,7 @@ const articulos = [
     link: "https://www.lavozdegalicia.es/noticia/arousa/vilagarcia-de-arousa/2025/03/12/mejor-hamburguesa-galicia-prepara-lamarta-vilagarcia/0003_202503A12C4992.htm"
   },
   {
-    imagen: "https://i.ytimg.com/vi_webp/VtM4N8R3szc/maxresdefault.webp",
+    imagen: "https://vilagarciavirtual.com/uploads/imagenes-negocio/lamarta_01.jpg",
     titulo: "POV: Parece tranquilo...Pero así empieza TODO",
     descripcion: "No hay gritos, no hay prisas… solo plancha caliente, queso derritiéndose y patatas esperando su destino.",
     link: "https://www.youtube.com/watch?v=TTJGlW3XNv8"
