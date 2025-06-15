@@ -40,6 +40,8 @@ El administrador dispone de un panel en el que puede visualizar toda la informac
 
 El usuario/afiliado dispone de un panel en el que puede revisar su información principal. Esta información sería su número de afiliado y los puntos que actualmente tiene. También podrá visualizar las recompensas disponibles en el local y sus últimas diez transacciones en este mismo.
 
+Si no eres afiliado puedes registrarte introduciendo la contraseña _Lamarta-Club-2026_ y rellenando el formulario.
+
 ## Sobre o autor
 
 Soy Elías Osorio Pouseu, estudiante de 2º de Desarrollo de Aplicaciones Web en el IES Armando Cotarelo Valledor. Domino tecnologías como HTML, CSS, JS, PHP, SQL, Figma y un poco de React. 
