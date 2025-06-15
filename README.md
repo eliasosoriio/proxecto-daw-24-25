@@ -26,7 +26,7 @@ Esta aplicación consigue aumentar el número de clientes que vuelven repetidame
 
 Fideplus gestiona unas recompensas que el usuario puede observar desde su panel, además de sus puntos como afiliado. Un euro gastado en el negocio equivale a cien puntos. El administrador o gerente del local dispone de su propio panel en el que se podrán añadir, modificar y editar esas recompensas. Otra de las opciones es buscar a un afiliado accediendo a su información y saldo. Desde esta pantalla se pueden añadir más puntos a un usuario o canjear una recompensa. 
 
-La parte visual, la que todos vemos (frontend), está desarrollada en React y la parte del servidor (backend), que es la API y la base de datos (MySQL), está desarrollada en PHP crudo. Toda esta aplicación está alojada en IONOS.
+La parte visual, la que todos vemos (frontend), está desarrollada en React y la parte del servidor (backend), que es la API y la base de datos (MySQL), está desarrollada en PHP crudo y SQL. Toda esta aplicación está alojada en IONOS.
 
 ## Instalación / Posta en marcha
 
@@ -42,7 +42,7 @@ El usuario/afiliado dispone de un panel en el que puede revisar su información 
 
 ## Sobre o autor
 
-Soy Elías Osorio Pouseu, estudiante de 2º de Desarrollo de Aplicaciones Web en el IES Armando Cotarelo Valledor. Domino tecnologías como HTML, CSS, JS, PHP, SQL, FIGMA y un poco de React. 
+Soy Elías Osorio Pouseu, estudiante de 2º de Desarrollo de Aplicaciones Web en el IES Armando Cotarelo Valledor. Domino tecnologías como HTML, CSS, JS, PHP, SQL, Figma y un poco de React. 
 
 Me considero alguien que busca la simplicidad y bastante perfeccionista, sobre todo en el diseño y en lo que ve la gente. Cuando mi hermano me habló sobre hacer la página y posteriormente el sistema, tenía claro que una de las cosas principales que quería era representar la marca de una manera única. Que la gente se acuerde de la página de Lamarta. 
 
@@ -76,5 +76,14 @@ Si te decides a hacerlo haz un fork del repositorio. Después, crea una rama esp
 
 ## Links
 
-> EXPLICACIÓN*: Ligazóns externas e descipciones destas ligazóns que creas conveniente indicar aquí. Xeralmente xa van estar integrados coa túa documentación, pero se requires realizar unha listaxe deles, leste é o lugar.
->
+- [HTML (MDN)](https://developer.mozilla.org/es/docs/Web/HTML)
+- [CSS (MDN)](https://developer.mozilla.org/es/docs/Web/CSS)
+- [JavaScript (MDN)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [SQL (W3Schools)](https://www.w3schools.com/sql/)
+- [PHP](https://www.php.net/manual/es/)
+- [Vercel](https://vercel.com/)
+- [IONOS](https://www.ionos.es/)
+- [phpMyAdmin](https://www.phpmyadmin.net/)
+
+Estos enlaces pertenecen al software principal utilizado. Para ver más, mira en la sección de [referencias](./doc/templates/6_Referencias.md).

@@ -10,12 +10,12 @@
 ## 1- Sitios web de documentación técnica
 - [Como utilizar las rutas en React (W3Schools)](https://www.w3schools.com/react/react_router.asp)
 - [Rutas privadas con React Router (4geeks)](https://4geeks.com/es/lesson/rutas-privadas-con-react-router)
-- [CORS - Qué es, cómo funciona y configuración (Arsys)](https://www.arsys.es/blog/cors-que-es-como-funciona-y-configuracion#tree-4)
-- [Guía CORS - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CORS)
-- [password_hash - PHP.net](https://www.php.net/manual/es/function.password-hash.php)
-- [password_verify - PHP.net](https://www.php.net/manual/es/function.password-verify.php)
+- [CORS (Arsys)](https://www.arsys.es/blog/cors-que-es-como-funciona-y-configuracion#tree-4)
+- [Guía CORS (MDN)](https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CORS)
+- [password_hash](https://www.php.net/manual/es/function.password-hash.php)
+- [password_verify](https://www.php.net/manual/es/function.password-verify.php)
 - [Uso de password_hash y password_verify (StackOverflow)](https://stackoverflow.com/questions/30279321/how-to-use-phps-password-hash-to-hash-and-verify-passwords)
-- [PDO Transaction - PHP Tutorial](https://www.phptutorial.net/php-pdo/php-pdo-transaction/)
+- [PDO Transaction](https://www.phptutorial.net/php-pdo/php-pdo-transaction/)
 - [Renderizado de listas en React (React.dev)](https://es.react.dev/learn/rendering-lists)
 - [useEffect Hook en React (W3Schools)](https://www.w3schools.com/react/react_useeffect.asp)
 - [window.scrollTo() (StackOverflow)](https://es.stackoverflow.com/questions/549391/scrollto-sobre-un-div)
@@ -38,14 +38,16 @@
 
 - Codificación y pruebas:
   - [Talend API Tester (extensión Chrome)](https://chromewebstore.google.com/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm)
-  - [Notyf - Librería para notificaciones (GitHub)](https://github.com/caroso1222/notyf)
+  - [Notyf (Librería en GitHub)](https://github.com/caroso1222/notyf)
 
 
 ## 3- Sitios oficiais do software utilizado
-- [JavaScript - Documentación oficial (MDN)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-- [React - Documentación oficial](https://reactjs.org/docs/getting-started.html)
-- [SQL - Documentación oficial de SQL estándar (W3Schools)](https://www.w3schools.com/sql/)
-- [PHP - Documentación oficial](https://www.php.net/manual/es/)
+- [HTML (MDN)](https://developer.mozilla.org/es/docs/Web/HTML)
+- [CSS (MDN)](https://developer.mozilla.org/es/docs/Web/CSS)
+- [JavaScript (MDN)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [SQL (W3Schools)](https://www.w3schools.com/sql/)
+- [PHP](https://www.php.net/manual/es/)
 - [Vercel](https://vercel.com/)
 - [IONOS](https://www.ionos.es/)
 - [phpMyAdmin](https://www.phpmyadmin.net/)
