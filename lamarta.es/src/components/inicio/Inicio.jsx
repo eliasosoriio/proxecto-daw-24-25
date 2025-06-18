@@ -9,7 +9,7 @@ function Inicio() {
     <>
       <ScrollArriba />
       <header className="portada" aria-labelledby="portada-titulo">
-        <div className="portada--contenido d-flex-col">
+        <section className="portada--contenido d-flex-col">
           <h1 id="portada-titulo">LAMARTA - THE BEST BURGUER BAR</h1>
           <p>HAZ TU PEDIDO</p>
           <p>YA POR LA <span>WEB</span></p>
@@ -21,7 +21,7 @@ function Inicio() {
           >
             PEDIR
           </a>
-        </div>
+        </section>
       </header>
 
       <section className="productos" aria-labelledby="productos-titulo">

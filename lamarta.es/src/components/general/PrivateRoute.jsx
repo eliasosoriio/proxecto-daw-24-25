@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import { Navigate } from 'react-router-dom';
 
-const urlToken = "https://lamarta.es/api/route.php/token";
+const urlToken = "http://localhost/producto_fideplus_lamarta/route.php/token";
 
 async function ajax(options) {
     const {url, method, data} = options;
