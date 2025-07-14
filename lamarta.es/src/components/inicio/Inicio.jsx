@@ -72,11 +72,11 @@ function Inicio() {
       </section>
 
       <section className="galeria">
-        <img src="https://i.imgur.com/yfuUZCK.jpeg" alt="Imagen del entrante Tequeños" className="galeria-1 d-none"/>
-        <img src="https://i.imgur.com/LPLIVYJ.jpeg" alt="Imagen del entrante Nuggets Veggie" className="galeria-2 d-none"/>
-        <img src="https://i.imgur.com/jLX7lM0.jpeg" alt="Imagen del menú 2x12" className="galeria-3"/>
-        <img src="https://i.imgur.com/NHK61az.jpeg" alt="Imagen del entrante Gouda Rings" className="galeria-4 d-none"/>
-        <img src="https://i.imgur.com/qZ79wZD.jpeg" alt="Imagen del entrante Alitas BBQ" className="galeria-5 d-none"/>
+        <img src="https://lamarta.es/assets/tequenos.jpg" alt="Imagen del entrante Tequeños" className="galeria-1 d-none"/>
+        <img src="https://lamarta.es/assets/nuggetsbbq.png" alt="Imagen del entrante Nuggets Veggie" className="galeria-2 d-none"/>
+        <img src="https://lamarta.es/assets/2x12.png" alt="Imagen del menú 2x12" className="galeria-3"/>
+        <img src="https://lamarta.es/assets/gouda.png" alt="Imagen del entrante Gouda Rings" className="galeria-4 d-none"/>
+        <img src="https://lamarta.es/assets/alitas.png" alt="Imagen del entrante Alitas BBQ" className="galeria-5 d-none"/>
 		  </section>
     </>
   )

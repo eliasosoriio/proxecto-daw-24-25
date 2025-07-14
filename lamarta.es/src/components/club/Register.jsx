@@ -8,8 +8,8 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { Link } from "react-router-dom";
 
-const urlAfiliado = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
-const urlRegistro = "http://localhost/producto_fideplus_lamarta/route.php/register";
+const urlAfiliado = "https://lamarta.es/api/route.php/afiliado";
+const urlRegistro = "https://lamarta.es/api/route.php/register";
 
 async function ajax(options) {
     const {url, method, data} = options;

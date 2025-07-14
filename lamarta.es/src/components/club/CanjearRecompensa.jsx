@@ -8,8 +8,8 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import PrivateRoute from '../general/PrivateRoute';
 
-const urlRecompensas = "http://localhost/producto_fideplus_lamarta/route.php/recompensa";
-const urlTransacciones = "http://localhost/producto_fideplus_lamarta/route.php/transaccion";
+const urlRecompensas = "https://lamarta.es/api/route.php/recompensa";
+const urlTransacciones = "https://lamarta.es/api/route.php/transaccion";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../../styles/club/Puntos.css";
 
-const urlUsuarios = "http://localhost/producto_fideplus_lamarta/route.php/afiliado";
+const urlUsuarios = "https://lamarta.es/api/route.php/afiliado";
 
 async function ajax(options) {
     const {url, method, data, headers} = options;
