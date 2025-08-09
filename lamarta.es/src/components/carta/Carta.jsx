@@ -54,8 +54,8 @@ const entrantes = [
 
 const entrantesVeggie = [
     {
-        nombre: 'Nuggets Veggie con patatas (6ud.)',
-        precio: '6,50€'
+        nombre: 'Nuggets Veggie (6ud.)',
+        precio: '4,95€'
     }
 ];
 
@@ -64,64 +64,64 @@ const smash = [
         nombre: "LA BBB",
         carne: "SMASH BURGER (TERNERA 80 G)",
         ingredientes: "Queso cheddar, pepinillo, ketchup y mostaza",
-        precio: "5,95€",
-        precioMenu: "7,95€"
+        precio: "6,45€",
+        precioMenu: "8,45€"
     },
     {
         nombre: "LA BBQ",
         carne: "SMASH BURGER (TERNERA 80 G)",
         ingredientes: "Queso cheddar, bacon y salsa BBQ",
-        precio: "6,95€",
-        precioMenu: "8,95€"
+        precio: "7,95€",
+        precioMenu: "9,95€"
     },
     {
         nombre: "DOBLE BBB",
         carne: "DOBLE SMASH BURGER (TERNERA 160 G)",
         ingredientes: "Queso cheddar, pepinillo, ketchup y mostaza",
-        precio: "6,95€",
-        precioMenu: "8,95€"
+        precio: "7,45€",
+        precioMenu: "9,45€"
     },
     {
         nombre: "DOBLE BBQ",
         carne: "DOBLE SMASH BURGER (TERNERA 160 G)",
         ingredientes: "Queso cheddar, bacon y salsa BBQ",
-        precio: "8,40€",
-        precioMenu: "9,95€"
+        precio: "8,95€",
+        precioMenu: "10,95€"
     },
     {
         nombre: "PREMIUM BACON",
         carne: "DOBLE SMASH BURGER (VACA Y BUEY 200 G)",
         ingredientes: "Queso cheddar, bacon y salsa bacon",
-        precio: "9,95€",
-        precioMenu: "12,15€"
+        precio: "11,15€",
+        precioMenu: "13,15€"
     },
     {
         nombre: "LA CLASSIC",
         carne: "SMASH BURGER (VACA Y BUEY 100 G)",
         ingredientes: "Queso cheddar, aros de cebolla crujiente, lechuga, tomate y mayonesa",
-        precio: "9,95€",
-        precioMenu: "12,15€"
+        precio: "10,95€",
+        precioMenu: "12,95€"
     },
     {
         nombre: "LA QUEEN MARTA",
         carne: "SMASH BURGER (VACA Y BUEY 100 G)",
         ingredientes: "Queso cheddar, cebolla, lechuga, pepinillos y salsa queen",
-        precio: "9,95€",
-        precioMenu: "12,15€"
+        precio: "10,95€",
+        precioMenu: "12,95€"
     },
     {
         nombre: "LAMARTA",
         carne: "DOBLE SMASH BURGER (VACA Y BUEY 200 G)",
         ingredientes: "Queso cheddar, cochinita",
-        precio: "10,95€",
-        precioMenu: "13,15€"
+        precio: "11,95€",
+        precioMenu: "13,95€"
     },
     {
         nombre: "LA MB",
         carne: "DOBLE SMASH BURGER (VACA Y BUEY 200 G)",
         ingredientes: "Crema de queso cabra y cebolla caramelizada",
         precio: "11,95€",
-        precioMenu: "13,15€"
+        precioMenu: "13,95€"
     },
     {
         nombre: "ONION RING",
@@ -134,8 +134,8 @@ const smash = [
         nombre: "LA MOZZAPARMA",
         carne: "SMASH BURGER (VACA Y BUEY 100 G)",
         ingredientes: "Pasta de tomate deshidratado, queso mozzarella, champiñones, rúcula y canónigos, lascas de queso parmesano y cebolla crispy",
-        precio: "11,95€",
-        precioMenu: "13,95€"
+        precio: "12,45€",
+        precioMenu: "14,45€"
     }
 ];
 
@@ -151,8 +151,8 @@ const chicken = [
         nombre: "LA MOZZAPARMA",
         carne: "DISCO DE POLLO (100 G)",
         ingredientes: "Pasta de tomate deshidratado, queso mozzarela, champiñónes, rúcula y canónigos, lascas de queso parmesano y cebolla crispy",
-        precio: "10,95€",
-        precioMenu: "12,95€"
+        precio: "11,95€",
+        precioMenu: "13,95€"
     }
 ];
 
@@ -186,28 +186,28 @@ const glutenFree = [
         carne: "SMASH BURGER (TERNERA 80 G)",
         ingredientes: "Queso cheddar, pepinillo, ketchup y mostaza",
         precio: "6,95€",
-        precioMenu: "8,95€"
+        precioMenu: "9,95€"
     },
     {
         nombre: "DOBLE BBB",
         carne: "DOBLE SMASH BURGER (TERNERA 160 G)",
         ingredientes: "Queso cheddar, pepinillo, ketchup y mostaza",
         precio: "7,95€",
-        precioMenu: "9,95€"
+        precioMenu: "10,95€"
     },
     {
         nombre: "PREMIUM BACON",
         carne: "DOBLE SMASH BURGER (VACA Y BUEY 200 G)",
         ingredientes: "Queso cheddar, bacon y salsa bacon",
         precio: "10,95€",
-        precioMenu: "13,15€"
+        precioMenu: "14,15€"
     },
     {
         nombre: "LA CLASSIC",
         carne: "SMASH BURGER (VACA Y BUEY 100 G)",
         ingredientes: "Queso cheddar, lechuga, tomate, bacon y mayonesa",
-        precio: "10,95€",
-        precioMenu: "12,95€"
+        precio: "11,95€",
+        precioMenu: "13,95€"
     },
     {
         nombre: "LA MB",
