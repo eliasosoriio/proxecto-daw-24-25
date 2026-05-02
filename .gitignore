@@ -1,0 +1,6 @@
+.DS_Store
+api.lamarta.es/.env
+api.lamarta.es/.env.*
+!api.lamarta.es/.env.example
+api.lamarta.es/phpmyadmin-dump*.sql
+api.lamarta.es/*backup*.sql

@@ -31,10 +31,12 @@ Pasos para el despliegue:
 - Clonamos el repositorio mediante Git.
 - Accedemos a la carpeta _lamarta.es_ y hacemos un _npm install_ para instalar las dependencias.
 - Una vez instaladas, hacemos _npm run dev_ para desplegar el frontend. Por defecto, en el puerto 5173.
-- Para el backend, accedemos a _api.lamarta.es_ y levantamos los contenedores con _docker-compose up_.
-- Una vez levantados, accedemos a _phpMyAdmin_, generalmente en el puerto 8000. Y se importa el [dump de la base de datos](../../api.lamarta.es/phpmyadmin-dump-producto_fideplus_lamarta.sql).
+- Para el backend, accedemos a _api.lamarta.es_, copiamos _.env.example_ a _.env_ y definimos las credenciales del entorno y el codigo de acceso al registro.
+- Con la configuracion lista, levantamos los contenedores con _docker-compose up -d_.
+- Una vez levantados, accedemos a _phpMyAdmin_, generalmente en el puerto 8000, e importamos el [esquema base de la base de datos](../../api.lamarta.es/db/schema.sql).
+- Por ultimo, creamos el primer administrador ejecutando _docker-compose exec php php scripts/create_admin.php --name="Admin" --surname="Inicial" --email="admin@local.test" --password="Cambia-Esta-Clave123!"_.
 
-Con todo esto listo, ya podríamos iniciar sesión en el club con cualquiera de los tipos de usuario y continuar el desarrollo.
+Con todo esto listo, ya podriamos iniciar sesion en el club con la cuenta administrativa creada durante la implantacion y continuar el desarrollo.
 
 
 #### 1.1.2- Producción
@@ -47,9 +49,10 @@ Pasos para el despliegue:
 
 - Una vez nuestra aplicación en desarrollo está lista para pasar a producción, hacemos _npm run build_ en _lamarta.es_. Esto genera una carpeta _dist_ en la que se encontrarán los archivos que tenemos que subir a la carpeta raíz en nuestro servidor.
 - Cuando ya está el frontend, creamos una carpeta en la raíz del servidor llamada _api_. Aquí subiremos los archivos PHP de la API.
-- El siguiente paso es crear una base de datos en el servidor. Se utiliza el mismo dump que en local y después en los archivos de la API, se cambian los parámetros de acceso a la base de datos.
+- El siguiente paso es crear una base de datos en el servidor, importar el [esquema base](../../api.lamarta.es/db/schema.sql) y configurar fuera del repositorio las variables de entorno que necesita la API.
+- Tras esto, se crea el primer administrador con el script _php scripts/create_admin.php_ o con un procedimiento equivalente del servidor.
 
-Con todo esto listo, ya podríamos iniciar sesión en el club con cualquiera de los tipos de usuario.
+Con todo esto listo, ya podriamos iniciar sesion en el club con las cuentas creadas en el entorno de despliegue.
 
 
 #### 1.1.3- Tipos de usuarios
@@ -59,7 +62,7 @@ Hay dos tipos de usuarios:
 - **Administrador:** Tiene acceso a un panel para gestionar a los afiliados y a las recompensas.
 - **Afiliado:** Puede ver los puntos que va acumulando y las recompensas disponibles.
 
-Las cuentas que vienen en el dump, tienen como contraseña *Abc1234..* las de afiliado y *Admin1234..* la de administrador.
+El repositorio ya no incluye cuentas precargadas ni contrasenas de demostracion. El primer administrador se crea durante la implantacion y las cuentas afiliadas se generan desde la aplicacion o desde el entorno correspondiente.
 
 
 ### 1.2- Administración do sistema
@@ -76,7 +79,7 @@ Los afiliados no necesitan ninguna formación debido a que su panel es informati
 
 Las principales mejoras a futuro son:
 
-- En vez de que los trabajadores canjeen las recompensas, que sean los propios usuarios. 
+- En vez de que los trabajadores canjeen las recompensas, que sean los propios usuarios.
 - Realizar un sistema de votaciones para hacer encuestas para que los afiliados voten que recompensas quieren.
 - Añadir un sistema de reservas para el restaurante. Así los afiliado también tienen la opción de reservar mesa.
 - Crear una newsletter que envíe información y promociones a los afiliados.

@@ -6,7 +6,7 @@
  */
 include_once("Controller.php");
 
-define("CONTRASENIA_REGISTRO","Lamarta-Club-2026");
+define("CONTRASENIA_REGISTRO", getenv("REGISTER_ACCESS_CODE") ?: "");
 
 /**
  * Clase RegisterController, contiene el método de comprobarRegistro.
@@ -21,7 +21,15 @@ class RegisterController {
     public static function comprobarRegistro($object) {
         $data = json_decode($object, true);
         $contrasenia = $data[0]["contrasenia"];
-        $puedeRegistrarse = $contrasenia == CONTRASENIA_REGISTRO;
+
+        if (CONTRASENIA_REGISTRO === "") {
+            header('Content-Type: application/json');
+            http_response_code(500);
+            echo json_encode(["success" => false, "error" => "El registro no esta configurado en este entorno."]);
+            exit;
+        }
+
+        $puedeRegistrarse = hash_equals(CONTRASENIA_REGISTRO, (string) $contrasenia);
 
         if($puedeRegistrarse){
             header('Content-Type: application/json');
